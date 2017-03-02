@@ -304,7 +304,7 @@
                     <li><a class="toctree-l4" href="#recovery-mechanisms_1">Recovery Mechanisms</a></li>
                 
             
-                <li class="toctree-l3"><a href="#9-dynamic-application-modifications">9: Dynamic Application Modifications</a></li>
+                <li class="toctree-l3"><a href="#dynamic-application-modifications">Dynamic Application Modifications</a></li>
                 
             
                 <li class="toctree-l3"><a href="#user-interface">User Interface</a></li>
@@ -549,6 +549,13 @@
             
     <li class="toctree-l1 ">
         <a class="" href="../dtgateway/">dtGateway</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_systemalerts/">Alerts</a>
         
     </li>
 
@@ -1476,10 +1483,10 @@ example copying data in-out of HDFS), monitoring, metrics collections,
 etc. will require no changes when streaming applications run on
 Hadoop.</p>
 <h3 id="yarn">YARN</h3>
-<p><a href="http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site">YARN</a>is
+<p><a href="http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site">YARN</a> is
 the core library of Hadoop 2.2 that is tasked with resource management
 and works as a distributed application framework. In this section we
-will walk through Yarn's components. In Hadoop 2.2, the old jobTracker
+will walk through YARN's components. In Hadoop 2.2, the old jobTracker
 has been replaced by a combination of ResourceManager (RM) and
 ApplicationMaster (AM).</p>
 <h4 id="resource-manager-rm">Resource Manager (RM)</h4>
@@ -2940,7 +2947,7 @@ high.</p>
 Speculative execution is under development and
 is not yet available.</p>
 <hr />
-<h1 id="9-dynamic-application-modifications">9: Dynamic Application Modifications</h1>
+<h1 id="dynamic-application-modifications">Dynamic Application Modifications</h1>
 <p>Dynamic application modifications are being worked on and most of
 the features discussed here are now available. The platform supports the
 ability to modify the DAG of the application as per inputs as well as

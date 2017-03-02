@@ -508,6 +508,13 @@
         
             
     <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_systemalerts/">Alerts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
         <a class="" href="../apex/">Apache Apex</a>
         
     </li>
@@ -975,10 +982,12 @@ respectively. More commonly, output ports are simply defined as instances of
 }
 </code></pre>
 
-<p>A <em>stream</em> is the set of links connecting a single port of an upstream operator to
-one or more input ports of downstream operators.
-We've already seen an example of a stream above, namely <code>randomData</code>.
-For a more detailed explanation of these concepts, please
+<p>A <em>stream</em> is the set of links connecting a single port of an upstream operator to one or
+more input ports of downstream operators. We've already seen an example of a stream above,
+namely <code>randomData</code>. If the upstream operator is not partitioned, tuples are delivered to
+the input ports of a stream in the same order in which they were written to the output
+port; this guarantee may change in the future. For a more detailed explanation of these
+concepts, please
 look <a href="http://docs.datatorrent.com/operator_development/">here</a>.</p>
 <h2 id="annotations">Annotations</h2>
 <p>Annotations are an important tool for expressing desired guarantees which are then
@@ -1092,17 +1101,17 @@ generate the required number of parallel unifiers, cascading into multiple level
 necessary, to ensure that the number of input streams at each unifier does not exceed
 this limit.</p>
 <h2 id="buffer-server">Buffer Server</h2>
-<p>The <code>Buffer Server</code> is a separate thread within a container which implements a tuple
-queue with a publish-subscribe model. It is present whenever the container hosts an
-operator with an output port connected to another operator outside the container; each
-such port has a separate queue.</p>
+<p>The <code>Buffer Server</code> is a separate service within a container which implements
+a publish-subscribe model. It is present whenever the container hosts an operator
+with an output port connected to another operator outside the container.</p>
 <p>The output port is the publisher and the connected input ports of downstream operators
 are the subscribers. It buffers tuples so that they can be replayed when a
 downstream operator fails and is restarted. As described earlier, the memory allocated
 to a buffer server is user configurable via an attribute named <code>BUFFER_MEMORY_MB</code> and
 defaults to 512MB.</p>
-<p>The total memory required by a container that hosts many such operators may climb
-rapidly; reducing the value of this attribute is advisable in such cases.</p>
+<p>The total memory required by a container that hosts many such operators may climb rapidly;
+reducing the value of this attribute is advisable in such cases in a memory constrained
+environment.</p>
 <h2 id="allocating-operator-memory">Allocating Operator Memory</h2>
 <p>A container is a JVM process; the maximum memory each such container can consume is
 user configurable via the <code>MEMORY_MB</code> attribute whose default value is 1GB.
@@ -1232,10 +1241,8 @@ FileLineOutputOperator fileOutput = dag.addOperator(&quot;FileOutputOperator&quo
 dag.addStream(&quot;POJO's&quot;, jdbcInputOperator.outputPort, fileOutput.input).setLocality(Locality.CONTAINER_LOCAL);
 </code></pre>
 
-<h3 id="application-database-to-database">Application &mdash; database to database</h3>
-<p>[Coming soon]</p>
-<h3 id="application-file-to-database">Application &mdash; file to database</h3>
-<p>[Coming soon]</p>
+<h3 id="apphub">AppHub</h3>
+<p><a href="https://www.datatorrent.com/apphub/">AppHub</a> is a source of application templates. There are many more applications for various use cases to help jump start development effort. </p>
 <h2 id="additional-resources">Additional Resources</h2>
 <ol>
 <li>

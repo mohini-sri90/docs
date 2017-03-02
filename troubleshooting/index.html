@@ -471,6 +471,13 @@
         
             
     <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_systemalerts/">Alerts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
         <a class="" href="../apex/">Apache Apex</a>
         
     </li>
@@ -532,9 +539,43 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#troubleshooting-datatorrent-rts">Troubleshooting DataTorrent RTS</a></li>
+                <li class="toctree-l3"><a href="#download">Download</a></li>
                 
-                    <li><a class="toctree-l4" href="#download">Download</a></li>
+                    <li><a class="toctree-l4" href="#where-can-i-get-datatorrent-rts-software">Where can I get DataTorrent RTS software?</a></li>
+                
+                    <li><a class="toctree-l4" href="#what-is-the-difference-between-datatorrent-rts-editions">What is the difference between DataTorrent RTS editions?</a></li>
+                
+                    <li><a class="toctree-l4" href="#what-are-datatorrent-rts-package-contents-of-community-vs-enterprise-edition">What are DataTorrent RTS package contents of Community vs Enterprise edition?</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-do-i-confirm-the-package-downloaded-correctly">How do I confirm the package downloaded correctly?</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-do-i-download-the-datatorrent-rts-package-using-cli">How do I download the DataTorrent RTS package using CLI?</a></li>
+                
+                    <li><a class="toctree-l4" href="#what-are-the-prerequisites-of-datatorrent-rts">What are the prerequisites of DataTorrent RTS ?</a></li>
+                
+                    <li><a class="toctree-l4" href="#where-can-i-start-from-after-downloading-datatorrent-rts">Where can I start from after downloading DataTorrent RTS?</a></li>
+                
+                    <li><a class="toctree-l4" href="#what-are-the-supported-hadoop-distribution-by-datatorrent-rts">What are the supported Hadoop distribution by DataTorrent RTS?</a></li>
+                
+                    <li><a class="toctree-l4" href="#what-is-the-datatorrent-sandbox">What is the Datatorrent Sandbox?</a></li>
+                
+                    <li><a class="toctree-l4" href="#where-do-i-get-datatorrent-sandbox-download-link">Where do I get DataTorrent Sandbox download link?</a></li>
+                
+                    <li><a class="toctree-l4" href="#what-are-the-system-requirements-for-sandbox-deployment">What are the system requirements for sandbox deployment?</a></li>
+                
+                    <li><a class="toctree-l4" href="#what-are-the-datatorrent-rts-package-content-details-in-sandbox">What are the DataTorrent RTS package content details in sandbox?</a></li>
+                
+                    <li><a class="toctree-l4" href="#why-does-the-browser-console-on-the-sandbox-say-hdfs-not-ready">Why does the browser console on the sandbox say HDFS Not Ready ?</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-do-i-get-specific-dt-version">How do I get specific DT version ?</a></li>
+                
+                    <li><a class="toctree-l4" href="#where-can-i-request-new-upgrade-current-license">Where can I request new / upgrade current license?</a></li>
+                
+                    <li><a class="toctree-l4" href="#where-do-i-find-product-documentation">Where do I find product documentation?</a></li>
+                
+                    <li><a class="toctree-l4" href="#where-can-i-learn-more-about-apache-apex">Where can I learn more about Apache Apex?</a></li>
+                
+                    <li><a class="toctree-l4" href="#do-you-need-help">Do you need help?</a></li>
                 
             
                 <li class="toctree-l3"><a href="#installation">Installation</a></li>
@@ -684,7 +725,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="troubleshooting-datatorrent-rts">Troubleshooting DataTorrent RTS</h1>
+                <p>===============================</p>
 <h2 id="download">Download</h2>
 <h3 id="where-can-i-get-datatorrent-rts-software">Where can I get DataTorrent RTS software?</h3>
 <p>DataTorrent products are available for download from <a href="https://www.datatorrent.com/download">https://www.datatorrent.com/download/</a></p>
@@ -692,15 +733,9 @@
 <li><strong>Community Edition</strong>:  It is a packaged version of Apache Apex and enables developers to quickly develop their big data streaming and batch projects.</li>
 <li><strong>Enterprise Edition</strong>:  Designed for enterprise production deployment and includes security, advanced monitoring and troubleshooting, graphical application assembly, and application data visualization.</li>
 <li><strong>Sandbox Edition</strong>:  Enterprise Edition and demo applications pre-installed and configured with a single-node Hadoop cluster running in a virtual machine.  Optimized for evaluation and training purposes.</li>
-<li><strong>Data Ingestion Application</strong>: It simplifies the collection, aggregation and movement of large amounts of data to and from Hadoop and is available for production use at no cost. It's available for download through dtHub, a feature inside DataTorrent product.</li>
 </ul>
 <h3 id="what-is-the-difference-between-datatorrent-rts-editions">What is the difference between DataTorrent RTS editions?</h3>
 <p>Please refer to <a href="https://www.datatorrent.com/product/edition-overview/">DataTorrent RTS editions overview</a></p>
-<h3 id="where-can-i-find-the-standard-edition-installer">Where can I find the Standard edition installer?</h3>
-<p>You can use the download link for Enterprise edition as the package is
-same for both editions. But, you have to apply the license to enable the
-Standard edition. You can upgrade the license by using dtManage.
-Licenses are available in 2 types : evaluation and production.</p>
 <h3 id="what-are-datatorrent-rts-package-contents-of-community-vs-enterprise-edition">What are DataTorrent RTS package contents of Community vs Enterprise edition?</h3>
 <p>Package contents for Community edition:</p>
 <ul>
@@ -836,12 +871,15 @@ under these directories:</p>
 </code></pre>
 <p>Now reformat HDFS with <code>hdfs namenode -format</code>
 and finally, restart all HDFS services.</p>
-<h3 id="what-is-data-ingestion-application">What is Data Ingestion application?</h3>
-<p>Data Ingestion application simplifies the collection, aggregation and movement of large amounts of data to and from Hadoop and is available for production use at no cost.</p>
-<h3 id="where-do-i-get-data-ingestion-application">Where do I get Data Ingestion application?</h3>
-<p>It's available for download through dtHub, a feature inside DataTorrent product.</p>
-<h3 id="what-are-the-prerequisites-of-data-ingestion-application">What are the prerequisites of Data Ingestion application?</h3>
-<p>DataTorrent RTS 3.4.x and above.</p>
+<p>If all services are running and the normal console still does not appear,
+please run following commands:</p>
+<pre><code class="shell">hdfs dfsadmin -safemode leave
+hdfs fsck -delete
+</code></pre>
+
+<p>If HDFS detects that some files are corrupted (perhaps due to an earlier improper shutdown)
+it will not exit the initial safemode automatically;
+the commands above exit safemode manually and delete corrupted files.</p>
 <h3 id="how-do-i-get-specific-dt-version">How do I get specific DT version ?</h3>
 <p>You can find archive list of various DataTorrent RTS versions at the bottom of each product download page.</p>
 <h3 id="where-can-i-request-new-upgrade-current-license">Where can I request new / upgrade current license?</h3>

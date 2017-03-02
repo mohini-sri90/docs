@@ -471,6 +471,13 @@
         
             
     <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_systemalerts/">Alerts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
         <a class="" href="../apex/">Apache Apex</a>
         
     </li>
@@ -543,6 +550,8 @@
             <ul>
             
                 <li class="toctree-l3"><a href="#datatorrent-rts-release-notes">DataTorrent RTS Release Notes</a></li>
+                
+                    <li><a class="toctree-l4" href="#version-371">Version: 3.7.1</a></li>
                 
                     <li><a class="toctree-l4" href="#version-370">Version: 3.7.0</a></li>
                 
@@ -617,9 +626,27 @@
             <div class="section">
               
                 <h1 id="datatorrent-rts-release-notes">DataTorrent RTS Release Notes</h1>
+<h2 id="version-371">Version: 3.7.1</h2>
+<p>Release date: Feb 28, 2017</p>
+<h3 id="summary">Summary</h3>
+<p>This is primarily for users who install RTS in a Kerberized cluster and enable AppDataTracker. The issue was Gateway fails to recognize AppDataTracker application and it continuously relaunched. This release fixes the issue. </p>
+<p>Other issues that are also fixed:</p>
+<ul>
+<li>In 3.6.0, users have the option to override certain properties from the config file. This ability was missing in 3.7.0.</li>
+<li>On a kerberized cluster, when the kerberos configuration parameters are
+  specified in the <code>dt-site.xml</code> file in the user's home directory, the
+  installation wizard does not allow the user to continue with the installation.</li>
+</ul>
+<h3 id="appendix">Appendix</h3>
+<h4 id="bug-fixes">Bug Fixes</h4>
+<ul>
+<li>[SPOI-10698] - Allow Custom Properties with Config XML file while launching an Application</li>
+<li>[SPOI-10737] - AppDataTracker application relaunches continuously and fails in a kerberized cluster.</li>
+<li>[SPOI-10932] - Installation Wizard does not allow to complete gateway configuration</li>
+</ul>
 <h2 id="version-370">Version: 3.7.0</h2>
 <p>Release date: Dec 30, 2016</p>
-<h3 id="summary">Summary</h3>
+<h3 id="summary_1">Summary</h3>
 <p>The new features on this release are functionalities that will ease debugging an application and administering application alerts in production. </p>
 <p>Operation related features for a Dev Ops role:  </p>
 <ul>
@@ -664,7 +691,7 @@ Change log: https://github.com/apache/apex-core/blob/v3.5.0/CHANGELOG.md</p>
 <p>There was also benchmarking on WindowedOperator with the spillable data structures. From the result, the community significantly improved how objects are serialized and reduced garbage collection considerably in the Managed State layer. Work is still in progress for purging state that is not needed any more and further improving the performance of Managed State that the spillable data structures depend on. More information about the windowing support can be found at http://apex.apache.org/docs/malhar/operators/windowedOperator/.</p>
 <p>This release also adds a new, alternative Cassandra output operator (non-transactional, upsert based) and support for fixed length file format to the enrichment operator. 
 Change log: https://github.com/apache/apex-malhar/blob/v3.6.0/CHANGELOG.md</p>
-<h3 id="appendix">Appendix</h3>
+<h3 id="appendix_1">Appendix</h3>
 <h4 id="known-issues">Known Issues</h4>
 <ul>
 <li>[SPOI-9921]   Delete widgets on default pane of physical operators needs to have warm colors</li>
@@ -786,7 +813,7 @@ Change log: https://github.com/apache/apex-malhar/blob/v3.6.0/CHANGELOG.md</p>
 <li>[SPOI-9483]   Superuser role and oAuth cleanups</li>
 <li>[SPOI-8996]   Add authentication configuration web services spc to gateway REST api doc</li>
 </ul>
-<h4 id="bug-fixes">Bug Fixes</h4>
+<h4 id="bug-fixes_1">Bug Fixes</h4>
 <ul>
 <li>[SPOI-5852]   App Package page has a single word "ago" for modification time after importing pi demo</li>
 <li>[SPOI-6651]   Launching App from UI ignores APPLICATION_NAME attribute defined in properties.xml file</li>
@@ -902,7 +929,7 @@ Change log: https://github.com/apache/apex-malhar/blob/v3.6.0/CHANGELOG.md</p>
 </ul>
 <h2 id="version-360">Version: 3.6.0</h2>
 <p>Release date: Nov 9, 2016</p>
-<h3 id="summary_1">Summary</h3>
+<h3 id="summary_2">Summary</h3>
 <p>DataTorrent RTS releases AppHub, a repository of application templates for various Big Data use cases. The key of this release is that RTS now have an infrastructure to distribute application templates easily. Developers can reduce the time to develop Big Data applications using templates. There are five templates in this release with many more to come. </p>
 <ul>
 <li>HDFS Sync </li>
@@ -911,7 +938,7 @@ Change log: https://github.com/apache/apex-malhar/blob/v3.6.0/CHANGELOG.md</p>
 <li>HDFS to HDFS Line Copy</li>
 <li>HDFS to Kafka Sync</li>
 </ul>
-<h3 id="appendix_1">Appendix</h3>
+<h3 id="appendix_2">Appendix</h3>
 <h4 id="improvement_1">Improvement</h4>
 <ul>
 <li>[SPOI-9136] - Enforce DefaultOutputPort.emit() or Sink.put() thread affinity</li>
@@ -932,7 +959,7 @@ Change log: https://github.com/apache/apex-malhar/blob/v3.6.0/CHANGELOG.md</p>
 <li>[SPOI-9574] - Rename title on AppHub list page</li>
 <li>[SPOI-9612] - Upgrade AppHub server deployment</li>
 </ul>
-<h4 id="bug-fixes_1">Bug Fixes</h4>
+<h4 id="bug-fixes_2">Bug Fixes</h4>
 <ul>
 <li>[SPOI-9140] - dtManage shows "Failed to parse" error when 'Monitor' tab is refreshed</li>
 <li>[SPOI-9522] - DELETE call to /ws/v2/config/properties/{name} returns 500</li>
@@ -940,7 +967,7 @@ Change log: https://github.com/apache/apex-malhar/blob/v3.6.0/CHANGELOG.md</p>
 </ul>
 <h2 id="version-350">Version 3.5.0</h2>
 <p>Release date: Sep 26, 2016</p>
-<h3 id="summary_2">Summary</h3>
+<h3 id="summary_3">Summary</h3>
 <p>DataTorrent RTS continues to deliver features that sets it apart in bringing operability in running an enterprise grade big data-in-motion platform. This particular release brought new features such as</p>
 <ul>
 <li>Allowing users to analyze "stuck operator" by obtaining stats from the running JVM (i.e. GC stats and thread dump)</li>
@@ -960,7 +987,7 @@ Change log: https://github.com/apache/apex-malhar/blob/v3.6.0/CHANGELOG.md</p>
 </ul>
 <p>For the full release note, please go to
 https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
-<h3 id="appendix_2">Appendix</h3>
+<h3 id="appendix_3">Appendix</h3>
 <h4 id="known-issues_1">Known Issues</h4>
 <ul>
 <li>[SPOI-9232] Dedup with manage state operator marking all impression as duplicate</li>
@@ -983,7 +1010,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[SPOI-6932] - Module to read from HDFS Input record by record and emit it downstream</li>
 <li>[SPOI-7948] - JDBC Input Operator</li>
 </ul>
-<h4 id="bug-fixes_2">Bug Fixes</h4>
+<h4 id="bug-fixes_3">Bug Fixes</h4>
 <ul>
 <li>[SPOI-7836] - Trend widget fails after dashboard save/reload with PiDemo app</li>
 <li>[SPOI-7886] - Duplicate ports show up in the UI for POJO operators</li>
@@ -1007,7 +1034,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[SPOI-8461] - AbstractKafkaInputOperator problems</li>
 </ul>
 <h2 id="version-340">Version 3.4.0</h2>
-<h3 id="summary_3">Summary</h3>
+<h3 id="summary_4">Summary</h3>
 <p>Affinity rules provides a way to specify hints on how operators should be deployed in a Hadoop cluster. There are two types of rules: affinity and anti-affinity rules. Affinity rule indicates that the group of operators in the rule should be allocated together. Anti-affinity rule, the new feature in Apache Apex 3.4.0, indicates that the group of operators should be allocated separately.</p>
 <p>This release also includes a lot of bug fixes. Please see appendix for full list. </p>
 <h3 id="dtmanage">dtManage</h3>
@@ -1024,7 +1051,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>RPC timeout is now configurable</li>
 <li>When an operator is blocked, it nows print out a warning instead of debug</li>
 </ul>
-<h3 id="appendix_3">Appendix</h3>
+<h3 id="appendix_4">Appendix</h3>
 <h4 id="known-issues_2">Known Issues</h4>
 <ul>
 <li>[SPOI-8518] - Support links from Dashboard to Application instance pages</li>
@@ -1091,7 +1118,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[SPOI-7986] - Gateway proxy feature is not working</li>
 <li>[SPOI-7934] - Kafka-dedup-HDFS-solution: Ahead in time messages are lost from Dedup operator</li>
 </ul>
-<h4 id="bug-fixes_3">Bug Fixes</h4>
+<h4 id="bug-fixes_4">Bug Fixes</h4>
 <ul>
 <li>[SPOI-7939] - Dynamic repartition causes application to hang</li>
 <li>[SPOI-8468] - Can't assign roles for users in secure environment</li>
@@ -1189,7 +1216,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[APEXCORE-402] - SpscArrayQueue to notify publishing thread on not full condition</li>
 </ul>
 <h2 id="version-330">Version 3.3.0</h2>
-<h3 id="summary_4">Summary</h3>
+<h3 id="summary_5">Summary</h3>
 <h4 id="dthub">dtHub</h4>
 <p>DataTorrent RTS allows companies to quickly build low latency real time Big Data application that can scale and fault tolerant. With the introduction of dtHub, DataTorrent now host and maintain an application distributor. You can access it through dtManage and easily install or update application without having to upgrade the whole RTS platform. Prior to dtHub, RTS installer packaged both platform and applications. In 3.3, they are decoupled with significantly reduced installer size. You can independently choose when to upgrade the platform and when to install/upgrade applications.</p>
 <h4 id="dtmanage_1">dtManage</h4>
@@ -1233,7 +1260,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[SPOI-7479] - dtHub "check for updates" option says 'no updated versions' and then displays updated packages</li>
 <li>[SPOI-7626] - Stacked Area Chart widget shows NaN values on Firefox</li>
 </ul>
-<h3 id="appendix_4">Appendix</h3>
+<h3 id="appendix_5">Appendix</h3>
 <h4 id="dthub_1">dtHub</h4>
 <ul>
 <li>[SPOI-6787] - dtHub UI - explore, import, download</li>
@@ -1292,7 +1319,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <ul>
 <li>[SPOI-7127] - Change enterprise evaluation days from 30 days to 60 days</li>
 </ul>
-<h4 id="bug-fixes_4">Bug Fixes</h4>
+<h4 id="bug-fixes_5">Bug Fixes</h4>
 <ul>
 <li>[SPOI-5622] - dtcli: Command 'show-physical-plan' fails with "Failed web service request" error</li>
 <li>[SPOI-6352] - Gateway's RM Proxy REST calls don't work with HA-enabled</li>
@@ -1425,14 +1452,14 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[APEXCORE-306] - Recovery checkpoint handing in iteration loops</li>
 </ul>
 <h2 id="version-321">Version 3.2.1</h2>
-<h3 id="summary_5">Summary</h3>
+<h3 id="summary_6">Summary</h3>
 <p>This release bundles a few fixes and features for customers who are on 3.2.0 and not ready to upgrade to 3.3.0  </p>
 <h4 id="improvement_5">Improvement</h4>
 <ul>
 <li>[SPOI-7900] add default role to first time login user</li>
 <li>[SPOI-7061] Implement retention policy for terminated apps</li>
 </ul>
-<h4 id="bug-fixes_5">Bug Fixes</h4>
+<h4 id="bug-fixes_6">Bug Fixes</h4>
 <ul>
 <li>[SPOI-6999] Gateway stops updating application information after problems with YARN or HDFS</li>
 <li>[SPOI-7471] Temp directories/files not cleaned up in Gateway</li>

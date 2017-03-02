@@ -484,6 +484,13 @@
         
             
     <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_systemalerts/">Alerts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
         <a class="" href="../apex/">Apache Apex</a>
         
     </li>
@@ -630,7 +637,7 @@
 <p>For authorization, dtGateway provides built-in role-based access control. The admin can decide which roles can view what information and perform what operations in dtGateway. The user-to-role mapping can be managed by dtGateway, or be integrated with LDAP roles.  In addition, we provide access control with granularity to the application instance level as well as to the application package level. For example, you can control which users and which roles have read or write access to which application instances and to which application packages.</p>
 <p>For information on configuring security see <a href="../dtgateway_security/">dtGateway security</a> guide.</p>
 <h2 id="system-alerts">System Alerts</h2>
-<p>The DT Gateway System Alerts provides a way for users to monitor metrics in the Hadoop cluster and of running applications.  When an alert condition becomes true continuously within the specified time set for that alert, the Gateway sends an email to the email address or addresses associated with that alert.  The same is true for alerts condition changing to a false state. The alert conditions are written in JavaScript. Alerts are created via the <strong>PUT /ws/v2/systemAlerts/alerts/{name}</strong> documented in the <a href="../dtgateway_api/">REST API</a>.  For more detail documentation on System Alerts, please refer to <a href="../dtgateway_systemalerts/">this document</a>.</p>
+<p>System Alerts provide a way for users to monitor cluster and application metrics. When an alert condition (written in JavaScript) turns true and stays that way for a configured time interval, dtGateway sends email to the configured list of email addresses. The same is true when the condition turns false. Alerts are created via the <strong>PUT /ws/v2/systemAlerts/alerts/{name}</strong> call documented in the <a href="../dtgateway_api/">REST API</a>. For more details on System Alerts, please see <a href="../dtgateway_systemalerts/">this document</a>.</p>
 <h2 id="rest-api">Rest API</h2>
 <p>Here is an example of using the curl command to access dtGateway’s REST API to get the details of a physical operator with ID=40 of application instance with ID=application_1442448722264_14891, assuming dtGateway is listening at localhost:9090</p>
 <pre><code class="bash">$ curl http://localhost:9090/ws/v2/applications/application_1442448722264_14891/physicalPlan/operators/40
@@ -682,7 +689,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../apex/" class="btn btn-neutral float-right" title="Apache Apex">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../dtgateway_systemalerts/" class="btn btn-neutral float-right" title="Alerts">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../dtdashboard/" class="btn btn-neutral" title="dtDashboard"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -714,7 +721,7 @@
         <span><a href="../dtdashboard/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../apex/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../dtgateway_systemalerts/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

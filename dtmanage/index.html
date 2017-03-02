@@ -486,6 +486,13 @@
         
             
     <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_systemalerts/">Alerts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
         <a class="" href="../apex/">Apache Apex</a>
         
     </li>
@@ -621,14 +628,14 @@
 <h3 id="installation-wizard">Installation Wizard</h3>
 <p>The first time you open the Console, after installing DataTorrent RTS on your cluster, it will take you to the Installation Wizard. This walks you through the initial configuration of your DataTorrent installation, by confirming the following:</p>
 <ul>
-<li>Location of the hadoop executable</li>
+<li>Location of the Hadoop executable</li>
 <li>DFS location where all the DataTorrent files are stored</li>
 <li>DataTorrent license</li>
 <li>Summary and review of any remaining configuration items</li>
 </ul>
 <p><img alt="" src="../images/dtmanage/hadoop-config-screenshot.png" /></p>
 <h4 id="when-kerberos-security-is-enabled">When Kerberos Security is Enabled</h4>
-<p>When your hadoop cluster has security enabled with Kerberos, there will be four additional controls in the installation wizard: </p>
+<p>When your Hadoop cluster has security enabled with Kerberos, there will be four additional controls in the installation wizard: </p>
 <ul>
 <li><strong>Kerberos Principal</strong>: The Kerberos principal (e.g. primary/instance@REALM) to use on behalf of the management console.</li>
 <li><strong>Kerberos Keytab</strong>: The location (path) of the Kerberos keytab file to use on the gateway node's local file system.</li>
@@ -657,22 +664,22 @@ This can be useful when Hadoop configuration has changed or some other factor of
 <h3 id="user-profile">User Profile</h3>
 <p>The User Profile page displays information about the current user, including their username, the authentication scheme being used, and the roles that the current user has. In addition, users can perform the following actions:</p>
 <ul>
-<li>change password </li>
-<li>change the default home page</li>
-<li>change the theme of the console</li>
-<li>restore the default options of the console</li>
+<li>Change password </li>
+<li>Change the default home page</li>
+<li>Change the theme of the console</li>
+<li>Restore the default options of the console</li>
 </ul>
 <p><img alt="User Profile" src="../images/dtmanage/console-profile.png" /></p>
 <h3 id="user-management">User Management</h3>
 <p>Use this page to manage users and roles of your DataTorrent cluster:</p>
 <ul>
-<li>add users</li>
-<li>change users’ roles</li>
-<li>change users’ password</li>
-<li>delete users</li>
-<li>add roles</li>
-<li>edit role permissions</li>
-<li>delete roles</li>
+<li>Add users</li>
+<li>Change users’ roles</li>
+<li>Change users’ password</li>
+<li>Delete users</li>
+<li>Add roles</li>
+<li>Edit role permissions</li>
+<li>Delete roles</li>
 </ul>
 <p><img alt="User Management Screen" src="../images/dtmanage/console-user-mgmt.png" /></p>
 <blockquote>
@@ -681,24 +688,23 @@ This can be useful when Hadoop configuration has changed or some other factor of
 <h3 id="installation-wizard_1">Installation Wizard</h3>
 <p>At any time, you can go back to the installation wizard from the Configuration Tab. It can help diagnose issues and reconfigure your cluster and gateway.</p>
 <h2 id="develop-tab">Develop Tab</h2>
-<p>The development area of dtManage is mainly geared towards the creation, upload, configuration, and launch of DataTorrent applications. The development home can be viewed by clicking the “Develop” tab in the main navigation bar on the top of the screen. A prerequisite to using the development tools of the UI is an understanding of what Apex Application Packages are. For more information, see the <a href="https://www.datatorrent.com/docs/guides/ApplicationDeveloperGuide.html">Application Packages Guide</a>.</p>
+<p>The development area of dtManage is mainly geared towards the creation, upload, configuration, and launch of DataTorrent applications. The development home can be viewed by clicking the “Develop” tab in the main navigation bar on the top of the screen. A prerequisite to using the development tools of the UI is an understanding of what Apex Application Packages are. For more information, see the <a href="http://docs.datatorrent.com/application_packages/">Application Packages Guide</a>.</p>
 <p><img alt="Development Tab" src="../images/dtmanage/console-dev-screen.png" /></p>
 <h3 id="application-packages">Application Packages</h3>
-<p>To access the application package listing, click on the "Apps" link from the Develop Tab index page. From here, you can perform several operators directly on application packages:</p>
+<p>To access the application package listing, click on the "Apps" link from the Develop Tab index page. From here, you can perform several operations directly on application packages:</p>
 <ul>
 <li>Download the app package</li>
 <li>Delete the app package</li>
 <li>Create a new application in an application package via dtAssemble (requires enterprise license)</li>
 <li>Launch applications in the app package</li>
-<li>Import default packages (see below)</li>
+<li>Import from AppHub </li>
 </ul>
-<p><img alt="Application Packages" src="../images/dtmanage/console-dev-apps.png" /></p>
 <blockquote>
 <p><strong>Note:</strong> If authentication is enabled, you may not be able to see others’ app packages, depending on your permissions.</p>
 </blockquote>
-<h4 id="importing-default-packages">Importing Default Packages</h4>
-<p>When you install the DataTorrent platform, a folder located in the installation directory called <code>demos/app-packages</code> will contain various default app packages that can be imported into HDFS for use. Just above the list of Application Packages, there should be a button that says <strong>Import default packages</strong>. Clicking this will take you to a page that shows the list of these demo app packages. Select one or more to import and click the <strong>Import</strong> button. This will upload the selected app package to HDFS.</p>
-<p><img alt="" src="../images/dtmanage/import-default-packages.png" /></p>
+<h4 id="apphub">AppHub</h4>
+<p>The AppHub hosts a collection of applications that can be imported or downloaded (as .apa files). You can use the applications as they are, or use them as examples to develop your own. Imported AppHub packages will appear on your Application Packages page.</p>
+<p><img alt="" src="../images/dtmanage/console-apphub.png" /></p>
 <h3 id="application-package-page">Application Package Page</h3>
 <p>Once you have uploaded or imported an App Package, clicking on the package name in the list will take you to the Application Package Page, where you can view all the package details.</p>
 <p><img alt="Application Package Page" src="../images/dtmanage/console-package.png" /></p>
@@ -708,24 +714,26 @@ This can be useful when Hadoop configuration has changed or some other factor of
 <ul>
 <li><strong>Specify a name for the running app</strong>
   The console will pre-populate this field with an appropriate name, but you can specify your own name. Just be weary that it must be unique compared to the other applications running on your DataTorrent installation.</li>
-<li><strong>Specify the <a href="https://hadoop.apache.org/docs/r2.4.1/hadoop-yarn/hadoop-yarn-site/CapacityScheduler.html">scheduler queue</a></strong>
-  This input allows you to specify which queue you want the application to be launched under. The default behavior depends on your Hadoop installation, but typically will be <code>root.[USER_NAME]</code>.</li>
-<li><strong>Use a config file when launching</strong>
-  App Package config files are xml files that contain <code>&lt;properties&gt;</code> that get interpreted and used for launching an application. To choose one, enable the check box and choose the config file you want to use for launch.</li>
-<li><strong>Specify custom properties</strong>
-  In addition to choosing a config file, you may also specify properties directly in the launch popup by selecting this option. Note that there are three helpful functions when specifying custom properties:</li>
-<li><em>add required properties</em> - App Packages can have required properties (for example, twitter API access keys for the twitter demo). This function adds a new property with the required property name to the form, making it easy to fill in.<ul>
-<li><em>add default properties</em> - App Packages can also have default properties. This function will add the default properties to the list, making it easy for you to override the defaults</li>
-<li><em>save this configuration as…</em> - This function creates a new config file and saves it to the App Package, which can then be used later to launch the app with. That way, you can relaunch the app with the same properties without having to re-enter them.</li>
+<li><strong>Specify launch properties</strong>
+  In addition to choosing a config file, you may also specify properties directly in the launch popup by selecting this option. Any required properties will automatically show up in this section and require input. Note that there are several helpful functions when specifying custom properties:</li>
+<li><em>add</em> - App Packages can have custom properties applied at launch time to override existing properties.<ul>
+<li><em>add default properties</em> - App Packages can also have default properties. This function will add the default properties to the list, making it easy for you to override the defaults. This button can be found clicking on the <em>add</em> button's submenu.
+  If any properties were added, the option to save the properties as a Configuration Package is activated.</li>
 </ul>
 </li>
+<li><strong>Use configuration file</strong>
+  App Package config files are xml files that contain <code>&lt;properties&gt;</code> that get interpreted and used for launching an application. To choose one, enable the check box and choose the config file you want to use for launch.</li>
+<li><strong>Use configuration package</strong>
+  App Packages with a separate associated Configuration Package can be selected here. The Configuration Package will launch with its own custom properties.</li>
+<li><strong>Specify the <a href="https://hadoop.apache.org/docs/r2.4.1/hadoop-yarn/hadoop-yarn-site/CapacityScheduler.html">scheduler queue</a></strong>
+  This input allows you to specify which queue you want the application to be launched under. The default behavior depends on your Hadoop installation, but typically will be <code>root.[USER_NAME]</code>.</li>
 </ul>
 <p><img alt="Launch app modal" src="../images/dtmanage/console-launch-app.png" /></p>
 <blockquote>
 <p><strong>Note:</strong> For more information about config files and custom properties, see the <a href="https://www.datatorrent.com/docs/guides/ApplicationDeveloperGuide.html">Application Packages Guide</a></p>
 </blockquote>
-<h3 id="viewing-an-application-dag">Viewing an Application DAG</h3>
-<p>All DataTorrent applications are made up of operators that connect together via streams to form a Directed Acyclic Graph (DAG). To see a visualization of this DAG, click on the application name in the list of applications.</p>
+<h3 id="viewing-an-application">Viewing an Application</h3>
+<p>All DataTorrent applications are made up of operators that connect together via streams to form a Directed Acyclic Graph (DAG). To see a visualization of this DAG, click on the application name in the list of applications. In addition to the DAG, Package Properties and any Required Properties will be listed on this page.</p>
 <p><img alt="DAG View" src="../images/dtmanage/console-dag-view.png" /></p>
 <h3 id="creating-apps-with-dtassemble">Creating apps with dtAssemble</h3>
 <p>If you have an Enterprise license, you will have access to the dtAssemble tool. Using this tool is outside the scope of this guide, but check out the <a href="http://docs.datatorrent.com/dtassemble/">dtAssemble guide</a>.</p>
@@ -734,13 +742,13 @@ This can be useful when Hadoop configuration has changed or some other factor of
 <h3 id="operations-home">Operations Home</h3>
 <p>The operations home page shows overall cluster statistics as well as a list of running DataTorrent applications.</p>
 <p><img alt="Operations Home Page" src="../images/dtmanage/console-monitor-home.png" /></p>
-<p>The cluster statistics include some performance statistics and memory usage information. As for the application list, there are two options to take note of: <strong>retrieve ended apps</strong> and <strong>include system apps</strong>. The first option will include all ended applications that are still in the resource manager history. The second option will include system apps, which are apps like the App Data Tracker that are developed by DataTorrent and used to add functionality to your DataTorrent cluster.</p>
+<p>The cluster statistics include some performance statistics and memory usage information. As for the application list, there are two options to take note of: <strong>ended apps</strong> and <strong>system apps</strong>. The first option will include all ended applications that are still in the resource manager history. The second option will include system apps, which are apps like the App Data Tracker that are developed by DataTorrent and used to add functionality to your DataTorrent cluster.</p>
 <h3 id="instance-page">Instance Page</h3>
 <p>To get to an application instance page, click on either the app name or the app id in the list of running applications.</p>
 <p><img alt="Instance Page View" src="../images/dtmanage/console-monitor-instance.png" /></p>
 <p>All sections and subsections of the instance page currently use a dashboard/widget system. The controls for this system are located near the top of the screen, below the breadcrumbs:</p>
 <p><img alt="widget controls" src="../images/dtmanage/console-widget-ctrls.png" /></p>
-<p>There are tool tips to help you understand how to work with dashboards and widgets. For most users, the default dashboard configurations (<em>logical</em>, <em>physical</em>, <em>physical-dag-view</em>, <em>metric-view</em>) will suffice. The following is a list of widgets available on an app instance page:</p>
+<p>There are tool tips to help you understand how to work with dashboards and widgets. For most users, the default dashboard configurations (<em>logical</em>, <em>physical</em>, <em>physical-dag-view</em>, <em>metric-view</em>, <em>attempts</em>) will suffice. The following is a list of widgets available on an app instance page:</p>
 <h4 id="application-overview-widget">Application Overview Widget</h4>
 <p>All the default dashboard tabs have this widget. It contains basic information regarding the app plus a few controls. To end a running application, use either the “shutdown” or “kill” buttons in this widget:</p>
 <p><img alt="shutdown and kill buttons" src="../images/dtmanage/console-instance-kill-shutdown.png" /></p>
@@ -752,7 +760,7 @@ This can be useful when Hadoop configuration has changed or some other factor of
 <h4 id="stram-events-widget">Stram Events Widget</h4>
 <p>Each application has a stream of notable events that can be viewed with the StrAM Events widget:</p>
 <p><img alt="Stram Events" src="../images/dtmanage/console-events.png" /></p>
-<p>Some events have additional information attached to it, which can be viewed by clicking the “details” button in the list:</p>
+<p>Some events have additional information attached to it, which can be viewed by clicking the "i" icon in the list:</p>
 <p><img alt="Event Detail Modal" src="../images/dtmanage/console-events-modal.png" /></p>
 <h4 id="logical-dag-widget">Logical DAG Widget</h4>
 <p>This widget visualizes the logical plan of the application being viewed:</p>
@@ -780,13 +788,14 @@ This can be useful when Hadoop configuration has changed or some other factor of
 <h3 id="recording-and-viewing-sample-tuples">Recording and Viewing Sample Tuples</h3>
 <p>There is a mechanism called tuple recording that can be used to easily look at the content of tuples flowing through your application. To use this feature, select a physical operator from the Physical Operators List widget and click on the “record a sample” button. This will bring up a modal window which you can then use to traverse the sample and look at the actual content of the tuple (converted to a JSON structure):</p>
 <p><img alt="" src="../images/dtmanage/console-record-tuples.gif" /></p>
+<blockquote>
+<p><strong>Pro tip:</strong> Select multiple tuples by holding down the shift key.</p>
+</blockquote>
 <h3 id="viewing-logs">Viewing Logs</h3>
 <p>Another useful feature of the Console is the ability to view container logs of a given application. To do this, select a container from the Containers List widget (default location of this widget is in the “physical” dashboard). Then click the logs dropdown and select the log you want to look at:</p>
 <p><img alt="" src="../images/dtmanage/console-log-viewing.gif" /></p>
-<p>Once you are viewing a log file in the console, there are few tricks to traversing it. You can scroll to the top to fetch earlier content, scroll to the bottom for later content, grep for strings in the selected range or over the entire log, and click the “eye” icon to the far left of every line to go to that location of the log:</p>
+<p>Once you are viewing a log file in the console, there are few tricks to traversing it. You can scroll to the top to fetch earlier content, scroll to the bottom for later content, "tail" the log to watch for real-time updates, grep for strings in the selected range or over the entire log, and click the “eye” icon to the far left of every line to go to that location of the log:</p>
 <p><img alt="" src="../images/dtmanage/console-log-viewing-adv.gif" /></p>
-<p>There are numerous improvements in store for dtManage, and user feedback is highly valued in the planning, so please provide any that will help in your usage of the tool!</p>
-<p>~The DataTorrent UI Team</p>
               
             </div>
           </div>
