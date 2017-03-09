@@ -106,6 +106,13 @@
 
         
             
+    <li class="toctree-l1 ">
+        <a class="" href="../demo_videos/">Videos</a>
+        
+    </li>
+
+        
+            
     <ul class="subnav">
     <li><span>Tutorials</span></li>
 
@@ -258,6 +265,13 @@
             
     <ul class="subnav">
     <li><span>Library Operators</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../library_operators/">List of Operators</a>
+        
+    </li>
 
         
             
@@ -629,20 +643,20 @@
 <h2 id="version-371">Version: 3.7.1</h2>
 <p>Release date: Feb 28, 2017</p>
 <h3 id="summary">Summary</h3>
-<p>This is primarily for users who install RTS in a Kerberized cluster and enable AppDataTracker. The issue was Gateway fails to recognize AppDataTracker application and it continuously relaunched. This release fixes the issue. </p>
+<p>This is primarily for users who install RTS in a Kerberized cluster as application fails to launch in 3.7.0. This release fixes the issue. </p>
 <p>Other issues that are also fixed:</p>
 <ul>
 <li>In 3.6.0, users have the option to override certain properties from the config file. This ability was missing in 3.7.0.</li>
-<li>On a kerberized cluster, when the kerberos configuration parameters are
-  specified in the <code>dt-site.xml</code> file in the user's home directory, the
-  installation wizard does not allow the user to continue with the installation.</li>
+<li>Gateway fails to recognize AppDataTracker application and it continuously relaunched on a Kerberized cluster.</li>
+<li>On a Kerberized cluster, when the configuration parameters are specified in the <code>dt-site.xml</code> file in the user's home directory, the installation wizard does not allow the user to continue with the installation.</li>
 </ul>
 <h3 id="appendix">Appendix</h3>
 <h4 id="bug-fixes">Bug Fixes</h4>
 <ul>
-<li>[SPOI-10698] - Allow Custom Properties with Config XML file while launching an Application</li>
-<li>[SPOI-10737] - AppDataTracker application relaunches continuously and fails in a kerberized cluster.</li>
+<li>[SPOI-10698] - Allow Custom Properties with Config XML file while launching an application</li>
+<li>[SPOI-10737] - AppDataTracker application relaunches continuously and fails in a Kerberized cluster.</li>
 <li>[SPOI-10932] - Installation Wizard does not allow to complete gateway configuration</li>
+<li>[SPOI-10773] - Application fails to run in fully enabled Kerberized mode (APEXCORE-616 - https://issues.apache.org/jira/browse/APEXCORE-616)</li>
 </ul>
 <h2 id="version-370">Version: 3.7.0</h2>
 <p>Release date: Dec 30, 2016</p>
