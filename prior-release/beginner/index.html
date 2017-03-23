@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../favicon.ico">
+  
+  <title>Beginner's Guide - DataTorrent Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Beginner's Guide";
+    var mkdocs_page_input_path = "beginner.md";
+    var mkdocs_page_url = "/beginner/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44586211-2', 'docs.datatorrent.com');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> DataTorrent Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">DataTorrent RTS</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Demos</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../demos/">Running Apps</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../sandbox/">Sandbox</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Development</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../create/">Creating Applications</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Beginner's Guide</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#beginners-guide-to-apache-apex">Beginner's Guide to Apache Apex</a></li>
+                
+                    <li><a class="toctree-l4" href="#introduction">Introduction</a></li>
+                
+                    <li><a class="toctree-l4" href="#quickstart">Quickstart</a></li>
+                
+                    <li><a class="toctree-l4" href="#preliminaries">Preliminaries</a></li>
+                
+                    <li><a class="toctree-l4" href="#running-the-maven-archetype">Running the maven archetype</a></li>
+                
+                    <li><a class="toctree-l4" href="#the-default-application">The default application</a></li>
+                
+                    <li><a class="toctree-l4" href="#running-the-application-and-the-unit-test">Running the application and the unit test</a></li>
+                
+                    <li><a class="toctree-l4" href="#attributes-and-properties">Attributes and Properties</a></li>
+                
+                    <li><a class="toctree-l4" href="#local-mode-testing">Local Mode Testing</a></li>
+                
+                    <li><a class="toctree-l4" href="#operators-ports-and-streams">Operators, Ports and Streams</a></li>
+                
+                    <li><a class="toctree-l4" href="#annotations">Annotations</a></li>
+                
+                    <li><a class="toctree-l4" href="#partitioners-unifiers-and-streamcodecs">Partitioners, Unifiers and StreamCodecs</a></li>
+                
+                    <li><a class="toctree-l4" href="#buffer-server">Buffer Server</a></li>
+                
+                    <li><a class="toctree-l4" href="#allocating-operator-memory">Allocating Operator Memory</a></li>
+                
+                    <li><a class="toctree-l4" href="#sample-applications">Sample Applications</a></li>
+                
+                    <li><a class="toctree-l4" href="#additional-resources">Additional Resources</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Tutorials</span></li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Top N Words</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords/">Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c1/">Development Environment</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c2/">Building in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c3/">Building with dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c4/">Monitoring with dtManage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c5/">Visualizing with dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c7/">Advanced Features</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c6/">Appendix</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Sales Dimensions</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions/">Building in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions-c2/">Building with dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions-c3/">Visualizing with dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions-c4/">Monitoring with dtManage</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apex_development_setup/">Apex Development Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../configure_IDE/">Generate New Project in IDE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../application_development/">Applications</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../application_packages/">Application Packages</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../configuration_packages/">Configuration Packages</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operator_development/">Operators</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Library Operators</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/kafkaInputOperator/">Kafka Input</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/dimensions_computation/">Dimension Computation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/hdht/">HDHT</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/deduper/">Deduper</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/file_splitter/">File Splitter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/block_reader/">Block Reader</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/file_output/">File Output</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/snapshot_server/">Snapshot Server</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app_data_framework/">App Data Framework</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_api/">REST API</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>App Templates</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/hdfs-sync/">HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/s3-to-hdfs-sync/">S3 to HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kafka-to-hdfs-sync/">Kafka to HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/hdfs-line-copy/">HDFS to HDFS Line Copy App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/hdfs-to-kafka-sync/">HDFS to Kafka Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/database-to-hdfs/">Database dump to HDFS App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/database-to-database-sync/">Database to Database Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kafka-to-database-sync/">Kafka to Database Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kafka-to-hdfs-filter/">Kafka to HDFS Filter App</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Applications</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app_data_tracker/">App Data Tracker</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtingest/">dtIngest</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Platform</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../rts/">RTS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtmanage/">dtManage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtassemble/">dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtdashboard/">dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway/">dtGateway</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apex/">Apache Apex</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apex_malhar/">Apache Apex-Malhar</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Deployment and Operations</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../installation/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../configuration/">Configuration</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_security/">Security</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_systemalerts/">System Alerts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apexcli/">Apex CLI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../release_notes/">Release Notes</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../glossary/">Glossary</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../additional_docs/">Resources</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">DataTorrent Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Development &raquo;</li>
+        
+      
+    
+    <li>Beginner's Guide</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="beginners-guide-to-apache-apex">Beginner's Guide to Apache Apex</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Apache Apex is a fault-tolerant, high-performance platform and framework for building
+distributed applications; it is built on Hadoop. This guide is targeted at Java
+developers who are getting started with building Apex applications.</p>
+<h2 id="quickstart">Quickstart</h2>
+<p>Those eager to get started right away can download, build, and run a few sample
+applications; just follow these steps:</p>
+<ul>
+<li>Make sure you have <em>Java JDK</em>, <em>maven</em> and <em>git</em> installed.</li>
+<li>Clone the examples git repo: <code>https://github.com/DataTorrent/examples</code></li>
+<li>Switch to <code>tutorials/fileOutput</code> and build it either in your favorite IDE or on the command line with:</li>
+</ul>
+<pre><code>cd examples/tutorials/fileOutput
+mvn clean package -DskipTests
+</code></pre>
+
+<ul>
+<li>Run the test in your IDE or on the command line with:</li>
+</ul>
+<pre><code>mvn test
+</code></pre>
+
+<p>Some of the applications are discussed in the <em>Sample Applications</em> section below.
+The rest of this document provides a more leisurely introduction to Apex.</p>
+<h2 id="preliminaries">Preliminaries</h2>
+<p>Before beginning development, you'll need to make sure the following prerequisites
+are present; details of setting up your development environment are
+<a href="http://docs.datatorrent.com/apex_development_setup/" title="Environment Setup">here</a>:</p>
+<ol>
+<li>Recent versions of the Java JDK, maven, git.</li>
+<li>A Hadoop cluster where the application can be deployed.</li>
+<li>A working internet connection.</li>
+</ol>
+<h2 id="running-the-maven-archetype">Running the maven archetype</h2>
+<p>Apex applications use the <code>maven</code> build tool. The maven archetype is useful for avoiding
+the tedious process of creating a suitable <code>pom.xml</code> maven build file by hand; it also
+generates a simple default application with two operators that you can build and run
+without having to write any code or make any changes. To run it, place the following
+lines in a text file (called, say <code>newapp.sh</code>) and run it with the shell
+(e.g. <code>bash newapp.sh</code>):</p>
+<pre><code class="shell">v=&quot;3.3.0-incubating&quot;
+mvn -B archetype:generate \
+  -DarchetypeGroupId=org.apache.apex \
+  -DarchetypeArtifactId=apex-app-archetype \
+  -DarchetypeVersion=&quot;$v&quot; \
+  -DgroupId=com.example \
+  -Dpackage=com.example.myapexapp \
+  -DartifactId=myapexapp \
+  -Dversion=1.0-SNAPSHOT
+</code></pre>
+
+<p>As new versions are released, you might need to update the version number (the
+the variable <code>v</code> above). You can also run the archetype from your Java IDE as described
+<a href="http://docs.datatorrent.com/configure_IDE/">here</a>.</p>
+<p>It should create a new project directory named <code>myapexapp</code> with these 3 Java source files:</p>
+<pre><code>src/test/java/com/example/myapexapp/ApplicationTest.java
+src/main/java/com/example/myapexapp/Application.java
+src/main/java/com/example/myapexapp/RandomNumberGenerator.java
+</code></pre>
+
+<p>The project should also contain these properties files:</p>
+<pre><code>src/site/conf/my-app-conf1.xml
+src/main/resources/META-INF/properties.xml
+</code></pre>
+
+<p>You should now be able to step into the new directory and build the project:</p>
+<pre><code class="shell">cd myapexapp; mvn clean package -DskipTests
+</code></pre>
+
+<p>This will create a directory named <code>target</code> and an application package file
+within it named <code>myapexapp-1.0-SNAPSHOT.apa</code>.</p>
+<p>These files are discussed further in the sections below.</p>
+<h2 id="the-default-application">The default application</h2>
+<p>We now discuss the default application generated by the archetype in some detail.
+Additional, more realistic applications are presented in the section titled
+<code>Sample Applications</code> below.</p>
+<p>The default application creates an application in <code>Application.java</code> with 2 operators:</p>
+<pre><code class="java">@ApplicationAnnotation(name=&quot;MyFirstApplication&quot;)
+public class Application implements StreamingApplication
+{
+  @Override
+  public void populateDAG(DAG dag, Configuration conf) {
+    RandomNumberGenerator randomGenerator = dag.addOperator(&quot;randomGenerator&quot;, RandomNumberGenerator.class);
+    randomGenerator.setNumTuples(500);
+    ConsoleOutputOperator cons = dag.addOperator(&quot;console&quot;, new ConsoleOutputOperator());
+    dag.addStream(&quot;randomData&quot;, randomGenerator.out, cons.input).setLocality(Locality.CONTAINER_LOCAL);
+  }
+}
+</code></pre>
+
+<p>The application is named <strong>MyFirstApplication</strong> via the annotation
+<code>@ApplicationAnnotation</code>; this name will be displayed in the UI console and must be
+unique among the applications running on a cluster. It can also be changed at launch time.</p>
+<p>The <code>populateDAG</code> method is the only one that you'll need to implement. Its contents
+fall into three categories: operator creation, operator configuration, and stream
+creation.</p>
+<p>Two operators are created: <code>randomGenerator</code> and <code>console</code>. The first is
+defined in <code>RandomNumberGenerator.java</code>; it generates random
+floating point values and emits them on its output port. The second is an instance
+of <code>ConsoleOutputOperator</code> class defined in <strong>Malhar</strong> &ndash; the library of pre-built
+operators. The first argument to <code>addOperator()</code> is the name of this operator instance
+(there can be multiple instances of the same class, so we need a unique name to
+distinguish them); the second can be either a class object that needs to be instantiated
+as shown for <code>randomGenerator</code> or an actual instance of that class as shown for <code>console</code>.</p>
+<p>The operators can be configured by calling setter methods on them; the call to
+<code>setNumTuples</code> is an example. However, operators are typically configured via XML
+properties files as discussed in later sections below.</p>
+<p>Finally, the <code>addStream</code> call creates a stream named <code>randomData</code> connecting the
+output port of first operator to the input port of the second.</p>
+<h2 id="running-the-application-and-the-unit-test">Running the application and the unit test</h2>
+<p>The file <code>ApplicationTest.java</code> contains a unit test that can be run from an IDE
+by highlighting the <code>testApplication</code> method and selecting the appropriate
+option from the dropdown; it can also be run the maven command line:</p>
+<pre><code class="shell">mvn -Dtest=ApplicationTest#testApplication test
+</code></pre>
+
+<p>It runs for about 10 seconds printing each random number with a prefix of <code>hello world:</code>.
+The first argument explicitly selects the test to run (<code>testApplication</code>)
+from the named class (<code>ApplicationTest</code>); you can omit it and just run <code>mvn test</code> to
+run all of the unit tests.</p>
+<p>It is important to note that this particular test is actually a test of the entire
+application rather than a single class or a method within a class. It uses a class
+called <code>LocalMode</code> to essentially simulate a cluster. It is an extremely useful
+technique for testing your application without the need for a cluster. It can be used
+in more elaborate ways to test complex applications as discussed in the section
+entitled <code>Local Mode Testing</code> below.</p>
+<p>To run the application, you need access to a cluster with Hadoop installed; there are
+multiple options here:</p>
+<ul>
+<li>Download and setup the sandbox as described
+  <a href="http://docs.datatorrent.com/sandbox/">here</a>. This is
+  the simplest option for experimenting with Apex since it has all the necessary pieces
+  installed.</li>
+<li>Download and install the DataTorrent Community or Enterprise Edition downloadable from
+  <a href="https://www.datatorrent.com/download/">here</a>.</li>
+<li>Use an existing DataTorrent RTS licensed installation.</li>
+<li>Clone the Apex source code on a cluster with Hadoop already installed, build it and
+  use the <code>apexcli</code> command line tool (previously named <code>dtcli</code>) from there to run your
+  application as described in <a href="https://youtu.be/LwRWBudOjg4">this video</a>.</li>
+</ul>
+<p>With the first 3 methods, you have a browser-based GUI console and you can simply
+navigate to <code>Develop</code> &#8658; <code>Upload Package</code> and upload the <code>.apa</code> file built earlier;
+then run it using the <code>launch</code> button. If using the command line tool, run that tool
+then use the command <code>launch myapexapp-1.0-SNAPSHOT.apa</code> to launch the application. You
+can also specify a particular XML configuration file that is packaged with the
+application to use during launch, for example:
+<code>launch -apconf my-app-conf1.xml myapexapp-1.0-SNAPSHOT.apa</code>
+For an exhaustive list of commands available with this tool, please see
+<a href="http://docs.datatorrent.com/apexcli/">here</a>.</p>
+<p>More details about configuration files are provided in the next section.</p>
+<h3 id="configuring-your-application">Configuring your application</h3>
+<p>Application configuration is typically done via XML properties files though it can also
+be done with code as shown above. The <code>properties.xml</code> file mentioned earlier has some
+examples:</p>
+<pre><code class="xml">&lt;property&gt;
+  &lt;name&gt;dt.application.MyFirstApplication.operator.randomGenerator.prop.numTuples&lt;/name&gt;
+  &lt;value&gt;1000&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+  &lt;name&gt;dt.application.MyFirstApplication.operator.console.prop.stringFormat&lt;/name&gt;
+  &lt;value&gt;hello world: %s&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+
+<p>The number of tuples output per window (windows are discussed in greater detail below)
+is set both in the code and in this file; in such cases, values in this properties
+file override those set in the code.</p>
+<p>Configuration values can also be placed in XML
+files under <code>site/conf</code> and the file <code>my-app-conf1.xml</code> mentioned above is an example.
+These files are not processed automatically; they need to be explicitly selected at
+launch time. To do this in the GUI, select the <em>Use saved configuration</em> checkbox in
+the launch dialog and choose the desired file from the dropdown. When a property is
+specified in multiple files, precedence rules determine the final value; those rules
+are discussed
+<a href="http://docs.datatorrent.com/application_packages/#properties-source-precedence">here</a>.</p>
+<h2 id="attributes-and-properties">Attributes and Properties</h2>
+<p>Properties are simply public accessor methods in the operator classes and govern the
+functionality of the operator. Attributes on the other hand are pre-defined and affect
+how the operator or application behaves with respect to its environment. We have already
+seen a couple of examples of properties, namely, the number of tuples emitted per window
+by the random number generator (<code>numTuples</code>) and the prefix string appended to each
+value before it is output by the console operator (<code>stringFormat</code>).</p>
+<p>Operator properties that are more complex objects than the primitive types can also
+be initialized from XML files. For example, if we have properties declared as
+<code>int[] counts;</code> and <code>String[] paths;</code> in an operator named <code>foo</code>, we can initialize
+them with:</p>
+<pre><code class="xml">&lt;property&gt;
+  &lt;name&gt;dt.operator.foo.prop.counts&lt;/name&gt;
+  &lt;value&gt;10, 20, 30&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+  &lt;name&gt;dt.operator.foo.prop.paths&lt;/name&gt;
+  &lt;value&gt;&quot;/tmp/path1&quot;, &quot;/tmp/path3&quot;, &quot;/tmp/path3&quot;&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+
+<p>An example of an attribute is the amount of memory allocated to the Buffer Server (see
+section below entitled <code>Buffer Server</code>); it is named <code>BUFFER_MEMORY_MB</code> can be set
+like this:</p>
+<pre><code class="xml">&lt;property&gt;
+  &lt;name&gt;dt.application.{appName}.operator.{opName}.port.{portName}.attr.BUFFER_MEMORY_MB&lt;/name&gt;
+  &lt;value&gt;128&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+
+<p>Here <em>{appName}</em>, <em>{opName}</em>, <em>{portName}</em> are appropriate application, operator
+and port names respectively; they can also be replaced with asterisks (wildcards). The
+default value is 512MB.</p>
+<p>Some additional attributes include:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PARTITIONER</code></td>
+<td>custom partitioner class associated with an operator</td>
+</tr>
+<tr>
+<td><code>PARTITION_PARALLEL</code></td>
+<td>if true, triggers parallel partitioning of a downstream operator when an upstream operator is partitioned.</td>
+</tr>
+<tr>
+<td><code>STREAM_CODEC</code></td>
+<td>controls serialization/deserialization as well as destination partitions</td>
+</tr>
+<tr>
+<td><code>RECOVERY_ATTEMPTS</code></td>
+<td>maximum restart attempts of a failed operator</td>
+</tr>
+</tbody>
+</table>
+<p>Currently available attribute names are in <code>Context</code> class of the <code>api</code> module in
+Apex source code.</p>
+<p>For additional examples of initialization of properties, including list and map
+objects, please look
+<a href="http://docs.datatorrent.com/application_packages/#operator-properties">here</a>.</p>
+<h2 id="local-mode-testing">Local Mode Testing</h2>
+<p>As noted above, the <code>LocalMode</code> class is used for testing the application locally in
+your development environment. A common, though suboptimal, use looks like this:</p>
+<pre><code class="java">try {
+  LocalMode lma = LocalMode.newInstance();
+  Configuration conf = new Configuration(false);
+  conf.addResource(this.getClass().getResourceAsStream(&quot;/META-INF/properties.xml&quot;));
+  lma.prepareDAG(new Application(), conf);
+  LocalMode.Controller lc = lma.getController();
+  lc.run(10000); // runs for 10 seconds and quits
+} catch (ConstraintViolationException e) {
+  Assert.fail(&quot;constraint violations: &quot; + e.getConstraintViolations());
+}
+</code></pre>
+
+<p>Here, a <em>Configuration</em> object containing all the appropriate settings of properties and
+attributes for the application is created by parsing the default <code>properties.xml</code> file,
+a new <em>Application</em> object is created and configured and finally a controller used for
+timed execution of the application. This approach, though occasionally useful to uncover
+shallow bugs, has one glaring deficiency &ndash; it does not check the results in any way
+as most unit tests do. We strongly recommend avoiding this usage pattern.</p>
+<p>A far better (and recommended) approach is to write data to some storage system
+that can then be queried for verification. An example of this approach is
+<a href="https://github.com/DataTorrent/examples/blob/master/tutorials/fileOutput/src/test/java/com/example/fileOutput/ApplicationTest.java">here</a> and looks like this:</p>
+<pre><code class="java">try {
+  LocalMode lma = LocalMode.newInstance();
+  lma.prepareDAG(new Application(), getConfig());
+  LocalMode.Controller lc = lma.getController();
+  lc.runAsync();
+
+  // wait for output files to show up
+  while ( ! check() ) {
+    System.out.println(&quot;Sleeping ....&quot;);
+    Thread.sleep(1000);
+  }
+} catch (ConstraintViolationException e) {
+  Assert.fail(&quot;constraint violations: &quot; + e.getConstraintViolations());
+}
+
+</code></pre>
+
+<p>Here, we invoke <code>runAsync</code> on the controller to fork off a separate thread to run the
+application while the main thread enters a loop where it looks for the presence of the
+expected output files. A pair of functions can be defined to setup prerequisites such
+as starting external servers, creating directories, etc. and perform the corresponding
+teardown upon test termination; these functions are annotated with <code>@Before</code> and <code>@After</code>.</p>
+<h3 id="checking-logs">Checking logs</h3>
+<p>Logs for the Application Master and the various containers can be retrieved and viewed
+on the UI console by navigating to the <code>Physical</code> tab, clicking on the specific container
+in question, clicking on the blue <code>logs</code> button and then selecting the appropriate file
+from the dropdown. If you don't have access to the UI, you'll need to log in to the
+appropriate node on the cluster and check the logs there.</p>
+<p>A good starting point is the
+YARN log file which is usually present at <code>/var/log/hadoop-yarn</code> or <code>/var/log/hadoop</code> or
+similar locations and named <code>yarn-{user}-resourcemanager-{host}.log</code> or
+<code>hadoop-cmf-yarn-RESOURCEMANAGER-{host}.log.out</code> (where <em>{user}</em> and <em>{host}</em> have
+appropriate values) or something similar. This file will
+indicate what containers were allocated for each application, whether the allocation
+succeeded or failed and where each container is running. Typically, application and
+container ids will have the respective forms <code>application_1448033276100_0001</code> and
+<code>container_1462948052533_0001_01_022468</code>.</p>
+<p>If the application failed <em>during</em> launch,
+the YARN logs will usually have enough information to diagnose the root cause -- for
+example, a container requiring more memory than is available. If the application launch
+was successful, you'll see the containers transition through various states: <em>NEW</em>,
+<em>ALLOCATED</em>, <em>ACQUIRED</em>, <em>RUNNING</em>.</p>
+<p>If it failed <em>after</em> launch, the logs of the particular container that failed will shed
+more light on the issue. Those logs are located on the appropriate node under a
+directory with the same name as the container id which itself is under a directory
+named with the application id, for example:</p>
+<pre><code>dtadmin@dtbox:/sfw/hadoop/shared/logs$ cd nodemanager/application_1465857463845_0001/
+dtadmin@dtbox:/sfw/hadoop/shared/logs/nodemanager/application_1465857463845_0001$ ls
+container_1465857463845_0001_01_000001  container_1465857463845_0001_01_000003
+container_1465857463845_0001_01_000002  container_1465857463845_0001_01_000004
+dtadmin@dtbox:/sfw/hadoop/shared/logs/nodemanager/application_1465857463845_0001$ ls *1
+AppMaster.stderr  AppMaster.stdout  dt.log
+dtadmin@dtbox:/sfw/hadoop/shared/logs/nodemanager/application_1465857463845_0001$ ls *2
+dt.log  stderr  stdout
+</code></pre>
+
+<p>The Application Master container id always has the suffix <code>_000001</code>.</p>
+<h2 id="operators-ports-and-streams">Operators, Ports and Streams</h2>
+<p>An <em>operator</em> is, simply put, a class that
+implements the <code>Operator</code> interface. Though the class could be written to directly
+implement that interface, a more common and easier method is to extend <code>BaseOperator</code>
+since it provides default empty implementations of all the required methods.
+We've already seen an example above, namely <code>RandomNumberGenerator</code>.</p>
+<p>A <em>port</em> is a class that can either emit (output port) or ingest (input port) data.
+Input and output ports implement the <code>InputPort</code> and <code>OutputPort</code> interfaces
+respectively. More commonly, output ports are simply defined as instances of
+<code>DefaultOutputPort</code>, for example:</p>
+<pre><code class="java">public final transient DefaultOutputPort&lt;Double&gt; out = new DefaultOutputPort&lt;Double&gt;();
+</code></pre>
+
+<p>and input ports are defined as anonymous inner classes that extend <code>DefaultInputPort</code>:</p>
+<pre><code class="java">public final transient DefaultInputPort&lt;Double&gt; input = new DefaultInputPort&lt;Double&gt;()
+{
+  @Override
+  public void process(Double v) {
+    out.emit(v);
+  }
+}
+</code></pre>
+
+<p>A <em>stream</em> is the set of links connecting a single port of an upstream operator to
+one or more input ports of downstream operators.
+We've already seen an example of a stream above, namely <code>randomData</code>.
+For a more detailed explanation of these concepts, please
+look <a href="http://docs.datatorrent.com/operator_development/">here</a>.</p>
+<h2 id="annotations">Annotations</h2>
+<p>Annotations are an important tool for expressing desired guarantees which are then
+verified in a validation phase before running the application. Some examples:</p>
+<pre><code class="java">@Min(1)
+int index;
+
+@NotNull
+String name
+
+@NotNull
+@Size(min=1, max=128)
+private String[] path;
+
+@NotNull
+@Size(min = 1)
+private final Set&lt;String&gt; files;
+
+@Valid
+FooBar object;
+</code></pre>
+
+<p>The <code>@Min</code> and <code>@Max</code> annotations check lower and upper bounds; <code>@Size</code> checks the
+size of a collection or array against minimum and maximum limits; <code>@Valid</code> requests
+recursive validation checks on the object.</p>
+<p>There are also a few Apex-specific annotations; we've seen one example above, namely
+<code>@ApplicationAnnotation</code> used to set the name of the application. A couple of others
+are useful to declare that a port within an operator need not be connected:</p>
+<pre><code class="java">@InputPortFieldAnnotation(optional = true)
+public final transient InputPort&lt;Object&gt; inportWithCodec = new DefaultInputPort&lt;&gt;();
+
+@OutputPortFieldAnnotation(optional = true)
+public final transient DefaultOutputPort&lt;Map&lt;String, Object&gt;&gt; outBindings
+   = new DefaultOutputPort&lt;&gt;();
+</code></pre>
+
+<p>For additional information about annotations, please see:
+<a href="http://docs.datatorrent.com/application_development/#initializationinstantiation-time">here</a> and
+<a href="http://docs.oracle.com/javaee/6/tutorial/doc/gircz.html">here</a></p>
+<h2 id="partitioners-unifiers-and-streamcodecs">Partitioners, Unifiers and StreamCodecs</h2>
+<p>Partitioning is a mechanism for load balancing; it involves replicating one or more
+operators so that the load can be shared by all the replicas. Partitioning is
+accomplished by the <code>definePartitions</code> method of the <code>Partitioner</code> interface.
+A couple of implementations are available: <code>StatelessPartitioner</code> (static partitioning)
+and <code>StatelessThroughputBasedPartitioner</code> (dynamic partitioning, see below).
+These can be used by setting the <code>PARTITIONER</code>
+attribute on the operator by including a stanza like the following in your
+configuration file (where <em>{appName}</em> and <em>{opName}</em> are the
+appropriate application and operator names):</p>
+<pre><code class="xml">&lt;property&gt;
+  &lt;name&gt;dt.application.{appName}.operator.{opName}.attr.PARTITIONER&lt;/name&gt;
+  &lt;value&gt;com.datatorrent.common.partitioner.StatelessPartitioner:2&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+
+<p>The number after the colon specifies the number of desired partitions. This can be
+done for any operator that is not a connector (i.e. input or output operator) and is not
+annotated with <code>@OperatorAnnotation(partitionable = false)</code>. No code changes are necessary.
+Incoming tuples entering input ports of the operator are automatically distributed among the
+partitions based on their hash code by default. You can get greater control of how tuples
+are distributed to partitions by using a <code>StreamCodec</code>; further discussion of stream
+codecs is deferred to the Advanced Guide [<em>coming soon</em>].
+A small sample program illustrating use of stream codecs is
+<a href="https://github.com/DataTorrent/examples/tree/master/tutorials/partition">here</a>.</p>
+<p>Connectors need special care since they interact with external systems. Many connectors
+(e.g. Kafka input, file input and output operators) implement the <code>Partitioner</code>
+interface and support partitioning using custom implementations of <code>definePartitions</code>
+<em>within</em> the operator.
+Documentation and/or source code of the individual connectors should be consulted for
+details.</p>
+<p>Sometimes there is need to replicate an entire linear segment of the DAG; this is
+known as <code>Parallel Partitioning</code> and is achieved by setting the <code>PARTITION_PARALLEL</code>
+attribute on the input port of each downstream operator that is part of the linear
+segment. Both of these mechanisms are described in greater detail in the
+<em>Advanced Features</em> section of the
+<a href="http://docs.datatorrent.com/tutorials/topnwords-c7/#partitioning"><strong>Top N Words tutorial</strong></a></p>
+<p>As mentioned above, the <code>StatelessPartitioner</code> is used for <em>static</em>
+partitioning since it occurs once before the application starts. Dynamic partitioning
+while the application is running is also possible using the
+<code>StatelessThroughputBasedPartitioner</code> or a custom partitioner. Implementing such
+a partitioner needs special care, especially if the operator to be partitioned
+has some accumulated state since this state typically needs to be redistributed among
+the newly created partitions. An example of a custom partitioner that does dynamic
+partitioning is <a href="https://github.com/DataTorrent/examples/tree/master/tutorials/dynamic-partition">here</a>.</p>
+<p>Unifiers are the flip side of the partitioning coin: When data that was intended to be
+processed by a single instance is now processed by multiple partitions, each instance
+computes partial results since it processes only part of the stream; these partial
+results need to be combined to form the final result; this is the function of a unifier.</p>
+<p>For example, suppose an operator is processing numbers and computes the sum of all the
+values seen in a window. If it is partitioned into N replicas, each replica is computing
+a partial sum and we would need a unifier that computes the overall sum from
+these N partial sums. A sample application that shows how to define and use a unifier is
+available <a href="https://github.com/DataTorrent/examples/tree/master/tutorials/unifiers">here</a>.</p>
+<p>A unifier for an operator is provided by a suitable override of the <code>getUnifier()</code> method
+of the output port, for example:</p>
+<pre><code class="java">  public final transient DefaultOutputPort&lt;HighLow&lt;Integer&gt;&gt; out
+    = new DefaultOutputPort&lt;HighLow&lt;Integer&gt;&gt;() {
+    @Override
+    public Unifier&lt;HighLow&lt;Integer&gt;&gt; getUnifier() {
+      return new UnifierRange&lt;Integer&gt;()
+    }
+  };
+</code></pre>
+
+<p>If no unifier is supplied for a partitioned operator, the platform will supply a default
+pass-through unifier.</p>
+<p>When the number of partitions is large and the unifier involves non-trivial computations
+there is a risk that it can become a bottleneck; in such cases, the <code>UNIFIER_LIMIT</code>
+attribute can be set on the appropriate output port. The platform will then automatically
+generate the required number of parallel unifiers, cascading into multiple levels if
+necessary, to ensure that the number of input streams at each unifier does not exceed
+this limit.</p>
+<h2 id="buffer-server">Buffer Server</h2>
+<p>The <code>Buffer Server</code> is a separate thread within a container which implements a tuple
+queue with a publish-subscribe model. It is present whenever the container hosts an
+operator with an output port connected to another operator outside the container; each
+such port has a separate queue.</p>
+<p>The output port is the publisher and the connected input ports of downstream operators
+are the subscribers. It buffers tuples so that they can be replayed when a
+downstream operator fails and is restarted. As described earlier, the memory allocated
+to a buffer server is user configurable via an attribute named <code>BUFFER_MEMORY_MB</code> and
+defaults to 512MB.</p>
+<p>The total memory required by a container that hosts many such operators may climb
+rapidly; reducing the value of this attribute is advisable in such cases.</p>
+<h2 id="allocating-operator-memory">Allocating Operator Memory</h2>
+<p>A container is a JVM process; the maximum memory each such container can consume is
+user configurable via the <code>MEMORY_MB</code> attribute whose default value is 1GB.
+If it is too large, container allocation may fail before the application even
+begins; if it is too small, the application may fail at run time as it tries to
+allocate memory and runs up against this limit.
+An example of setting this limit:</p>
+<pre><code class="xml">&lt;property&gt;
+  &lt;name&gt;dt.application.MyFirstApplication.operator.randomGenerator.attr.MEMORY_MB&lt;/name&gt;
+  &lt;value&gt;300&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+
+<p>As before, wildcards can be used to set the same value for all operators by replacing
+the operator name <code>randomGenerator</code> with an asterisk. The application name can also be
+omitted, so a shorter version is:</p>
+<pre><code class="xml">&lt;property&gt;
+  &lt;name&gt;dt.operator.*.attr.MEMORY_MB&lt;/name&gt;
+  &lt;value&gt;300&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+
+<p>The Application Master (aka <em>StrAM</em>) is a supervisory Java process associated with each
+application; memory allocation for it is specified slightly differently:</p>
+<pre><code class="xml">&lt;property&gt;
+  &lt;name&gt;dt.attr.MASTER_MEMORY_MB&lt;/name&gt;
+  &lt;value&gt;700&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+
+<p>For small applications, a value as low as 700 may be adequate; for larger applications,
+a value 2000 or more may be needed. If this value is too small, the application typically
+fails at startup with no user-visible diagnostics; YARN logs need to be examined in such
+cases.</p>
+<h2 id="sample-applications">Sample Applications</h2>
+<p>This section briefly discusses some sample applications using commonly used connectors.
+The applications themselves are available at
+<a href="http://github.com/DataTorrent/examples">Examples</a>.
+We briefly describe a few of them below.</p>
+<p>Each example has a brief <code>README.md</code> file (in markdown format) describing what the
+application does. In most cases, the unit tests function as full application tests that
+can be run locally in your development environment without the need for a cluster as
+described above.</p>
+<h3 id="application-file-copy">Application &mdash; file copy</h3>
+<p>The <code>fileIO-simple</code> application copies all data verbatim from files added to an input
+directory to rolling files in an output directory. The input and output directories,
+the output file base name and maximum size are configured in <code>META_INF/properties.xml</code>:</p>
+<pre><code class="xml">&lt;property&gt;
+  &lt;name&gt;dt.application.SimpleFileIO.operator.input.prop.directory&lt;/name&gt;
+  &lt;value&gt;/tmp/SimpleFileIO/input-dir&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+  &lt;name&gt;dt.application.SimpleFileIO.operator.output.prop.filePath&lt;/name&gt;
+  &lt;value&gt;/tmp/SimpleFileIO/output-dir&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+  &lt;name&gt;dt.application.SimpleFileIO.operator.output.prop.fileName&lt;/name&gt;
+  &lt;value&gt;myfile&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+  &lt;name&gt;dt.application.SimpleFileIO.operator.output.prop.maxLength&lt;/name&gt;
+  &lt;value&gt;1000000&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+
+<p>The application DAG is created in <code>Application.java</code>:</p>
+<pre><code class="java">@Override
+public void populateDAG(DAG dag, Configuration conf)
+{
+  // create operators
+  FileLineInputOperator in = dag.addOperator(&quot;input&quot;, new FileLineInputOperator());
+  FileOutputOperator out = dag.addOperator(&quot;output&quot;, new FileOutputOperator());
+
+  // create streams
+  dag.addStream(&quot;data&quot;, in.output, out.input);
+}
+</code></pre>
+
+<p>The <code>FileLineInputOperator</code> is part of Malhar and is a concrete class that extends
+<code>AbstractFileInputOperator</code>. The <code>FileOutputOperator</code> is defined locally
+and extends the <code>AbstractFileOutputOperator</code> and overrides 3 methods:
++ <code>getFileName</code> which simply returns the current file name
++ <code>getBytesForTuple</code> which appends a newline to the argument string, converts it to an array of bytes and returns it.
++ <code>setup</code> which creates the actual file name by appending the operator id to the configured base name (this last step is necessary when partitioning is involved to ensure that multiple partitions do not write to the same file).</p>
+<p>Output files are created with temporary names like <code>myfile_p2.0.1465929407447.tmp</code> and
+renamed to <code>myfile_p2.0</code> when they reach the maximum configured size.</p>
+<h3 id="application-database-to-file">Application &mdash; database to file</h3>
+<p>The <code>jdbcIngest</code> application reads rows from a table in <code>MySQL</code>, creates Java objects
+(_POJO_s) and writes them to a file in the user specified directory in HDFS.</p>
+<p>Application configuration values are specified in 2 files: 
+<code>META_INF/properties.xml</code> and <code>src/site/conf/example.xml</code>. The former uses the in-memory
+database <code>HSQLDB</code> and is used by the unit test in JdbcInputAppTest; this test can be
+run, as described earlier, either in your IDE or using maven on the command line.
+The latter uses <em>MySql</em> and is intended for use on a cluster. To run on a cluster you'll
+need a couple of preparatory steps:</p>
+<ul>
+<li>Make sure <em>MySql</em> is installed on the cluster.</li>
+<li>Change <code>example.xml</code> to reflect proper values for <code>databaseUrl</code>, <code>userName</code>, <code>password</code> and <code>filePath</code>.</li>
+<li>Create the required table and rows by running the SQL queries in the file <code>src/test/resources/example.sql</code>.</li>
+<li>Create the HDFS output directory if necessary.</li>
+<li>Build the project to create the <code>.apa</code> package</li>
+<li>Launch the application, selecting <code>example.xml</code> as the configuration file during launch.</li>
+<li>Verify that the expected output file is present.</li>
+</ul>
+<p>Further details on these steps are in the project <code>README.md</code> file.</p>
+<p>The application uses two operators: The first is <code>FileLineOutputOperator</code> which extends
+<code>AbstractFileOutputOperator</code> and provides implementations for two methods:
+<code>getFileName</code> and <code>getBytesForTuple</code>. The former creates a file name using the operator
+id &dash; this is important if this operator has multiple partitions and prevents the
+partitions from writing to the same file (which could cause garbled data). The latter
+simply converts the incoming object to an array of bytes and returns it.</p>
+<p>The second is <code>JdbcPOJOInputOperator</code> which comes from Malhar; it reads records from
+a table and outputs them on the output port; they type of object that is emitted is
+specified by the value of the  <code>TUPLE_CLASS</code> attribute in the configuration file
+namely <code>PojoEvent</code> in this case. This operator also needs a couple of additional
+properties: (a) a list of <code>FieldInfo</code> objects that describe the mapping from table
+columns to fields of the Pojo; and (b) a <code>store</code> object that deals with the details
+of establishing a connection to the database server.</p>
+<p>The application itself is then created in the usual way in <code>JdbcHDFSApp.populateDAG</code>:</p>
+<pre><code class="java">JdbcPOJOInputOperator jdbcInputOperator = dag.addOperator(&quot;JdbcInput&quot;, new JdbcPOJOInputOperator());
+jdbcInputOperator.setFieldInfos(addFieldInfos());
+
+jdbcInputOperator.setStore(new JdbcStore());
+
+FileLineOutputOperator fileOutput = dag.addOperator(&quot;FileOutputOperator&quot;, new FileLineOutputOperator());
+
+dag.addStream(&quot;POJO's&quot;, jdbcInputOperator.outputPort, fileOutput.input).setLocality(Locality.CONTAINER_LOCAL);
+</code></pre>
+
+<h3 id="application-database-to-database">Application &mdash; database to database</h3>
+<p>[Coming soon]</p>
+<h3 id="application-file-to-database">Application &mdash; file to database</h3>
+<p>[Coming soon]</p>
+<h2 id="additional-resources">Additional Resources</h2>
+<ol>
+<li>
+<p><a href="http://docs.datatorrent.com/apex_development_setup/" title="Environment Setup">Development environment setup</a></p>
+</li>
+<li>
+<p><a href="http://docs.datatorrent.com/troubleshooting/" title="Troubleshooting">Troubleshooting guide</a></p>
+</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../tutorials/topnwords/" class="btn btn-neutral float-right" title="Introduction">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../create/" class="btn btn-neutral" title="Creating Applications"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../create/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../tutorials/topnwords/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../favicon.ico">
+  
+  <title>Sandbox - DataTorrent Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Sandbox";
+    var mkdocs_page_input_path = "sandbox.md";
+    var mkdocs_page_url = "/sandbox/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44586211-2', 'docs.datatorrent.com');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> DataTorrent Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">DataTorrent RTS</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Demos</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../demos/">Running Apps</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Sandbox</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#datatorrent-rts-sandbox">DataTorrent RTS Sandbox</a></li>
+                
+                    <li><a class="toctree-l4" href="#installation">Installation</a></li>
+                
+                    <li><a class="toctree-l4" href="#accessing-console">Accessing Console</a></li>
+                
+                    <li><a class="toctree-l4" href="#configuring-the-sandbox">Configuring the Sandbox</a></li>
+                
+                    <li><a class="toctree-l4" href="#running-demo-applications">Running Demo Applications</a></li>
+                
+                    <li><a class="toctree-l4" href="#service-management">Service Management </a></li>
+                
+                    <li><a class="toctree-l4" href="#support">Support</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Development</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../create/">Creating Applications</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../beginner/">Beginner's Guide</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Tutorials</span></li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Top N Words</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords/">Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c1/">Development Environment</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c2/">Building in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c3/">Building with dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c4/">Monitoring with dtManage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c5/">Visualizing with dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c7/">Advanced Features</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c6/">Appendix</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Sales Dimensions</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions/">Building in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions-c2/">Building with dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions-c3/">Visualizing with dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions-c4/">Monitoring with dtManage</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apex_development_setup/">Apex Development Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../configure_IDE/">Generate New Project in IDE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../application_development/">Applications</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../application_packages/">Application Packages</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../configuration_packages/">Configuration Packages</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operator_development/">Operators</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Library Operators</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/kafkaInputOperator/">Kafka Input</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/dimensions_computation/">Dimension Computation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/hdht/">HDHT</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/deduper/">Deduper</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/file_splitter/">File Splitter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/block_reader/">Block Reader</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/file_output/">File Output</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/snapshot_server/">Snapshot Server</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app_data_framework/">App Data Framework</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_api/">REST API</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>App Templates</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/hdfs-sync/">HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/s3-to-hdfs-sync/">S3 to HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kafka-to-hdfs-sync/">Kafka to HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/hdfs-line-copy/">HDFS to HDFS Line Copy App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/hdfs-to-kafka-sync/">HDFS to Kafka Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/database-to-hdfs/">Database dump to HDFS App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/database-to-database-sync/">Database to Database Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kafka-to-database-sync/">Kafka to Database Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kafka-to-hdfs-filter/">Kafka to HDFS Filter App</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Applications</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app_data_tracker/">App Data Tracker</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtingest/">dtIngest</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Platform</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../rts/">RTS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtmanage/">dtManage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtassemble/">dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtdashboard/">dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway/">dtGateway</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apex/">Apache Apex</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apex_malhar/">Apache Apex-Malhar</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Deployment and Operations</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../installation/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../configuration/">Configuration</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_security/">Security</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_systemalerts/">System Alerts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apexcli/">Apex CLI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../release_notes/">Release Notes</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../glossary/">Glossary</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../additional_docs/">Resources</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">DataTorrent Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Sandbox</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="datatorrent-rts-sandbox">DataTorrent RTS Sandbox</h1>
+<p>The DataTorrent Sandbox provides a quick and simple way to experience
+DataTorrent RTS without setting up and managing a complete Hadoop cluster.
+The Sandbox has the latest version of DataTorrent RTS Enterprise Edition
+pre-installed along with all the Hadoop services required to launch and run
+the included demo applications.</p>
+<h2 id="installation">Installation</h2>
+<p>You'll need to install Virtual Box in order to run the sandbox.
+Oracle VirtualBox is a virtual machine manager (version 4.3 or later)
+and can be downloaded from <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a>.</p>
+<p>Download the sandbox from
+<a href="https://www.datatorrent.com/download/">datatorrent.com/download</a> and import it
+into Virtual Box. Then select the newly imported image in the left pane of the
+Virtual Box console and click the <code>Start</code> button to
+start the sandbox virtual machine. When the machine comes up, you should see a
+browser window showing a login dialog which is discussed in the next section.</p>
+<h2 id="accessing-console">Accessing Console</h2>
+<p>When accessing DataTorrent console in the sandbox for the first time, you will be required to log in.  Use username <strong>dtadmin</strong> and password <strong>dtadmin</strong>.  Same credentials are also valid for sandbox system access.</p>
+<p><a href="http://localhost:9090/" target="\_blank">
+<img alt="" src="../images/sandbox/login.png" />
+</a></p>
+<p>If the various HDFS services are not yet ready, you may see a red warning saying
+HDFS is not ready like this:</p>
+<p><img alt="HDFS Not Ready" src="../images/sandbox/HDFSNotReady.png" title="HDFS Not Ready" /></p>
+<p>This warning should disappear after a few minutes and the console should appear
+looking something like this:</p>
+<p><img alt="Sandbox Console" src="../images/sandbox/SandboxConsole.png" title="Sandbox Console" /></p>
+<p>If the warning persists after several minutes, check that all required services
+are running as described in the <em>Service Management</em> section below.</p>
+<p>Inside the DataTorrent RTS Sandbox console can be accessed by opening a browser and visiting <a href="http://localhost:9090/" target="\_blank">http://localhost:9090/</a></p>
+<h2 id="configuring-the-sandbox">Configuring the Sandbox</h2>
+<p>The sandbox is configured with 6GB RAM; if your development machine has 16GB or
+more, you can increase the sandbox RAM to 8GB or more using the VirtualBox
+console. This will yield better performance and support larger applications.</p>
+<p>Additionally, you can change the network adapter from <strong>NAT</strong> to
+<strong>Bridged Adapter</strong>; this will allow you to login to the sandbox from your
+host as well as transfer files back and forth using <em>ssh</em> and <em>scp</em> on Linux
+or <em>ssh</em> tools like <strong>PuTTY</strong> and <strong>pscp</strong> on Windows.</p>
+<p>A simpler option for sharing files is to mount a shared folder from the host
+on the guest; this may be the only option in some environments where the
+sandbox is unable to acquire a separate IP address from DHCP. See, for example,
+<a href="http://www.htpcbeginner.com/mount-virtualbox-shared-folder-on-ubuntu-linux/">http://www.htpcbeginner.com/mount-virtualbox-shared-folder-on-ubuntu-linux/</a> or
+<a href="http://www.htpcbeginner.com/setup-virtualbox-shared-folders-linux-windows/">http://www.htpcbeginner.com/setup-virtualbox-shared-folders-linux-windows/</a>.</p>
+<p>Of course all such configuration must be done when when the sandbox is not running.</p>
+<h2 id="running-demo-applications">Running Demo Applications</h2>
+<p>Once authenticated, you can continue to <a href="../demos/">Demo Applications</a> section to learn how to import, launch, and run demo applications.</p>
+<h2 id="service-management">Service Management <a name="service_management"></a></h2>
+<p>The sandbox automatically launches the following services on startup.</p>
+<ul>
+<li>Hadoop HDFS NameNode</li>
+<li>Hadoop HDFS DataNode</li>
+<li>Hadoop YARN ResourceManager</li>
+<li>Hadoop YARN NodeManager</li>
+<li>DataTorrent Gateway</li>
+</ul>
+<p>Depending on the host machine capabilities, these may take from several seconds to several minutes to start up.  Until Hadoop services are active and ready, it is normal to see the warning message described above.</p>
+<p>If the warning persists after several minutes, check the status of each of these
+following services: you can do that with a shell script like this:</p>
+<pre><code>#!/bin/bash
+services='hadoop-hdfs-namenode hadoop-hdfs-datanode hadoop-yarn-resourcemanager hadoop-yarn-nodemanager dtgateway'
+for s in $services; do
+    sudo service "$s" status
+done
+</code></pre>
+<p>If any of these services are not running, you can start them by running a similar
+script but with <code>status</code> replaced by <code>start</code>.</p>
+<h2 id="support">Support</h2>
+<p>If you experience issues while experimenting with the sandbox, or have any feedback and comments, please let us know, and we will be happy to help!  Contact us using one of the methods listed on <a href="https://www.datatorrent.com/contact/">datatorrent.com/contact</a> page.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../create/" class="btn btn-neutral float-right" title="Creating Applications">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../demos/" class="btn btn-neutral" title="Running Apps"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../demos/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../create/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../favicon.ico">
+  
+  <title>App Data Tracker - DataTorrent Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "App Data Tracker";
+    var mkdocs_page_input_path = "app_data_tracker.md";
+    var mkdocs_page_url = "/app_data_tracker/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44586211-2', 'docs.datatorrent.com');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> DataTorrent Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">DataTorrent RTS</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Demos</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../demos/">Running Apps</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../sandbox/">Sandbox</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Development</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../create/">Creating Applications</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../beginner/">Beginner's Guide</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Tutorials</span></li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Top N Words</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords/">Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c1/">Development Environment</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c2/">Building in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c3/">Building with dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c4/">Monitoring with dtManage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c5/">Visualizing with dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c7/">Advanced Features</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c6/">Appendix</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Sales Dimensions</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions/">Building in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions-c2/">Building with dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions-c3/">Visualizing with dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions-c4/">Monitoring with dtManage</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apex_development_setup/">Apex Development Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../configure_IDE/">Generate New Project in IDE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../application_development/">Applications</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../application_packages/">Application Packages</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../configuration_packages/">Configuration Packages</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operator_development/">Operators</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Library Operators</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/kafkaInputOperator/">Kafka Input</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/dimensions_computation/">Dimension Computation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/hdht/">HDHT</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/deduper/">Deduper</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/file_splitter/">File Splitter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/block_reader/">Block Reader</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/file_output/">File Output</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/snapshot_server/">Snapshot Server</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app_data_framework/">App Data Framework</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_api/">REST API</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>App Templates</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/hdfs-sync/">HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/s3-to-hdfs-sync/">S3 to HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kafka-to-hdfs-sync/">Kafka to HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/hdfs-line-copy/">HDFS to HDFS Line Copy App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/hdfs-to-kafka-sync/">HDFS to Kafka Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/database-to-hdfs/">Database dump to HDFS App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/database-to-database-sync/">Database to Database Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kafka-to-database-sync/">Kafka to Database Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kafka-to-hdfs-filter/">Kafka to HDFS Filter App</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Applications</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">App Data Tracker</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#app-data-tracker">App Data Tracker</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#interaction-between-adt-and-user-apex-applications">Interaction between ADT and user Apex Applications</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#launching-adt">Launching ADT</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#adt-topology">ADT Topology</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#aggregations">Aggregations</a></li>
+                
+                    <li><a class="toctree-l4" href="#custom-aggregator-in-adt">Custom Aggregator in ADT</a></li>
+                
+                    <li><a class="toctree-l4" href="#discovery-of-custom-aggregators">Discovery of Custom Aggregators</a></li>
+                
+                    <li><a class="toctree-l4" href="#using-metrics_dimensions_scheme">Using METRICS_DIMENSIONS_SCHEME</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#dashboards">Dashboards</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtingest/">dtIngest</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Platform</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../rts/">RTS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtmanage/">dtManage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtassemble/">dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtdashboard/">dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway/">dtGateway</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apex/">Apache Apex</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apex_malhar/">Apache Apex-Malhar</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Deployment and Operations</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../installation/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../configuration/">Configuration</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_security/">Security</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_systemalerts/">System Alerts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apexcli/">Apex CLI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../release_notes/">Release Notes</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../glossary/">Glossary</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../additional_docs/">Resources</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">DataTorrent Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Applications &raquo;</li>
+        
+      
+    
+    <li>App Data Tracker</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="app-data-tracker">App Data Tracker</h1>
+<h1 id="introduction">Introduction</h1>
+<p>App Data Tracker, called ADT from now on for conciseness, is a system Apex application that utilizes App Data Framework for collecting and aggregating stats and auto-metrics of user Apex applications.</p>
+<p><strong>Stats</strong> are pre-defined measurements that tracks the health and performance of an application. There are 2 types of stats for each Apex application.
+<em> Application stats - these include stats at the application level. For example - <code>plannedContainers</code>, <code>numOperators</code>, <code>failedContainers</code>, <code>totalTuplesProcessed</code>, etc.
+</em> Operator stats - these include stats of each operator in an application. Example of per operator stats are - <code>totalTuplesProcessed</code>, <code>totalTuplesEmitted</code>, <code>cpuPercentageMA</code>, etc.</p>
+<p><strong>AutoMetrics</strong> are custom measurements that an operator developer can define for their operator. If an operator having auto-metrics is integrated to an application, then these auto-metrics become eligible
+to be collected by ADT for aggregation. AutoMetrics are explained in detail <a href="http://apex.apache.org/docs/apex/autometrics/">here</a>.</p>
+<h1 id="interaction-between-adt-and-user-apex-applications">Interaction between ADT and user Apex Applications</h1>
+<p>After ADT has been enabled, applications will push stats and metrics to dtGateway. In this scenario, dtGateway serves as a message bus. ADT acts as a
+subscriber to this message bus. The diagram below depicts the message flow among user Apex applications, dtGateway and ADT.</p>
+<p><a name="dtGateway-adt"></a><img alt="Message flow between user applications, dtGateway and ADT" src="../images/adt/adt.png" /></p>
+<h1 id="launching-adt">Launching ADT</h1>
+<p>ADT can be automatically launched by dtGateway if the dt-site.xml that is used by the dtGateway has the following properties:</p>
+<pre><code class="xml">&lt;property&gt;
+  &lt;name&gt;dt.appDataTracker.enable&lt;/name&gt;
+  &lt;value&gt;true&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+  &lt;name&gt;dt.appDataTracker.transport&lt;/name&gt;
+  &lt;value&gt;com.datatorrent.common.metric.AutoMetricBuiltInTransport:AppDataTrackerFeed&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+  &lt;name&gt;dt.attr.METRICS_TRANSPORT&lt;/name&gt;
+  &lt;value&gt;com.datatorrent.common.metric.AutoMetricBuiltInTransport:AppDataTrackerFeed&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+
+<p><strong>Note</strong>: ADT will be shown running in dtManage as a “system app”.  It will show up if the “show system apps” button is pressed.</p>
+<h1 id="adt-topology">ADT Topology</h1>
+<p><img alt="ADT Topology" src="../images/adt/adt_topology.png" /></p>
+<p>The input operator in ADT is a web-socket input operator which listens to the topic <code>AppDataTrackerFeed</code>. This is the topic which the
+application masters of the user applications are publishing to.</p>
+<p>Once the messages enter ADT, they are processed for aggregation and stored in HDHT.</p>
+<h1 id="aggregations">Aggregations</h1>
+<p>ADT aggregates only <strong>Metrics</strong> by time. <strong>Stats</strong> - application or operator level represent cumulative values and therefore are not time-aggregated.</p>
+<p>By default, the time buckets ADT aggregates upon are one minute, one hour and one day. It can be overridden by changing the operator attribute <code>METRICS_DIMENSIONS_SCHEME</code>.</p>
+<p>Also by default, ADT performs all these aggregations : SUM, MIN, MAX, AVG, COUNT, FIRST, LAST on all number metrics.  You can also override by changing the same operator attribute <code>METRICS_DIMENSIONS_SCHEME</code>, provided the custom aggregator is known to ADT.  (See next section)</p>
+<h2 id="custom-aggregator-in-adt">Custom Aggregator in ADT</h2>
+<p>Custom aggregators allow you to do your own custom computation on statistics generated by any of your applications. In order to write a Custom aggregator the implementations of the
+following methods is needed:</p>
+<ul>
+<li>Combining new inputs with the current aggregation</li>
+<li>Combining two aggregations together into one aggregation</li>
+</ul>
+<p>Let’s consider the case where we want to perform the following rolling average:</p>
+<p>Y_n = (1/2) * X_n + (1/4) * X_n-1 + (1/8) * X_n-2 + (1/16) * X_n-3 +...</p>
+<p>This aggregation could be performed by the following Custom Aggregator:</p>
+<pre><code class="java">@Name(&quot;IIRAVG&quot;)
+public class AggregatorIIRAVG extends AbstractIncrementalAggregator
+{
+  ...
+
+  private void aggregateHelper(DimensionsEvent dest, DimensionsEvent src)
+  {
+    double[] destVals = dest.getAggregates().getFieldsDouble();
+    double[] srcVals = src.getAggregates().getFieldsDouble();
+
+    for (int index = 0; index &lt; destLongs.length; index++) {
+      destVals[index] = .5 * destVals[index] + .5 * srcVals[index];
+    }
+  }
+
+  @Override
+  public void aggregate(Aggregate dest, InputEvent src)
+  {
+    //Aggregate a current aggregation with a new input
+    aggregateHelper(dest, src);
+  }
+
+  @Override
+  public void aggregate(Aggregate destAgg, Aggregate srcAgg)
+  {
+    //Combine two existing aggregations together
+    aggregateHelper(destAgg, srcAgg);
+  }
+}
+</code></pre>
+
+<h2 id="discovery-of-custom-aggregators">Discovery of Custom Aggregators</h2>
+<p>ADT searches for custom aggregator jars under the following directories statically before launching:</p>
+<ol>
+<li>{dt_installation_dir}/plugin/aggregators</li>
+<li>{user_home_dir}/.dt/plugin/aggregators</li>
+</ol>
+<p>It uses reflection to find all the classes that extend from <code>IncrementalAggregator</code> and <code>OTFAggregator</code> in these jars and registers them with the name provided by <code>@Name</code> annotation (or class name when <code>@Name</code> is absent).</p>
+<h2 id="using-metrics_dimensions_scheme">Using <code>METRICS_DIMENSIONS_SCHEME</code></h2>
+<p>Here is a sample code snippet on how you can make use of <code>METRICS_DIMENSIONS_SCHEME</code> to set your own time buckets and your own set of aggregators for certain <code>AutoMetric</code>s performed by the ADT in your application.</p>
+<pre><code class="java">  @Override
+  public void populateDAG(DAG dag, Configuration configuration)
+  {
+    ...
+    LineReceiver lineReceiver = dag.addOperator(&quot;LineReceiver&quot;, new LineReceiver());
+    ...
+    AutoMetric.DimensionsScheme dimensionsScheme = new AutoMetric.DimensionsScheme()
+    {
+      String[] timeBuckets = new String[] { &quot;1s&quot;, &quot;1m&quot;, &quot;1h&quot; };
+      String[] lengthAggregators = new String[] { &quot;IIRAVG&quot;, &quot;SUM&quot; };
+      String[] countAggregators = new String[] { &quot;SUM&quot; };
+
+      /* Setting the aggregation time bucket to be one second, one minute and one hour */
+      @Override
+      public String[] getTimeBuckets()
+      {
+        return timeBuckets;
+      }
+
+      @Override
+      public String[] getDimensionAggregationsFor(String logicalMetricName)
+      {
+        if (&quot;length&quot;.equals(logicalMetricName)) {
+          return lengthAggregators;
+        } else if (&quot;count&quot;.equals(logicalMetricName)) {
+          return countAggregators;
+        } else {
+          return null; // use default
+        }
+      }
+    };
+
+    dag.setAttribute(lineReceiver, OperatorContext.METRICS_DIMENSIONS_SCHEME, dimensionsScheme);
+    ...
+  }
+</code></pre>
+
+<h1 id="dashboards">Dashboards</h1>
+<p>With ADT enabled, you can visualize the AutoMetrics and system metrics in the Dashboards within dtManage.   Refer back to the <a href="#dtGateway-adt">diagram</a>, dtGateway relays queries and query results to and from ADT.  In this way, dtManage sends queries and receives results from ADT via dtGateway and uses the results to let the user visualize the data.</p>
+<p>Click on the visualize button in dtManage's application page.</p>
+<p><img alt="AppDataTracker" src="../images/adt/visualize.png" /></p>
+<p>You will see the dashboard for the AutoMetrics and the system metrics.</p>
+<p><img alt="AppDataTracker" src="../images/adt/dashboard.png" /></p>
+<p>The left widget shows the AutoMetrics of <code>line</code> and <code>count</code> for the <a href="http://apex.apache.org/docs/apex/autometrics/#lineReceiver">LineReceiver</a> operator.  The right widget shows the system metrics.</p>
+<p>The Dashboards have some simple builtin widgets to visualize the data.  Line charts and bar charts are some examples.
+Users will be able to implement their own widgets to visualize their data.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../dtingest/" class="btn btn-neutral float-right" title="dtIngest">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../app-templates/kafka-to-hdfs-filter/" class="btn btn-neutral" title="Kafka to HDFS Filter App"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../app-templates/kafka-to-hdfs-filter/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../dtingest/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

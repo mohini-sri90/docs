@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../favicon.ico">
+  
+  <title>System Alerts - DataTorrent Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "System Alerts";
+    var mkdocs_page_input_path = "dtgateway_systemalerts.md";
+    var mkdocs_page_url = "/dtgateway_systemalerts/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44586211-2', 'docs.datatorrent.com');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> DataTorrent Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">DataTorrent RTS</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Demos</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../demos/">Running Apps</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../sandbox/">Sandbox</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Development</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../create/">Creating Applications</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../beginner/">Beginner's Guide</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Tutorials</span></li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Top N Words</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords/">Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c1/">Development Environment</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c2/">Building in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c3/">Building with dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c4/">Monitoring with dtManage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c5/">Visualizing with dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c7/">Advanced Features</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c6/">Appendix</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Sales Dimensions</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions/">Building in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions-c2/">Building with dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions-c3/">Visualizing with dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions-c4/">Monitoring with dtManage</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apex_development_setup/">Apex Development Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../configure_IDE/">Generate New Project in IDE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../application_development/">Applications</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../application_packages/">Application Packages</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../configuration_packages/">Configuration Packages</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operator_development/">Operators</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Library Operators</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/kafkaInputOperator/">Kafka Input</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/dimensions_computation/">Dimension Computation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/hdht/">HDHT</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/deduper/">Deduper</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/file_splitter/">File Splitter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/block_reader/">Block Reader</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/file_output/">File Output</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/snapshot_server/">Snapshot Server</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app_data_framework/">App Data Framework</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_api/">REST API</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>App Templates</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/hdfs-sync/">HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/s3-to-hdfs-sync/">S3 to HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kafka-to-hdfs-sync/">Kafka to HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/hdfs-line-copy/">HDFS to HDFS Line Copy App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/hdfs-to-kafka-sync/">HDFS to Kafka Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/database-to-hdfs/">Database dump to HDFS App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/database-to-database-sync/">Database to Database Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kafka-to-database-sync/">Kafka to Database Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kafka-to-hdfs-filter/">Kafka to HDFS Filter App</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Applications</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app_data_tracker/">App Data Tracker</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtingest/">dtIngest</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Platform</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../rts/">RTS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtmanage/">dtManage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtassemble/">dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtdashboard/">dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway/">dtGateway</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apex/">Apache Apex</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apex_malhar/">Apache Apex-Malhar</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Deployment and Operations</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../installation/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../configuration/">Configuration</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_security/">Security</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">System Alerts</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#dt-gateway-system-alerts">DT Gateway System Alerts</a></li>
+                
+                    <li><a class="toctree-l4" href="#alerts-topics">Alerts &amp; Topics</a></li>
+                
+                    <li><a class="toctree-l4" href="#managing-and-viewing-alerts">Managing and viewing alerts</a></li>
+                
+                    <li><a class="toctree-l4" href="#creating-an-alert">Creating an alert</a></li>
+                
+                    <li><a class="toctree-l4" href="#deleting-an-alert">Deleting an alert</a></li>
+                
+                    <li><a class="toctree-l4" href="#alerts-history">Alerts history</a></li>
+                
+                    <li><a class="toctree-l4" href="#viewing-the-content-and-the-status-of-alerts">Viewing the content and the status of alerts</a></li>
+                
+                    <li><a class="toctree-l4" href="#viewing-all-the-current-data-in-the-_topic-array">Viewing all the current data in the _topic array</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apexcli/">Apex CLI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../release_notes/">Release Notes</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../glossary/">Glossary</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../additional_docs/">Resources</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">DataTorrent Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Deployment and Operations &raquo;</li>
+        
+      
+    
+    <li>System Alerts</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="dt-gateway-system-alerts">DT Gateway System Alerts</h1>
+<p>The DT Gateway allows the user to set arbitrary system alerts using JavaScript with the values in the PubSub websocket topics. The topic values are such as system metrics, application metrics, and custom application counters. Also, these JavaScript conditions can be simple to complex multiline which user can set on metrics, to be alerted during anomalous behavior.  Alert configurations are store in the Hadoop cluster, however, alert active and historical states are stored in the Gateway memory.  Alerts active and historical states will be lost when gateways are restarted.</p>
+<h2 id="alerts-topics">Alerts &amp; Topics</h2>
+<p>As described above the alerts can be set on any metrics. When the alert condition evaluates to true and remains so for a specified time duration, the alert becomes active and email is sent. When the condition is no longer true the alert becomes inactive and another email about the state change is sent. 
+Here is an example for simple JavaScript condition. one can issue the REST request to create an alert named “xyz” which emails to someone@company.com when the number of running applications is greater than 5 for at least 60 seconds.</p>
+<h3 id="put-wsv2systemalertsalertsxyz">PUT /ws/v2/systemAlerts/alerts/xyz</h3>
+<pre><code class="json">{
+  &quot;condition&quot;:&quot;_topic['cluster.metrics'].numAppsRunning &gt; 5&quot;,
+  &quot;email&quot;:&quot;someone@company.com&quot;,
+  &quot;description&quot;: &quot;No.of apps running is more than 5&quot;,
+  &quot;timeThresholdMillis&quot;:&quot;60000&quot;
+}
+</code></pre>
+
+<p>When the number of running applications is greater than 5 for more than 60 seconds, a simple email will be sent to someone@company.com, stating that the alert is in effect, and when the number of running applications drops below 6, another email will be sent to someone@company.com, stating that the alert is no longer in effect.</p>
+<p>So, the <code>condition</code> is a simple JavaScript condition, user can build these JavaScript conditions from various system or application-specific values. These values are available as fields of JavaScript objects obtained by using expressions of the form <code>_topic[&lt;topic_name&gt;]</code>. 
+The topic names can be looked up using the <strong>GET /ws/v2/systemAlerts/topicData</strong> REST API call shown below:</p>
+<p>Note: Alert names may contain special characters such as spaces, slashes and percents. However, they must be URL encoded before making the REST API calls. (ex: Get,Put,Delete)</p>
+<h3 id="get-wsv2systemalertstopicdata">GET /ws/v2/systemAlerts/topicData</h3>
+<pre><code class="json">{
+  -&quot;applications.&lt;applicationId&gt;.logicalOperators&quot;: {...}, 
+  -&quot;applications.&lt;applicationId&gt;.physicalOperators&quot;: {...}, 
+  -&quot;applications.&lt;applicationId&gt;.containers&quot;: {...}, 
+  -&quot;applications.&lt;applicationId&gt;&quot;: {...}
+  -&quot;cluster.metrics&quot;: {...},
+  -&quot;applications&quot;: {...}
+}
+</code></pre>
+
+<p>where <strong><code>&lt;applicationId&gt;</code></strong> refers to the application id of a running application. These topic repeat for every running applications. The alert condition can refer to multiple such topic values and can be any valid JavaScript expressions that return a boolean. The email can be sent to multiple addresses separated by a comma.</p>
+<h2 id="managing-and-viewing-alerts">Managing and viewing alerts</h2>
+<p>From the Gateway REST API, you can do the following operations
+<em> Creating an alert 
+</em> Deleting an alert
+<em> Alerts history
+</em> Viewing the content and the status of alerts
+* Viewing all the current data in the <code>_topic</code> array</p>
+<h2 id="creating-an-alert">Creating an alert</h2>
+<p>To create an alert, the user needs to specify the name of the alert, the alert condition, the email address the alert is emailed to and the duration in milliseconds for which the alert condition has to be true for the alert to be in effect. As explained above, in the JavaScript condition, one can refer to the values in various topics by <code>_topic[&lt;topic_name&gt;]</code>.  The topic values include system metrics, application metrics, and custom application counters, which one can look up using the Gateway REST API.  The alert condition can refer to multiple such topic values and can be any valid JavaScript expressions that return a boolean.  Because of that, the user can create very customized alert conditions, such as whether an application named “XYZApplication” is running, whether a certain application is allocating too many containers, etc.</p>
+<p><strong>Complex JavaScript Expressions :</strong></p>
+<p>For example, one can issue the REST request to create an alert named "WordCountAppNotRunning" which emails to someone@company.com and someone@company.com when the "WordCount" app is not in "Running" state for at least 60 seconds.</p>
+<h3 id="put-wsv2systemalertsalertswordcountappnotrunning">PUT /ws/v2/systemAlerts/alerts/WordCountAppNotRunning</h3>
+<pre><code class="json">{
+  &quot;condition&quot;: &quot;_topic['applications.application_1480063135007_0543']['state'] != 'RUNNING'&quot;,
+  &quot;email&quot;:&quot;someone@company.com, someone@company.com&quot;,
+  &quot;description&quot;: &quot;WordCount Application is not running&quot;,
+  &quot;timeThresholdMillis&quot;:&quot;60000&quot;
+}
+</code></pre>
+
+<p>The above alert is valid for that current running session of "WordCount" application. However, when "WordCount" application is restarted, a new application id is generated. Then, the above alert is obsolete. One solution is user can update the application id in the condition every time application restarts or we can write a complex JavaScript expression to find application id for the given application.</p>
+<p>Let's update above alert to work every time application restarts. The JavaScript condition can replace by </p>
+<pre><code>var alert = false;
+var appId = undefined;
+var appsInfo = _topic['applications'].apps;
+
+for(i = 0; i &lt; appsInfo.length; i++)
+{
+   if(appsInfo[i].name == 'WordCount')
+   {
+         appId = appsInfo[i].id;
+         break;
+   }
+}
+if(appId != undefined)
+{
+    alert  = _topic['applications.' + appId]['state']  !=  'RUNNING' ;
+}
+alert;
+</code></pre>
+
+<p>The complex JavaScript expressions has to compress to single line and can use any tool available, such as  [http://javascriptcompressor.com/]</p>
+<h3 id="put-wsv2systemalertsalertswordcountappnotrunning_1">PUT /ws/v2/systemAlerts/alerts/WordCountAppNotRunning</h3>
+<pre><code class="json">{
+  &quot;condition&quot;: &quot;var alert=false;var appId=undefined;var appsInfo=_topic['applications'].apps;for(i=0;i&lt;appsInfo.length;i++){if(appsInfo[i].name=='WordCount'){appId=appsInfo[i].id;break}}if(appId!=undefined){alert=_topic['applications.'+appId]['state']!='RUNNING'}alert;&quot;,
+   &quot;email&quot;:&quot;someone@company.com, someone@company.com&quot;,
+   &quot;description&quot;: &quot;WordCount Application is not running&quot;,
+   &quot;timeThresholdMillis&quot;:&quot;60000&quot;
+}
+</code></pre>
+
+<h2 id="deleting-an-alert">Deleting an alert</h2>
+<p>We can delete the alert, by web request 
+<strong>DELETE /ws/v2/systemAlerts/alerts/{name}</strong></p>
+<h2 id="alerts-history">Alerts history</h2>
+<p>We can get the alerts history by making a web request</p>
+<p><strong>GET /ws/v2/systemAlerts/history</strong></p>
+<pre><code class="json">{
+&quot;history&quot;: [{
+    &quot;name&quot;: &quot;xyz&quot;,
+    &quot;inTime&quot;: &quot;1481235199598&quot;,
+    &quot;outTime&quot;: &quot;1481235251088&quot;,
+    &quot;message&quot;: &quot;No.of apps running is more than 5&quot;
+},{
+    &quot;name&quot;: &quot;checkCsvParserNotRunning&quot;,
+    &quot;inTime&quot;: &quot;1481235251087&quot;,
+    &quot;outTime&quot;: &quot;1481235549648&quot;,
+    &quot;message&quot;: &quot;Application is not running&quot;
+}],
+}
+</code></pre>
+
+<p>The alert history comprises a name of alert, the time the alert became active (inTime), the time the alert became inactive(outTime) and message. The alert history is obtained through the gateway. So, whenever gateway is restarted, the alerts history gets cleared. </p>
+<h2 id="viewing-the-content-and-the-status-of-alerts">Viewing the content and the status of alerts</h2>
+<p>We can get the content and status of alerts by making a web request </p>
+<p><strong>GET /ws/v2/systemAlerts/alerts/{name}</strong></p>
+<pre><code class="json">{
+ &quot;name&quot;: &quot;checkLatencyApp&quot;,
+ &quot;condition&quot;: &quot;var alert=false;var appId=undefined;var appsInfo=_topic['applications'].apps;for(i=0;i&lt;appsInfo.length;i++){if(appsInfo[i].name=='xyzApp'){appId=appsInfo[i].id;break}}if(appId!=undefined){var expTopic='applications.'+appId+'.physicalOperators';var operators=_topic[expTopic].operators;for(i=0;(i&lt;operators.length);++i){if(operators[i].latencyMA&gt;50){alert=true;break}}}alert;&quot;,
+ &quot;email&quot;: &quot;someone@company.com, someone@company.com&quot;,
+ &quot;description&quot;: &quot;checking latency &gt; 50&quot;,
+ &quot;timeThresholdMillis&quot;: &quot;10000&quot;,
+ &quot;alertStatus&quot;: {
+   &quot;isInAlert&quot;: true,
+   &quot;inTime&quot;: &quot;1481264665450&quot;,
+   &quot;emailSent&quot;: true,
+   &quot;message&quot;: &quot;checking latency &gt; 50&quot;
+  }
+}
+</code></pre>
+
+<p>The payload shows the name of alert, JavaScript condition, email addresses, description and "timeThresholdMillis" which is the duration in milliseconds for which the alert condition has to be true for the alert to be in effect.
+The payload also contains information related alert status such as "isInAlert" which means that the alert is still active or not, "inTime" which represents the time the alert became active, "emailSent" as the name suggests email is sent or not, and "message" is similar to the description.</p>
+<h2 id="viewing-all-the-current-data-in-the-_topic-array">Viewing all the current data in the <code>_topic</code> array</h2>
+<p>This section is already covered under <strong>Alerts &amp; Topics</strong> .</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../apexcli/" class="btn btn-neutral float-right" title="Apex CLI">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../dtgateway_security/" class="btn btn-neutral" title="Security"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../dtgateway_security/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../apexcli/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

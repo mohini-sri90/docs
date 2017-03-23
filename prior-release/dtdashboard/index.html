@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../favicon.ico">
+  
+  <title>dtDashboard - DataTorrent Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "dtDashboard";
+    var mkdocs_page_input_path = "dtdashboard.md";
+    var mkdocs_page_url = "/dtdashboard/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44586211-2', 'docs.datatorrent.com');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> DataTorrent Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">DataTorrent RTS</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Demos</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../demos/">Running Apps</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../sandbox/">Sandbox</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Development</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../create/">Creating Applications</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../beginner/">Beginner's Guide</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Tutorials</span></li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Top N Words</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords/">Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c1/">Development Environment</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c2/">Building in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c3/">Building with dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c4/">Monitoring with dtManage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c5/">Visualizing with dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c7/">Advanced Features</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c6/">Appendix</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Sales Dimensions</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions/">Building in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions-c2/">Building with dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions-c3/">Visualizing with dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions-c4/">Monitoring with dtManage</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apex_development_setup/">Apex Development Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../configure_IDE/">Generate New Project in IDE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../application_development/">Applications</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../application_packages/">Application Packages</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../configuration_packages/">Configuration Packages</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operator_development/">Operators</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Library Operators</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/kafkaInputOperator/">Kafka Input</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/dimensions_computation/">Dimension Computation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/hdht/">HDHT</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/deduper/">Deduper</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/file_splitter/">File Splitter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/block_reader/">Block Reader</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/file_output/">File Output</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/snapshot_server/">Snapshot Server</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app_data_framework/">App Data Framework</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_api/">REST API</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>App Templates</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/hdfs-sync/">HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/s3-to-hdfs-sync/">S3 to HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kafka-to-hdfs-sync/">Kafka to HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/hdfs-line-copy/">HDFS to HDFS Line Copy App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/hdfs-to-kafka-sync/">HDFS to Kafka Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/database-to-hdfs/">Database dump to HDFS App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/database-to-database-sync/">Database to Database Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kafka-to-database-sync/">Kafka to Database Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kafka-to-hdfs-filter/">Kafka to HDFS Filter App</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Applications</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app_data_tracker/">App Data Tracker</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtingest/">dtIngest</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Platform</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../rts/">RTS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtmanage/">dtManage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtassemble/">dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">dtDashboard</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#dtdashboard-application-data-visualization">dtDashboard - Application Data Visualization</a></li>
+                
+                    <li><a class="toctree-l4" href="#examples">Examples</a></li>
+                
+                    <li><a class="toctree-l4" href="#data-sources">Data Sources</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#stats-and-custom-metrics">Stats and Custom Metrics</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#data-visualization-with-dashboards-and-widgets">Data Visualization with Dashboards and Widgets</a></li>
+                
+                    <li><a class="toctree-l4" href="#overview">Overview</a></li>
+                
+                    <li><a class="toctree-l4" href="#accessing-dashboards">Accessing Dashboards</a></li>
+                
+                    <li><a class="toctree-l4" href="#creating-dashboards">Creating Dashboards</a></li>
+                
+                    <li><a class="toctree-l4" href="#modifying-dashboards">Modifying Dashboards</a></li>
+                
+                    <li><a class="toctree-l4" href="#widgets-overview">Widgets Overview</a></li>
+                
+                    <li><a class="toctree-l4" href="#adding-widgets">Adding Widgets</a></li>
+                
+                    <li><a class="toctree-l4" href="#editing-widgets">Editing Widgets</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway/">dtGateway</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apex/">Apache Apex</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apex_malhar/">Apache Apex-Malhar</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Deployment and Operations</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../installation/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../configuration/">Configuration</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_security/">Security</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_systemalerts/">System Alerts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apexcli/">Apex CLI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../release_notes/">Release Notes</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../glossary/">Glossary</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../additional_docs/">Resources</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">DataTorrent Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Platform &raquo;</li>
+        
+      
+    
+    <li>dtDashboard</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="dtdashboard-application-data-visualization">dtDashboard - Application Data Visualization</h1>
+<p>The App Data Framework collection of UI tools and operator APIs that allows DataTorrent developers to visualize the data flowing through their applications.  This guide assumes the reader’s basic knowledge on the DataTorrent RTS platform and the Console, and the concept of operators in streaming applications.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="twitter-example">Twitter Example</h3>
+<p>The Twitter Hashtag Count Demo, shipped with DataTorrent RTS distribution, is a streaming application that utilizes the App Data Framework.  To demonstrate how the Application Data Framework works on a very high level, on the Application page in the Console, click on the visualize button next to the application name, and a dashboard for the Twitter Hashtag Count Demo will be created.  In it, you will see visualization of the top 10 hashtags computed in the application:</p>
+<p><img alt="Screenshot from 2015-06-03 15:31:58.png" src="../images/dtdashboard/image16.png" /></p>
+<h3 id="ads-dimension-example">Ads Dimension Example</h3>
+<p>The Ads Dimension Demo included in the DataTorrent RTS distribution also utilizes the App Data Framework.  The widgets for this application demonstrates more features than the Twitter one because you can issue your own queries to choose what data you want to visualize.  For example, one might want to visualize the running revenue and cost for advertiser “Starbucks” and publisher “Google”.</p>
+<p><img alt="Screenshot from 2015-06-03 16:25:57.png" src="../images/dtdashboard/image06.png" /></p>
+<h2 id="data-sources">Data Sources</h2>
+<p>A Data Source in the application consists of three operators.  The Query Operator, the Data Source Operator and the Result Operator.  The Query Operator takes in queries from a message queue and passes them to the Data Source Operator.  The Data Source Operator processes the queries and sends the results to the Result Operator.  The Result Operator delivers the results to the message queue.  The Data Source Operator generally takes in data from other parts of the DAG.</p>
+<p><img alt="" src="../images/dtdashboard/image04.png" /></p>
+<p>To see how this is fit in our previous examples, below is the DAG for the Twitter Hashtag Demo:</p>
+<p><img alt="Screenshot from 2015-06-03 13:08:54.png" src="../images/dtdashboard/image05.png" /></p>
+<p>The operators “Query”, “Tabular Server” and “QueryResult” are the three operators that serve the data being visualized in the Console.  The “Tabular Server” operator takes in data from the TopCounter operator, processes incoming queries, and generates results.</p>
+<p>And below is the DAG for the Ads Dimension Demo:</p>
+<p><img alt="Screenshot from 2015-06-03 18:27:12.png" src="../images/dtdashboard/image11.png" /></p>
+<p>In this DAG, the operators “Query”, “Store” and “QueryResult” are the three operators that make up the Data Source.  The “Store” operator takes in incoming data, stores them in a persistent storage, and serve them.  In other words, the Data Source serves historical data as well as current data, as opposed to the Twitter Hashtag Demo, which only serves the current data.</p>
+<p>All these operators are available in the Malhar (and Megh). When you are familiar with how the built-in operators work, you may want to create your own Data Sources in your own application.  <a href="http://www.datatorrent.com/docs/">App Data Framework Programming Guide</a></p>
+<h1 id="stats-and-custom-metrics">Stats and Custom Metrics</h1>
+<p>Each application has statistics such as tuples processed per second, latency, and memory used.  Each operator in an application can contain custom metrics that are part of the application logic.  With the Application Data Framework, each application comes with Data Sources that give out historical and real-time application statistics data and custom metrics data.  You can visualize such data as you would for other Data Sources in the application.</p>
+<h1 id="data-visualization-with-dashboards-and-widgets">Data Visualization with Dashboards and Widgets</h1>
+<h2 id="overview">Overview</h2>
+<p>DataTorrent Dashboards and Widgets are UI tools that allow users to quickly and easily visualize historical and real-time application data.  Below is an example of a visualization dashboard with Stacked Area Chart, Pie Chart, Multi Bar Chart, and Table widgets.</p>
+<p><img alt="" src="../images/dtdashboard/image07.png" /></p>
+<p>Dashboards are quick and easy to create, and can include data from a single or multiple applications on the same screen.  Widgets can be added, removed, rearranged, and resized at any time.  Each widget provides a unique way to visualizes the application data, and provides a number of ways to configure the content and the corresponding visualizations.</p>
+<h2 id="accessing-dashboards">Accessing Dashboards</h2>
+<p>Dashboards are accessible from Visualize section in the DataTorrent Console menu.</p>
+<p><img alt="" src="../images/dtdashboard/image01.png" /></p>
+<p>After selecting Visualize menu item, a list of available dashboards is displayed.  The list of available dashboards can be ordered or filtered by dashboard name, description, included applications, creating user, and modified timestamp.  Clicking one of the dashboard name links takes you to the selected dashboard.</p>
+<p><img alt="" src="../images/dtdashboard/image09.png" /></p>
+<p>An alternative way to access dashboards is from Monitor section.  Navigate to one of the running applications, and if the application supports data visualization, list of existing dashboards which include selected application will be displayed after clicking on visualize button below the application name.</p>
+<p><img alt="" src="../images/dtdashboard/image00.png" /></p>
+<p>Below is an example of accessing the data visualization dashboard from a running application.</p>
+<p><img alt="appDashboardsDropdown2.gif" src="../images/dtdashboard/image08.gif" /></p>
+<h2 id="creating-dashboards">Creating Dashboards</h2>
+<p>There are two ways to create a new visualization dashboard</p>
+<ul>
+<li>create new button on the Dashboards screen</li>
+<li>generate new dashboard option in the visualization menu of a compatible running DataTorrent application</li>
+</ul>
+<p>Below is an illustrated example and a set of steps for creating a new dashboard from the Dashboards screen using the create new button reatingDashboard.gif](images/dtdashboard/image15.gif)</p>
+<ol>
+<li>
+<p>Provide a unique dashboard name. Names are required to be unique for a single user.  Two different users can have a dashboard with the same name.</p>
+</li>
+<li>
+<p>Include optional dashboard description.  Descriptions help explain and provide context for visualizations presented in the dashboard to new users, and provide an additional way to search and filter dashboards in the list.</p>
+</li>
+<li>
+<p>Select compatible applications to include in the data visualizations. Only applications with compatible data visualization sources will be listed.  Any number of applications can be included, and selection can be changed after a dashboard is created.</p>
+</li>
+<li>
+<p>Choose to automatically generate a new dashboard or create one from scratch. Generating a new dashboard option automatically adds a widget to the new dashboard for every available data source in every selected application.  Creating dashboard from scratch involves manually choosing the widgets to display.</p>
+</li>
+<li>
+<p>Customize and save the dashboard.  Add, remove, resize, and customize the widgets.  Save the changes to preserve the current dashboard state.</p>
+</li>
+</ol>
+<p>Below is an illustrated example of creating a new dashboard with generate new dashboard option in the visualization menu of a compatible running DataTorrent application.</p>
+<p><img alt="creatingDashboardAppVizDropdown.gif" src="../images/dtdashboard/image14.gif" /></p>
+<ol>
+<li>
+<p>Locate visualize menu in the Application Summary section of a running application.  Only applications with compatible data visualization sources include visualize menu option.</p>
+</li>
+<li>
+<p>Choose to generate new dashboard from the visualize menu drop-down list.  New dashboard will be automatically named, generated, and saved.  The new dashboard name will reflect the selected application name, and widgets will be automatically added one for every available data source.</p>
+</li>
+<li>
+<p>Customize and save the dashboard.  Add, remove, resize, and customize the widgets.  Save the changes to preserve the current dashboard state.</p>
+</li>
+</ol>
+<h2 id="modifying-dashboards">Modifying Dashboards</h2>
+<p>Dashboards controls are presented as a row of buttons just below the dashboard title and description.</p>
+<p><img alt="" src="../images/dtdashboard/image03.png" /></p>
+<p>New widgets can be added with settings button allows you to change dashboard name, description, and list of associated applications.  Use the save changes button to persist the dashboard state, which includes any changes made to the dashboard settings or widgets.  And finally, display mode enables an alternative visualization mode, which removes widget controls and backgrounds to create a simplified and seamless viewing experience.</p>
+<h2 id="widgets-overview">Widgets Overview</h2>
+<p>Dashboard widgets receive and display data in real time from DataTorrent application data sources.  Widgets can be added, removed, rearranged, and resized at any time.  Each widgets has a unique list of configurable properties, which include interactive elements displayed directly on the widget, as well as data query settings available from the widget settings.</p>
+<h2 id="adding-widgets">Adding Widgets</h2>
+<p>Widgets can be added to the dashboard by clicking add widget button, selecting one of the available data sources, selecting one or more widgets, and confirming selection by clicking add widget <img alt="addingWidgets.gif" src="../images/dtdashboard/image02.gif" /></p>
+<p>Alternatively, randomly selected widgets, one for every available data source, can be added to the dashboard by clicking auto generate button.  Widgets will be automatically placed on the dashboard without any further dialogs.  If data sources are responding slowly, auto generate may take longer to add new widgets.  During this time the button will remain disabled to avoid duplicate requests, and will show spinning arrows to indicate that previous action is already in progress.</p>
+<p><img alt="autoGenerateWidgets.gif" src="../images/dtdashboard/image10.gif" /></p>
+<p>Whether using auto generate buttons, results are not persisted until save changes is applied.</p>
+<p>Each data source supports one or more data schema types, such as snapshot, dimensions  Each schema type has a specific list of compatible widgets which can be selected to visualize the data.</p>
+<h2 id="editing-widgets">Editing Widgets</h2>
+<p>Each widget has an dimensions, snapshot) and widget type (table, chart, text For snapshot schema, which represents a single point in time, the primary widget controls include</p>
+<ul>
+<li>label field selection</li>
+<li>quantity field selection</li>
+<li>sort order selection</li>
+</ul>
+<p>Below is an example of changing label field and sort order for a bar chart widget.</p>
+<p><img alt="snapshotWidgetSettings.gif" src="../images/dtdashboard/image12.gif" /></p>
+<p>For dimensions schema, which represents a series of points in time, with ability to configure dimensions based on key and value settings, the primary widget controls include</p>
+<ul>
+<li>Time ranges selection</li>
+<li>live streaming</li>
+<li>historical range</li>
+<li>Dimensions Selections</li>
+<li>key combinations and key values selection</li>
+<li>aggregate selection</li>
+</ul>
+<p><img alt="dimensionsWidgetSettings.gif" src="../images/dtdashboard/image18.gif" /></p>
+<p>For Notes widget, a text in Markdown format can be entered and should be translated to HTML look.  Below is an example of using Markdown syntax to produce headings, lists, and quoted text.</p>
+<p><img alt="markdownWidgetSettings.gif" src="../images/dtdashboard/image13.gif" /></p>
+<p>After making the widget settings changes, remember to use save changes button to persist the desired results.  If the resulting changes should not be saved, reloading the dashboard will revert it to the the original state.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../dtgateway/" class="btn btn-neutral float-right" title="dtGateway">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../dtassemble/" class="btn btn-neutral" title="dtAssemble"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../dtassemble/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../dtgateway/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

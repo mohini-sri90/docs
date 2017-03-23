@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../favicon.ico">
+  
+  <title>Configuration - DataTorrent Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Configuration";
+    var mkdocs_page_input_path = "configuration.md";
+    var mkdocs_page_url = "/configuration/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44586211-2', 'docs.datatorrent.com');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> DataTorrent Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">DataTorrent RTS</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Demos</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../demos/">Running Apps</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../sandbox/">Sandbox</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Development</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../create/">Creating Applications</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../beginner/">Beginner's Guide</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Tutorials</span></li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Top N Words</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords/">Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c1/">Development Environment</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c2/">Building in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c3/">Building with dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c4/">Monitoring with dtManage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c5/">Visualizing with dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c7/">Advanced Features</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c6/">Appendix</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Sales Dimensions</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions/">Building in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions-c2/">Building with dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions-c3/">Visualizing with dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions-c4/">Monitoring with dtManage</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apex_development_setup/">Apex Development Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../configure_IDE/">Generate New Project in IDE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../application_development/">Applications</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../application_packages/">Application Packages</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../configuration_packages/">Configuration Packages</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operator_development/">Operators</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Library Operators</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/kafkaInputOperator/">Kafka Input</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/dimensions_computation/">Dimension Computation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/hdht/">HDHT</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/deduper/">Deduper</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/file_splitter/">File Splitter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/block_reader/">Block Reader</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/file_output/">File Output</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/snapshot_server/">Snapshot Server</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app_data_framework/">App Data Framework</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_api/">REST API</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>App Templates</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/hdfs-sync/">HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/s3-to-hdfs-sync/">S3 to HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kafka-to-hdfs-sync/">Kafka to HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/hdfs-line-copy/">HDFS to HDFS Line Copy App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/hdfs-to-kafka-sync/">HDFS to Kafka Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/database-to-hdfs/">Database dump to HDFS App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/database-to-database-sync/">Database to Database Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kafka-to-database-sync/">Kafka to Database Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kafka-to-hdfs-filter/">Kafka to HDFS Filter App</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Applications</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app_data_tracker/">App Data Tracker</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtingest/">dtIngest</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Platform</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../rts/">RTS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtmanage/">dtManage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtassemble/">dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtdashboard/">dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway/">dtGateway</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apex/">Apache Apex</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apex_malhar/">Apache Apex-Malhar</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Deployment and Operations</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../installation/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Configuration</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#datatorrent-rts-configuration">DataTorrent RTS Configuration</a></li>
+                
+                    <li><a class="toctree-l4" href="#installation">Installation</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#configuration-files">Configuration Files</a></li>
+                
+                    <li><a class="toctree-l4" href="#install-dirconfcustom-envsh">(install dir)/conf/custom-env.sh</a></li>
+                
+                    <li><a class="toctree-l4" href="#user-homedtdt-sitexml">(user home)/.dt/dt-site.xml</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#resources-management-and-performance-tuning">Resources Management and Performance Tuning</a></li>
+                
+                    <li><a class="toctree-l4" href="#cpu">CPU</a></li>
+                
+                    <li><a class="toctree-l4" href="#network">Network</a></li>
+                
+                    <li><a class="toctree-l4" href="#ram">RAM</a></li>
+                
+                    <li><a class="toctree-l4" href="#spike-management">Spike Management</a></li>
+                
+                    <li><a class="toctree-l4" href="#partitioning">Partitioning</a></li>
+                
+                    <li><a class="toctree-l4" href="#stream-modes">Stream Modes</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#multi-tenancy-and-security">Multi-Tenancy and Security</a></li>
+                
+                    <li><a class="toctree-l4" href="#kerberos-authentication">Kerberos Authentication</a></li>
+                
+                    <li><a class="toctree-l4" href="#cli-configuration">CLI Configuration</a></li>
+                
+                    <li><a class="toctree-l4" href="#dt-gateway-configuration">DT Gateway Configuration</a></li>
+                
+                    <li><a class="toctree-l4" href="#console-authentication">Console Authentication</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#run-time-management">Run-Time Management</a></li>
+                
+                    <li><a class="toctree-l4" href="#dynamic-functional-modifications">Dynamic Functional Modifications</a></li>
+                
+                    <li><a class="toctree-l4" href="#runtime-code">Runtime Code</a></li>
+                
+                    <li><a class="toctree-l4" href="#load">Load</a></li>
+                
+                    <li><a class="toctree-l4" href="#uptime">Uptime</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#attributes">Attributes</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#application-configuration">Application Configuration</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#adjusting-logging-levels">Adjusting Logging Levels</a></li>
+                
+                    <li><a class="toctree-l4" href="#application-logging">Application Logging</a></li>
+                
+                    <li><a class="toctree-l4" href="#custom-log4j-properties-for-application-packages">Custom log4j Properties for Application Packages</a></li>
+                
+                    <li><a class="toctree-l4" href="#dtgateway-logging">dtGateway Logging</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#hadoop-tuning">Hadoop Tuning</a></li>
+                
+                    <li><a class="toctree-l4" href="#yarn-vmem-pmem-ratio-tuning">YARN vmem-pmem ratio tuning</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_security/">Security</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_systemalerts/">System Alerts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apexcli/">Apex CLI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../release_notes/">Release Notes</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../glossary/">Glossary</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../additional_docs/">Resources</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">DataTorrent Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Deployment and Operations &raquo;</li>
+        
+      
+    
+    <li>Configuration</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="datatorrent-rts-configuration">DataTorrent RTS Configuration</h1>
+<p>This document covers all the information required to configure DataTorrent RTS
+to run with Hadoop 2.2+. Basic understanding of Hadoop 2.x, including HDFS and YARN
+is required.  To learn more about Hadoop 2.x visit <a href="https://hadoop.apache.org/">hadoop.apache.org</a>.</p>
+<h2 id="installation">Installation</h2>
+<p>If you have not installed DataTorrent RTS already, follow the installation instructions in the <a href="../installation/">installation guide</a>.</p>
+<hr />
+<h1 id="configuration-files">Configuration Files</h1>
+<p>System configuration is stored in local files on the machine where
+the DT Gateway was installed, as well as Apache Apex DFS root directory
+selected during the installation.  The local file <code>custom-env.sh</code> can be used
+to configure CLASSPATH, JAVA_HOME, and various runtime settings.</p>
+<p>Depending on the installation type, these may be located under <code>/opt/datatorrent/current/conf</code> or <code>~/datatorrent/current/conf</code>.  See <a href="../installation/">installation guide</a> for details.</p>
+<h3 id="install-dirconfcustom-envsh">(install dir)/conf/custom-env.sh</h3>
+<p>This file can be used to configure behavior of DT Gateway service,
+as well as <code>apex</code> command line utility.  After adding custom properties
+to this file, dtgateway and Apex CLI utilities need to be restarted for
+changes to take effect.</p>
+<p>Example custom-env.sh configuration:</p>
+<pre><code class="bash"># Increase DT Gateway memory to 2GB
+DT_GATEWAY_HEAP_MEM=2048m
+</code></pre>
+
+<p>Environment variables available for configuration</p>
+<ul>
+<li><em>DT_GATEWAY_HEAP_MEM</em> &ndash; Maximum heap size allocated to DT Gateway service.  Default is 1024m.</li>
+<li><em>DT_GATEWAY_DEBUG</em> &ndash; Set to 1 to enable additional debug information in the dtgateway.log</li>
+<li><em>DT_CLASSPATH</em> &ndash; Classpath used to load additional jars or properties for Apex CLI and dtgateway</li>
+<li><em>DT_LOG_DIR</em> &ndash; Directory for log files</li>
+<li><em>DT_RUN_DIR</em> &ndash; Directory for process id and other temporary files
+created at run time</li>
+</ul>
+<h3 id="user-homedtdt-sitexml">(user home)/.dt/dt-site.xml</h3>
+<p>This file is used to customize the DataTorrent platform and the behavior of
+applications.  It can be particularly useful for changing
+Gateway application connection address, or configuring environment specific
+settings, such as specific machine names, IP addresses, or performance
+settings which may change from environment to environment.</p>
+<p>Example of a single property configuration in dt-site.xml:</p>
+<pre><code class="xml">&lt;configuration&gt;
+  &lt;property&gt;
+      &lt;name&gt;dt.operator.MyCustomStore.host&lt;/name&gt;
+      &lt;value&gt;192.168.2.35&lt;/value&gt;
+  &lt;/property&gt;
+   …
+&lt;/configuration&gt;
+</code></pre>
+
+<h4 id="gateway-configuration-properties">Gateway Configuration Properties</h4>
+<ul>
+<li><strong>dt.gateway.listenAddress</strong> - The address and port DT Gateway listens to.  Defaults to 0.0.0.0:9090</li>
+<li><strong>dt.gateway.autoPublishInterval</strong> - The interval in milliseconds DT Gateway should publish application information on the websocket channel.  Default is 1000.</li>
+<li><strong>dt.gateway.sslKeystorePath</strong> - Specifying of the SSL Key store path enables HTTPS on the DT Gateway (See the <a href="../dtgateway_security/">dtGateway Security</a> document)</li>
+<li><strong>dt.gateway.sslKeystorePassword</strong> - The password of the SSL key store (See the <a href="../dtgateway_security/">dtGateway Security</a> document)</li>
+<li><strong>dt.gateway.allowCrossOrigin</strong> - Setting it to true allows cross origin HTTP access to the DT Gateway.  Default is false.</li>
+<li><strong>dt.gateway.authentication.(OPTION)</strong> - Determines the scheme of Hadoop security authentication (See the <a href="../dtgateway_security/">dtGateway Security</a> document).</li>
+<li><strong>dt.gateway.http.authentication</strong> - Determines the scheme of DT Gateway HTTP security authentication (See the <a href="../dtgateway_security/">dtGateway Security</a> document).</li>
+<li><strong>dt.gateway.staticResourceDirectory</strong> - The document root directory where the DT Gateway should serve from for the /static HTTP path.</li>
+</ul>
+<h4 id="application-configuration-properties">Application Configuration Properties</h4>
+<p>For a complete list of configurable application properties see the Attributes section below.</p>
+<hr />
+<h1 id="resources-management-and-performance-tuning">Resources Management and Performance Tuning</h1>
+<p>The platform provides continuous information about CPU, Memory, and Network
+usage for the system as a whole, individual running applications,
+operators, streams, and various internal components.  These statistics
+are available via <a href="../dtgateway_api/">REST API</a>, <a href="../apexcli/">Apex CLI</a>, and <a href="../dtmanage/">dtManage</a>.</p>
+<p>The platform is also responsible for</p>
+<ul>
+<li>Honoring the resource restrictions enforced by the YARN RM and taking
+    preventive action to ensure they are met. This is done at both launch time
+    (fit the execution plan to the number of containers and their
+    sizes), as well as at run time.</li>
+<li>Honoring resource constraints an application developer
+    may provide such as the amount of memory allocated to individual operators,
+    associated buffer servers, or the number of partitions.</li>
+</ul>
+<p>STRAM works with the YARN RM on a continual basis to ensure that resource
+constraints are met. As a multi-tenant application, it is crucial to be able to
+perform within given resource limits. The design of the platform enables
+effective management of all three types of resources (CPU, Memory, I/O).</p>
+<h2 id="cpu">CPU</h2>
+<p>CPU utilization is computed on a per-thread basis within a container by the
+StreamingContainer; this value is also, in effect, the per-operator value
+since each operator is a single threaded application. CPU utilization is also
+computed for the buffer-server as well as other common tasks within a container.</p>
+<h2 id="network">Network</h2>
+<p>Network usage management is needed to ensure that desired latency and
+throughput levels are achieved and any applicable SLA terms are met.</p>
+<p>The platform provides real-time statistics on the number of bytes or tuples
+processed by each operator. Application developers can modulate network traffic
+using a couple of mechanisms:
+- Adjust the locality of streams: Using THREAD_LOCAL or CONTAINER_LOCAL
+  can reduce network load substantially as discussed below.
+- Adjust the number of partitions and unifiers.</p>
+<h2 id="ram">RAM</h2>
+<p>STRAM keeps track of resource usage on per container basis. Appropriate
+attributes can be set to limit the amount of RAM on a per-operator or
+per-container basis.</p>
+<h2 id="spike-management">Spike Management</h2>
+<p>Streaming applications do not have the same throughput (events/second) for
+all 24 hours of the day; occasional spikes in the incoming data rate are common.
+Most streaming applications resolve this dichotomy
+by providing resources for the peak. So, resource utilization is
+suboptimal for most of the day because resources, though unused, are locked up
+and therefore unusable by other applications in a multi-tenant environment.</p>
+<p>The platform provides mechanisms to manage the spikes by adding partitions
+during peak, and removing them once the spike subsides.</p>
+<h2 id="partitioning">Partitioning</h2>
+<p>Partitioning is a core mechanism to distribute computation (and the associated
+resource utilization) across the cluster. It is discussed, along with the
+related concept of unifiers, in greater detail in
+<a href="../application_development/">Application development</a> and <a href="../operator_development/">Operator Development</a>.</p>
+<h2 id="stream-modes">Stream Modes</h2>
+<p>The platform support 5 stream modes, namely THREAD_LOCAL
+(intra-thread), CONTAINER_LOCAL (intra process/jvm), NODE_LOCAL (intra
+node), RACK_LOCAL (same rack), and unspecified. While designing an application,
+the modes should be decided carefully. All
+stream-modes are hints to the STRAM, and hence could be ignored if
+resources are not available, and could be changed on a run-time basis.
+There are pros and cons of each.</p>
+<ol>
+<li><strong>THREAD_LOCAL</strong>: All the operators of the ports on this stream
+    share the same thread. Tuples are thus passed via the thread call stack.
+    The performance is massive and go into 100s of millions
+    of tuples/sec. Do note that if the operations are compute intensive,
+    them THREAD_LOCAL may not perform better than CONTAINER_LOCAL.
+    Thread call stack is extremely efficient in terms of I/O (there is
+    no I/O here), but the same thread does both the upstream and
+    downstream computation. A limitation is that all downstream
+    operators on this stream must have only one input port connected. If
+    the JVM process is lost, all the operators are lost, and will be
+    restarted again in another container.</li>
+<li><strong>CONTAINER_LOCAL</strong>: All the operators of the ports on this
+    stream are in the same process. Each denotes a separate thread, and
+    tuples are passed in memory via a connectionBuffer as the intra-process
+    communication mechanism.
+    This mode has very high throughput and can easily do more than
+    million tuples/sec. However, since there is no bufferserver, features that
+    it provides (spooling, persistence) are not available, so memory needs
+    may grow.
+    This mode relies on the downstream operators consuming tuples, on average,
+    at least as fast as they are emitted by the upstream operator. As with the
+    previous mode, if the JVM process is
+    lost, all the operators are lost, and will be restarted again in
+    another container.</li>
+<li><strong>NODE_LOCAL</strong>: All operators on this stream are on the
+    same node. Inter-process communication via the local loopback interface is
+    used. This mode is also very fast, as data does not traverse the NIC
+    but it has a buffer-server and so all the features that the buffer-server
+    provides (spooling, persistence) are available. If one container dies, all
+    the operators in that container will obviously need to be recreated and
+    restarted, but other operators remain unaffected. However if
+    a node dies then all of its containers and the operators hosted by them
+    need to be restarted.</li>
+<li><strong>RACK_LOCAL</strong>: All operators on this stream are in the
+    same rack. Communication is not as fast as the previous modes since data
+    needs to pass through the NIC. Like the previous mode, it has a
+    buffer-server and so all the features that buffer-server provides are
+    available. Use of this mode reduces the probability of multi-operator
+    outage since multiple operators are not constrained to run on the same
+    node. This mode however will be affected by outage of a switch.</li>
+<li>Unspecified: This is the default mode and STRAM makes no special effort
+    to achieve any particular locality. There are thus no guarantees on whether
+    a stream will cross rack, node, or process boundaries.</li>
+</ol>
+<p><img alt="" src="../images/configuration/image02.png" /></p>
+<hr />
+<h1 id="multi-tenancy-and-security">Multi-Tenancy and Security</h1>
+<p>The platform is a YARN native application, and so all security features
+available in Hadoop also apply for securing Apache Apex applications.<br />
+The default security for the streaming application is Kerberos based.</p>
+<h2 id="kerberos-authentication">Kerberos Authentication</h2>
+<p>Kerberos is a ticket based authentication system that provides
+authentication in a distributed environment where authentication between
+multiple users, hosts and services is needed. It is the de-facto
+authentication mechanism supported in Hadoop. To use Kerberos
+authentication, the Hadoop installation must first be configured for
+secure mode with Kerberos. Please refer to the administration guide of
+your Hadoop distribution on how to do that. Once Hadoop is running with
+Kerberos security enabled, DataTorrent platform also needs to be
+configured for Kerberos. There are two parts of the platform that need
+to be configured, CLI (Command Line Interface) and DT Gateway.</p>
+<h2 id="cli-configuration">CLI Configuration</h2>
+<p>The DataTorrent command line interface is used to launch
+applications along with performing various other operations on
+applications. The security configuration for the CLI program is described in the Apache Apex security document available <a href="https://apex.apache.org/docs/apex/security/">here</a>.</p>
+<h2 id="dt-gateway-configuration">DT Gateway Configuration</h2>
+<p>DT Gateway is a service that provides the backend functionality
+for the DataTorrent UI console. In a Hadoop cluster with Kerberos security enabled additional configuration is needed for this service to communicate with Hadoop. This is described in <a href="../dtgateway_security/">Gateway Security</a>.</p>
+<h2 id="console-authentication">Console Authentication</h2>
+<p>Access to the UI console can be secured by having users authenticate before they can access the contents of the console. Different authentication mechanisms are supported including local password,
+Kerberos and LDAP. Please refer to <a href="../dtgateway_security/">Gateway Security</a> for details of how to configure this.</p>
+<h1 id="run-time-management">Run-Time Management</h1>
+<p>Unlike Map-Reduce, streaming applications never end. They are designed
+to run 24x7, processing a continuous stream of input data. This makes run-time
+management of the applications very critical. The platform provides strong
+support for various operations. These include</p>
+<ul>
+<li>Runtime metrics and stats on various components of the
+    application including aggregated metrics</li>
+<li>Ability to change the logical plan, physical plan, and
+    execution plan of the application</li>
+<li>Ability to dump the current state of the application to enable
+    re-launch (in case of Hadoop grid outage)</li>
+<li>Integration of STRAM state with Zookeeper (in later versions)</li>
+<li>Debugger, charting, and other tools triggered at run time</li>
+</ul>
+<h2 id="dynamic-functional-modifications">Dynamic Functional Modifications</h2>
+<p>Platform supports changes to an application at multiple stages.
+Application design parameters (attributes and properties) can be
+changed at launch time via the job configuration file and during runtime via
+the <code>apex</code> tool or using the REST webservice calls. Support for runtime
+changes is critical for operability as it enables changes to a running
+application without being forced to kill it. This is a critical need for
+streaming applications and a significant difference from map-reduce/batch
+applications.</p>
+<p>From an operational perspective, the platform will allow changes
+in both the logical plan (query modification, or properties
+modifications) and the physical plan (attribute modification generally and
+partitioning changes specifically).</p>
+<p>Examples of dynamic changes to logical plan include
+-   Changing properties of an operator
+-   Adding or deleting a sub-dag. Some examples are
+  -   Change in persistence
+  -   Insertion of charts, debugger etc.
+  -   Query insertion on a particular stream</p>
+<p>Any change to a logical plan will change the physical and the
+execution plan. Examples of dynamic changes only to physical plan
+include</p>
+<ul>
+<li>Change in attributes that triggers STRAM to change the number
+    of physical operators.</li>
+<li>Runtime changes in load or grid resources (via RM, or
+    outages), that triggers STRAM to change the physical plan to meet
+    SLA, latency, resources usage goals</li>
+<li>Direct request to change the number of partitions of
+    an operator. For example new input adapters to handle expected
+    uptick in ingestion rate</li>
+</ul>
+<p>Any change to a physical plan will change the execution plan.
+Examples of dynamic changes only to the execution plan include</p>
+<ul>
+<li>Changes in attributes that need a new execution plan</li>
+<li>Changes to stream modes</li>
+<li>Node recovery from an outage</li>
+</ul>
+<h2 id="runtime-code">Runtime Code</h2>
+<p>STRAM is able to reuse and move any code that is supplied with the
+initial launch of the application. The default behavior is for the jar
+to include all the library templates in addition to the application
+code. This enables STRAM to make changes to the application as the code
+is already available.</p>
+<h2 id="load">Load</h2>
+<p>STRAM manages runtime changes to ensure that the application
+scales up and down. This includes changes in load, changes in skew,
+changes in resource behavior (network goes slow) etc. STRAM proactively
+monitors the application and will make run time changes as
+needed.</p>
+<h2 id="uptime">Uptime</h2>
+<p>Node recovery is a change in the execution plan caused by external
+events (node outage) or RM taking resources back (preemption). The
+platform enables node recovery in three modes, namely, at least once, at
+most once, and exactly once. SLA enforcement in terms of latency,
+uptime, etc. is done via runtime changes.</p>
+<hr />
+<h1 id="attributes">Attributes</h1>
+<p>Attribute specification is the process by which operational
+customization is achieved. Currently, modification of attributes on an
+application that is already running is not supported. We intend to add
+this in future versions on an attribute by attribute basis. Attributes
+are parameters that the platform recognizes and acts on and are not part
+of user code. Attributes are the mechanism by which platform features
+can be customized. They are specified with a key and a value. In this
+section we list the attributes, their default values, and briefly
+explain what they do.</p>
+<p>There are three kinds of attributes</p>
+<ul>
+<li>Application attributes</li>
+<li>Operator attributes</li>
+<li>Port attributes</li>
+</ul>
+<p>For implementation details look at the <a href="https://www.datatorrent.com/docs/apidocs/">javadocs</a>. Some very common attributes are</p>
+<ul>
+<li>Application: Application window, Application name, Checkpoint
+    window, Container JVM options, container memory, containers, max
+    count, heartbeat interval, STRAM memory, launch mode, tuple
+    recording, etc.  See <a href="https://www.datatorrent.com/docs/apidocs/com/datatorrent/api/Context.DAGContext.html">Context.DAGContext</a></li>
+<li>Operators: Initial partitions, checkpoint window, locality
+    host, locality rack, memory, recovery attempts, stateless, storage
+    agent, etc. See <a href="https://www.datatorrent.com/docs/apidocs/com/datatorrent/api/Context.OperatorContext.html">Context.OperatorContext</a></li>
+<li>Ports: Queue capacity, auto_record, partition parallel, etc.
+    See <a href="https://www.datatorrent.com/docs/apidocs/com/datatorrent/api/Context.PortContext.html">Context.PortContext</a></li>
+</ul>
+<p>These attributes are available via the <code>Context</code> class and can be
+accessed in the <code>setup</code> call of an operator.</p>
+<h1 id="application-configuration">Application Configuration</h1>
+<p>Starting from RTS release 2.0.0, applications are configured through Application Packages.  Please refer to the
+<a href="../application_packages/">Application Packages</a> for details.</p>
+<h1 id="adjusting-logging-levels">Adjusting Logging Levels</h1>
+<h2 id="application-logging">Application Logging</h2>
+<p>Logging levels for specific classes or groups of classes can be raised or
+lowered at runtime from <a href="../dtmanage/">dtManage</a> application view with the
+<em>Set Log Levels</em> button.  Explicit class paths or patterns like
+<code>org.apache.hadoop.*</code> or <code>com.datatorrent.*</code> can be used to adjust logging to
+valid <code>log4j</code> levels such as DEBUG or INFO. This produces immediate change in
+the logs, but does not persist across application restarts.</p>
+<p>For permanent changes to logging levels, lines similar to these can be inserted
+into <code>dt-site.xml</code>. To specify multiple patterns, use a comma-separated list.</p>
+<pre><code class="xml">&lt;property&gt;
+  &lt;name&gt;dt.loggers.level&lt;/name&gt;
+  &lt;value&gt;com.datatorrent.*:DEBUG,org.apache.*:INFO&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+
+<p>Full DEBUG logging can be enabled by adding these lines:</p>
+<pre><code class="xml">&lt;property&gt;
+  &lt;name&gt;dt.attr.DEBUG&lt;/name&gt;
+  &lt;value&gt;true&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+
+<h2 id="custom-log4j-properties-for-application-packages">Custom log4j Properties for Application Packages</h2>
+<p>There are two ways of setting custom <code>log4j</code> properties in an Apex application
+package</p>
+<ol>
+<li>
+<p>At the Application level. This will ensure that the custom log4j properties
+   are used for all containers including Application Master. An example:</p>
+<pre><code>&lt;property&gt;
+  &lt;name&gt;dt.attr.CONTAINER_JVM_OPTIONS&lt;/name&gt;
+  &lt;value&gt;-Dlog4j.configuration=custom_log4j.properties&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+</li>
+<li>
+<p>At an individual operator level. This sets the custom log4j properties only
+   on the container that is hosting the operator.  An example:</p>
+<pre><code>&lt;property&gt;
+  &lt;name&gt;dt.operator.&lt;OPERATOR_NAME&gt;.attr.JVM_OPTIONS&lt;/name&gt;
+  &lt;value&gt; -Dlog4j.configuration=custom_log4j.properties&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+</li>
+</ol>
+<p>Make sure that the file <code>custom_log4j.properties</code> is part of your application
+jar and is located under <code>src/main/resources</code>.  Some examples of custom log4j
+properties files follow.</p>
+<ol>
+<li>
+<p>Writing to a file</p>
+<pre><code>log4j.rootLogger=${hadoop.root.logger} // this is set to INFO / DEBUG, RFA
+log4j.appender.RFA=org.apache.log4j.RollingFileAppender
+log4j.appender.RFA.layout=org.apache.log4j.PatternLayout
+log4j.appender.RFA.layout.ConversionPattern=%d{ISO8601} [%t] %-5p %c{2} %M - %m%n
+log4j.appender.RFA.File=${hadoop.log.dir}/${hadoop.log.file}
+</code></pre>
+</li>
+<li>
+<p>Writing to Console</p>
+<pre><code>log4j.rootLogger=${hadoop.root.logger} // this is set to INFO / DEBUG, RFA
+log4j.appender.RFA=org.apache.log4j.ConsoleAppender
+log4j.appender.RFA.layout.ConversionPattern=%d{ISO8601} [%t] %-5p %c{2} %M - %m%n
+log4j.appender.RFA.layout=org.apache.log4j.PatternLayout
+</code></pre>
+</li>
+</ol>
+<h2 id="dtgateway-logging">dtGateway Logging</h2>
+<p>DT Gateway log level can be changed to DEBUG by settings following
+environment variable before launching DT Gateway (as of version
+2.0).</p>
+<pre><code>export DT_GATEWAY_DEBUG=1
+</code></pre>
+<h1 id="hadoop-tuning">Hadoop Tuning</h1>
+<h3 id="yarn-vmem-pmem-ratio-tuning">YARN vmem-pmem ratio tuning</h3>
+<p>After performing a new installation, sometimes the following
+message is displayed while launching an application:</p>
+<pre><code>Application application_1408120377110_0002 failed 2
+times due to AM Container for appattempt_1408120377110_0002_000002
+exited with exitCode: 143 due to:
+Container\[pid=27163,containerID=container_1408120377110_0002_02_000001\]
+is running beyond virtual memory limits. Current usage: 308.1 MB of 1 GB
+physical memory used; 2.5 GB of 2.1 GB virtual memory used. Killing
+container.
+
+Dump of the process-tree for container_1408120377110_0002_02_000001 :
+
+
+PID PPID PGRPID SESSID CMD_NAME USER_MODE_TIME(MILLIS) SYSTEM_TIME(MILLIS) VMEM_USAGE(BYTES) RSSMEM_USAGE(PAGES) FULL_CMD_LINE
+
+27208 27163 27163 27163 (java) 604 19 2557546496 78566
+/usr/java/default/bin/java
+-agentlib:jdwp=transport=dt_socket,server=y,suspend=n -Xmx768m
+-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp/dt-heap-2.bin
+-Dhadoop.root.logger=DEBUG,RFA
+-Dhadoop.log.dir=/disk2/phd/dn/yarn/userlogs/application_1408120377110_0002/container_1408120377110_0002_02_000001
+</code></pre>
+
+<p>To fix this <code>yarn.nodemanager.vmem-pmem-ratio</code> in <code>yarn-site.xml</code> should be
+increased from 2 to 5 or higher.  Here is an example setting:</p>
+<pre><code class="xml">&lt;property&gt;
+   &lt;description&gt;Ratio between virtual memory to physical memory when
+     setting memory limits for containers. Container allocations are
+     expressed in terms of physical memory, and virtual memory usage
+     is allowed to exceed this allocation by this ratio.
+   &lt;/description&gt;
+   &lt;name&gt;yarn.nodemanager.vmem-pmem-ratio&lt;/name&gt;
+   &lt;value&gt;10&lt;/value&gt;
+ &lt;/property&gt;
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../dtgateway_security/" class="btn btn-neutral float-right" title="Security">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../installation/" class="btn btn-neutral" title="Installation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../installation/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../dtgateway_security/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

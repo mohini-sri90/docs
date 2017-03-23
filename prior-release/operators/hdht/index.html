@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../favicon.ico">
+  
+  <title>HDHT - DataTorrent Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "HDHT";
+    var mkdocs_page_input_path = "operators/hdht.md";
+    var mkdocs_page_url = "/operators/hdht/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44586211-2', 'docs.datatorrent.com');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> DataTorrent Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">DataTorrent RTS</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Demos</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../demos/">Running Apps</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../sandbox/">Sandbox</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Development</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../create/">Creating Applications</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../beginner/">Beginner's Guide</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Tutorials</span></li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Top N Words</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tutorials/topnwords/">Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tutorials/topnwords-c1/">Development Environment</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tutorials/topnwords-c2/">Building in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tutorials/topnwords-c3/">Building with dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tutorials/topnwords-c4/">Monitoring with dtManage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tutorials/topnwords-c5/">Visualizing with dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tutorials/topnwords-c7/">Advanced Features</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tutorials/topnwords-c6/">Appendix</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Sales Dimensions</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tutorials/salesdimensions/">Building in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tutorials/salesdimensions-c2/">Building with dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tutorials/salesdimensions-c3/">Visualizing with dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tutorials/salesdimensions-c4/">Monitoring with dtManage</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../apex_development_setup/">Apex Development Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../configure_IDE/">Generate New Project in IDE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../application_development/">Applications</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../application_packages/">Application Packages</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../configuration_packages/">Configuration Packages</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../operator_development/">Operators</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Library Operators</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../kafkaInputOperator/">Kafka Input</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dimensions_computation/">Dimension Computation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">HDHT</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#hdht">HDHT</a></li>
+                
+                    <li><a class="toctree-l4" href="#concepts">Concepts</a></li>
+                
+                    <li><a class="toctree-l4" href="#interface">Interface</a></li>
+                
+                    <li><a class="toctree-l4" href="#architecture">Architecture</a></li>
+                
+                    <li><a class="toctree-l4" href="#configuration">Configuration</a></li>
+                
+                    <li><a class="toctree-l4" href="#example">Example</a></li>
+                
+                    <li><a class="toctree-l4" href="#limitations">Limitations</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../deduper/">Deduper</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../file_splitter/">File Splitter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../block_reader/">Block Reader</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../file_output/">File Output</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../snapshot_server/">Snapshot Server</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app_data_framework/">App Data Framework</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dtgateway_api/">REST API</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>App Templates</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/hdfs-sync/">HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/s3-to-hdfs-sync/">S3 to HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/kafka-to-hdfs-sync/">Kafka to HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/hdfs-line-copy/">HDFS to HDFS Line Copy App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/hdfs-to-kafka-sync/">HDFS to Kafka Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/database-to-hdfs/">Database dump to HDFS App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/database-to-database-sync/">Database to Database Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/kafka-to-database-sync/">Kafka to Database Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/kafka-to-hdfs-filter/">Kafka to HDFS Filter App</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Applications</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app_data_tracker/">App Data Tracker</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dtingest/">dtIngest</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Platform</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../rts/">RTS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dtmanage/">dtManage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dtassemble/">dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dtdashboard/">dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dtgateway/">dtGateway</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../apex/">Apache Apex</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../apex_malhar/">Apache Apex-Malhar</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Deployment and Operations</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../installation/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../configuration/">Configuration</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dtgateway_security/">Security</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dtgateway_systemalerts/">System Alerts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../apexcli/">Apex CLI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../release_notes/">Release Notes</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../glossary/">Glossary</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../additional_docs/">Resources</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">DataTorrent Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Development &raquo;</li>
+        
+      
+        
+          <li>Library Operators &raquo;</li>
+        
+      
+    
+    <li>HDHT</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="hdht">HDHT</h1>
+<p>Some applications need to compute values based not only on current event flow but also on historical data. HDHT provides a simple interface to store
+and access historical data in an operator. HDHT is an embedded state store with key value interface on top of the Hadoop file system. It is fully integrated into the Apache Apex operator model and provides persistent storage with exactly-once guarantee.</p>
+<p>The programming model of a key-value store or hash table can be applied to a wide range of common use cases. Within most streaming applications, ingested events or computed data already carry the key that can be used for storage and retrieval. Many operations performed during computation require key based access. HDHT provides an embedded key value store for the application. The advantage of HDHT over other key value stores in streaming applications are</p>
+<ul>
+<li>Embedded, Hadoop native solution. Does not require install/manage of other services.</li>
+<li>Integrates with Apex check-pointing mechanism to provide exactly once guarantee.</li>
+</ul>
+<p>This document provides overview of HDHT and instructions for using HDHT in an operator for storing
+and retrieving state of the operator.</p>
+<h2 id="concepts">Concepts</h2>
+<h4 id="write-ahead-log">Write Ahead Log</h4>
+<p>Each tuple written to HDHT is written to Write Ahead Log (WAL) first. The WAL is used
+to recover in-memory state and provide exactly once processing after failure of an operator. HDHT
+stores WAL on HDFS to prevent data loss during node failure.</p>
+<h4 id="uncommitted-cache">Uncommitted Cache</h4>
+<p>Uncommitted cache is in-memory key value store. Initially updates are written to this memory store, to avoid disk I/Os on every update. When data in Uncommitted cached reaches a configured limit, it is written on the disk. It avoids frequent data flushes and small file creation by writing data in bulk from the cache to disk thereby also improving throughput.</p>
+<h4 id="data-files">Data Files</h4>
+<p>HDHT flushes memory to persisted storage periodically. The data is kept indexed for efficient retrieval of given key. HDHT supports multiple data file backends. Default backend used is DTFile, which is a modified version of Hadoop TFile with block cache for speedy lookups.
+Available backends are
+- <code>TFile</code>: Files are written in hadoop <a href="https://hadoop.apache.org/docs/stable/api/org/apache/hadoop/io/file/tfile/TFile.html">Tfile</a> format
+- <code>DTFile</code>: Files are written in TFile format; during lookup HDHT maintains a block cache to reduce disk I/Os.
+- <code>HFile</code> : Files are written in HBase format.</p>
+<h4 id="metadata">Metadata</h4>
+<p>Metadata file keeps information about data files. Each data file record contains start key and name of the file. Metadata file also contains WAL recovery information, which is used during recovery after failure.</p>
+<h4 id="partition-hdht-bucket">Partition (HDHT Bucket)</h4>
+<p>By default, when the operator is partitioned, the partitioning is reflected by HDHT in the filesystem by using a separate directory for each operator partition. Each directory is accessed only by the associated operator partition. Each partition has its own WAL and metadata file. Each
+HDHT partition is identified by bucketKey, which is also the name of the subdirectory used for
+storing data for the partition.</p>
+<h2 id="interface">Interface</h2>
+<p>HDHT supports two basic operations <strong>get</strong> and <strong>put</strong>, they are wrapped by interfaces HDHT.Writer, HDHT.Reader and an abstract implementation is provided by the HDHTReader and HDHTWriter classes.</p>
+<p>Operations supported by HDHT are.</p>
+<pre><code class="java">byte[] get(long bucketKey, Slice key) throws IOException;
+void put(long bucketKey, Slice key, byte[] value) throws IOException;
+byte[] getUncommitted(long bucketKey, Slice key);
+</code></pre>
+
+<p>All methods takes bucketKey as the first argument. The bucketKey is used as a partition key within HDHT.</p>
+<ul>
+<li><strong>put</strong> store data in HDHT. The data written is written to the WAL first and then stored in uncommitted cache.
+After enough dirty data is accumulated in cache or enough time has elapsed from last flush, this cache is flushed to the data files.</li>
+<li><strong>getUncommitted</strong> does a lookup in uncommitted cache. Uncommitted cache is in-memory key value store.</li>
+<li><strong>get</strong> does a lookup in persisted storage file and return the data. <strong>Note</strong> <em>get</em> does not
+ return data from uncommitted cache.</li>
+</ul>
+<h2 id="architecture">Architecture</h2>
+<p>Please refer to <a href="https://www.datatorrent.com/data-store-for-scalable-stream-processing/">HDHT Blog</a>
+for the architecture of HDHT.</p>
+<h3 id="codec">Codec</h3>
+<p>HDHT provides an abstract implementation <em>AbstractSinglePortHDHTWriter</em>, which uses a user defined codec for serialization and de-serialization.</p>
+<pre><code class="java">public interface HDHTCodec&lt;EVENT&gt; extends StreamCodec&lt;EVENT&gt;
+{
+  byte[] getKeyBytes(EVENT event);
+  byte[] getValueBytes(EVENT event);
+  EVENT fromKeyValue(Slice key, byte[] value);
+}
+</code></pre>
+
+<p>It has following methods
+- <strong>getKeyBytes</strong> Return key as a byte array from the event.
+- <strong>getValueBytes</strong> Return value as a byte array from event.
+- <strong>fromKeyValue</strong> HDHT will use this function to deserialize key and value byte arrays to reconstruct the user event object.
+- <strong>getPartition</strong> This method is inherited from StreamCodec, its return value is used to determine HDHT bucket where this event will be written. The same stream codec is used
+ for partition of the input port which make sure that data for same event goes to a single partition
+ of the operator.</p>
+<h2 id="configuration">Configuration</h2>
+<h3 id="filestore">fileStore</h3>
+<p>This setting determines the format in which files are written. Default is DTFileImpl.</p>
+<h3 id="basepath">basePath</h3>
+<p>Location in HDFS where data files are stored. This is required configuration parameter.</p>
+<p>Property File Syntax</p>
+<pre><code class="xml">   &lt;property&gt;
+     &lt;name&gt;dt.operator.{name}.store.basePath&lt;/name&gt;
+     &lt;value&gt;/home/hdhtdatadir&lt;/value&gt;
+  &lt;/property&gt;
+</code></pre>
+
+<p>Java API.</p>
+<pre><code class="java">/* select DTFile backend with basePath set to HDHTdata */
+TFileImpl.DTFileImpl hdsFile = new TFileImpl.DTFileImpl();
+hdsFile.setBasePath(&quot;HDHTdata&quot;);
+store.setFileStore(hdsFile);
+</code></pre>
+
+<h3 id="maxfilesize">maxFileSize</h3>
+<p>Size of each file. Default value is 134217728134217728 (i.e 128MB).</p>
+<p>Property File Syntax</p>
+<pre><code class="xml"> &lt;property&gt;
+   &lt;name&gt;dt.operator.{name}.maxFileSize&lt;/name&gt;
+   &lt;value&gt;{value in bytes}&lt;/value&gt;
+ &lt;/property&gt;
+</code></pre>
+
+<p>Java API.</p>
+<pre><code class="java">store.setMaxFileSize(64 * 1024 * 1024);
+</code></pre>
+
+<h3 id="flushsize">flushSize</h3>
+<p>HDHT will flush data to files after number of unwritten tuples crosses this limit. Default value is 1000000.</p>
+<p>Property File Syntax</p>
+<pre><code class="xml">&lt;property&gt;
+  &lt;name&gt;dt.operator.{name}.flushSize&lt;/name&gt;
+  &lt;value&gt;{number}&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+
+<p>Java API.</p>
+<pre><code class="java">store.setFlushSize(1000000);
+</code></pre>
+
+<h3 id="flushintervalcount">flushIntervalCount</h3>
+<p>This setting will force data flush even if number of tuples are below <em>flushSize</em>. Default value is 120 windows.</p>
+<p>Property File Syntax</p>
+<pre><code class="xml"> &lt;property&gt;
+   &lt;name&gt;dt.operator.{name}.flushIntervalCount&lt;/name&gt;
+   &lt;value&gt;{number of windows}&lt;/value&gt;
+ &lt;/property&gt;
+</code></pre>
+
+<p>Java API.</p>
+<pre><code class="java">store.setFlushIntervalCount(120);
+</code></pre>
+
+<h3 id="maxwalfilesize">maxWalFileSize</h3>
+<p>Write Ahead Log segment size. Older segments are deleted once data is written to the data files. Default value is 67108864 (64MB)</p>
+<p>Property File Syntax</p>
+<pre><code class="xml">&lt;property&gt;
+  &lt;name&gt;dt.operator.{name}.maxWalFileSize&lt;/name&gt;
+  &lt;value&gt;{value in bytes}&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+
+<p>Java API.</p>
+<pre><code class="java">store.setMaxWalFileSize(128 * 1024 * 1024);
+</code></pre>
+
+<h2 id="example">Example</h2>
+<p>This is a sample reference implementation, which computes how many times a word was seen in an
+ application. The partial count is stored in the HDHT. The application does a lookup for
+the previous count and writes back the incremented count in HDHT.</p>
+<h3 id="store-operator">Store Operator</h3>
+<p>HDHT provides following abstract implementations
+<em> <code>HDHTReader</code> - This class implements functionality required for </em>get<em>, It access HDHT
+in read-only mode.
+</em> <code>HDHTWriter</code> - This class extends functionality of <code>HDHTReader</code> by adding support for <em>put</em>,
+  this class also maintains <em>uncommitted cache</em>, which can be accessed through <em>getUncommitted</em>
+  method.
+* <code>AbstractSinglePortHDHTWriter</code> - This class extends from <code>HDHTWriter</code> and provides common functionality
+required for the operator. This class support code for operator partitioning. Also it provides an input port with a default implementation of
+storing value received on the port to the HDHT using the coded provided.</p>
+<p>For this example we will use <code>AbstractSinglePortHDHTWriter</code> for the store, we need to
+implement codec which is used by <code>AbstractSinglePortHDHTWriter</code> for serialization and deserialization. Following is
+a simple serializer which serializes key and ignores the value part, as the input to the operator is only keys.</p>
+<h3 id="implement-a-codec">Implement a Codec</h3>
+<pre><code class="java">  public static class StringCodec extends KryoSerializableStreamCodec&lt;String&gt; implements HDHTCodec&lt;String&gt; {
+    @Override
+    public byte[] getKeyBytes(String s)
+    {
+      return s.getBytes();
+    }
+
+    @Override
+    public byte[] getValueBytes(String s)
+    {
+      return s.getBytes();
+    }
+
+    @Override
+    public String fromKeyValue(Slice key, byte[] value)
+    {
+      return new String(key.buffer, key.offset, key.length);
+    }
+  }
+</code></pre>
+
+<p>The store operator is implemented as shown below, we will need to provide an implementation of
+<code>getCodec</code>, and override <code>processEvent</code> to change default behavior of storing data in HDHT
+directly.</p>
+<pre><code class="java">public class HDHTWordCounter extends AbstractSinglePortHDHTWriter&lt;String&gt;
+{
+  public transient DefaultOutputPort&lt;Pair&lt;String, Long&gt;&gt; out = new DefaultOutputPort&lt;&gt;();
+  private transient HashMap&lt;String, AtomicLong&gt; cache;
+
+  @Override
+  protected HDHTCodec&lt;String&gt; getCodec()
+  {
+    return new StringCodec();
+  }
+
+  @Override
+  protected void processEvent(String word) throws IOException
+  {
+    AtomicLong count = cache.get(word);
+    if (count == null) {
+      count = new AtomicLong(0L);
+      cache.put(word, count);
+    }
+    count.incrementAndGet();
+  }
+
+  private void updateCount() throws IOException
+  {
+    for(Map.Entry&lt;String, AtomicLong&gt; entry : cache.entrySet()) {
+      String word = entry.getKey();
+      long prevCount = 0;
+      byte[] key = codec.getKeyBytes(word);
+      Slice keySlice = new Slice(key);
+      long bucketKey = getBucketKey(word);
+      /** First look for cached data */
+      byte[] value = getUncommitted(bucketKey, keySlice);
+      if (value == null) {
+        /** look into persisted data files */
+        value = get(bucketKey, keySlice);
+        if (value == null) {
+          value = ByteBuffer.allocate(8).putLong(0).array();
+        }
+      }
+
+      prevCount = ByteBuffer.wrap(value).getLong();
+
+      /** update count by taking new event into account */
+      prevCount += entry.getValue().get();
+
+      /** save computed result back to HDHT */
+      put(bucketKey, keySlice, ByteBuffer.wrap(value).putLong(prevCount).array());
+
+      /* emit updated counts on the output port */
+      out.emit(new Pair&lt;&gt;(word, prevCount));
+    }
+  }
+
+  @Override
+  public void beginWindow(long windowId)
+  {
+    super.beginWindow(windowId);
+    cache = new HashMap&lt;&gt;();
+  }
+
+  @Override
+  public void endWindow()
+  {
+    try {
+      updateCount();
+      super.endWindow();
+    } catch (IOException e) {
+
+      throw new RuntimeException(&quot;Unable to flush to HDHT&quot;);
+    }
+  }
+}
+</code></pre>
+
+<p>Sample Application.</p>
+<pre><code class="java">@ApplicationAnnotation(name=&quot;HDHTWordCount&quot;)
+public class HDHTWordCountApp implements StreamingApplication
+{
+  @Override
+  public void populateDAG(DAG dag, Configuration configuration)
+  {
+    AbstractFileInputOperator.FileLineInputOperator gen = dag.addOperator(&quot;Reader&quot;, new AbstractFileInputOperator.FileLineInputOperator());
+    gen.setDirectory(&quot;/home/data&quot;);
+
+    WordSplitter splitter = dag.addOperator(&quot;Splitter&quot;, new WordSplitter());
+
+    HDHTWordCounter store = dag.addOperator(&quot;Store&quot;, new HDHTWordCounter());
+    ConsoleOutputOperator console = dag.addOperator(&quot;Console&quot;, new ConsoleOutputOperator());
+
+    TFileImpl.DTFileImpl hdsFile = new TFileImpl.DTFileImpl();
+    hdsFile.setBasePath(&quot;WALBenchMarkDir&quot;);
+    store.setFileStore(hdsFile);
+
+    dag.addStream(&quot;lines&quot;, gen.output, splitter.input);
+    dag.addStream(&quot;s1&quot;, splitter.output, store.input);
+    dag.addStream(&quot;s2&quot;, store.out, console.input);
+  }
+}
+</code></pre>
+
+<h3 id="performance-tuning">Performance tuning</h3>
+<h4 id="effect-of-frequent-wal-flushes">Effect of frequent WAL flushes.</h4>
+<p>HDHT stores Write Ahead Log (WAL) on HDFS, WAL is flushed at end of every application window. Operator will be blocked till WAL is persisted on the disks. This flush will add additional delay
+to the operator. To avoid frequent delay we can reduce the frequency of flush by increasing APPLICATION_WINDOW_SIZE.</p>
+<h4 id="application-level-cache">Application Level Cache</h4>
+<p>Maintain a cache to avoid frequent serialization and de-serialization of events while accessing HDHT. For example in the provided example the operator keeps computed counts till the endWindow and flushes the data to HDHT at end of the application window. If duplicate keys are seen within an application window we will save on serialization and de-serialization time.</p>
+<h4 id="key-design">Key design</h4>
+<p>HDHT gives best performance if keys are monotonically increasing, In this case
+HDHT does not have to overwrite existing files, which avoids expensive disk I/O thus yielding
+optimal performance. Overwriting existing file is costly operation, as it involves reading file data
+to memory and applying new changes from committed cached which falls within the key range of file, and
+writing back changes to disk again. If you are storing time series data in HDHT, it is best to
+use timestamp as the leading field in the key.</p>
+<p>For keys which are not monotonically increasing, key design should be such that hot
+keys falls in small number of files. For example, suppose each file size is <code>S</code> bytes and flush is
+triggered every <code>T</code> seconds, and HDFS write bandwidth per container is <code>B</code> bytes per second, in this case we can sustain the write throughput, if keys processed within 30 seconds span at most <code>(T / (S/B))</code> files. </p>
+<p>If S, T and B are 128MB, 30 seconds, and 40MB respectively, this expression evaluates to 10, so if your keys span more than 10 files with 30 seconds, the write cannot be sustained.</p>
+<h4 id="file-backend">File Backend</h4>
+<p>Prefer <code>DTFile</code> backend implementation over <code>TFile</code> backend implementation if you are going to issue frequent <code>get</code> operations. DTFile backend caches file blocks
+in memory which reduces disk I/O during cache hit.</p>
+<h2 id="limitations">Limitations</h2>
+<ul>
+<li>Dynamic Partitioning is not supported yet.</li>
+<li>Write to same bucket from multiple operator is not supported. The default implementation use derives bucketKey based on number of operator partitions and hashcode of the event. If user chooses to use different bucketKey he needs to make sure that a single bucketKey is handled by only one operator partition.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../deduper/" class="btn btn-neutral float-right" title="Deduper">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../dimensions_computation/" class="btn btn-neutral" title="Dimension Computation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../dimensions_computation/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../deduper/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../favicon.ico">
+  
+  <title>Troubleshooting - DataTorrent Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Troubleshooting";
+    var mkdocs_page_input_path = "troubleshooting.md";
+    var mkdocs_page_url = "/troubleshooting/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44586211-2', 'docs.datatorrent.com');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> DataTorrent Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">DataTorrent RTS</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Demos</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../demos/">Running Apps</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../sandbox/">Sandbox</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Development</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../create/">Creating Applications</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../beginner/">Beginner's Guide</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Tutorials</span></li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Top N Words</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords/">Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c1/">Development Environment</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c2/">Building in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c3/">Building with dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c4/">Monitoring with dtManage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c5/">Visualizing with dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c7/">Advanced Features</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c6/">Appendix</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Sales Dimensions</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions/">Building in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions-c2/">Building with dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions-c3/">Visualizing with dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions-c4/">Monitoring with dtManage</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apex_development_setup/">Apex Development Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../configure_IDE/">Generate New Project in IDE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../application_development/">Applications</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../application_packages/">Application Packages</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../configuration_packages/">Configuration Packages</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operator_development/">Operators</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Library Operators</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/kafkaInputOperator/">Kafka Input</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/dimensions_computation/">Dimension Computation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/hdht/">HDHT</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/deduper/">Deduper</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/file_splitter/">File Splitter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/block_reader/">Block Reader</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/file_output/">File Output</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/snapshot_server/">Snapshot Server</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app_data_framework/">App Data Framework</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_api/">REST API</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>App Templates</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/hdfs-sync/">HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/s3-to-hdfs-sync/">S3 to HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kafka-to-hdfs-sync/">Kafka to HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/hdfs-line-copy/">HDFS to HDFS Line Copy App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/hdfs-to-kafka-sync/">HDFS to Kafka Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/database-to-hdfs/">Database dump to HDFS App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/database-to-database-sync/">Database to Database Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kafka-to-database-sync/">Kafka to Database Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kafka-to-hdfs-filter/">Kafka to HDFS Filter App</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Applications</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app_data_tracker/">App Data Tracker</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtingest/">dtIngest</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Platform</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../rts/">RTS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtmanage/">dtManage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtassemble/">dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtdashboard/">dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway/">dtGateway</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apex/">Apache Apex</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apex_malhar/">Apache Apex-Malhar</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Deployment and Operations</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../installation/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../configuration/">Configuration</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_security/">Security</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_systemalerts/">System Alerts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apexcli/">Apex CLI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Troubleshooting</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#troubleshooting-datatorrent-rts">Troubleshooting DataTorrent RTS</a></li>
+                
+                    <li><a class="toctree-l4" href="#download">Download</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#installation">Installation</a></li>
+                
+                    <li><a class="toctree-l4" href="#minimum-hardware-requirements-what-happens-if-certain-minimum-configuration-requirement-has-not-been-met">Minimum hardware requirements, what happens if certain minimum configuration requirement has not been met?</a></li>
+                
+                    <li><a class="toctree-l4" href="#what-happens-if-java-is-not-installed">What happens if java is not installed?</a></li>
+                
+                    <li><a class="toctree-l4" href="#what-happens-if-hadoop-is-not-installed">What happens if Hadoop is not installed?</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-do-i-check-if-hadoop-is-installed-and-running-correctly">How do I check if Hadoop is installed and running correctly?</a></li>
+                
+                    <li><a class="toctree-l4" href="#what-happens-if-the-downloaded-file-is-corrupted">What happens if the downloaded file is corrupted?</a></li>
+                
+                    <li><a class="toctree-l4" href="#why-do-i-see-the-following-permissions-errors">Why do I see the following permissions errors?</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#upgrade">Upgrade</a></li>
+                
+                    <li><a class="toctree-l4" href="#license-agent-errors-cause-problems-during-upgrade-from-datatorrent-rts-20-to-30">License agent errors cause problems during upgrade from DataTorrent RTS 2.0 to 3.0.</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#configuration">Configuration</a></li>
+                
+                    <li><a class="toctree-l4" href="#configuring-memory">Configuring Memory</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#development">Development</a></li>
+                
+                    <li><a class="toctree-l4" href="#hadoop-dependencies-conflicts">Hadoop dependencies conflicts</a></li>
+                
+                    <li><a class="toctree-l4" href="#serialization-considerations">Serialization considerations</a></li>
+                
+                    <li><a class="toctree-l4" href="#getting-this-message-in-stram-logs-is-anything-wrong-in-my-code">Getting this message in STRAM logs. Is anything wrong in my code?</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#debugging">Debugging</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-to-remote-debug-gateway-service">How to remote debug gateway service?</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-to-setup-debug-level-while-running-an-application">How to setup DEBUG level while running an application?</a></li>
+                
+                    <li><a class="toctree-l4" href="#my-gateway-is-throwing-the-following-exception">My gateway is throwing the following exception.</a></li>
+                
+                    <li><a class="toctree-l4" href="#when-apex-is-running-in-secure-mode-yarn-logs-get-flooded-with-several-thousand-messages-per-second">When Apex is running in secure mode, YARN logs get flooded with several thousand messages per second.</a></li>
+                
+                    <li><a class="toctree-l4" href="#application-throwing-following-kryo-exception">Application throwing following Kryo exception.</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#log-analysis">Log analysis</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-to-check-stram-logs">How to check STRAM logs</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-to-check-application-logs">How to check application logs</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-to-check-killed-operators-state">How to check killed operator’s state</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-to-search-for-particular-any-application-or-container">How to search for particular any application or container?</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-do-i-search-within-logs">How do I search within logs?</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#launching-applications">Launching Applications</a></li>
+                
+                    <li><a class="toctree-l4" href="#application-goes-from-accepted-state-to-finishedfailed-state">Application goes from accepted state to Finished(FAILED) state</a></li>
+                
+                    <li><a class="toctree-l4" href="#constraintviolationexception-during-application-launch">ConstraintViolationException during application launch</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#events">Events</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-to-check-container-failures">How to check container failures</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-to-search-within-events">How to search within events</a></li>
+                
+                    <li><a class="toctree-l4" href="#tail-vs-range-mode">tail vs range mode</a></li>
+                
+                    <li><a class="toctree-l4" href="#what-is-following-button-in-events-pane">What is “following” button in events pane</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-do-i-get-a-heap-dump-when-a-container-gets-an-outofmemoryerror">How do I get a heap dump when a container gets an OutOfMemoryError ?</a></li>
+                
+                    <li><a class="toctree-l4" href="#coming-soon">Coming Soon</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../release_notes/">Release Notes</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../glossary/">Glossary</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../additional_docs/">Resources</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">DataTorrent Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Deployment and Operations &raquo;</li>
+        
+      
+    
+    <li>Troubleshooting</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="troubleshooting-datatorrent-rts">Troubleshooting DataTorrent RTS</h1>
+<h2 id="download">Download</h2>
+<h3 id="where-can-i-get-datatorrent-rts-software">Where can I get DataTorrent RTS software?</h3>
+<p>DataTorrent products are available for download from <a href="https://www.datatorrent.com/download">https://www.datatorrent.com/download/</a></p>
+<ul>
+<li><strong>Community Edition</strong>:  It is a packaged version of Apache Apex and enables developers to quickly develop their big data streaming and batch projects.</li>
+<li><strong>Enterprise Edition</strong>:  Designed for enterprise production deployment and includes security, advanced monitoring and troubleshooting, graphical application assembly, and application data visualization.</li>
+<li><strong>Sandbox Edition</strong>:  Enterprise Edition and demo applications pre-installed and configured with a single-node Hadoop cluster running in a virtual machine.  Optimized for evaluation and training purposes.</li>
+<li><strong>Data Ingestion Application</strong>: It simplifies the collection, aggregation and movement of large amounts of data to and from Hadoop and is available for production use at no cost. It's available for download through dtHub, a feature inside DataTorrent product.</li>
+</ul>
+<h3 id="what-is-the-difference-between-datatorrent-rts-editions">What is the difference between DataTorrent RTS editions?</h3>
+<p>Please refer to <a href="https://www.datatorrent.com/product/edition-overview/">DataTorrent RTS editions overview</a></p>
+<h3 id="where-can-i-find-the-standard-edition-installer">Where can I find the Standard edition installer?</h3>
+<p>You can use the download link for Enterprise edition as the package is
+same for both editions. But, you have to apply the license to enable the
+Standard edition. You can upgrade the license by using dtManage.
+Licenses are available in 2 types : evaluation and production.</p>
+<h3 id="what-are-datatorrent-rts-package-contents-of-community-vs-enterprise-edition">What are DataTorrent RTS package contents of Community vs Enterprise edition?</h3>
+<p>Package contents for Community edition:</p>
+<ul>
+<li>Apache Apex</li>
+<li>DataTorrent Demo Applications</li>
+<li>DataTorrent dtManage</li>
+</ul>
+<p>Package contents for Enterprise edition:</p>
+<ul>
+<li>Apache Apex</li>
+<li>DataTorrent Demo Applications</li>
+<li>DataTorrent Operator Library</li>
+<li>DataTorrent Enterprise Security</li>
+<li>DataTorrent dtManage</li>
+<li>DataTorrent dtAssemble</li>
+<li>DataTorrent dtDashboard</li>
+</ul>
+<h3 id="how-do-i-confirm-the-package-downloaded-correctly">How do I confirm the package downloaded correctly?</h3>
+<p>You can verify the downloaded DataTorrent RTS package by comparing with
+MD5 sum. The command to get md5 sum of downloaded package:</p>
+<pre><code># md5sum &lt;DT_RTS_Package&gt;
+</code></pre>
+<p>Compare the result with MD5 sum posted on the product download page.</p>
+<h3 id="how-do-i-download-the-datatorrent-rts-package-using-cli">How do I download the DataTorrent RTS package using CLI?</h3>
+<p>Use following curl command to download DataTorrent RTS package:</p>
+<pre><code>curl -LSO &lt;DT_RTS_download_link&gt;
+</code></pre>
+<p>We recommend using ‘curl’ instead of ‘wget’, which lacks chunked transfer encoding support, potentially resulting in corrupted downloads.</p>
+<h3 id="what-are-the-prerequisites-of-datatorrent-rts">What are the prerequisites of DataTorrent RTS ?</h3>
+<p>DataTorrent RTS platform has following Hadoop cluster requirements:</p>
+<ul>
+<li>Operating system supported by Hadoop distribution</li>
+<li>Hadoop (2.2 or above) cluster with HDFS, YARN configured. Make sure
+    hadoop executable available in PATH variable</li>
+<li>Java 7 or 8 as supported by Hadoop distribution</li>
+<li>Minimum of 8G RAM available on the Hadoop cluster</li>
+<li>Permissions to create HDFS directory for DataTorrent user</li>
+<li>Google Chrome or Safari to access dtManage (DataTorrent UI
+    console)</li>
+</ul>
+<h3 id="where-can-i-start-from-after-downloading-datatorrent-rts">Where can I start from after downloading DataTorrent RTS?</h3>
+<ul>
+<li>After successful download of DataTorrent RTS, make sure all prerequisites are satisfied.</li>
+<li>You will need to install DataTorrent RTS on Hadoop cluster using the downloaded installer. Refer to <a href="../installation/">installation guide</a></li>
+<li>Once installed, you will be prompted to proceed to dtManage, the DataTorrent management console, where you will be able to launch and manage applications.</li>
+</ul>
+<h3 id="what-are-the-supported-hadoop-distribution-by-datatorrent-rts">What are the supported Hadoop distribution by DataTorrent RTS?</h3>
+<p>DataTorrent RTS is a Hadoop 2.x native application and is fully
+integrated with YARN and HDFS providing tight integration with any
+Apache Hadoop 2.x based distribution.</p>
+<table>
+<col width="50%" />
+<col width="50%" />
+<tbody>
+<tr class="odd">
+<td align="left"><p>Hadoop Distribution</p></td>
+<td align="left"><p>Supported Version</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>Amazon EMR</p></td>
+<td align="left"><p>Hadoop 2.4 and higher</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>Apache Hadoop</p></td>
+<td align="left"><p>Hadoop 2.2 and higher</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>Cloudera</p></td>
+<td align="left"><p>CDH 5.0 and higher</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>Hortonworks</p></td>
+<td align="left"><p>HDP 2.0 and higher</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>MapR</p></td>
+<td align="left"><p>4.0 and higher</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>Microsoft</p></td>
+<td align="left"><p>HDInsight</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>Pivotal</p></td>
+<td align="left"><p>2.1 and higher</p></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="what-is-the-datatorrent-sandbox">What is the Datatorrent Sandbox?</h3>
+<p>The Sandbox provides a quick and simple way to experience DataTorrent RTS without setting up and managing a complete Hadoop cluster. The Sandbox contains pre-installed DataTorrent RTS Enterprise Edition along with all the Hadoop services required to launch and run the included demo applications.</p>
+<h3 id="where-do-i-get-datatorrent-sandbox-download-link">Where do I get DataTorrent Sandbox download link?</h3>
+<p>Sandbox can be downloaded by visiting <a href="https://www.datatorrent.com/download/">datatorrent.com/download</a></p>
+<h3 id="what-are-the-system-requirements-for-sandbox-deployment">What are the system requirements for sandbox deployment?</h3>
+<p>The DataTorrent RTS Sandbox is a complete, stand-alone, instance of the
+Enterprise Edition as a single-node Hadoop cluster on your local
+machine. Following are prerequisites for DataTorrent RTS:</p>
+<ul>
+<li><a href="https://www.virtualbox.org/">VirtualBox</a> 4.3 or greater installed.</li>
+<li>6GB RAM or greater available for Sandbox VM.</li>
+</ul>
+<h3 id="what-are-the-datatorrent-rts-package-content-details-in-sandbox">What are the DataTorrent RTS package content details in sandbox?</h3>
+<ul>
+<li>Ubuntu 12.04 LTS + Apache Hadoop 2.2 (DataTorrent RTS 3.1 or earlier)</li>
+<li>Lubuntu 14.04 LTS + Apache Hadoop 2.7 (DataTorrent RTS 3.2 or later)</li>
+<li>Apache Apex, Apache Apex-Malhar</li>
+<li>DataTorrent Operator Library</li>
+<li>DataTorrent Enterprise Security</li>
+<li>DataTorrent dtManage</li>
+<li>DataTorrent dtAssemble</li>
+<li>DataTorrent dtDashboard</li>
+<li>Demo Applications</li>
+</ul>
+<h3 id="why-does-the-browser-console-on-the-sandbox-say-hdfs-not-ready">Why does the browser console on the sandbox say <code>HDFS Not Ready</code> ?</h3>
+<p>The HDFS services take a few minutes to start; the console needs all of
+those services to be up and running and until that occurs, it displays this
+warning. If the normal console does not appear after a few minutes, please run
+the <code>jps</code> command to see which services may <em>not</em> be running, for example:</p>
+<pre><code class="shell">dtadmin@dtbox:~/tmp$ jps
+1407 DTGateway
+4145 Jps
+2830 NodeManager
+3059 ResourceManager
+2650 NameNode
+</code></pre>
+
+<p>Here we see that the <code>DataNode</code> is not running. In this case, stop all
+HDFS services (using, for example the script shown in the
+<a href="http://docs.datatorrent.com/sandbox/">sandbox page</a>. Then, remove everything
+under these directories:</p>
+<pre><code>/sfw/hadoop/shared/data/hdfs/datanode/current
+/sfw/hadoop/shared/data/hdfs/namenode/current
+</code></pre>
+<p>Now reformat HDFS with <code>hdfs namenode -format</code>
+and finally, restart all HDFS services.</p>
+<h3 id="what-is-data-ingestion-application">What is Data Ingestion application?</h3>
+<p>Data Ingestion application simplifies the collection, aggregation and movement of large amounts of data to and from Hadoop and is available for production use at no cost.</p>
+<h3 id="where-do-i-get-data-ingestion-application">Where do I get Data Ingestion application?</h3>
+<p>It's available for download through dtHub, a feature inside DataTorrent product.</p>
+<h3 id="what-are-the-prerequisites-of-data-ingestion-application">What are the prerequisites of Data Ingestion application?</h3>
+<p>DataTorrent RTS 3.4.x and above.</p>
+<h3 id="how-do-i-get-specific-dt-version">How do I get specific DT version ?</h3>
+<p>You can find archive list of various DataTorrent RTS versions at the bottom of each product download page.</p>
+<h3 id="where-can-i-request-new-upgrade-current-license">Where can I request new / upgrade current license?</h3>
+<p>Please follow the instructions at <a href="https://www.datatorrent.com/license-upgrade/">License Upgrade</a></p>
+<h3 id="where-do-i-find-product-documentation">Where do I find product documentation?</h3>
+<p>Please refer to: <a href="http://docs.datatorrent.com/">DataTorrent Documentation</a></p>
+<h3 id="where-can-i-learn-more-about-apache-apex">Where can I learn more about Apache Apex?</h3>
+<p>You can refer Apex page for more details: <a href="http://apex.apache.org">Apache Apex</a></p>
+<h3 id="do-you-need-help">Do you need help?</h3>
+<p>You can contact us at <a href="https://www.datatorrent.com/contact">https://www.datatorrent.com/contact</a></p>
+<h1 id="installation">Installation</h1>
+<p>There are multiple installations available e.g. Sandbox Edition, Community Edition, Enterprise Edition, dtIngest. Supported operating systems are which support Hadoop platform (tested on CentOS 6.x and Ubuntu 12.04).</p>
+<h3 id="minimum-hardware-requirements-what-happens-if-certain-minimum-configuration-requirement-has-not-been-met">Minimum hardware requirements, what happens if certain minimum configuration requirement has not been met?</h3>
+<p>Minimum of 8G RAM is required on the Hadoop cluster.</p>
+<h3 id="what-happens-if-java-is-not-installed">What happens if java is not installed?</h3>
+<p>Following message can be seen when Java is not available on the system</p>
+<pre><code>Error: java executable not found. Please ensure java
+or hadoop are installed and available in PATH environment variable
+before proceeding with this installation.
+</code></pre>
+<p>Install Java 7 from package manager of Linux Distribution and try running installer again.</p>
+<h3 id="what-happens-if-hadoop-is-not-installed">What happens if Hadoop is not installed?</h3>
+<p>Installation will be successful, however Hadoop Configuration page in dtManage (e.g. http://localhost:9090) will expect Hadoop binary (/usr/bin/hadoop) &amp; DFS location.</p>
+<p><img alt="HadoopConfiguration.png" src="../images/troubleshooting/image02.png" /></p>
+<p>Install Hadoop > 2.2.0 and update the configuration parameters above.</p>
+<h3 id="how-do-i-check-if-hadoop-is-installed-and-running-correctly">How do I check if Hadoop is installed and running correctly?</h3>
+<p>Following commands can be used to confirm installed Hadoop version and if Hadoop services are running.</p>
+<pre><code>$ hadoop version
+
+Hadoop 2.4.0
+Subversion [http://svn.apache.org/repos/asf/hadoop/common](http://svn.apache.org/repos/asf/hadoop/common) -r
+1583262
+Compiled by jenkins on 2014-03-31T08:29Z
+Compiled with protoc 2.5.0
+From source with checksum 375b2832a6641759c6eaf6e3e998147
+This command was run using
+/usr/local/hadoop/share/hadoop/common/hadoop-common-2.4.0.jar
+
+$ jps
+
+10211 NameNode
+10772 ResourceManager
+10427 DataNode
+14691 Jps
+10995 NodeManager
+</code></pre>
+<h3 id="what-happens-if-the-downloaded-file-is-corrupted">What happens if the downloaded file is corrupted?</h3>
+<p>MD5 checksum will result in the following error:</p>
+<pre><code>“Verifying archive integrity...Error in MD5 checksums: &lt;MD5 checksum&gt; is different from &lt;MD5 checksum&gt;”.
+</code></pre>
+<p>Downloaded installer could be corrupted.  Try downloading the installer again.  If using command line, use <code>curl</code> instead of <code>wget</code>.</p>
+<h3 id="why-do-i-see-the-following-permissions-errors">Why do I see the following permissions errors?</h3>
+<p>During installation following error message will be seen on screen</p>
+<p><img alt="Permissions Error" src="../images/troubleshooting/image01.png" /></p>
+<p>These typically happen when specified directory does not exist, and the installation user does not have permissions to create it.  Following commands can be executed by user with sufficient privileges to resolve this issue:</p>
+<pre><code>$ hadoop dfs -ls /user/&lt;USER&gt;/datatorrent
+$ hadoop dfs -mkdir /user/&lt;USER&gt;/datatorrent  
+$ hadoop dfs -chown &lt;USER&gt; /user/&lt;USER&gt;/datatorrent
+</code></pre>
+<h1 id="upgrade">Upgrade</h1>
+<h3 id="license-agent-errors-cause-problems-during-upgrade-from-datatorrent-rts-20-to-30">License agent errors cause problems during upgrade from DataTorrent RTS 2.0 to 3.0.</h3>
+<p>If your applications are being launched continuously, or you are unable to launch apps due to licensing errors, try running complete uninstall and re-installation of DataTorrent RTS.  See <a href="../installation/">installation guide</a> for details.</p>
+<h1 id="configuration">Configuration</h1>
+<h3 id="configuring-memory">Configuring Memory</h3>
+<h5 id="configuring-operator-memory">Configuring Operator Memory:</h5>
+<p>Operator memory for an operator can be configured in one of the following two ways:</p>
+<p>1 Using the same default values for all the operators: </p>
+<pre><code>&lt;property&gt;
+  &lt;name&gt;dt.application.&lt;APPLICATION_NAME&gt;.operator.*.attr.MEMORY_MB&lt;/name&gt;
+  &lt;value&gt;2048&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+<p>This would set 2GB as size of all the operators in the given application.</p>
+<p>2 Setting specific value for a particular operator: Following example will set 8GB as the operator memory for operator <code>Op</code>.</p>
+<pre><code>&lt;property&gt;
+  &lt;name&gt;dt.application.&lt;APPLICATION_NAME&gt;.operator.Op.attr.MEMORY_MB&lt;/name&gt;
+  &lt;value&gt;8192&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+<p>The amount of memory required by an operator should be based on maximum amount of data that operator will be storing in-memory for all the fields -- both transient and non-transient. Default value for this attribute is 1024 MB.</p>
+<h5 id="configuring-buffer-server-memory">Configuring Buffer Server Memory:</h5>
+<p>There is a buffer server in each container hosting an operator with an output port connected to an input port outside the container. The buffer server memory of a container can be controlled by BUFFER_MEMORY_MB. This can be configured in one of the following ways:</p>
+<p>1 Using the same default values for all the output ports of all the operators</p>
+<pre><code>&lt;property&gt;
+  &lt;name&gt;dt.application.&lt;APPLICATION_NAME&gt;.operator.*.port.*.attr.BUFFER_MEMORY_MB&lt;/name&gt;
+  &lt;value&gt;128&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+<p>This sets 128Mb as buffer memory for all the output ports of all the operators.</p>
+<p>2 Setting specific value for a particular output port of particular operator: Following example sets 1GB as buffer memory for output port <code>p</code> of an operator <code>Op</code>:</p>
+<pre><code>&lt;property&gt;
+  &lt;name&gt;dt.application.&lt;APPLICATION_NAME&gt;.operator.Op.port.p.attr.BUFFER_MEMORY_MB&lt;/name&gt;
+  &lt;value&gt;1024&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+<p>Default value for this attribute is 512 MB</p>
+<h5 id="calculating-container-memory">Calculating Container memory:</h5>
+<p>Following formula is used to calculate the container memory.</p>
+<pre><code>Container Memory = Sum of MEMORY_MB of All the operators in the container+ Sum of BUFFER_MEMORY_MB of all the output ports that have a sink in a different container.
+</code></pre>
+<p>Sometimes the memory allocated to the container is not same as calculated by the above formula, it is because actual container memory allocated by RM has to lie between</p>
+<pre><code>[yarn.scheduler.minimum-allocation-mb, yarn.scheduler.maximum-allocation-mb]
+</code></pre>
+<p>These values can be found in yarn configuration</p>
+<h5 id="configuring-application-master-memory">Configuring Application Master Memory:</h5>
+<p>Application Master memory can be configured using MASTER_MEMORY_MB attribute. Following example sets 4GB as the memory for Application Master:</p>
+<pre><code>&lt;property&gt;
+  &lt;name&gt;dt.application.&lt;APPLICATION_NAME&gt;.attr.MASTER_MEMORY_MB&lt;/name&gt;
+  &lt;value&gt;4096&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+<p>Default value for this attribute is 1024 MB. You may need to increase this value if you are running a big application that has large number of containers</p>
+<h1 id="development">Development</h1>
+<h3 id="hadoop-dependencies-conflicts">Hadoop dependencies conflicts</h3>
+<p>You have to make sure that the Hadoop jars are not bundled with the application package o/w they may conflict with the versions available in Hadoop classpath. Here are some of the ways to exclude Hadoop dependencies from the application package</p>
+<ol>
+<li>
+<p>If your application is directly dependent on the Hadoop jars, make sure that the scope of the dependency is <code>provided</code>. For eg if your application is dependent on hadoop-common, this is how you should add the dependency in pom.xml</p>
+<pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;
+  &lt;artifactId&gt;hadoop-common&lt;/artifactId&gt;
+  &lt;version&gt;2.2.0&lt;/version&gt;
+  &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+</li>
+<li>
+<p>If your application has transitive dependency on Hadoop jars, make sure that Hadoop jars are excluded from the transitive dependency and added back as application dependency with provided scope as mentioned above. Exclusions in pom.xml can be set as follows</p>
+<pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;&lt;/groupId&gt;
+  &lt;artifactId&gt;&lt;/artifactId&gt;
+  &lt;version&gt;&lt;/version&gt;
+  &lt;exclusions&gt;
+    &lt;exclusion&gt;
+      &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;
+      &lt;artifactId&gt;*&lt;/artifactId&gt;
+    &lt;/exclusion&gt;
+  &lt;/exclusions&gt;
+&lt;/dependency&gt;
+</code></pre>
+</li>
+</ol>
+<h3 id="serialization-considerations">Serialization considerations</h3>
+<p>The platform requires all operators and tuples in an Apex application to be serializable (and deserializable).
+After an application is launched, operators are serialized from the starting node and deserialized and 
+instantiated on various cluster nodes. Also checkpointing involves serializing and persisting an operator 
+to a store and deserializing from the store in case of recovery. Tuples are serialized and deserialized 
+when transmitted over a stream.</p>
+<p>Problems of lack of serializability (and deserializability) in the code can only be reliably uncovered at run-time.
+So the recommended way to uncover these problems is to run the application in 
+<a href="http://apex.apache.org/docs/apex/application_development/#local-mode">local mode</a> before running on a cluster.
+Use the <a href="http://apex.apache.org/docs/apex/apex_cli/">ApexCLI</a> to launch your application with the <code>-local</code> option
+to run it in local mode. When the platform runs into a situation where a field or object is not serializable or 
+deserializable, the application will fail at that point with a relevant exception logged on the console or the
+log file as described in the <a href="#application-throwing-following-kryo-exception">Kryo exception</a> section. Check out 
+that section further for hints about troubleshooting serialization issues.</p>
+<h4 id="transient-members">Transient members</h4>
+<p>Certain data members of an operator do not need to be serialized or deserialized during deployment or 
+checkpointing/recovery because they are <a href="http://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.3.1.3">transient</a>
+in nature and do not represent stateful data. Developers should judiciously use the 
+<a href="http://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.3.1.3">transient</a> keyword for declaring
+such non-stateful members of operators (or members of objects which are indirectly members of operators) 
+so that the platform skips serialization of such members and serialization/deserialization errors are 
+minimized. Transient members are further described in the context of the operator life-cycle 
+<a href="http://apex.apache.org/docs/apex/operator_development/#setup-call">here</a>. Typical examples of
+transient data members are database or network connection objects which need to be 
+initialized before they are used in a process, so there is no use of persisting them
+across process invocations.</p>
+<h3 id="getting-this-message-in-stram-logs-is-anything-wrong-in-my-code">Getting this message in STRAM logs. Is anything wrong in my code?</h3>
+<pre><code>2015-10-09 04:31:06,749 INFO com.datatorrent.stram.StreamingContainerManager: Heartbeat for unknown operator 3 (container container_1443694550865_0150_01_000007)
+</code></pre>
+<p>Coming soon.</p>
+<h1 id="debugging">Debugging</h1>
+<h3 id="how-to-remote-debug-gateway-service">How to remote debug gateway service?</h3>
+<p>Update Hadoop OPTS variable by running,</p>
+<pre><code>export HADOOP_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5432 $HADOOP_OPTS"
+</code></pre>
+<h3 id="how-to-setup-debug-level-while-running-an-application">How to setup DEBUG level while running an application?</h3>
+<p>Add the following property to your properties file:</p>
+<pre><code>&lt;property&gt;
+  &lt;name&gt;dt.application.&lt;APP-NAME&gt;.attr.DEBUG&lt;/name&gt;
+  &lt;value&gt;true&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+<h3 id="my-gateway-is-throwing-the-following-exception">My gateway is throwing the following exception.</h3>
+<pre><code>  ERROR YARN Resource Manager has problem: java.net.ConnectException: Call From myexample.com/192.168.3.21 to 0.0.0.0:8032 failed on connection
+  exception: java.net.ConnectException: Connection refused; For more  details see:[http://wiki.apache.org/hadoop/ConnectionRefused](http://wiki.apache.org/hadoop/ConnectionRefused) at
+  sun.reflect.GeneratedConstructorAccessor27.newInstance(Unknown Source)
+  at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+  ...
+</code></pre>
+<p>Check if the host where gateway is running has yarn-site.xml file. You need to have all Hadoop configuration files accessible to dtGateway for it to run successfully.</p>
+<h3 id="when-apex-is-running-in-secure-mode-yarn-logs-get-flooded-with-several-thousand-messages-per-second">When Apex is running in secure mode, YARN logs get flooded with several thousand messages per second.</h3>
+<p>Please make sure that the kerberos principal user name has an account with the
+same user id on the cluster nodes.</p>
+<h3 id="application-throwing-following-kryo-exception">Application throwing following Kryo exception.</h3>
+<pre><code>  com.esotericsoftware.kryo.KryoException: Class cannot be created (missing no-arg constructor):
+</code></pre>
+<p>This means that Kryo is not able to deserialize the object because the type is missing default constructor. There are couple of ways to address this exception</p>
+<ol>
+<li>Add default constructor to the type in question.</li>
+<li>
+<p>Using <a href="https://github.com/EsotericSoftware/kryo#serializers">custom serializer</a> for the type in question. Some existing alternative serializers can be found at <a href="https://github.com/magro/kryo-serializers">https://github.com/magro/kryo-serializers</a>. A custom serializer can be used as follows:</p>
+<p>2.1 Using Kryo's @FieldSerializer.Bind annotation for the field causing the exception. Here is how to bind custom serializer.</p>
+<pre><code>@FieldSerializer.Bind(CustomSerializer.class)
+SomeType someType
+</code></pre>
+<p>Kryo will use this CustomSerializer to serialize and deserialize type SomeType. If
+SomeType is a Map or Collection, there are some special annotations @BindMap and
+@BindCollection; please see <a href="https://github.com/EsotericSoftware/kryo">here</a>.</p>
+<p>2.2 Using the @DefaultSerializer annotation on the class, for example:</p>
+<pre><code>@DefaultSerializer(JavaSerializer.class)
+public class SomeClass ...
+</code></pre>
+<p>2.3 Using custom serializer with stream codec. You need to define custom stream codec and attach this custome codec to the input port that is expecting the type in question. Following is an example of creating custom stream codec:</p>
+<pre><code>import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.UUID;
+import com.esotericsoftware.kryo.Kryo;
+
+public class CustomSerializableStreamCodec&lt;T&gt; extends com.datatorrent.lib.codec.KryoSerializableStreamCodec&lt;T&gt;
+{
+    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException
+    {
+        in.defaultReadObject();
+        this.kryo = new Kryo();
+        this.kryo.setClassLoader(Thread.currentThread().getContextClassLoader());
+        this.kryo.register(SomeType.class, new CustomSerializer()); // Register the types along with custom serializers
+    }
+
+    private static final long serialVersionUID = 201411031405L;
+}
+</code></pre>
+<p>Let's say there is an Operator <code>CustomOperator</code> with an input port <code>input</code> that expects type SomeType. Following is how to use above defined custom stream codec</p>
+<pre><code>CustomOperator op = dag.addOperator("CustomOperator", new CustomOperator());
+CustomSerializableStreamCodec&lt;SomeType&gt; codec = new CustomSerializableStreamCodec&lt;SomeType&gt;();
+dag.setInputPortAttribute(op.input, Context.PortContext.STREAM_CODEC, codec);
+</code></pre>
+<p>This works only when the type is passed between different operators. If the type is part of the operator state, please use one of the above two ways. </p>
+</li>
+</ol>
+<h1 id="log-analysis">Log analysis</h1>
+<p>There are multiple ways to adjust logging levels.  For details see <a href="../configuration/#logging">configuration guide</a>.</p>
+<h3 id="how-to-check-stram-logs">How to check STRAM logs</h3>
+<p>You can get STRAM logs by retrieving YARN logs from command line, or by using dtManage web interface.  </p>
+<p>In dtManage console, select first container from the Containers List in Physical application view.  The first container is numbered 000001. Then click the logs dropdown and select the log you want to look at.  </p>
+<p>Alternatively, the following command can retrieve all application logs, where the first container includes the STRAM log.</p>
+<pre><code>yarn logs -applicationId &lt;applicationId&gt;
+</code></pre>
+<h3 id="how-to-check-application-logs">How to check application logs</h3>
+<p>On dt console, select a container from the Containers List widget
+(default location of this widget is in the “physical” dashboard). Then
+click the logs dropdown and select the log you want to look at.</p>
+<p><img alt="console-log-viewing.gif" src="../images/troubleshooting/image00.gif" /></p>
+<h3 id="how-to-check-killed-operators-state">How to check killed operator’s state</h3>
+<p>On dt console, click on “retrieve killed” button of container List.
+Containers List widget’s default location is on the “physical”
+dashboard. Then select the appropriate container of killed operator and
+check the state.</p>
+<p><img alt="RetrieveKilled.gif" src="../images/troubleshooting/image03.gif" /></p>
+<h3 id="how-to-search-for-particular-any-application-or-container">How to search for particular any application or container?</h3>
+<p>In applications or containers table there is search text box. You can
+type in application name or container number to locate particular
+application or container.</p>
+<h3 id="how-do-i-search-within-logs">How do I search within logs?</h3>
+<p>Once you navigate to the logs page,  </p>
+<ol>
+<li>Download log file to search using your preferred editor  </li>
+<li>use “grep” option and provide the search range “within specified range” or “over entire log”</li>
+</ol>
+<h1 id="launching-applications">Launching Applications</h1>
+<h3 id="application-goes-from-accepted-state-to-finishedfailed-state">Application goes from accepted state to Finished(FAILED) state</h3>
+<p>Check if your application name conflicts with any of the already running
+applications in your cluster. Apex does not allow two applications with
+the same name to run simultaneously.
+Your STRAM logs will have following error:<br />
+“Forced shutdown due to Application master failed due to application
+\&lt;appId> with duplicate application name \&lt;appName> by the same user
+\&lt;user name> is already started.”  </p>
+<h3 id="constraintviolationexception-during-application-launch">ConstraintViolationException during application launch</h3>
+<p>Check if all @NotNull properties of application are set. Apex operator
+properties are meant to configure parameter to operators. Some of the
+properties are must have, marked as @NotNull, to use an operator. If you
+don’t set any of such @NotNull properties application launch will fail
+and stram will throw ConstraintViolationException.    </p>
+<h1 id="events">Events</h1>
+<h3 id="how-to-check-container-failures">How to check container failures</h3>
+<p>In StramEvents list (default location of this widget is in the “logical”
+dashboard), look for event “StopContainer”. Click on “details” button in
+front of event to get details of container failure.</p>
+<h3 id="how-to-search-within-events">How to search within events</h3>
+<p>You can search events in specified time range. Select “range” mode in
+StramEvents widget. Then select from and to timestamp and hit the search
+button.</p>
+<h3 id="tail-vs-range-mode">tail vs range mode</h3>
+<p>tail mode allows you to see events as they come in while range mode
+allows you to search for events by time range.</p>
+<h3 id="what-is-following-button-in-events-pane">What is “following” button in events pane</h3>
+<p>When we enable “following” button the stram events list will
+automatically scroll to bottom when new events come in.</p>
+<h3 id="how-do-i-get-a-heap-dump-when-a-container-gets-an-outofmemoryerror">How do I get a heap dump when a container gets an OutOfMemoryError ?</h3>
+<p>The JVM has a special option for triggering a heap dump when an Out Of Memory error
+occurs, as well an associated option for specifying the name of the file to contain
+the dump namely <code>-XX:+HeapDumpOnOutOfMemoryError</code> and <code>-XX:HeapDumpPath=/tmp/op.heapdump</code>.
+To add them to a specific operator, use this stanza in your configuration file
+with <code>&lt;OPERATOR_NAME&gt;</code> replaced by the actual name of an operator:</p>
+<pre><code>    &lt;property&gt;
+      &lt;name&gt;dt.operator.&lt;OPERATOR_NAME&gt;.attr.JVM_OPTIONS&lt;/name&gt;
+      &lt;value&gt;-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp/op.heapdump&lt;/value&gt;
+    &lt;/property&gt;
+</code></pre>
+<p>To add them to all your containers, add this stanza to your configuration file:</p>
+<pre><code>    &lt;property&gt;
+      &lt;name&gt;dt.attr.CONTAINER_JVM_OPTIONS&lt;/name&gt;
+      &lt;value&gt;-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp/op.heapdump&lt;/value&gt;
+    &lt;/property&gt;
+</code></pre>
+<p>With these options, when an <strong>OutOfMemoryError</strong> occurs, the JVM writes the heap dump to the
+file <code>/tmp/op.heapdump</code>; you'll then need to retrieve the file from the node on which the
+operator was running.</p>
+<p>You can use the tool <code>jmap</code> (bundled with the JDK) to get a heap dump from a running
+container. Depending on the environment, you might need to run it as root and/or use
+the <code>-F</code> option; here is a sample invocation on the sandbox:</p>
+<pre><code>dtadmin@dtbox:~$ sudo jmap -dump:format=b,file=dump.bin -F 15557
+Attaching to process ID 15557, please wait...
+Debugger attached successfully.
+Server compiler detected.
+JVM version is 24.79-b02
+Dumping heap to dump.bin ...
+Heap dump file created
+</code></pre>
+<p>The heap dump shows the content of the entire heap in binary form and, as such, is
+not human readable and needs special tools such as
+<a href="http://docs.oracle.com/javase/7/docs/technotes/tools/share/jhat.html">jhat</a> or
+<a href="http://www.eclipse.org/mat/downloads.php">MAT</a> to analyze it.</p>
+<p>The former (<code>jhat</code>) is bundled as part of the JDK distribution, so it is very convenient
+to use. When run on a file containing a heap dump, it parses the file and makes the data
+viewable via a browser on port 7000 of the local host. Here is a typical run:</p>
+<pre><code>tmp: jhat op.heapdump 
+Reading from op.heapdump...
+Dump file created Fri Feb 26 14:06:48 PST 2016
+Snapshot read, resolving...
+Resolving 70966 objects...
+Chasing references, expect 14 dots..............
+Eliminating duplicate references..............
+Snapshot resolved.
+Started HTTP server on port 7000
+Server is ready.
+</code></pre>
+<p>It is important to remember that a heap dump is different from a thread dump. The
+latter shows the stack trace of every thread running in the container and is useful
+when threads are deadlocked.
+Additional information on tools related to both types of dumps is available
+<a href="http://www.oracle.com/technetwork/java/javase/matrix6-unix-137789.html">here</a>.</p>
+<h3 id="coming-soon">Coming Soon</h3>
+<ul>
+<li>Connection Refused Exception</li>
+<li>ClassNotFound Exception</li>
+<li>Launching apa vs jar</li>
+<li>DAG validation failed</li>
+<li>Multiple gateways running simultaneously, app not launched.</li>
+<li>HDFS in safe mode</li>
+<li>Application stays in accepted state</li>
+<li>Some containers do not get resources (specially in case of repartition)</li>
+<li>Insufficient memory set to operator causes operator kill continuously.</li>
+<li>
+<p>Why is the number of events same/different at input and output port of each operator?</p>
+</li>
+<li>
+<p>Shutdown vs kill option</p>
+</li>
+<li>Why shutdown doesn’t work? (if some containers are not running)</li>
+<li>Can I kill multiple applications at same time?</li>
+<li>Killing containers vs killing application</li>
+<li>STRAM failures (during define partitions)</li>
+<li>Thread local + partition parallel configuration</li>
+<li>What to do when downstream operators are slow than the input  operators.</li>
+<li>I am seeing high latency, what to do?</li>
+<li>appConf in ADT (inside apa file) vs conf option in Apex CLI</li>
+<li>Application keeps restarting (has happened once due to license agent during upgrade)</li>
+<li>Operator getting killed after every 60 secs (Timeout issue)</li>
+<li>How to change commit frequency</li>
+<li>Difference between exactly once, at least once and at most once</li>
+<li>Thread local vs container local vs node local</li>
+<li>Cluster nodes not able to access edge node where Gateway is running</li>
+<li>
+<p>Developers not sure when to process incoming tuples in end window or when to do it in process function of operator</p>
+</li>
+<li>
+<p>How partitioning works</p>
+<ul>
+<li>How the data is partitioned between different partitions.</li>
+<li>How to use stream-codec</li>
+<li>Data on which ports is partitioned? By default default partitioner partitions data on first port.</li>
+<li>How to enable stream-codec on multiple ports. (Join operator?? where both input-ports needs to receive same set of keys).</li>
+</ul>
+</li>
+<li>
+<p>pom dependency management, exclusions etc. eg: Malhar library and
+    contrib, Hive (includes Hadoop dependencies, we need to explicitly
+    exclude), Jersey(we work only with 1.9 version) etc</p>
+</li>
+<li>
+<p>All non-transient members of the operator object need to be
+    serializable. All members that are not serializable cannot be saved
+    during checkpoint and must be declared transient (e.g. connection
+    objects). This is such a common problem that we need to dedicate a
+    section to it.</p>
+</li>
+<li>
+<p>Exactly once processing mode. Commit operation is supposed to be
+    done at endWindow. This is only best-effort exactly once and not
+    100% guaranteed exactly once because operators may go down after
+    endWindow and before checkpointing finishes.</p>
+</li>
+<li>
+<p>How to check checkpoint size. (large checkpoint size cause instability in the DAG).</p>
+</li>
+<li>How to add custom metrics and metric aggregator.</li>
+<li>Example of how to implement dynamic partitioning.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../release_notes/" class="btn btn-neutral float-right" title="Release Notes">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../apexcli/" class="btn btn-neutral" title="Apex CLI"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../apexcli/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../release_notes/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

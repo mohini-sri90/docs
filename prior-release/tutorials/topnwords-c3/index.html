@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../favicon.ico">
+  
+  <title>Building with dtAssemble - DataTorrent Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Building with dtAssemble";
+    var mkdocs_page_input_path = "tutorials/topnwords-c3.md";
+    var mkdocs_page_url = "/tutorials/topnwords-c3/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44586211-2', 'docs.datatorrent.com');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> DataTorrent Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">DataTorrent RTS</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Demos</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../demos/">Running Apps</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../sandbox/">Sandbox</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Development</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../create/">Creating Applications</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../beginner/">Beginner's Guide</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Tutorials</span></li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Top N Words</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../topnwords/">Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../topnwords-c1/">Development Environment</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../topnwords-c2/">Building in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Building with dtAssemble</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#building-top-n-words-using-dtassemble">Building top N words using dtAssemble</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-i-create-top-n-words-using-dtassemble">Step I: Create top N words using dtAssemble</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-ii-drag-operators-to-the-application-canvas">Step II: Drag operators to the application canvas</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-iii-connect-the-operators">Step III: Connect the operators</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-iv-configure-the-operator-properties">Step IV: Configure the operator properties</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../topnwords-c4/">Monitoring with dtManage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../topnwords-c5/">Visualizing with dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../topnwords-c7/">Advanced Features</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../topnwords-c6/">Appendix</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Sales Dimensions</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../salesdimensions/">Building in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../salesdimensions-c2/">Building with dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../salesdimensions-c3/">Visualizing with dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../salesdimensions-c4/">Monitoring with dtManage</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../apex_development_setup/">Apex Development Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../configure_IDE/">Generate New Project in IDE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../application_development/">Applications</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../application_packages/">Application Packages</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../configuration_packages/">Configuration Packages</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../operator_development/">Operators</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Library Operators</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../operators/kafkaInputOperator/">Kafka Input</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../operators/dimensions_computation/">Dimension Computation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../operators/hdht/">HDHT</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../operators/deduper/">Deduper</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../operators/file_splitter/">File Splitter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../operators/block_reader/">Block Reader</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../operators/file_output/">File Output</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../operators/snapshot_server/">Snapshot Server</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app_data_framework/">App Data Framework</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dtgateway_api/">REST API</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>App Templates</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/hdfs-sync/">HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/s3-to-hdfs-sync/">S3 to HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/kafka-to-hdfs-sync/">Kafka to HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/hdfs-line-copy/">HDFS to HDFS Line Copy App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/hdfs-to-kafka-sync/">HDFS to Kafka Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/database-to-hdfs/">Database dump to HDFS App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/database-to-database-sync/">Database to Database Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/kafka-to-database-sync/">Kafka to Database Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/kafka-to-hdfs-filter/">Kafka to HDFS Filter App</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Applications</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app_data_tracker/">App Data Tracker</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dtingest/">dtIngest</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Platform</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../rts/">RTS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dtmanage/">dtManage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dtassemble/">dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dtdashboard/">dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dtgateway/">dtGateway</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../apex/">Apache Apex</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../apex_malhar/">Apache Apex-Malhar</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Deployment and Operations</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../installation/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../configuration/">Configuration</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dtgateway_security/">Security</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dtgateway_systemalerts/">System Alerts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../apexcli/">Apex CLI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../release_notes/">Release Notes</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../glossary/">Glossary</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../additional_docs/">Resources</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">DataTorrent Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Tutorials &raquo;</li>
+        
+      
+        
+          <li>Top N Words &raquo;</li>
+        
+      
+    
+    <li>Building with dtAssemble</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="building-top-n-words-using-dtassemble">Building top N words using dtAssemble</h1>
+<p>You can build top N words using dtAssemble &ndash; the graphical drag-and-drop
+application builder.</p>
+<p><em>Note</em>: This tool is not available with the Community edition license.</p>
+<p>Using the application builder, you can manually drag and drop participating operators on to the application canvas and connect them to build the DAG for
+the top N words application. You can move the application canvas in any
+direction using your mouse. You can also try the auto-layout and zoom-to-fit
+buttons at the top-right of the canvas to create an initial arrangement.</p>
+<p><em>Note</em>: You cannot undo the auto-layout or zoom-to-fit operations.</p>
+<p>Prerequisites</p>
+<p>To use <strong>dtAssemble</strong>, you should have uploaded an application package that
+contains all the operators you intend to use. The new application will reside
+in that package. For this exercise, we will use the package that you built and
+uploaded in the earlier chapter.</p>
+<p>To ensure that the full complement of sandbox resources are available for
+running the current application, ensure that no other applications are running
+by clicking the <em>Monitor</em> tab, and under <em>DataTorrent Applications</em>, kill any
+running applications.</p>
+<h2 id="step-i-create-top-n-words-using-dtassemble">Step I: Create top N words using dtAssemble</h2>
+<ol>
+<li>Log on to the DataTorrent RTS console (default username and password are
+   both <code>dtadmin</code>).</li>
+<li>On the DataTorrent RTS console, click <em>Develop</em> &#x21e8; <em>App Packages</em>.</li>
+<li>Make sure that the top N words package that you built following the
+   instructions of the previous chapter is uploaded.</li>
+<li>Click <em>TopNWordCount</em> in the name column to see the application details.
+  <img alt="TopNWordCount" src="../images/topnwords/image38.png" title="TopNWordCount" /></li>
+<li>Click <em>create new application</em> button.
+  <img alt="New Application" src="../images/topnwords/image37.png" title="New Application" /></li>
+<li>Type a name for your application, for example, <em>Top N words</em>, and click
+   <em>Create</em>. The <strong>Application Canvas</strong> should open.</li>
+</ol>
+<p>The existing application is a JAVA application. Applications that you create
+using dtAssemble are JSON applications. For each JSON application, there are
+three additional buttons that allow editing, deleting, and cloning operations.
+These operations are not supported for JAVA applications.</p>
+<p><img alt="JSON Application" src="../images/topnwords/image40.png" title="JSON Application" /></p>
+<h2 id="step-ii-drag-operators-to-the-application-canvas">Step II: Drag operators to the application canvas</h2>
+<ol>
+<li>Wait till the Application Canvas opens.
+  <img alt="Application Canvas" src="../images/topnwords/image39.png" title="Application Canvas" /></li>
+<li>From the Operator Library list on the left, locate the desired
+   operators by either:</li>
+<li>
+<p>Exploring the categories.</p>
+<p>-or-</p>
+</li>
+<li>
+<p>Using the <em>quick find</em> feature by typing the first few letters of the name of
+   the implementing class or related terms in the search box. For example, to
+   find the file reader, type <em>file</em>  into the search box to see a list of
+   matching operators. For example, the first operator is <em>LineReader</em>.
+    <img alt="Operator Library" src="../images/topnwords/image43.png" title="Operator Library" /></p>
+</li>
+<li>Drag the operator onto the canvas.</li>
+<li>Repeat this process for all the operators described in Appendix entitled
+    <em>Operators in Top N words application</em>, and arrange them on the canvas.</li>
+<li>To magnify or shrink the operators, use the buttons in the top-right corner.
+   You can also use the scroll wheel of your mouse to zoom in or out. The
+   entire canvas can also be moved in any direction with the mouse.</li>
+</ol>
+<h2 id="step-iii-connect-the-operators">Step III: Connect the operators</h2>
+<p>Observe that each operator shows output ports in pink and input ports in blue.
+The names of the operators and the corresponding JAVA classes are also shown.
+You can change the operator name by clicking it, and then changing the name in
+the Operator Name box in the Operator Inspector panel.</p>
+<p>Connect the operators as shown in the diagram below. Note the following points about
+the <em>FileWordCount</em> operator which has the largest number of connections:</p>
+<ul>
+<li>The control port is connected to the control port of <em>LineReader</em>.</li>
+<li>The input port is connected to the output port of <em>WindowWordCount</em>.</li>
+<li>The <em>fileOutput</em> port emits the final top N pairs to the corresponding
+  output file and so is connected to the input port of <em>WordCountWriter</em>.</li>
+<li>The <em>outputGlobal</em> port emits the global top N pairs and so is connected to
+  the input port of <em>AppDataSnapshotMapServer</em>.</li>
+<li>The <em>outputPerFile</em> port emits the top N pairs for the current file (while
+  the file is still being read) and so it is connected to <em>ConsoleOutput</em> as
+  well as to <em>AppDataSnapshotMapServer</em>.</li>
+</ul>
+<p><em>Note</em>: As you make changes, the top left corner displays <em>All
+changes saved to HDFS</em>. No explicit save step is needed.</p>
+<p>After you connect all the operators, the canvas looks like this.
+Although presented differently, it is the same as the logical DAG for
+the Java application.</p>
+<p><img alt="Connections" src="../images/topnwords/image41.png" title="Connections" /></p>
+<h2 id="step-iv-configure-the-operator-properties">Step IV: Configure the operator properties</h2>
+<p>The last step before running this application is to configure
+properties of the operators.</p>
+<ol>
+<li>Click the first operator (<em>LineReader</em>) in the canvas to see the list of
+   configurable properties in the right panel.</li>
+<li>
+<p>Locate the property labelled <em>Directory</em> and enter the path to the input
+   directory: <code>/tmp/test/input-dir</code>:</p>
+<p><img alt="Properties" src="../images/topnwords/image42.png" title="Properties" /></p>
+</li>
+<li>
+<p>Configure the properties of the remaining operators using this table for
+   reference. The table contains the same values that we set in the properties
+   file for the Java application.</p>
+<p><table>
+<colgroup>
+<col width="10%" />
+<col width="30%" />
+<col width="60%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><p><strong>Operator</strong></p></td>
+<td align="left"><p><strong>Property Name</strong></p></td>
+<td align="left"><p><strong>Value</strong></p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>5</p></td>
+<td align="left"><p>File Path</p></td>
+<td align="left"><p>/tmp/test/output-dir</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>2</p></td>
+<td align="left"><p>Non Word Str</p></td>
+<td align="left"><p>[\p{Punct}\s]+</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>9</p></td>
+<td align="left"><p>Topic</p></td>
+<td align="left"><p>TopNWordsQueryFile</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>10</p></td>
+<td align="left"><p>Topic</p></td>
+<td align="left"><p>TopNWordsQueryGlobal</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>11</p></td>
+<td align="left"><p>Topic</p></td>
+<td align="left"><p>TopNWordsQueryFileResult</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>12</p></td>
+<td align="left"><p>Topic</p></td>
+<td align="left"><p>TopNWordsQueryGlobalResult</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>7, 8</p></td>
+<td align="left"><p>Snapshot Schema JSON</p></td>
+<td align="left"><p>{ &quot;values&quot;: [{&quot;name&quot;: &quot;word&quot;, &quot;type&quot;: &quot;string&quot;},</p>
+<p>{&quot;name&quot;: &quot;count&quot;, &quot;type&quot;: &quot;integer&quot;}] }</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>4</p></td>
+<td align="left"><p>Top N</p></td>
+<td align="left"><p>10</p></td>
+</tr>
+</tbody>
+</table></p>
+</li>
+<li>
+<p>Click Stream 8 and Stream 9, and change <em>Stream Locality</em> from
+  <code>AUTOMATIC</code> to <code>CONTAINER_LOCAL</code> to match our earlier properties file.
+  After you perform this step, the line for the stream will change
+  from a solid line to a dotted line.</p>
+</li>
+<li>
+<p>Click the blank area of the canvas to see the
+   application attributes in the right panel. Scroll to <em>Master Memory Mb</em>, and
+   change its value to 500.</p>
+</li>
+<li>
+<p>Click each operator, navigate to the <em>Memory Mb</em> attribute in the
+   <em>Attributes</em> section, and change the value to 200 except for <em>Operator
+    4</em> for which the value is 512.</p>
+</li>
+<li>
+<p>Click <em>launch</em> in the top-left corner. <em>Note</em>: Before launching the
+   application, shut down the IDE; if it is running at the time of a launch,
+   the sandbox might hang due to resource exhaustion.
+  <img alt="launch" src="../images/topnwords/image44.png" title="launch" /></p>
+</li>
+<li>
+<p>On the launch application dialog window, type a name for your application.
+  <img alt="Name" src="../images/topnwords/image45.png" title="Name" /></p>
+</li>
+<li>
+<p>(Optional) To configure the application using a configuration file, select
+    <em>Use a config file</em> checkbox. To specify individual properties, select
+    <em>Specify custom properties</em> checkbox.</p>
+</li>
+<li>Click <em>Launch</em>.</li>
+</ol>
+<p>A transient pop-up at the top-right indicating that the launch was successful
+should appear.
+<img alt="Launched" src="../images/topnwords/image46.png" title="Launched" /></p>
+<p>After a successful launch, monitor the application following
+instructions in the Chapter entitled <em>Monitoring with dtManage</em>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../topnwords-c4/" class="btn btn-neutral float-right" title="Monitoring with dtManage">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../topnwords-c2/" class="btn btn-neutral" title="Building in Java"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../topnwords-c2/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../topnwords-c4/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../favicon.ico">
+  
+  <title>Building in Java - DataTorrent Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Building in Java";
+    var mkdocs_page_input_path = "tutorials/salesdimensions.md";
+    var mkdocs_page_url = "/tutorials/salesdimensions/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44586211-2', 'docs.datatorrent.com');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> DataTorrent Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">DataTorrent RTS</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Demos</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../demos/">Running Apps</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../sandbox/">Sandbox</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Development</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../create/">Creating Applications</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../beginner/">Beginner's Guide</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Tutorials</span></li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Top N Words</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../topnwords/">Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../topnwords-c1/">Development Environment</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../topnwords-c2/">Building in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../topnwords-c3/">Building with dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../topnwords-c4/">Monitoring with dtManage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../topnwords-c5/">Visualizing with dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../topnwords-c7/">Advanced Features</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../topnwords-c6/">Appendix</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Sales Dimensions</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Building in Java</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#building-the-sales-dimension-application-in-java">Building the Sales Dimension application in JAVA</a></li>
+                
+                    <li><a class="toctree-l4" href="#example-scenario">Example scenario</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-i-build-the-sales-dimension-application">Step I: Build the Sales Dimension application</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-ii-upload-the-sales-dimension-application-package">Step II: Upload the Sales Dimension application package</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-iii-launch-the-sales-dimension-application">Step III: Launch the Sales Dimension application</a></li>
+                
+                    <li><a class="toctree-l4" href="#operator-base-classes-and-interfaces">Operator base classes and interfaces</a></li>
+                
+                    <li><a class="toctree-l4" href="#operators-in-the-sales-dimensions-application">Operators in the Sales Dimensions application</a></li>
+                
+                    <li><a class="toctree-l4" href="#connecting-the-operators">Connecting the operators</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../salesdimensions-c2/">Building with dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../salesdimensions-c3/">Visualizing with dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../salesdimensions-c4/">Monitoring with dtManage</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../apex_development_setup/">Apex Development Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../configure_IDE/">Generate New Project in IDE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../application_development/">Applications</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../application_packages/">Application Packages</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../configuration_packages/">Configuration Packages</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../operator_development/">Operators</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Library Operators</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../operators/kafkaInputOperator/">Kafka Input</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../operators/dimensions_computation/">Dimension Computation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../operators/hdht/">HDHT</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../operators/deduper/">Deduper</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../operators/file_splitter/">File Splitter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../operators/block_reader/">Block Reader</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../operators/file_output/">File Output</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../operators/snapshot_server/">Snapshot Server</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app_data_framework/">App Data Framework</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dtgateway_api/">REST API</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>App Templates</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/hdfs-sync/">HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/s3-to-hdfs-sync/">S3 to HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/kafka-to-hdfs-sync/">Kafka to HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/hdfs-line-copy/">HDFS to HDFS Line Copy App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/hdfs-to-kafka-sync/">HDFS to Kafka Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/database-to-hdfs/">Database dump to HDFS App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/database-to-database-sync/">Database to Database Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/kafka-to-database-sync/">Kafka to Database Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/kafka-to-hdfs-filter/">Kafka to HDFS Filter App</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Applications</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../app_data_tracker/">App Data Tracker</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dtingest/">dtIngest</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Platform</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../rts/">RTS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dtmanage/">dtManage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dtassemble/">dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dtdashboard/">dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dtgateway/">dtGateway</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../apex/">Apache Apex</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../apex_malhar/">Apache Apex-Malhar</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Deployment and Operations</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../installation/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../configuration/">Configuration</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dtgateway_security/">Security</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dtgateway_systemalerts/">System Alerts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../apexcli/">Apex CLI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../release_notes/">Release Notes</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../glossary/">Glossary</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../additional_docs/">Resources</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">DataTorrent Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Tutorials &raquo;</li>
+        
+      
+        
+          <li>Sales Dimensions &raquo;</li>
+        
+      
+    
+    <li>Building in Java</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="building-the-sales-dimension-application-in-java">Building the Sales Dimension application in JAVA</h1>
+<p>The Sales Dimensions application demonstrates multiple
+features of the DataTorrent RTS platform including the ability to:
+- transform data
+- analyze data
+- act, based on analysis, in real time
+- support scalable applications for high-volume, multi-dimensional computations
+  with very low latency using existing library operators.</p>
+<h2 id="example-scenario">Example scenario</h2>
+<p>A large national retailer with physical stores and online sales
+channels is trying to gain better insights to improve decision making
+for their business. By utilizing real-time sales data, they would like
+to detect and forecast customer demand across multiple product
+categories, gauge pricing and promotional effectiveness across regions,
+and drive additional customer loyalty with real time cross purchase
+promotions.</p>
+<p>In order to achieve these goals, they need to analyze large
+volumes of transactions in real time by computing aggregations of sales
+data across multiple dimensions, including retail channels, product
+categories, and regions. This allows them to not only gain insights by
+visualizing the data for any dimension, but also make decisions and take
+actions on the data in real time.</p>
+<p>The application makes use of seven operators; along with the
+streams connecting their ports, these operators are discussed in the
+sections that follow.</p>
+<p>The application setup for this retailer requires:</p>
+<ul>
+<li>Input &ndash; For receiving individual sales transactions</li>
+<li>Transform &ndash; For converting incoming records into a consumable format</li>
+<li>Enrich &ndash; For providing additional information for each record by
+    performing additional lookups</li>
+<li>Compute &ndash; For performing aggregate computations on all possible
+    key field combinations</li>
+<li>Store &ndash; For storing computed results for further
+    analysis and visualizations</li>
+<li>Analyze, Alert &amp; Visualize &ndash; For displaying graphs
+    for selected combinations, perform analysis, and take actions on
+    computed data in real time.</li>
+</ul>
+<h2 id="step-i-build-the-sales-dimension-application">Step I: Build the Sales Dimension application</h2>
+<p>To save time we will use some source and data files that are available online.
+We will create a new maven project using the maven archetype, add the source
+and data files to the project, modify them suitable and finally build and
+deploy application.</p>
+<p>To build an application</p>
+<ol>
+<li>
+<p>Create a new application project named, say <code>salesapp</code>, as described in:
+   <a href="../../apex_development_setup/">Apache Apex Development Environment Setup</a></p>
+</li>
+<li>
+<p>Delete the following generated JAVA files: <code>Application.java</code> and
+    <code>RandomNumberGenerator.java</code> under <code>src/main/java/com/example/salesapp</code>
+    and <code>ApplicationTest.java</code> under <code>src/test/java/com/example/salesapp</code>.</p>
+</li>
+<li>
+<p>Checkout the <code>examples</code> git repository in a suitable location, for example:</p>
+<pre><code>cd; git checkout https://github.com/datatorrent/examples
+</code></pre>
+</li>
+<li>
+<p>Copy the following files from that repository at
+    <code>examples/dt-demo/dimensions/src/main/java/com/datatorrent/demos/dimensions/sales/generic</code>
+    to the main source directory of the new project at <code>src/main/java/com/example/salesapp</code>.</p>
+<p><table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><p>EnrichmentOperator.java</p></td>
+<td align="left"><p>JsonSalesGenerator.java</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>JsonToMapConverter.java</p></td>
+<td align="left"><p>RandomWeightedMovableGenerator.java</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>SalesDemo.java</p></td>
+<td align="left"><p></p></td>
+</tr>
+</tbody>
+</table></p>
+</li>
+<li>
+<p>Also copy these text files from the examples repository at
+    <code>examples/dt-demo/dimensions/src/main/resources</code>:
+    <code>salesGenericDataSchema.json</code>, <code>salesGenericEventSchema.json</code>,
+    <code>products.txt</code> to the new project at <code>src/main/resources</code>. The first two files
+    define the format of data for visualization queries and the last has
+    data used by the enrichment operator discussed below.</p>
+</li>
+<li>
+<p>Change the package location in each Java file to reflect
+    its current location by changing the line</p>
+<pre><code>package com.datatorrent.demos.dimensions.sales.generic;
+</code></pre>
+<p>to</p>
+<pre><code>package com.example.salesapp;
+</code></pre>
+</li>
+<li>
+<p>Add a new file called <code>InputGenerator.java</code> to the same location
+    containing this block of code:</p>
+<pre><code>package com.example.salesapp;
+import com.datatorrent.api.InputOperator;
+public interface InputGenerator&lt;T&gt; extends InputOperator {
+    public OutputPort&lt;T&gt; getOutputPort();
+}
+</code></pre>
+</li>
+<li>
+<p>Remove these lines from <code>JsonSalesGenerator.java</code> (the first is
+    unused, while the second is now package local):</p>
+<pre><code>import com.datatorrent.demos.dimensions.InputGenerator;
+import com.datatorrent.demos.dimensions.ads.AdInfo;
+</code></pre>
+<p>Also remove the first import from <code>SalesDemo.java</code>.</p>
+</li>
+<li>
+<p>Make the following changes to pom.xml:</p>
+<ol>
+<li>
+<p>Change the artifactId to something that is likely to be unique to
+   this application, for example: <code>&lt;artifactId&gt;salesapp&lt;/artifactId&gt;</code>.
+   This step is optional but is recommended since uploading a second
+   package with the same artifact id will overwrite the first. Similarly,
+   change the <code>name</code> and <code>description</code> elements to something meaningful
+   for this application.</p>
+</li>
+<li>
+<p>Add the following <code>repositories</code> element at the top level (i.e. as a
+   child of the <code>project</code> element):</p>
+<pre><code>&lt;!-- repository to provide the DataTorrent artifacts --&gt;
+&lt;repositories&gt;
+  &lt;repository&gt;
+    &lt;id&gt;datatorrent&lt;/id&gt;
+    &lt;name&gt;DataTorrent Release Repository&lt;/name&gt;
+    &lt;url&gt;https://www.datatorrent.com/maven/content/repositories/releases/&lt;/url&gt;
+    &lt;snapshots&gt;
+      &lt;enabled&gt;false&lt;/enabled&gt;
+    &lt;/snapshots&gt;
+  &lt;/repository&gt;
+&lt;/repositories&gt;
+</code></pre>
+</li>
+<li>
+<p>Add these lines to the dependencies section at the end of the <code>pom.xml</code>
+file (the version number might need to change as new releases come out):</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;com.datatorrent&lt;/groupId&gt;
+    &lt;artifactId&gt;dt-contrib&lt;/artifactId&gt;
+    &lt;version&gt;3.3.0&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.datatorrent&lt;/groupId&gt;
+    &lt;artifactId&gt;dt-library&lt;/artifactId&gt;
+    &lt;version&gt;3.3.0&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+</li>
+<li>
+<p>Finally change <code>apex.version</code> to 3.2.0-incubating. To recapitulate, we are
+   using versions <code>3.3.0</code> for <code>dt-contrib</code> and <code>dt-library</code>, <code>3.3.0-incubating</code>
+   for <code>malhar-library</code> and <code>3.2.0-incubating</code> for Apex.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Build the project as usual:</p>
+<pre><code>mvn clean package -DskipTests
+</code></pre>
+</li>
+</ol>
+<p>Assuming the build is successful, you should see the package file named
+<code>salesApp-1.0-SNAPSHOT.jar</code> under the target directory. The next step
+shows you how to use the <strong>dtManage</strong> GUI to upload the package and launch the
+application from there.</p>
+<h2 id="step-ii-upload-the-sales-dimension-application-package">Step II: Upload the Sales Dimension application package</h2>
+<p>To upload the Sales Dimension application package</p>
+<ol>
+<li>Log on to the DataTorrent Console (the default username and password are
+    both <code>dtadmin</code>).</li>
+<li>On the menu bar, click <em>Develop</em>.</li>
+<li>Under <em>App Packages</em>, click on <em>upload a package</em>.
+    <img alt="upload" src="../images/sales_dimensions/image20.png" title="upload" /></li>
+<li>Navigate to the location of <code>salesApp-1.0-SNAPSHOT.apa</code> and select it.</li>
+<li>Wait till the package is successfully uploaded.</li>
+</ol>
+<h2 id="step-iii-launch-the-sales-dimension-application">Step III: Launch the Sales Dimension application</h2>
+<p><em>Note</em>: If you are launching the application on the sandbox, make sure that
+an IDE is not running on it at the same time; otherwise, the sandbox might
+hang due to resource exhaustion.</p>
+<ol>
+<li>Log on to the DataTorrent Console (the default username and password
+   are both <code>dtadmin</code>).</li>
+<li>In the menu bar, click <code>Develop</code>.</li>
+<li>Under <code>App Packages</code>, locate the Sales Dimension application, and click
+   <em>launch application</em>.</li>
+<li>(Optional) To configure the application using a configuration file, select
+   <em>Use a config file</em>. To specify individual properties, select <em>Specify custom properties</em>.</li>
+<li>Click Launch.</li>
+</ol>
+<p>If the launch is successful a message indicating the success of the launch
+operation appears along with the application ID.</p>
+<h2 id="operator-base-classes-and-interfaces">Operator base classes and interfaces</h2>
+<p>This section briefly discusses operators (and ports) and the relevant interfaces;
+the next section discusses the specific operators used in the application.</p>
+<p>Operators can have multiple input and output ports; they receive events on their input
+ports and emit (potentially different) events on output ports. Thus, operators and ports
+are at the heart of all applications. The <code>Operator</code> interface extends the <code>Component</code>
+interface:</p>
+<pre><code>public interface Component &lt;CONTEXT extends Context&gt; {
+  public void setup(CONTEXT cntxt);
+  public void teardown();
+}
+</code></pre>
+<p>The <code>Operator</code> interface defines <code>Port</code>, <code>InputPort</code>, and <code>OutputPort</code> as inner interfaces with
+<code>InputPort</code>, and <code>OutputPort</code> extending <code>Port</code>.</p>
+<pre><code>public interface Operator extends Component&lt;Context.OperatorContext&gt; {
+
+  public static interface Port extends Component&lt;Context.PortContext&gt; {}
+
+  public static interface InputPort&lt;T extends Object&gt; extends Port {
+    public Sink&lt;T&gt; getSink();
+    public void setConnected(boolean bln);
+    public StreamCodec&lt;T&gt; getStreamCodec();
+  }
+
+  public static interface OutputPort&lt;T extends Object&gt; extends Port {
+    public void setSink(Sink&lt;Object&gt; sink);
+    public Unifier&lt;T&gt; getUnifier();
+  }
+
+  public void beginWindow(long l);
+  public void endWindow();
+}
+</code></pre>
+<p>Operators typically extend the <code>BaseOperator</code> class which simply
+defines empty methods for <code>setup</code>, <code>teardown</code>, <code>beginWindow</code>, and
+<code>endWindow</code>. Derived classes only need to define those functions for
+which they want to perform an action. For example the
+<code>ConsoleOutputOperator</code> class, which is often used during testing and
+debugging, does not override any of these methods.</p>
+<p>Input operators typically receive data from some external source such
+as a database, message broker, or a file system. They might also
+create synthetic data internally. They then transform this data into
+one or more events and write these events on one or more output ports;
+they have no input ports (this might seem paradoxical at first, but is
+consistent with our usage of input ports that dictates that input
+ports only be used to receive data from other operators, not from an
+external source).</p>
+<p>Input ports must implement the <code>InputOperator</code> interface.</p>
+<pre><code>public interface InputOperator extends Operator {
+  public void emitTuples();
+}
+</code></pre>
+<p>The <code>emitTuples</code> method will typically output one or more events on
+some or all of the output ports defined in the operator. For example,
+the simple application generated by the maven archetype command
+discussed earlier has an operator named <code>RandomNumberGenerator</code>,
+which is defined like this:</p>
+<pre><code>public class RandomNumberGenerator extends BaseOperator implements InputOperator {
+
+  public final transient DefaultOutputPort&lt;Double&gt; out = new DefaultOutputPort&lt;Double&gt;();
+
+  public void emitTuples()  {
+    if (count++ &lt; 100) {
+      out.emit(Math.random());
+    }
+  }
+}
+</code></pre>
+<p>Finally, the <code>DefaultInputPort</code> and <code>DefaultOutputPort</code> classes are
+very useful as base classes that can be extended when defining ports
+in operators.</p>
+<pre><code>public abstract class DefaultInputPort&lt;T&gt; implements InputPort&lt;T&gt;, Sink&lt;T&gt; {
+  private int count;
+
+  public Sink&lt;T&gt; getSink(){ return this; }
+
+  public void put(T tuple){
+    count++;
+    process(tuple);
+  }
+
+  public int getCount(boolean reset) {
+    try {
+      return count;
+    } finally {
+      if (reset) {
+        count = 0;
+      }
+    }
+  }
+
+  public abstract void process(T tuple);
+}
+
+public class DefaultOutputPort&lt;T&gt; implements Operator.OutputPort&lt;T&gt; {
+  private transient Sink&lt;Object&gt; sink;
+
+  final public void setSink(Sink&lt;Object&gt; s) {
+    this.sink = s == null? Sink.BLACKHOLE: s;
+  }
+
+  public void emit(T tuple){
+    sink.put(tuple);
+  }
+}
+</code></pre>
+<p>The <code>DefaultInputPort</code> class automatically keeps track of the number
+of events emitted and also supports the notion of a sink if needed in
+special circumstances. The abstract <code>process</code> method needs to be
+implemented by any concrete derived class; it will be invoked via the
+<code>Sink.put</code> override.</p>
+<p>The <code>DefaultOutputPort</code> class also supports a sink and forwards calls
+to <code>emit</code> to the sink. The <code>setSink</code> method is called by the <strong>StrAM</strong>
+execution engine to inject a suitable sink at deployment time.</p>
+<p>Output operators are the opposite of input operators; they typically
+receive data on one or more input ports from other operators and write
+them to external sinks. They have no output ports. There is, however,
+no specific interface to implement or base class to extend for output
+operators, though they often end up extending <code>BaseOperator</code> for
+convenience. For example, the <code>ConsoleOutputOperator</code> mentioned earlier
+is defined like this:</p>
+<pre><code>public class ConsoleOutputOperator extends BaseOperator {
+  public final transient DefaultInputPort&lt;Object&gt; input = new DefaultInputPort&lt;Object&gt;() {
+    public void process(Object t) {
+      System.out.println(s); }
+    };
+}
+</code></pre>
+<p>Notice that the implementation of the abstract method
+<code>DefaultInputPort.process</code> simply writes the argument object to the
+console (we have simplified the code in that function somewhat for the
+purposes of this discussion; the actual code also allows the message
+to be logged and also allows some control over the output format).</p>
+<h2 id="operators-in-the-sales-dimensions-application">Operators in the Sales Dimensions application</h2>
+<p>The application simulates an incoming stream of sales events by
+generating a synthetic stream of such events; these events are then
+converted to Java objects, enriched by mapping numeric identifiers to
+meaningful product names or categories. Aggregated data is then
+computed and stored for all possible combinations of dimensions such
+as channels, regions, product categories and customers. Finally, query
+support is added to enable visualization. Accordingly, a number of
+operators come into play and they are listed below. Within an
+application, an operator can be instantiated multiple times; in order
+to distinguish these instances, an application-specific name is
+associated with each instance (provided as the first argument of the
+<code>dag.addoperator</code> call). To facilitate easy cross-referencing with the
+code, we use the actual Java class names in the list below along with
+the instance name in parentheses.</p>
+<p>This diagram represents the Sales Dimension DAG. The
+ports on these operators are connected via streams.
+<img alt="SalesDemoDAG.png" src="../images/sales_dimensions/image19.png" /></p>
+<p><strong>JsonSalesGenerator (InputGenerator)</strong></p>
+<p>This class (new operator) is an input operator that generates a single
+sales event defined by a class like this:</p>
+<pre><code>class SalesEvent {
+  /* dimension keys */
+  public long time;
+  public int productId;
+  public String customer;
+  public String channel;
+  public String region;
+  /* metrics */
+  public double sales;
+  public double discount;
+  public double tax;
+}
+</code></pre>
+<p><strong>JsonToMapConverter (Converter)</strong></p>
+<p>This operator uses some special utility classes (ObjectReader and
+ObjectMapper) to transform JSON event data to Java maps for easy
+manipulation in Java code; it is fairly simple:</p>
+<pre><code>public class JsonToMapConverter extends BaseOperator {
+
+...
+
+  public final transient DefaultInputPort&lt;byte\[\]&gt; input = new DefaultInputPort&lt;byte[]&gt;() {
+    public void process(byte\[\] message) {
+      Map&lt;String, Object&gt; tuple = reader.readValue(message);
+      outputMap.emit(tuple);
+    }
+  }
+
+  public final transient DefaultOutputPort&lt;Map&lt;String, Object&gt;&gt; outputMap
+     = new DefaultOutputPort&lt;Map&lt;String, Object&gt;&gt;();
+
+}
+</code></pre>
+<p><strong>EnrichmentOperator (Enrichment)</strong></p>
+<p>This operator performs category lookup based on incoming numeric
+product IDs and adds the corresponding category names to the output
+events. The mapping is read from the text file <code>products.txt</code> that
+we encountered earlier while building the application. It contains
+data like this:</p>
+<pre><code>{"productId":96,"product":"Printers"}
+{"productId":97,"product":"Routers"}
+{"productId":98,"product":"Smart Phones"}
+</code></pre>
+<p>The core functionality of this operator is in the <code>process</code> function of
+the input port where it looks up the product identifier in the
+enrichment mapping and adds the result to the event before emitting it
+to the output port. The mapping file can be modified at runtime to add
+or remove productId to category mapping pairs, so there is also some
+code to check the modification timestamp and re-read the file if necessary.</p>
+<pre><code>public class EnrichmentOperator extends BaseOperator {
+  ...
+  public transient DefaultOutputPort&lt;Map&lt;String, Object&gt;&gt;
+    outputPort = new DefaultOutputPort&lt;Map&lt;String, Object&gt;&gt;();
+
+  public transient DefaultInputPort&lt;Map&lt;String, Object&gt;&gt;
+    inputPort = new DefaultInputPort&lt;Map&lt;String, Object&gt;&gt;() {
+
+    public void process(Map&lt;String, Object&gt; tuple) {
+      ...
+    }
+  }
+}
+</code></pre>
+<p><strong>DimensionsComputationFlexibleSingleSchemaMap (DimensionsComputation)</strong></p>
+<p>This operator performs dimension computations on incoming data. Sales
+numbers by all combinations of region, product category, customer, and
+sales channel should be computed and emitted.</p>
+<p><strong>AppDataSingleDimensionStoreHDHT (Store)</strong></p>
+<p>This operator stores computed dimensional information on HDFS,
+optimized for fast retrieval so that it can respond to queries.</p>
+<p><strong>PubSubWebSocketAppDataQuery (Query)</strong></p>
+<p>This is the dashboard connector for visualization queries.
+This operator and the next are used respectively to send queries and
+retrieve results from the Data Torrent Gateway which can act like a
+message broker for limited amounts of data using a topic-based
+publish/subscribe model. The URL to connect to is typically something
+like <code>ws://</code><em>gateway-host</em>:<em>port</em><code>/pubsub</code> where
+<em>gateway-host</em> and <em>port</em> should be replaced by appropriate values.</p>
+<p>A publisher sends a JSON message that looks like this to the URL
+where the value of the <code>data</code> key is the desired message content:</p>
+<pre><code>{"type":"publish", "topic":"foobar", "data": ...}
+</code></pre>
+<p>Correspondingly, subscribers send messages like this
+to retrieve published message data:</p>
+<pre><code>{"type":"subscribe", "topic":"foobar"}
+</code></pre>
+<p>Topic names need not be pre-registered anywhere but obviously, the
+same topic name (e.g. <em>foobar</em> in the example above) must be used by both
+publisher and subscriber; additionally, if there are no subscribers when
+a message is published, it is simply discarded.</p>
+<p>This query operator is an input operator used to send queries from
+the dashboard to the store via the gateway:</p>
+<pre><code>public class PubSubWebSocketAppDataQuery extends PubSubWebSocketInputOperator&lt;String&gt;
+implements AppData.ConnectionInfoProvider {
+  ...
+  protected String convertMessage(String message) {
+    JSONObject jo = new JSONObject(message);
+    return jo.getString("data");
+  }
+}
+</code></pre>
+<p>The important method here is <code>convertMessage</code> to convert the input
+string to a JSON object, get the value of the <code>data</code> key from the object
+and return it. The base classes look like this:</p>
+<pre><code>public class PubSubWebSocketInputOperator&lt;T&gt; extends WebSocketInputOperator&lt;T&gt; {
+  ...
+}
+</code></pre>
+<p>This class simply converts a JSON event into Java maps via the
+<code>convertMessage</code> method.</p>
+<pre><code>public class WebSocketInputOperator&lt;T&gt; extends
+SimpleSinglePortInputOperator&lt;T&gt; implements Runnable {
+  ...
+}
+</code></pre>
+<p>This code is intended to be run in an asynchronous thread to retrieve
+events from an external source and emit them on the output port.</p>
+<pre><code>public abstract class SimpleSinglePortInputOperator&lt;T&gt; extends BaseOperator
+implements InputOperator, Operator.ActivationListener&lt;OperatorContext&gt; {
+
+  final public transient BufferingOutputPort&lt;T&gt; outputPort;
+
+  final public void activate(OperatorContext ctx) {
+  }
+
+  public void emitTuples() {
+    outputPort.flush(Integer.MAX_VALUE);
+  }
+
+  public static class BufferingOutputPort&lt;T&gt; extends DefaultOutputPort&lt;T&gt; {
+    public void flush(int count) { ... }
+  }
+
+}
+</code></pre>
+<p>The class starts a separate thread which retrieves source events and
+invokes the <code>emit</code> method of the output port; the output port buffers
+events until the <code>flush</code> method is called at which point all buffered
+events are emitted.</p>
+<p><strong>PubSubWebSocketAppDataResult (QueryResult)</strong></p>
+<p>This is the dashboard connector for results of visualization queries
+and is the result counterpart of the previous input query operator:</p>
+<pre><code>public class PubSubWebSocketAppDataResult extends PubSubWebSocketOutputOperator&lt;String&gt;
+implements AppData.ConnectionInfoProvider {
+  ...
+}
+</code></pre>
+<p>This class merely overrides the generic <code>convertMapToMessage</code> method of the
+base class to generate the required JSON publish message.</p>
+<pre><code>public class PubSubWebSocketOutputOperator&lt;T&gt; extends WebSocketOutputOperator&lt;T&gt; {
+  ...
+}
+</code></pre>
+<p>This class, similarly, doesn't do much &ndash; the <code>convertMapToMessage</code>
+method converts input data into a suitable JSON object for publishing to the
+registered topic.</p>
+<pre><code>public class WebSocketOutputOperator&lt;T&gt; extends BaseOperator {
+  public final transient DefaultInputPort&lt;T&gt; input = new DefaultInputPort&lt;T&gt;() {
+    public void process(T t) {
+      ...
+
+      connection.sendTextMessage(convertMapToMessage(t));
+    }
+  }
+}
+</code></pre>
+<p>The key element in this class is the input port (the rest of the code
+deals with establishing a connection and reconnecting if
+necessary). As usual, the key method in the input port is <code>process</code>
+which converts the incoming event to a JSON message and sends it
+across the connection.</p>
+<h2 id="connecting-the-operators">Connecting the operators</h2>
+<p>Now that we've seen the operator details, we will look at how they are
+connected in the application. An application must implement the
+<code>StreamingApplication</code> interface:</p>
+<pre><code>public class SalesDemo implements StreamingApplication {
+  ...
+  public void populateDAG(DAG dag, Configuration conf) {
+    JsonSalesGenerator input
+      = dag.addOperator("InputGenerator", JsonSalesGenerator.class);
+    JsonToMapConverter converter
+      = dag.addOperator("Converter", JsonToMapConverter.class);
+    EnrichmentOperator enrichmentOperator
+      = dag.addOperator("Enrichment", EnrichmentOperator.class);
+    DimensionsComputationFlexibleSingleSchemaMap dimensions
+      = dag.addOperator("DimensionsComputation", DimensionsComputationFlexibleSingleSchemaMap.class);
+    AppDataSingleSchemaDimensionStoreHDHT store
+      = dag.addOperator("Store", AppDataSingleSchemaDimensionStoreHDHT.class);
+
+    Operator.OutputPort&lt;String&gt; queryPort;
+    Operator.InputPort&lt;String&gt; queryResultPort;
+
+    URI uri = URI.create("ws://" + gatewayAddress + "/pubsub");
+
+    PubSubWebSocketAppDataQuery wsIn = new
+    PubSubWebSocketAppDataQuery();
+    wsIn.setUri(uri);
+    queryPort = wsIn.outputPort;
+    dag.addOperator("Query", wsIn);
+    dag.addStream("Query", queryPort, store.query).setLocality(Locality.CONTAINER_LOCAL);
+    PubSubWebSocketAppDataResult wsOut
+      = dag.addOperator("QueryResult", new PubSubWebSocketAppDataResult());
+    wsOut.setUri(uri);
+
+    queryResultPort = wsOut.input;
+    dag.addStream("InputStream", inputGenerator.getOutputPort(), converter.input);
+    dag.addStream("EnrichmentStream", converter.outputMap, enrichmentOperator.inputPort);
+    dag.addStream("ConvertStream", enrichmentOperator.outputPort, dimensions.input);
+    dag.addStream("DimensionalData", dimensions.output, store.input);
+    dag.addStream("QueryResult", store.queryResult, queryResultPort).setLocality(Locality.CONTAINER_LOCAL);
+  }
+}
+</code></pre>
+<p>The key method to implement in an application is <code>populateDAG</code>; as shown
+above, the first step is to create instances of all seven operators and
+add them to the DAG (we have omitted some parts of the code that are
+related to advanced features or are not directly relevant to the
+current discussion). Once the operators are added to the DAG, their
+ports must be connected (as shown in the earlier diagram) using
+streams. Recall that a stream is represented by the <code>DAG.StreamMeta</code>
+interface and is created via <code>DAG.addStream()</code>. The first argument is
+the name of the stream, the second is the output port and the third
+the input port. These statements form the second part of the
+<code>populateDAG</code> function.</p>
+<p>These two simple steps (a) adding operators to the DAG; and (b)
+connecting their ports with streams are all it takes to build most
+applications. Of course, additional steps may be needed to configure
+suitable properties to achieve the desired performance levels but those
+are often easier.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../salesdimensions-c2/" class="btn btn-neutral float-right" title="Building with dtAssemble">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../topnwords-c6/" class="btn btn-neutral" title="Appendix"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../topnwords-c6/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../salesdimensions-c2/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

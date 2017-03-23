@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../favicon.ico">
+  
+  <title>dtManage - DataTorrent Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "dtManage";
+    var mkdocs_page_input_path = "dtmanage.md";
+    var mkdocs_page_url = "/dtmanage/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44586211-2', 'docs.datatorrent.com');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> DataTorrent Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">DataTorrent RTS</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Demos</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../demos/">Running Apps</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../sandbox/">Sandbox</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Development</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../create/">Creating Applications</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../beginner/">Beginner's Guide</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Tutorials</span></li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Top N Words</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords/">Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c1/">Development Environment</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c2/">Building in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c3/">Building with dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c4/">Monitoring with dtManage</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c5/">Visualizing with dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c7/">Advanced Features</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/topnwords-c6/">Appendix</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Sales Dimensions</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions/">Building in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions-c2/">Building with dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions-c3/">Visualizing with dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorials/salesdimensions-c4/">Monitoring with dtManage</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apex_development_setup/">Apex Development Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../configure_IDE/">Generate New Project in IDE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../application_development/">Applications</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../application_packages/">Application Packages</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../configuration_packages/">Configuration Packages</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operator_development/">Operators</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Library Operators</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/kafkaInputOperator/">Kafka Input</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/dimensions_computation/">Dimension Computation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/hdht/">HDHT</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/deduper/">Deduper</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/file_splitter/">File Splitter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/block_reader/">Block Reader</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/file_output/">File Output</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/snapshot_server/">Snapshot Server</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app_data_framework/">App Data Framework</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_api/">REST API</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>App Templates</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/hdfs-sync/">HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/s3-to-hdfs-sync/">S3 to HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kafka-to-hdfs-sync/">Kafka to HDFS Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/hdfs-line-copy/">HDFS to HDFS Line Copy App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/hdfs-to-kafka-sync/">HDFS to Kafka Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/database-to-hdfs/">Database dump to HDFS App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/database-to-database-sync/">Database to Database Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kafka-to-database-sync/">Kafka to Database Sync App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kafka-to-hdfs-filter/">Kafka to HDFS Filter App</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Applications</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app_data_tracker/">App Data Tracker</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtingest/">dtIngest</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Platform</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../rts/">RTS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">dtManage</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#dtmanage-guide">dtManage Guide</a></li>
+                
+                    <li><a class="toctree-l4" href="#introduction">Introduction</a></li>
+                
+                    <li><a class="toctree-l4" href="#configure-tab">Configure Tab</a></li>
+                
+                    <li><a class="toctree-l4" href="#develop-tab">Develop Tab</a></li>
+                
+                    <li><a class="toctree-l4" href="#monitor-tab">Monitor Tab</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtassemble/">dtAssemble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtdashboard/">dtDashboard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway/">dtGateway</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apex/">Apache Apex</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apex_malhar/">Apache Apex-Malhar</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Deployment and Operations</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../installation/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../configuration/">Configuration</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_security/">Security</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dtgateway_systemalerts/">System Alerts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apexcli/">Apex CLI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../release_notes/">Release Notes</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../glossary/">Glossary</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../additional_docs/">Resources</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">DataTorrent Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Platform &raquo;</li>
+        
+      
+    
+    <li>dtManage</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="dtmanage-guide">dtManage Guide</h1>
+<h2 id="introduction">Introduction</h2>
+<p>The DataTorrent Console (aka dtManage) is a web-based user interface that allows you to monitor and interact with the DataTorrent platform running on your Hadoop cluster. It is a web-based dashboard that is served by the DataTorrent Gateway, and has five areas: configuration, monitoring, development, and , visualization, and learning.</p>
+<p>To download the platform or the VM sandbox, go to <a href="http://www.datatorrent.com/download">http://www.datatorrent.com/download</a>.</p>
+<p><img alt="Console Screenshot" src="../images/dtmanage/console-welcome-screen.png" /></p>
+<h3 id="connection-requirements">Connection Requirements</h3>
+<p>When you install DataTorrent RTS on your Hadoop cluster using the installer binary, the DataTorrent Gateway service is started on the node where the installer is executed. By default, the Gateway serves the console from port 9090. The ability to connect to this node and port depends on your environment, and may require special setup such as an ssh tunnel, firewall configuration changes, VPN access, etc.</p>
+<p><img alt="Architectural Diagram" src="../images/dtmanage/console-gateway-diagram.png" /></p>
+<h3 id="browser-requirements">Browser Requirements</h3>
+<p>The Console currently supports Chrome and Safari.</p>
+<h3 id="installation-wizard">Installation Wizard</h3>
+<p>The first time you open the Console, after installing DataTorrent RTS on your cluster, it will take you to the Installation Wizard. This walks you through the initial configuration of your DataTorrent installation, by confirming the following:</p>
+<ul>
+<li>Location of the hadoop executable</li>
+<li>DFS location where all the DataTorrent files are stored</li>
+<li>DataTorrent license</li>
+<li>Summary and review of any remaining configuration items</li>
+</ul>
+<p><img alt="" src="../images/dtmanage/hadoop-config-screenshot.png" /></p>
+<h4 id="when-kerberos-security-is-enabled">When Kerberos Security is Enabled</h4>
+<p>When your hadoop cluster has security enabled with Kerberos, there will be four additional controls in the installation wizard: </p>
+<ul>
+<li><strong>Kerberos Principal</strong>: The Kerberos principal (e.g. primary/instance@REALM) to use on behalf of the management console.</li>
+<li><strong>Kerberos Keytab</strong>: The location (path) of the Kerberos keytab file to use on the gateway node's local file system.</li>
+<li><strong>YARN delegation token lifetime</strong>: If the value of the <code>yarn.resourcemanager.delegation.token.max-lifetime</code> property in your cluster configuration has been changed from the default, enter it here. Otherwise, leave this blank and the default will be assumed.</li>
+<li><strong>Namenode delegation token lifetime</strong>: If the value of the <code>dfs.namenode.delegation.token.max-lifetime</code> property in your cluster configuration has been changed from the default, enter it here. Otherwise, leave this blank and the default will be assumed.</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> The token lifetime values you enter will not actually set these values in your hadoop configuration, it is only meant to inform the DataTorrent platform of these values.</p>
+</blockquote>
+<h2 id="configure-tab">Configure Tab</h2>
+<p>The configuration page can be found by clicking the “Configure” link in the main navigation bar at the top. There are links to various tools to help you configure and troubleshoot your DataTorrent installation. <em>The configuration page links may differ depending on your cluster setup. The following is a screenshot with a cluster that has simple authentication/authorization enabled.</em></p>
+<p><img alt="" src="../images/dtmanage/console-config-screen.png" /></p>
+<h3 id="system-configuration">System Configuration</h3>
+<p>This page shows diagnostic information regarding the gateway and console, as well as any issues that the gateway may detect.</p>
+<p><img alt="System Configuration Page" src="../images/dtmanage/console-system-screen1.png" /></p>
+<p>In addition, you can perform the following actions from this page:</p>
+<h4 id="restart-the-gateway">Restart the Gateway</h4>
+<p><img alt="" src="../images/dtmanage/console-gateway-restart.png" />
+This can be useful when Hadoop configuration has changed or some other factor of your cluster environment has changed.</p>
+<h4 id="toggle-reporting">Toggle Reporting</h4>
+<p><img alt="" src="../images/dtmanage/console-reporting.png" /></p>
+<p>If enabled, your DataTorrent installation will send various pieces of information such as bug reporting and usage statistics back to our servers.</p>
+<h3 id="license-information">License Information</h3>
+<p>Use the License Information page to view how much of your DataTorrent license capacity your cluster is consuming as well as what capabilities your license permits. You can also upload new license files here.</p>
+<p><img alt="License Screen" src="../images/dtmanage/console-license.png" /></p>
+<h3 id="user-profile">User Profile</h3>
+<p>The User Profile page displays information about the current user, including their username, the authentication scheme being used, and the roles that the current user has. In addition, users can perform the following actions:</p>
+<ul>
+<li>change password </li>
+<li>change the default home page</li>
+<li>change the theme of the console</li>
+<li>restore the default options of the console</li>
+</ul>
+<p><img alt="User Profile" src="../images/dtmanage/console-profile.png" /></p>
+<h3 id="user-management">User Management</h3>
+<p>Use this page to manage users and roles of your DataTorrent cluster:</p>
+<ul>
+<li>add users</li>
+<li>change users’ roles</li>
+<li>change users’ password</li>
+<li>delete users</li>
+<li>add roles</li>
+<li>edit role permissions</li>
+<li>delete roles</li>
+</ul>
+<p><img alt="User Management Screen" src="../images/dtmanage/console-user-mgmt.png" /></p>
+<blockquote>
+<p><strong>Note:</strong> With most authentication schemes, the admin role cannot be deleted.</p>
+</blockquote>
+<h3 id="installation-wizard_1">Installation Wizard</h3>
+<p>At any time, you can go back to the installation wizard from the Configuration Tab. It can help diagnose issues and reconfigure your cluster and gateway.</p>
+<h2 id="develop-tab">Develop Tab</h2>
+<p>The development area of dtManage is mainly geared towards the creation, upload, configuration, and launch of DataTorrent applications. The development home can be viewed by clicking the “Develop” tab in the main navigation bar on the top of the screen. A prerequisite to using the development tools of the UI is an understanding of what Apex Application Packages are. For more information, see the <a href="https://www.datatorrent.com/docs/guides/ApplicationDeveloperGuide.html">Application Packages Guide</a>.</p>
+<p><img alt="Development Tab" src="../images/dtmanage/console-dev-screen.png" /></p>
+<h3 id="application-packages">Application Packages</h3>
+<p>To access the application package listing, click on the "Apps" link from the Develop Tab index page. From here, you can perform several operators directly on application packages:</p>
+<ul>
+<li>Download the app package</li>
+<li>Delete the app package</li>
+<li>Create a new application in an application package via dtAssemble (requires enterprise license)</li>
+<li>Launch applications in the app package</li>
+<li>Import default packages (see below)</li>
+</ul>
+<p><img alt="Application Packages" src="../images/dtmanage/console-dev-apps.png" /></p>
+<blockquote>
+<p><strong>Note:</strong> If authentication is enabled, you may not be able to see others’ app packages, depending on your permissions.</p>
+</blockquote>
+<h4 id="importing-default-packages">Importing Default Packages</h4>
+<p>When you install the DataTorrent platform, a folder located in the installation directory called <code>demos/app-packages</code> will contain various default app packages that can be imported into HDFS for use. Just above the list of Application Packages, there should be a button that says <strong>Import default packages</strong>. Clicking this will take you to a page that shows the list of these demo app packages. Select one or more to import and click the <strong>Import</strong> button. This will upload the selected app package to HDFS.</p>
+<p><img alt="" src="../images/dtmanage/import-default-packages.png" /></p>
+<h3 id="application-package-page">Application Package Page</h3>
+<p>Once you have uploaded or imported an App Package, clicking on the package name in the list will take you to the Application Package Page, where you can view all the package details.</p>
+<p><img alt="Application Package Page" src="../images/dtmanage/console-package.png" /></p>
+<p>Aside from various pieces of meta information (owner, DataTorrent version, required properties, etc), you will see a list of apps found in this package. </p>
+<h4 id="launching-apps">Launching Apps</h4>
+<p>To launch an app in an App Package, click on the launch button to the far right of the list. A dialog box will appear with several options: </p>
+<ul>
+<li><strong>Specify a name for the running app</strong>
+  The console will pre-populate this field with an appropriate name, but you can specify your own name. Just be weary that it must be unique compared to the other applications running on your DataTorrent installation.</li>
+<li><strong>Specify the <a href="https://hadoop.apache.org/docs/r2.4.1/hadoop-yarn/hadoop-yarn-site/CapacityScheduler.html">scheduler queue</a></strong>
+  This input allows you to specify which queue you want the application to be launched under. The default behavior depends on your Hadoop installation, but typically will be <code>root.[USER_NAME]</code>.</li>
+<li><strong>Use a config file when launching</strong>
+  App Package config files are xml files that contain <code>&lt;properties&gt;</code> that get interpreted and used for launching an application. To choose one, enable the check box and choose the config file you want to use for launch.</li>
+<li><strong>Specify custom properties</strong>
+  In addition to choosing a config file, you may also specify properties directly in the launch popup by selecting this option. Note that there are three helpful functions when specifying custom properties:</li>
+<li><em>add required properties</em> - App Packages can have required properties (for example, twitter API access keys for the twitter demo). This function adds a new property with the required property name to the form, making it easy to fill in.<ul>
+<li><em>add default properties</em> - App Packages can also have default properties. This function will add the default properties to the list, making it easy for you to override the defaults</li>
+<li><em>save this configuration as…</em> - This function creates a new config file and saves it to the App Package, which can then be used later to launch the app with. That way, you can relaunch the app with the same properties without having to re-enter them.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Launch app modal" src="../images/dtmanage/console-launch-app.png" /></p>
+<blockquote>
+<p><strong>Note:</strong> For more information about config files and custom properties, see the <a href="https://www.datatorrent.com/docs/guides/ApplicationDeveloperGuide.html">Application Packages Guide</a></p>
+</blockquote>
+<h3 id="viewing-an-application-dag">Viewing an Application DAG</h3>
+<p>All DataTorrent applications are made up of operators that connect together via streams to form a Directed Acyclic Graph (DAG). To see a visualization of this DAG, click on the application name in the list of applications.</p>
+<p><img alt="DAG View" src="../images/dtmanage/console-dag-view.png" /></p>
+<h3 id="creating-apps-with-dtassemble">Creating apps with dtAssemble</h3>
+<p>If you have an Enterprise license, you will have access to the dtAssemble tool. Using this tool is outside the scope of this guide, but check out the <a href="http://docs.datatorrent.com/dtassemble/">dtAssemble guide</a>.</p>
+<h2 id="monitor-tab">Monitor Tab</h2>
+<p>The main operations dashboard can be visited by clicking on the “Monitor” link in the main top navigation bar. This section of the Console can be used to monitor, debug, and kill running DataTorrent applications.</p>
+<h3 id="operations-home">Operations Home</h3>
+<p>The operations home page shows overall cluster statistics as well as a list of running DataTorrent applications.</p>
+<p><img alt="Operations Home Page" src="../images/dtmanage/console-monitor-home.png" /></p>
+<p>The cluster statistics include some performance statistics and memory usage information. As for the application list, there are two options to take note of: <strong>retrieve ended apps</strong> and <strong>include system apps</strong>. The first option will include all ended applications that are still in the resource manager history. The second option will include system apps, which are apps like the App Data Tracker that are developed by DataTorrent and used to add functionality to your DataTorrent cluster.</p>
+<h3 id="instance-page">Instance Page</h3>
+<p>To get to an application instance page, click on either the app name or the app id in the list of running applications.</p>
+<p><img alt="Instance Page View" src="../images/dtmanage/console-monitor-instance.png" /></p>
+<p>All sections and subsections of the instance page currently use a dashboard/widget system. The controls for this system are located near the top of the screen, below the breadcrumbs:</p>
+<p><img alt="widget controls" src="../images/dtmanage/console-widget-ctrls.png" /></p>
+<p>There are tool tips to help you understand how to work with dashboards and widgets. For most users, the default dashboard configurations (<em>logical</em>, <em>physical</em>, <em>physical-dag-view</em>, <em>metric-view</em>) will suffice. The following is a list of widgets available on an app instance page:</p>
+<h4 id="application-overview-widget">Application Overview Widget</h4>
+<p>All the default dashboard tabs have this widget. It contains basic information regarding the app plus a few controls. To end a running application, use either the “shutdown” or “kill” buttons in this widget:</p>
+<p><img alt="shutdown and kill buttons" src="../images/dtmanage/console-instance-kill-shutdown.png" /></p>
+<p>The “shutdown” function tries to gracefully stop the application, while “kill” forces the application to end. In either case, you will need to confirm your action.</p>
+<p>You can also use the <strong>set logging level</strong> button on this widget to specify what logging level gets written to the dt.log files. </p>
+<p><img alt="Application Overview widget" src="../images/dtmanage/console-set-level-instance.png" /></p>
+<p>You will then be presented with a dialog where you can specify either fully-qualified class names or package identifiers with wildcards:</p>
+<p><img alt="set log level modal" src="../images/dtmanage/console-set-level-modal.png" /></p>
+<h4 id="stram-events-widget">Stram Events Widget</h4>
+<p>Each application has a stream of notable events that can be viewed with the StrAM Events widget:</p>
+<p><img alt="Stram Events" src="../images/dtmanage/console-events.png" /></p>
+<p>Some events have additional information attached to it, which can be viewed by clicking the “details” button in the list:</p>
+<p><img alt="Event Detail Modal" src="../images/dtmanage/console-events-modal.png" /></p>
+<h4 id="logical-dag-widget">Logical DAG Widget</h4>
+<p>This widget visualizes the logical plan of the application being viewed:</p>
+<p><img alt="" src="../images/dtmanage/logical-dag.png" /></p>
+<p>Additionally, you can cycle through various metrics aggregated by logical operator. In the screenshot above, processed tuples per second and emitted tuples per second are shown. </p>
+<blockquote>
+<p><strong>Pro tip:</strong> Hold the alt/option key while using your mouse scroll wheel to zoom in and out on the DAG.</p>
+</blockquote>
+<h4 id="physical-dag-widget">Physical DAG Widget</h4>
+<p>This is similar to the Logical DAG Widget, except it shows the fully deployed "physical" operators. Depending on the partitioning of your application, this could be significantly more complex than the Logical DAG view.</p>
+<p><img alt="" src="../images/dtmanage/physical-dag.png" /></p>
+<p>Same-colored physical operators in this widget indicates that these operators are in the same container.</p>
+<h4 id="logical-operators-list-widget">Logical Operators List Widget</h4>
+<p>This widget shows a list of logical operators in the application. This table, like others, has live updates, filtering, column ordering, stacked row sorting, and column resizing. </p>
+<p>One nice feature specific to this widget is the ability to set the logging level for the Java class of a logical operator by selecting it in this list and using the provided dropdown, like so:</p>
+<p><img alt="" src="../images/dtmanage/console-set-level-from-oplist.png" /></p>
+<h4 id="physical-operators-list-widget">Physical Operators List Widget</h4>
+<p>Shows the physical operators in the application.</p>
+<h4 id="containers-list-widget">Containers List Widget</h4>
+<p>Shows the containers in the application. From this widget you can: select a container and go to one of its logs, fetch non-running containers and view information about them, and even kill selected containers.</p>
+<h4 id="logical-streams-list-widget">Logical Streams List Widget</h4>
+<p>Shows a list of the streams in the application. There are also links to the logical operator pages for the sources and sinks of each stream.</p>
+<h4 id="metrics-chart">Metrics Chart</h4>
+<p>Shows various metrics of your application on a real-time line chart. Single-click a metric to toggle its visibility. Double-click a metric to toggle all other keys' visibility.</p>
+<h3 id="recording-and-viewing-sample-tuples">Recording and Viewing Sample Tuples</h3>
+<p>There is a mechanism called tuple recording that can be used to easily look at the content of tuples flowing through your application. To use this feature, select a physical operator from the Physical Operators List widget and click on the “record a sample” button. This will bring up a modal window which you can then use to traverse the sample and look at the actual content of the tuple (converted to a JSON structure):</p>
+<p><img alt="" src="../images/dtmanage/console-record-tuples.gif" /></p>
+<h3 id="viewing-logs">Viewing Logs</h3>
+<p>Another useful feature of the Console is the ability to view container logs of a given application. To do this, select a container from the Containers List widget (default location of this widget is in the “physical” dashboard). Then click the logs dropdown and select the log you want to look at:</p>
+<p><img alt="" src="../images/dtmanage/console-log-viewing.gif" /></p>
+<p>Once you are viewing a log file in the console, there are few tricks to traversing it. You can scroll to the top to fetch earlier content, scroll to the bottom for later content, grep for strings in the selected range or over the entire log, and click the “eye” icon to the far left of every line to go to that location of the log:</p>
+<p><img alt="" src="../images/dtmanage/console-log-viewing-adv.gif" /></p>
+<p>There are numerous improvements in store for dtManage, and user feedback is highly valued in the planning, so please provide any that will help in your usage of the tool!</p>
+<p>~The DataTorrent UI Team</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../dtassemble/" class="btn btn-neutral float-right" title="dtAssemble">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../rts/" class="btn btn-neutral" title="RTS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../rts/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../dtassemble/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>
