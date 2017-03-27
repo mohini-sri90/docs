@@ -30,7 +30,7 @@ Guides on applying site-wide [configuration](http://www.mkdocs.org/user-guide/co
 
 Currently docs.datatorrent.com is hosted on Github Pages.  The deployment requires that a custom [CNAME](docs/CNAME) be present at docs level, and DNS entry for docs.datatorrent.com point to datatorrent.github.io.
 
-## Deployment
+## Deployment and Versioning
 
 **NOTE** Please make sure to use mkdocs v0.16.0 or later by running `mkdocs --version`.  If you have an older version of mkdocs installed upgrade with:
 
@@ -38,13 +38,47 @@ Currently docs.datatorrent.com is hosted on Github Pages.  The deployment requir
 sudo pip install --upgrade mkdocs
 ```
 
-Deployment is done from master branch of the repository by executing the following command:
+Please note that we no longer use `mkdocs gh-deploy --clean` -- that command should
+_NOT_ be used. Instead, deployment is done using the `release.rb` Ruby script.
+You can get a usage message with:
 
-```bash
-mkdocs gh-deploy --clean
+```
+ruby -w release.rb -h
 ```
 
-This results in all the documentation under [docs](docs) being statically generated into HTML files and deployed as top level in [gh-pages](https://github.com/DataTorrent/docs/tree/gh-pages) branch.  For more details on how this is done see [MkDocs - Deploying Github Pages](http://www.mkdocs.org/user-guide/deploying-your-docs/#github-pages).
+If making a new release, say X.Y.Z, make sure that:
+- You are on the `master` branch and all necessary changes are present in that branch.
+- There are no uncommitted changes.
+- There are no untracked files.
+
+Then, run the following command:
+```
+ruby -w release.rb -v X.Y.Z
+```
+
+It executes the following steps:
+- perform a variety of checks
+- add a link to the new release in `docs/prior_releases.md`
+- create a new branch `release-X.Y.Z` and a new tag `version-X.Y.Z`
+- build the site at `/tmp/rts-docs`
+- copy new site files into the `gh-pages` branch
+- push all 3 branches and the tag
+
+If updating an old release, say U.V.W, make sure that:
+- You are on the `release-U.V.W` branch and all necessary changes are present in that branch.
+- There are no uncommitted changes
+- There are no untracked files
+
+Then, run the following command:
+```
+ruby -w release.rb -v U.V.W -u
+```
+
+It executes the following steps:
+- perform a variety of checks
+- build the site at `/tmp/rts-docs`
+- copy new site files into the `gh-pages` branch under the release directory
+- push that branch
 
 
 
