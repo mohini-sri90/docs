@@ -432,6 +432,13 @@
         
             
     <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kinesis-to-s3/">Kinesis to S3 App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
         <a class="" href="../app-templates/s3-to-hdfs-sync/">S3 to HDFS Sync App</a>
         
     </li>
@@ -712,7 +719,7 @@ setlocal
 mvn -B archetype:generate ^
   -DarchetypeGroupId=org.apache.apex ^
   -DarchetypeArtifactId=apex-app-archetype ^
-  -DarchetypeVersion=3.3.0-incubating ^
+  -DarchetypeVersion=3.6.0-SNAPSHOT ^
   -DgroupId=com.example ^
   -Dpackage=com.example.myapexapp ^
   -DartifactId=myapexapp ^
@@ -720,10 +727,8 @@ mvn -B archetype:generate ^
 endlocal
 </code></pre>
 <p>The caret (^) at the end of some lines indicates that a continuation line follows.</p>
-<p>This command file also exists in the DataTorrent <em>examples</em> repository which you can check out with:</p>
-<pre><code>git clone https://github.com/DataTorrent/examples
-</code></pre>
-<p>You will find the script under <code>examples\tutorials\topnwords\scripts\newapp.cmd</code>.</p>
+<p>This command will eventually become outdated, check the <a href="https://github.com/apache/apex-core/blob/master/apex-app-archetype/README.md">apex-app-archetype README</a>
+for the latest version, which includes the most recent archetypeVersion.</p>
 <p>You can also, if you prefer, use an IDE to generate the project as described in
 <a href="../configure_IDE/">Creating a New Apache Apex Project with your IDE</a>.</p>
 <p>When the run completes successfully, you should see a new directory named <code>myapexapp</code> containing a maven project for building a basic Apache Apex application. It includes 3 source files:<strong>Application.java</strong>,  <strong>RandomNumberGenerator.java</strong> and <strong>ApplicationTest.java</strong>. You can now build the application by stepping into the new directory and running the appropriate maven command:</p>

@@ -413,6 +413,13 @@
         
             
     <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kinesis-to-s3/">Kinesis to S3 App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
         <a class="" href="../app-templates/s3-to-hdfs-sync/">S3 to HDFS Sync App</a>
         
     </li>
@@ -565,6 +572,8 @@
             
                 <li class="toctree-l3"><a href="#datatorrent-rts-release-notes">DataTorrent RTS Release Notes</a></li>
                 
+                    <li><a class="toctree-l4" href="#version-380">Version: 3.8.0</a></li>
+                
                     <li><a class="toctree-l4" href="#version-371">Version: 3.7.1</a></li>
                 
                     <li><a class="toctree-l4" href="#version-370">Version: 3.7.0</a></li>
@@ -640,9 +649,245 @@
             <div class="section">
               
                 <h1 id="datatorrent-rts-release-notes">DataTorrent RTS Release Notes</h1>
+<h2 id="version-380">Version: 3.8.0</h2>
+<p>Release date: Apr 18, 2017</p>
+<h3 id="summary">Summary</h3>
+<h4 id="application-templates-apphub">Application Templates (AppHub)</h4>
+<p>Pre-built data ingestion templates speed time-to-production</p>
+<p>Deploy DataTorrent RTS application templates on a Hadoop distribution either on-premises or on the cloud. As part of this release, DataTorrent is providing AWS - EMR deployment script option for each available application template. As a result, development is simplified, enabling developers to more quickly and easily unlock value for customers. DataTorrent is focused on the goals of reducing complexity and removing dependency on Hadoop deployment, and this release represents progress in that direction.   </p>
+<h4 id="application-configurations">Application Configurations</h4>
+<p>Simplifying customized application launches</p>
+<p>Users can start with a single Application Package and create multiple Application Configurations to launch and run the applications on different environments (for instance, in test and development).  And, efficiencies can be realized across business units: one Application Package could have multiple configurations for multiple internal units.  Each Application Configuration introduces a safety feature, which ensures that only one instance of Application Configuration can run at a time.  The status whether Application Configuration is running or not, and controls to launch and stop the application instance are provided in the Application Configuration view.  This set of features improves management, adds safety, and increases transparency when managing and launching applications.</p>
+<h3 id="debugging">Debugging</h3>
+<p>Improving log visualizations to speed up debugging</p>
+<h4 id="stram-event-grouping">StrAM Event Grouping</h4>
+<p>The StrAM Events widget helps from development and operations perspectives to visualize notable events from the application launch and throughout its ongoing run.  With this release, StrAM events widgets now offers better readability by organizing these events into related groups.  For example, when multiple downstream operators are re-deployed due to a container failure. All events triggered by the system to restore normal function will be grouped under a single root event which caused the restarts.  With this improved readability, the user can quickly identify failure causes and then drill down into the logs for each event.</p>
+<h4 id="garbage-collection-widgets">Garbage Collection Widgets</h4>
+<p>With this release, developers can more easily visualize garbage collection data trends—as opposed to sifting through logs. Three widgets are available for GC visualizations:</p>
+<ul>
+<li>Garbage collection log chart by heap.  Visualizes when memory is allocated and deallocated </li>
+<li>Garbage collection log table.  List memory allocation and deallocation details</li>
+<li>Garbage collection log chart by duration.  Visualizes how long it takes to deallocate memory </li>
+</ul>
+<h4 id="log-tailing-search">Log Tailing &amp; Search</h4>
+<p>Users can follow the logs as they are generated (tailing) with the RTS UI Console.  In this release, users can now also perform searches even when tailing to focus on specific events and exclude the noise.</p>
+<h4 id="alert-templates">Alert Templates</h4>
+<p>Simplifying and expanding alert functionality</p>
+<p>In 3.7.0, RTS introduced monitoring with alerts that a DevOps engineer could set up based on specific conditions. The 3.8.0 release continues to simplify and expand this functionality by adding:</p>
+<ul>
+<li>Nine predefined system alert templates, including cluster and application memory usage, application status, and active container count, killed container alerts, etc.</li>
+<li>Option to disable alerts without deleting them.</li>
+<li>The ability to configure custom SMTP settings for sending alert emails, instead of relying on Gateway’s local node sendmail facility.</li>
+</ul>
+<h4 id="security">Security</h4>
+<p>Security enhancement in 3.8.0 applies to RTS deployment on secure Hadoop with Kerberos enabled. User's own Kerberos credentials can now be used directly by RTS to launch applications.  It is better from a security perspective.</p>
+<p>The previous model involved using a single system user with Kerberos credential (Hadoop impersonation)  to launch applications. That requires access to the system Kerberos credential in order to refresh tokens before they expire.  With user’s own Kerberos credential, that is no longer the case. </p>
+<h4 id="licensing">Licensing</h4>
+<p>With the release of 3.8.0, DataTorrent is updating and simplifying its licensing policy.  What has changed?  </p>
+<p>Starting with 3.8, the Community Edition is no longer available. We are replacing the Community Edition with Free Edition.  Community Edition limited the features available to you, such as security.   Now with Free Edition you have access to all the features and tools of RTS up to a 128GB processing limit.</p>
+<p>Please refer to the DataTorrent website for additional details.</p>
+<h4 id="licensing-faq">Licensing FAQ</h4>
+<p><em>I have a Community Edition license. Is that edition still available?</em><br />
+Starting with 3.8, the Community Edition is no longer available.   You can continue to use the Community Edition with RTS version 3.7.</p>
+<p><em>How is license memory consumption calculated?</em><br />
+License memory consumption is the sum of all running applications as can be seen in Configuration - License Information and Monitor.</p>
+<p><em>What will happen when my memory consumption exceed my license limit?</em><br />
+You’ll receive a warning, which is shown for 30 minutes before most RTS features will be disabled. All existing applications will continue to run. Should you need to upgrade, you can easily contact DataTorrent for a new license.</p>
+<p><em>How will I know when my license is going to expire and what happens if the license expires?</em><br />
+We provide warnings at 30 days and 7 days before expiration date.  When a license expires, most RTS features will be immediately disabled. All existing applications will continue to run. You can easily contact DataTorrent for a new license.  </p>
+<p><em>What can I do once RTS is locked (either because my license memory has been exceeded or its expiration date has passed)?</em><br />
+Users can view running applications and enter new license details to unlock RTS. The following capabilities are still accessible:
+<em> Configure - System Configuration is available except for App Data Tracker
+</em> Configure - License Information is available
+<em> Configure - Installation Wizard is available
+</em> Monitor - Application kill, inspect and shutdown are available
+<em> Monitor - Application Overview (shutdown and kill only) per application is available
+</em> Monitor - Containers (kill only)
+<em> AppHub (download only, no import)
+</em> Learn</p>
+<p><em>Can I reduce the number of applications and return to compliance?</em><br />
+Yes, you can do so if you have exceeded your memory capacity, assuming that your license has not expired</p>
+<p><em>Can I reduce the memory usage of an application and bring it back to license compliance?</em><br />
+Yes, assuming that your license has not expired.  Please note that you will have to restart the application.</p>
+<p><em>I have an enterprise license for my production cluster. Can I use the Free Edition in a non- production cluster?</em><br />
+Yes. It’s worth noting that only community support is available for the Free Edition. Please visit the DataTorrent User group for RTS-related questions: https://groups.google.com/forum/#!aboutgroup/dt-users</p>
+<p>For the Apache Apex mailing list and meetups information, please go to
+https://apex.apache.org/community.html#mailing-lists</p>
+<p><em>Can I buy DataTorrent support for Free Edition?</em><br />
+Unfortunately, no. DataTorrent support is sold as part of our Enterprise Edition. If you’re seeking support, you may consider upgrading.</p>
+<p><em>Is Application Master Container memory consumption included in the calculation for processing capacity?</em><br />
+Yes. Application Master Container consumes 1 GB by default and every application has its own Application Master. If application is not running, it does not run as well. It grows based on customer application build. Memory requirements increases along with the size of logical and physical DAG. Partitioners of an operator run in AppMaster.</p>
+<h4 id="additional-features-of-380">Additional Features of 3.8.0</h4>
+<h5 id="multiple-gateway-support">Multiple gateway support</h5>
+<p>This allows simultaneous multiple gateway operations and increase fault tolerance due to management console failure. </p>
+<p>When there are multiple gateways (usually for High Availability), different developers may access them at the same time, with different or same user accounts. These activities will often result in simultaneous modification of the same resource stored in HDFS, and invalidate cache entries on each client. For example: When developer A tries to save a configuration package and developer B has edited and saved the same package, developer A will get an error. Developer A would then have to manually merge the differences. This release introduces a new file-based locking mechanism with HTTP ETag header to handle that scenario.
+Known limitation: Alerts and visualization works correctly with single gateway only.</p>
+<h5 id="retain-metric-selections-when-returning-to-monitor-physicallogical-view">Retain metric selections when returning to Monitor - Physical/Logical view</h5>
+<p>Better user experience since RTS will keep what users have selected to view (e.g. metrics) as they go from one screen to another. </p>
+<h4 id="datatorrent-apex-core-fork">DataTorrent Apex Core fork</h4>
+<p>RTS 3.8.0 is bundled with Apache Apex Core 3.5.0 plus forty feature and fixes that will be part of Apache Apex Core 3.6.0. Apex Core commits from Apr 3, 2017 will be included in RTS 3.9.0</p>
+<h5 id="new-feature">New Feature</h5>
+<ul>
+<li>[APEXCORE-579]        Custom control tuple support</li>
+<li>[APEXCORE-563]        Have a pointer to container log filename and offset in StrAM events that deliver a container or operator failure event.</li>
+</ul>
+<h5 id="improvements">Improvements</h5>
+<ul>
+<li>[APEXCORE-676]        Show description for DefaultProperties only when user requests it</li>
+<li>[APEXCORE-655]        Support RELEASE as archetype version when creating a project</li>
+<li>[APEXCORE-611]        StrAM Event Log Levels</li>
+<li>[APEXCORE-605]        Suppress bootstrap compiler warning</li>
+<li>[APEXCORE-592]        Returning description field in defaultProperties during apex cli call get-app-package-info</li>
+<li>[APEXCORE-572]        Remove dependency on hadoop-common test.jar</li>
+<li>[APEXCORE-570]        Prevent upstream operators from getting too far ahead when downstream operators are slow</li>
+<li>[APEXCORE-522]        Promote singleton usage pattern for String2String, Long2String and other StringCodecs</li>
+<li>[APEXCORE-426]        Support work preserving AM recovery</li>
+<li>[APEXCORE-294]        Graceful application shutdown</li>
+<li>[APEXCORE-143]        Graceful shutdown of test applications</li>
+</ul>
+<h5 id="task">Task</h5>
+<ul>
+<li>[APEXCORE-662]        Raise StramEvent for heartbeat miss</li>
+</ul>
+<h5 id="dependency-upgrade">Dependency Upgrade</h5>
+<ul>
+<li>[APEXCORE-656]        Upgrade org.apache.httpcomponents.httpclient</li>
+</ul>
+<h5 id="bug">Bug</h5>
+<ul>
+<li>[APEXCORE-674]        DTConfiguration utility class ValueEntry access level was changed</li>
+<li>[APEXCORE-663]        Application restart not working.</li>
+<li>[APEXCORE-648]        Unnecessary byte array copy in DefaultStatefulStreamCodec.toDataStatePair()</li>
+<li>[APEXCORE-645]        StramLocalCluster does not wait for master thread termination</li>
+<li>[APEXCORE-644]        get-app-package-operators with parent option does not work</li>
+<li>[APEXCORE-636]        Ability to refresh tokens using user's own Kerberos credentials in a managed environment where the application is launched using an admin with impersonation</li>
+<li>[APEXCORE-634]        Apex Platform unable to set unifier attributes for modules in DAG</li>
+<li>[APEXCORE-627]        Unit test AtMostOnceTest intermittently fails</li>
+<li>[APEXCORE-624]        Shutdown does not work because of incorrect logic in the AppMaster</li>
+<li>[APEXCORE-617]        InputNodeTest intermittently fails with ConcurrentModificationException</li>
+<li>[APEXCORE-616]        Application fails to start Kerberised cluster</li>
+<li>[APEXCORE-610]        Avoid multiple getBytes() calls in Tuple.writeString</li>
+<li>[APEXCORE-608]        Streaming Containers use stale RPC proxy after connection is closed</li>
+<li>[APEXCORE-598]        Embedded mode execution does not use APPLICATION_PATH for checkpointing</li>
+<li>[APEXCORE-597]        BufferServer needs to shut down all created execution services</li>
+<li>[APEXCORE-596]        Committed method on operators not called when stream locality is THREAD_LOCAL</li>
+<li>[APEXCORE-595]        Master incorrectly updates committedWindowId when all partitions are terminated.</li>
+<li>[APEXCORE-593]        apex cli get-app-package-info could not retrieve properties defined in properties.xml</li>
+<li>[APEXCORE-591]        SubscribeRequestTuple has wrong buffer size when mask is zero</li>
+<li>[APEXCORE-585]        Latency should be calculated only after the first window has been complete</li>
+<li>[APEXCORE-583]        Buffer Server LogicalNode should not be reused by Subscribers</li>
+<li>[APEXCORE-558]        Do not use yellow color to display command strings in help output</li>
+<li>[APEXCORE-504]        Possible race condition in StreamingContainerAgent.getStreamCodec()</li>
+<li>[APEXCORE-471]        Requests for container allocation are not re-submitted</li>
+</ul>
+<h4 id="datatorrent-rts-bug-fixes">DataTorrent RTS Bug Fixes</h4>
+<ul>
+<li>[SPOI-10021]  DTX Logical Operator page - BufferServerReadBytesPSMA and BufferServerWriteBytesPSMA to be removed</li>
+<li>[SPOI-10107]  Application service returns DAG which is null</li>
+<li>[SPOI-10118]  Upon launch of application, application details do not show up.</li>
+<li>[SPOI-10153]  Add System Properties "change" button should be warm in color</li>
+<li>[SPOI-10208]  Container state for failed attempt of app is shown as RUNNING</li>
+<li>[SPOI-10266]  "host" information is not available in appattempts API call</li>
+<li>[SPOI-10274]  Moving the mouse over the operator shows it as clickable but nothing happens</li>
+<li>[SPOI-10331]  Delete user modal gives error when clicked outside the frame</li>
+<li>[SPOI-10332]  Cancelling delete user action throws TypeError in developer console</li>
+<li>[SPOI-10335]  Jersey throwing exceptions &amp; excessive logging when WADL is enabled</li>
+<li>[SPOI-10355]  Update Buttons and Text</li>
+<li>[SPOI-10357]  Redirect User to Login Page</li>
+<li>[SPOI-10363]  CheckPermission should not throw exception when auth is not enabled.</li>
+<li>[SPOI-10416]  dtAssemble does not show connection between operators correctly</li>
+<li>[SPOI-10421]  Fix oauth login</li>
+<li>[SPOI-10438]  Hide Top Nav Menu Dropdown When Item is Clicked</li>
+<li>[SPOI-10463]  Enhance Date/Time Picker for StrAM Events Date Range</li>
+<li>[SPOI-10587]  Implement Date/Time Picker for Dashboard Widget</li>
+<li>[SPOI-10588]  Change Button Label to Close During Launching</li>
+<li>[SPOI-10862]  Multiple containers are labelled as AppMaster after dynamic partitioning</li>
+<li>[SPOI-10866]  Time Range Selection Saved Settings Not Loaded Correctly</li>
+<li>[SPOI-10894]  dtAssemble - Inspector contents not showing up consistently</li>
+<li>[SPOI-10911]  determine AppMaster container by id that contains _000001 instead of by including 0 operators</li>
+<li>[SPOI-10963]  appInstance page - fail to show "packagedDashboard" which is included in appPackage that appInstance is launched from</li>
+<li>[SPOI-10970]  AppHub on gateway does not load in HTTPS</li>
+<li>[SPOI-10996]  Subscribers/DataListeners may not be scheduled to execute even when they have data to process</li>
+<li>[SPOI-10997]  BufferServer needs to shut down all created execution services</li>
+<li>[SPOI-11000]  Upgrade org.apache.httpcomponents.httpclient</li>
+<li>[SPOI-11024]  Alerts Icon Issue</li>
+<li>[SPOI-11057]  Restart of the apps are failing</li>
+<li>[SPOI-11108]  DAG View Javascript Error</li>
+<li>[SPOI-11127]  Enhance "lastNbytes" to behave like "tail" command</li>
+<li>[SPOI-11142]  Unable to launch app if another app with default APPLICATION_NAME is already running</li>
+<li>[SPOI-11152]  Avoid usage of Apache Apex engine core class com.datatorrent.stram.client.DTConfiguration.ValueEntry</li>
+<li>[SPOI-11163]  Cannot launch application from application details page</li>
+<li>[SPOI-11164]  "Add default properties" option under "Specify launch properties" is missing</li>
+<li>[SPOI-11168]  License API Does Not Return Latest State Information</li>
+<li>[SPOI-11179]  Update Root Cause Failure to Use Newer Object Structure</li>
+<li>[SPOI-11185]  Invalid license expiration message sent by Gateway</li>
+<li>[SPOI-11186]  AppHub should be visible if license is invalid</li>
+<li>[SPOI-11188]  App Packages search does not work for "format" column</li>
+<li>[SPOI-11190]  Toggling "system apps" option does not show ended system apps</li>
+<li>[SPOI-11192]  Search for "lifetime" column on Monitor screen does not work</li>
+<li>[SPOI-11193]  Search for "memory" column on Monitor screen does not work</li>
+<li>[SPOI-11194]  Search on "state" column on Monitor page is not alphabetical</li>
+<li>[SPOI-11197]  Search on locality/source/sinks columns under Streams widget on logical tab does not work</li>
+<li>[SPOI-11198]  Search for "allocated mem" and "free memory" under Containers widget does not work</li>
+<li>[SPOI-11199]  "download file" option for empty container log files should be disabled</li>
+<li>[SPOI-11200]  Search for "allocated mem" and "started time" under Containers widget  for app attempt does not work</li>
+<li>[SPOI-11208]  DTgateway install screen messed up</li>
+<li>[SPOI-11210]  On entering corrupt license file error message should be a proper one</li>
+<li>[SPOI-11212]  Trailing and non trailing search should have same string</li>
+<li>[SPOI-11213]  Unable to save SMTP configuration using gmail</li>
+<li>[SPOI-11214]  Launching application with ï¿¼"Enable Garbage Collection" throws 404</li>
+<li>[SPOI-11215]  ADMIN_NOT_CONFIGURED warning is only shown to Dev user instead of admin</li>
+<li>[SPOI-11220]  Fresh RTS installation fails because of blank response from "/ws/v2/config" api call</li>
+<li>[SPOI-11222]  StackTrace feature not available from physical tab containers widget</li>
+<li>[SPOI-11223]  Show "Password change" warning for dtadmin only</li>
+<li>[SPOI-11231]  AppHub fails to load previous package versions</li>
+<li>[SPOI-11234]  Show all AppHub package versions option is missing in list view</li>
+<li>[SPOI-11236]  Extend application-level gc.log API to take in new parameter "descendingOrder" (false/true)</li>
+<li>[SPOI-11237]  Angular not resolving certain dtText-wrapped expressions in Console modals</li>
+<li>[SPOI-11238]  AppHub Check for Updates Does Not Show In All Cases</li>
+<li>[SPOI-11242]  "Upload package" option on Application Packages should not be available with invalid/no license</li>
+<li>[SPOI-11265]  Invalid message displayed when no license is uploaded</li>
+<li>[SPOI-11266]  Alert notification is delayed</li>
+<li>[SPOI-11270]  System Alert history is empty after relogin</li>
+<li>[SPOI-11271]  Developer user cannot create system alert</li>
+<li>[SPOI-11281]  .class file generated by tuple schema manager is invalid</li>
+<li>[SPOI-11291]  Creating clone of JSON application gives 500 Server Error</li>
+<li>[SPOI-11303]  Creating clone of JSON application gives 500 Server Error (UI)</li>
+<li>[SPOI-11304]  App package load errors after migrating from 3.7 to 3.8</li>
+<li>[SPOI-11307]  Search for "lifetime" column on Monitor screen does not work</li>
+<li>[SPOI-11318]  Copy To Clipboard option from Failure Message modal does not work</li>
+<li>[SPOI-11323]  Upgrade from 3.7.0 evaluation edition to 3.8.0 retains old license</li>
+<li>[SPOI-11325]  Selecting KILLED applications and then disabling ended apps, shows shutdown/kill options</li>
+<li>[SPOI-11326]  Clean install of 3.8.0 comes with no license</li>
+<li>[SPOI-11327]  StramEvents are grouped incorrectly</li>
+<li>[SPOI-11366]  Copy to clipboard not working when viewing stram event stack trace</li>
+<li>[SPOI-11367]  Wrong 'uptime' value in Application Overview</li>
+<li>[SPOI-11368]  Log and info icons should be right aligned in stram events</li>
+<li>[SPOI-11369]  Socket is unsubscribed by Console when critical path is not checked</li>
+<li>[SPOI-11371]  "source package" column in Application Configurations table is not sortable</li>
+<li>[SPOI-11372]  Unable to view gc.log on UI</li>
+<li>[SPOI-11375]  Wrong stream locality is shown in Physical DAG widget</li>
+<li>[SPOI-11377]  Incorrect GC stats for logical operators if they are connected by CONTAINER_LOCAL stream</li>
+<li>[SPOI-11379]  Heap reduction percentage is negative for some GC events</li>
+<li>[SPOI-11382]  UI hangs when trying to change settings for GC Log Chart widgets</li>
+<li>[SPOI-11383]  Selecting a container in GC Log Chart widgets throws error in Developer console</li>
+<li>[SPOI-11417]  Memory usage of App Data Tracker is not counted against license</li>
+<li>[SPOI-11418]  Event grouping: UI should ignore groupId 0 &amp; null</li>
+<li>[SPOI-11421]  Unable to use Security Configuration feature with free license</li>
+<li>[SPOI-11422]  Admin user should not be able to delete its own user account</li>
+<li>[SPOI-11424]  Show tooltip for version string in application overview widget</li>
+<li>[SPOI-7887]   PUT /ws/v2/appPackages/{owner}/{packageName}/{packageVersion}/applications/{applicationName}[?errorIfExists={true/false}] should return error instead of success where there is error "Failed to load"</li>
+<li>[SPOI-8248]   Packaged dashboards do not reconnect with new app instances</li>
+<li>[SPOI-8477]   Upgrade License Opens in dtManage window, it should be in opened up in new window</li>
+<li>[SPOI-8610]   Disable editing operator properties which are of Object type</li>
+<li>[SPOI-9375]   Uptime values shown on UI are out of whack immediately after app is launched</li>
+<li>[SPOI-9474]   Failed to restart DT application in MapR secure cluster</li>
+<li>[SPOI-9921]   Delete widgets on default pane of physical operators needs to have warm colors</li>
+<li>[SPOI-9945]   Top navigation menu is wrapping into two lines</li>
+</ul>
 <h2 id="version-371">Version: 3.7.1</h2>
 <p>Release date: Feb 28, 2017</p>
-<h3 id="summary">Summary</h3>
+<h3 id="summary_1">Summary</h3>
 <p>This is primarily for users who install RTS in a Kerberized cluster as application fails to launch in 3.7.0. This release fixes the issue. </p>
 <p>Other issues that are also fixed:</p>
 <ul>
@@ -660,7 +905,7 @@
 </ul>
 <h2 id="version-370">Version: 3.7.0</h2>
 <p>Release date: Dec 30, 2016</p>
-<h3 id="summary_1">Summary</h3>
+<h3 id="summary_2">Summary</h3>
 <p>The new features on this release are functionalities that will ease debugging an application and administering application alerts in production. </p>
 <p>Operation related features for a Dev Ops role:  </p>
 <ul>
@@ -746,7 +991,7 @@ Change log: https://github.com/apache/apex-malhar/blob/v3.6.0/CHANGELOG.md</p>
 <li>[SPOI-10409]  Updating app packages using "check for updates" option from AppHub gives wrong notification</li>
 <li>[SPOI-10410]  Deleting a property while creating tuple schema gives error in developer console</li>
 </ul>
-<h4 id="new-feature">New Feature</h4>
+<h4 id="new-feature_1">New Feature</h4>
 <ul>
 <li>[SPOI-7720]   DT Hub shows just one version of an application</li>
 <li>[SPOI-10182]  dtAssemble - if there is unsaved change, keep launch button enabled which will pop up a dialog box asking save-and-launch when being clicked.</li>
@@ -788,7 +1033,7 @@ Change log: https://github.com/apache/apex-malhar/blob/v3.6.0/CHANGELOG.md</p>
 <li>[SPOI-7963]   Show container stack trace in dtManage</li>
 <li>[SPOI-10230]  containerLogsUrl shown in appattempt table can be pretty-printed</li>
 </ul>
-<h4 id="task">Task</h4>
+<h4 id="task_1">Task</h4>
 <ul>
 <li>[SPOI-9291]   Calcite</li>
 <li>[SPOI-8027]   TBD: Apex Java high level API - Aggregation Part 1</li>
@@ -943,7 +1188,7 @@ Change log: https://github.com/apache/apex-malhar/blob/v3.6.0/CHANGELOG.md</p>
 </ul>
 <h2 id="version-360">Version: 3.6.0</h2>
 <p>Release date: Nov 9, 2016</p>
-<h3 id="summary_2">Summary</h3>
+<h3 id="summary_3">Summary</h3>
 <p>DataTorrent RTS releases AppHub, a repository of application templates for various Big Data use cases. The key of this release is that RTS now have an infrastructure to distribute application templates easily. Developers can reduce the time to develop Big Data applications using templates. There are five templates in this release with many more to come. </p>
 <ul>
 <li>HDFS Sync </li>
@@ -957,7 +1202,7 @@ Change log: https://github.com/apache/apex-malhar/blob/v3.6.0/CHANGELOG.md</p>
 <ul>
 <li>[SPOI-9136] - Enforce DefaultOutputPort.emit() or Sink.put() thread affinity</li>
 </ul>
-<h4 id="task_1">Task</h4>
+<h4 id="task_2">Task</h4>
 <ul>
 <li>[SPOI-9118] - Publish App Templates for Ingestion on AppHub</li>
 <li>[SPOI-9419] - Update AppHub API to include the markdown content</li>
@@ -981,7 +1226,7 @@ Change log: https://github.com/apache/apex-malhar/blob/v3.6.0/CHANGELOG.md</p>
 </ul>
 <h2 id="version-350">Version 3.5.0</h2>
 <p>Release date: Sep 26, 2016</p>
-<h3 id="summary_3">Summary</h3>
+<h3 id="summary_4">Summary</h3>
 <p>DataTorrent RTS continues to deliver features that sets it apart in bringing operability in running an enterprise grade big data-in-motion platform. This particular release brought new features such as</p>
 <ul>
 <li>Allowing users to analyze "stuck operator" by obtaining stats from the running JVM (i.e. GC stats and thread dump)</li>
@@ -1035,7 +1280,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[SPOI-9130] - dtConsole shows no applications on monitor tab</li>
 <li>[SPOI-9131] - gateway REST and WebSocket APIs for cluster metrics fail to report stats</li>
 </ul>
-<h4 id="task_2">Task</h4>
+<h4 id="task_3">Task</h4>
 <ul>
 <li>[SPOI-8411] - Deduper operator using Managed State</li>
 <li>[SPOI-9004] - Deduper Documentation</li>
@@ -1048,7 +1293,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[SPOI-8461] - AbstractKafkaInputOperator problems</li>
 </ul>
 <h2 id="version-340">Version 3.4.0</h2>
-<h3 id="summary_4">Summary</h3>
+<h3 id="summary_5">Summary</h3>
 <p>Affinity rules provides a way to specify hints on how operators should be deployed in a Hadoop cluster. There are two types of rules: affinity and anti-affinity rules. Affinity rule indicates that the group of operators in the rule should be allocated together. Anti-affinity rule, the new feature in Apache Apex 3.4.0, indicates that the group of operators should be allocated separately.</p>
 <p>This release also includes a lot of bug fixes. Please see appendix for full list. </p>
 <h3 id="dtmanage">dtManage</h3>
@@ -1153,7 +1398,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[SPOI-7971] - After dynamic repartition application appears blocked</li>
 </ul>
 <h4 id="apache-apex-340_1">Apache Apex 3.4.0</h4>
-<h4 id="new-feature_1">New Feature</h4>
+<h4 id="new-feature_2">New Feature</h4>
 <ul>
 <li>[APEXCORE-10] - Enable non-affinity of operators per node (not containers)</li>
 <li>[APEXCORE-359] - Add clean-app-directories command to CLI to clean up data of terminated apps</li>
@@ -1178,7 +1423,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[APEXCORE-419] - When operator is blocked, print out a warning instead of debug</li>
 <li>[APEXCORE-447] - Document: update AutoMetrics with AppDataTracker link</li>
 </ul>
-<h4 id="bug">Bug</h4>
+<h4 id="bug_1">Bug</h4>
 <ul>
 <li>[APEXCORE-130] - Throwing A Runtime Exception In Setup Causes The Operator To Block</li>
 <li>[APEXCORE-201] - Reported latency is wrong when a downstream operator is behind more than 1000 windows</li>
@@ -1210,7 +1455,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[APEXCORE-444] - 401 authentication errors when making webservice calls to STRAM in secure mode</li>
 <li>[APEXCORE-445] - Race condition in AsynFSStorageAgent.save()</li>
 </ul>
-<h4 id="task_3">Task</h4>
+<h4 id="task_4">Task</h4>
 <ul>
 <li>[APEXCORE-293] - Add core and malhar documentation to project web site</li>
 <li>[APEXCORE-319] - Document backward compatibility guidelines</li>
@@ -1230,7 +1475,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[APEXCORE-402] - SpscArrayQueue to notify publishing thread on not full condition</li>
 </ul>
 <h2 id="version-330">Version 3.3.0</h2>
-<h3 id="summary_5">Summary</h3>
+<h3 id="summary_6">Summary</h3>
 <h4 id="dthub">dtHub</h4>
 <p>DataTorrent RTS allows companies to quickly build low latency real time Big Data application that can scale and fault tolerant. With the introduction of dtHub, DataTorrent now host and maintain an application distributor. You can access it through dtManage and easily install or update application without having to upgrade the whole RTS platform. Prior to dtHub, RTS installer packaged both platform and applications. In 3.3, they are decoupled with significantly reduced installer size. You can independently choose when to upgrade the platform and when to install/upgrade applications.</p>
 <h4 id="dtmanage_1">dtManage</h4>
@@ -1397,7 +1642,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[SPOI-6381] - Support Dynamically Updating Enum Values For Keys In The Dimensions Store</li>
 <li>[SPOI-6545] - Allow Gateway to directly contact dtHub to install app packages</li>
 </ul>
-<h3 id="new-feature_2">New Feature</h3>
+<h3 id="new-feature_3">New Feature</h3>
 <ul>
 <li>[APEXCORE-3] - Ability for an operator to populate DAG at launch time</li>
 <li>[APEXCORE-60] - Iterative processing support</li>
@@ -1418,7 +1663,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[APEXCORE-291] - Provide a way for an operator to specify its metric aggregator instance</li>
 <li>[APEXCORE-305] - Enable checkstyle violations logging to console during maven build</li>
 </ul>
-<h3 id="bug_1">Bug</h3>
+<h3 id="bug_2">Bug</h3>
 <ul>
 <li>[APEXCORE-58] - endWindow is being called even when the operator is being undeployed</li>
 <li>[APEXCORE-83] - beginWindow not called on recovery</li>
@@ -1433,7 +1678,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[APEXCORE-300] - Fix checkstyle regular expression</li>
 <li>[APEXCORE-303] - Launch properties not evaluated</li>
 </ul>
-<h3 id="task_4">Task</h3>
+<h3 id="task_5">Task</h3>
 <ul>
 <li>[APEXCORE-24] - Takes out usage of Rhino as it is GPL 2.0</li>
 <li>[APEXCORE-186] - Enable license check in Travis CI</li>
@@ -1466,7 +1711,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[APEXCORE-306] - Recovery checkpoint handing in iteration loops</li>
 </ul>
 <h2 id="version-321">Version 3.2.1</h2>
-<h3 id="summary_6">Summary</h3>
+<h3 id="summary_7">Summary</h3>
 <p>This release bundles a few fixes and features for customers who are on 3.2.0 and not ready to upgrade to 3.3.0  </p>
 <h4 id="improvement_5">Improvement</h4>
 <ul>
@@ -1509,7 +1754,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[APEXCORE-398] - Ack may not be delivered from buffer server to it's client</li>
 </ul>
 <h2 id="version-320">Version 3.2.0</h2>
-<h3 id="new-feature_3">New Feature</h3>
+<h3 id="new-feature_4">New Feature</h3>
 <ul>
 <li>[SPOI-6351] - Add feature to REST API to get queue information from cluster</li>
 </ul>
@@ -1522,7 +1767,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[DTIN-69] - Move Query Operators implementation to newer one</li>
 <li>[DTIN-50] - [dtIngest] add parameter "parallel readers"</li>
 </ul>
-<h3 id="bug_2">Bug</h3>
+<h3 id="bug_3">Bug</h3>
 <ul>
 <li>[SPOI-5104] - Ingestion: Failed to copy data when inputs include a directory and a subdirectory</li>
 <li>[SPOI-5216] - FileSplitter fails with ConcurrentModificationException</li>
@@ -1568,7 +1813,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[DTIN-176] - Parallel read is not working in case of FTP and S3 as input</li>
 <li>[DTIN-186] - FileMerger failed with unable to merge file exception</li>
 </ul>
-<h3 id="task_5">Task</h3>
+<h3 id="task_6">Task</h3>
 <ul>
 <li>[SPOI-5173] - DAG validation: Attribute values Serializable</li>
 <li>[SPOI-5403] - Ingestion Splunk integration</li>
@@ -1598,7 +1843,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <ul>
 <li>[SPOI-5828] - Stackstraces should not be shown on errors</li>
 </ul>
-<h3 id="bug_3">Bug</h3>
+<h3 id="bug_4">Bug</h3>
 <ul>
 <li>[SPOI-5786] - AppDataTracker Custom Metric Store Deadlock</li>
 <li>[SPOI-6032] - App Builder should not show property from super class</li>
@@ -1615,14 +1860,14 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[SPOI-6313] - Work Around APEX-129</li>
 <li>[SPOI-6333] - RandomNumberGenerator in apex-app-archetype does not use numTuples property</li>
 </ul>
-<h3 id="task_6">Task</h3>
+<h3 id="task_7">Task</h3>
 <ul>
 <li>[SPOI-5755] - Gateway should show "HDFS is not up yet"</li>
 <li>[SPOI-6148] - Update website with release 3.1</li>
 <li>[SPOI-6241] - Change in enterprise license</li>
 </ul>
 <h2 id="version-310">Version 3.1.0</h2>
-<h3 id="new-feature_4">New Feature</h3>
+<h3 id="new-feature_5">New Feature</h3>
 <ul>
 <li>[SPOI-4670] - Enable message schema management in App Builder</li>
 <li>[SPOI-5844] - Retrieve older versions of schemas</li>
@@ -1631,7 +1876,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <ul>
 <li>[SPOI-5611] - Simplify PubSub operators to supply Gateway connect address URI by default</li>
 </ul>
-<h3 id="bug_4">Bug</h3>
+<h3 id="bug_5">Bug</h3>
 <ul>
 <li>[SPOI-4380] - MxN unifier not removed when partition is removed from physical plan.</li>
 <li>[SPOI-5338] - Cleanup OperatorDiscoverer class to remove reflection and use ASM</li>
@@ -1646,7 +1891,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[SPOI-5946] - Port compatibility when port require schemas</li>
 <li>[SPOI-6002] - AppBuilder fails to load operator due to NullPointerException</li>
 </ul>
-<h3 id="task_7">Task</h3>
+<h3 id="task_8">Task</h3>
 <ul>
 <li>[SPOI-5307] - Mocha based tests for Gateway API calls</li>
 <li>[SPOI-5749] - Certify MapR sandbox</li>
@@ -1687,7 +1932,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[SPOI-5361] - Button for dt.phoneHome.enable property on system config page</li>
 <li>[SPOI-5527] - Implement Queue Option</li>
 </ul>
-<h3 id="bug_5">Bug</h3>
+<h3 id="bug_6">Bug</h3>
 <ul>
 <li>[SPOI-4321] - Datatorrent Core Trigger Jenkings Job hangs</li>
 <li>[SPOI-4633] - Resolve type variable across the type hierarchy </li>
@@ -1775,7 +2020,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[SPOI-5657] - Redirect to welcome screen of the Learn section after install</li>
 <li>[SPOI-5694] - Ingestion default app-config should populate meaningful defaults</li>
 </ul>
-<h3 id="new-feature_5">New Feature</h3>
+<h3 id="new-feature_6">New Feature</h3>
 <ul>
 <li>[SPOI-4672] - Support for secure HA environments</li>
 <li>[SPOI-5288] - Add "launch" button to each item in the list of app packages</li>
@@ -1783,7 +2028,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[SPOI-5313] - Obfuscate ADT in the distribution build</li>
 <li>[SPOI-5561] - Markdown documentation support in the Console</li>
 </ul>
-<h3 id="task_8">Task</h3>
+<h3 id="task_9">Task</h3>
 <ul>
 <li>[SPOI-4228] - The location of App Data Tracker from installation and from devel mode</li>
 <li>[SPOI-4658] - App Data Tracker Technical Doc</li>
@@ -1809,7 +2054,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[SPOI-5645] - support "short" primitive type in app builder</li>
 <li>[SPOI-5658] - Dummy ticket for Apex-17 - Change CustomMetric annotation to AutoMetric and enhancements</li>
 </ul>
-<h3 id="bug_6">Bug</h3>
+<h3 id="bug_7">Bug</h3>
 <ul>
 <li>[MLHR-1726] - Bug in PojoUtils</li>
 <li>[MLHR-1742] - Create a wrapper method in POJOUtils that returns the appropriate getter for primitives</li>

@@ -428,6 +428,13 @@
         
             
     <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/kinesis-to-s3/">Kinesis to S3 App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
         <a class="" href="../../app-templates/s3-to-hdfs-sync/">S3 to HDFS Sync App</a>
         
     </li>
@@ -874,8 +881,7 @@ thus indicating to the platform that the downstream operator must be partitioned
 as many copies as the upstream operator so that they form parallel pipelines. Running the
 application with this configuration file shows the following physical DAG:</p>
 <p><img alt="DAG Parallel Partition" src="../images/topnwords/image53.png" title="DAG Parallel Partition" /></p>
-<p>Notice that both operators have been replicated and the unifier added; we now have 15
-operators with a total of 4.8GB allocated to them.</p>
+<p>Notice that both operators have been replicated and the unifier added.</p>
 <h2 id="streaming-windows-and-application-windows">Streaming Windows and Application Windows</h2>
 <p>Operators receive incoming tuples and emit outgoing tuples within a small temporal window
 called a <em>streaming window</em>. Its boundaries are marked by calls to <code>beginWindow</code> and

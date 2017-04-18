@@ -413,6 +413,13 @@
         
             
     <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kinesis-to-s3/">Kinesis to S3 App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
         <a class="" href="../app-templates/s3-to-hdfs-sync/">S3 to HDFS Sync App</a>
         
     </li>
@@ -542,6 +549,8 @@
                 <li class="toctree-l3"><a href="#dt-gateway-system-alerts">DT Gateway System Alerts</a></li>
                 
                     <li><a class="toctree-l4" href="#alerts-and-topics">Alerts and Topics</a></li>
+                
+                    <li><a class="toctree-l4" href="#configuring-smtp-for-email">Configuring SMTP for Email</a></li>
                 
                     <li><a class="toctree-l4" href="#managing-and-viewing-alerts">Managing and viewing alerts</a></li>
                 
@@ -689,6 +698,111 @@ such as <code>Get</code>, <code>Put</code>, and <code>Delete</code>):</p>
 exist for every running application. The alert condition can refer to multiple such topic values and
 can be any valid JavaScript expressions that return a boolean. A comma separated list of
 email addresses can be specified.</p>
+<h2 id="configuring-smtp-for-email">Configuring SMTP for Email</h2>
+<p>SMTP needs to be configured for the gateway to be able to send alert emails via an 
+<a href="https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol#Outgoing_mail_SMTP_server">SMTP server</a>. Make
+a note of the following steps before attempting to configure SMTP in the gateway.</p>
+<ul>
+<li>make sure there is an SMTP server in the network the gateway will have access to. Note down the
+SMTP server's hostname and port number (please see the note below regarding encryption-type).</li>
+<li>if the SMTP server supports or requires <a href="https://www.fastmail.com/help/technical/ssltlsstarttls.html">TLS or SSL encryption</a>,
+determine the encryption-type for the communication between the gateway and the SMTP server. The values for
+encryption-type are "tls", "ssl" or "none" (i.e. no encryption). In case "tls" or "ssl" is used,
+ensure appropriate certificates are installed to establish <a href="https://en.wikipedia.org/wiki/Public_key_certificate">trust</a>.</li>
+<li>determine the authentication-type for your SMTP server. The only supported values are "password" (i.e. authentication using
+username and password) or "none" (i.e. no authentication).</li>
+<li>if you choose the "password" authentication-type, you will need the SMTP-username and SMTP-password to be used
+by the gateway to authenticate with the SMTP server.</li>
+<li>determine the "fromAddr" and the "fromName" for the emails sent by the gateway which the email recipient
+will see as the sender of the emails. Note that for certain SMTP servers the "fromAddr" and the SMTP-username
+may need to match or else the latter overrides the former.</li>
+<li>determine a "test-address" where you can receive emails to verify validity of the SMTP configuration.</li>
+<li>in case you choose the "password" authentication-type, you will need to set up an SSL keystore as described
+<a href="../dtgateway_security/#setting-up-ssl-keystore-in-gateway">here</a>. The gateway uses the keystore to encrypt and
+decrypt your SMTP-password.</li>
+</ul>
+<p>You can use the following APIs to set or retrieve the SMTP configuration. Note that the JSON sample following the
+PUT request is the payload of the request. </p>
+<h3 id="put-wsv2configsmtp">PUT /ws/v2/config/smtp</h3>
+<pre><code class="json">{
+&quot;host&quot;: &quot;smtp.gmail.com&quot;,
+&quot;port&quot;: &quot;587&quot;,
+&quot;fromAddr&quot;: &quot;no-reply@mydomain.com&quot;,
+&quot;fromName&quot;: &quot;Do Not Reply&quot;,
+&quot;encryptionType&quot;: &quot;tls&quot;,
+&quot;authType&quot;: &quot;password&quot;,
+&quot;username&quot;: &quot;smtp-user@mydomain.com&quot;,
+&quot;password&quot;: &quot;secret_password&quot;,
+&quot;testAddr&quot;: &quot;testuser@yourdomain.com&quot;
+}
+</code></pre>
+
+<p>Contents of the JSON Object:</p>
+<table>
+<thead>
+<tr>
+<th>JSON Key</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>host</td>
+<td>the SMTP hostname</td>
+</tr>
+<tr>
+<td>port</td>
+<td>the SMTP port on the SMTP server</td>
+</tr>
+<tr>
+<td>fromAddr</td>
+<td>the "from-address" described above i.e. the address from which the alert email is sent</td>
+</tr>
+<tr>
+<td>fromName</td>
+<td>the "from-name" described above i.e. the user friendly string for the "from-address"</td>
+</tr>
+<tr>
+<td>encryptionType</td>
+<td>the "encryption-type" value described above i.e. "tls", "ssl" or "none"</td>
+</tr>
+<tr>
+<td>authType</td>
+<td>the "authentication-type" value described above i.e. "password" or "none"</td>
+</tr>
+<tr>
+<td>username</td>
+<td>the "SMTP-username" value described above</td>
+</tr>
+<tr>
+<td>password</td>
+<td>the "SMTP-password" value described above</td>
+</tr>
+<tr>
+<td>testAddr</td>
+<td>the "test-address" value described above. The gateway sends a test email to this address when you use this API to set the SMTP configuration.</td>
+</tr>
+</tbody>
+</table>
+<p>A note about password: if you omit the "password" value in your JSON object in the API, the gateway will use the existing saved password
+so the client does not need to include the password in subsequent API calls. Note that the GET API (described below) never returns the
+password of the SMTP configuration, hence the DataTorrent console is able to use this feature without either displaying or requiring the 
+user to re-enter the previous password. Note that the JSON sample following the GET request is the value returned from the GET request.</p>
+<h3 id="get-wsv2configsmtp">GET /ws/v2/config/smtp</h3>
+<pre><code class="json">{
+&quot;host&quot;: &quot;smtp.gmail.com&quot;,
+&quot;port&quot;: &quot;587&quot;,
+&quot;fromAddr&quot;: &quot;no-reply@mydomain.com&quot;,
+&quot;fromName&quot;: &quot;Do Not Reply&quot;,
+&quot;encryptionType&quot;: &quot;tls&quot;,
+&quot;authType&quot;: &quot;password&quot;,
+&quot;username&quot;: &quot;smtp-user@mydomain.com&quot;,
+&quot;testAddr&quot;: &quot;testuser@yourdomain.com&quot;
+}
+</code></pre>
+
+<p>The GET API returns the existing SMTP configuration in the gateway. As mentioned above, the SMTP-password
+value is never returned for security reasons.</p>
 <h2 id="managing-and-viewing-alerts">Managing and viewing alerts</h2>
 <p>The following operations are available in the Gateway REST API:</p>
 <ul>

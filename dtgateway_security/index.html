@@ -413,6 +413,13 @@
         
             
     <li class="toctree-l1 ">
+        <a class="" href="../app-templates/kinesis-to-s3/">Kinesis to S3 App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
         <a class="" href="../app-templates/s3-to-hdfs-sync/">S3 to HDFS Sync App</a>
         
     </li>
@@ -548,7 +555,7 @@
                 
                     <li><a class="toctree-l4" href="#administering-using-command-line">Administering Using Command Line</a></li>
                 
-                    <li><a class="toctree-l4" href="#enabling-https-in-gateway">Enabling HTTPS in Gateway</a></li>
+                    <li><a class="toctree-l4" href="#setting-up-ssl-keystore-in-gateway">Setting up SSL Keystore in Gateway</a></li>
                 
             
             </ul>
@@ -1324,39 +1331,72 @@ external role staff to the DataTorrent role developer.</p>
 <pre><code>% curl -b ~/cookie-jar -XDELETE http://localhost:9090/ws/v2/auth/users/jane
 </code></pre>
 <p>This command removes the user “jane”.</p>
-<h2 id="enabling-https-in-gateway">Enabling HTTPS in Gateway</h2>
-<p>HTTPS in the Gateway can be enabled by performing following two steps.</p>
+<h2 id="setting-up-ssl-keystore-in-gateway">Setting up SSL Keystore in Gateway</h2>
+<p>An SSL keystore is needed for your gateway to enable HTTPS in the gateway and to configure SMTP with password authentication. SMTP configuration is needed for the gateway to 
+send email alerts as described in <a href="../dtgateway_systemalerts/">System Alerts</a>. </p>
+<p>Follow the steps below to set up the keystore.</p>
 <ol>
 <li>
-<p>Generate an SSL keystore if you don’t have one.  Instruction on how to generate an SSL keystore is here: <a href="http://docs.oracle.com/cd/E19509-01/820-3503/ggfen/index.html">http://docs.oracle.com/cd/E19509-01/820-3503/ggfen/index.html</a></p>
+<p>Generate an SSL keystore if you don’t have one.  Instruction on how to generate an SSL keystore is here: <a href="http://docs.oracle.com/cd/E19509-01/820-3503/ggfen/index.html">http://docs.oracle.com/cd/E19509-01/820-3503/ggfen/index.html</a>.
+Note down the keystore password and full path of the keystore that you need to provide in the next step.</p>
 </li>
 <li>
-<p>Add a property to dt-site.xml configuration file, typically located under <code>/opt/datatorrent/current/conf</code> ( or <code>~/datatorrent/current/conf</code> for local install).</p>
+<p>Add two properties to <code>dt-site.xml</code> configuration file, typically located under <code>/opt/datatorrent/current/conf</code> (or <code>~/datatorrent/current/conf</code> for local install).</p>
 <pre><code>&lt;configuration&gt;
 ...
   &lt;property&gt;
-           &lt;name&gt;dt.gateway.sslKeystorePath&lt;/name&gt;
-           &lt;value&gt;{/path/to/keystore}&lt;/value&gt;
+    &lt;!-- this is the full path to the SSL keystore you created --&gt;
+      &lt;name&gt;dt.gateway.sslKeystorePath&lt;/name&gt;
+      &lt;value&gt;{/path/to/keystore}&lt;/value&gt;
   &lt;/property&gt;
   &lt;property&gt;
-            &lt;name&gt;dt.gateway.sslKeystorePassword&lt;/name&gt;
-             &lt;value&gt;{keystore-password}&lt;/value&gt;
-  &lt;/property&gt;
-  &lt;property&gt;
-    &lt;name&gt;dt.attr.GATEWAY_USE_SSL&lt;/name&gt;
-          &lt;value&gt;true&lt;/value&gt;
+    &lt;!-- this is the keystore password --&gt;
+      &lt;name&gt;dt.gateway.sslKeystorePassword&lt;/name&gt;
+      &lt;value&gt;{keystore-password}&lt;/value&gt;
   &lt;/property&gt;
 ...
 &lt;/configuration&gt;
 </code></pre>
 </li>
 <li>
+<p>Perform any additional steps required for "Enabling HTTPS" or "SMTP Password Encryption" use-case as described below.</p>
+</li>
+<li>
 <p>Restart the Gateway by running</p>
 <pre><code>sudo service dtgateway restart
 </code></pre>
-<p>( when running Gateway in local mode use <code>dtgateway restart</code> command)</p>
+<p>(when running Gateway in local mode use <code>dtgateway restart</code> command)</p>
 </li>
 </ol>
+<h3 id="enabling-https-in-gateway">Enabling HTTPS in Gateway</h3>
+<p>To enable HTTPS in the Gateway after setting up the keystore as described above, you have to add the following
+property to the <code>dt-site.xml</code> configuration file</p>
+<pre><code>    &lt;configuration&gt;
+    ...
+      &lt;property&gt;
+        &lt;name&gt;dt.attr.GATEWAY_USE_SSL&lt;/name&gt;
+        &lt;value&gt;true&lt;/value&gt;
+      &lt;/property&gt;
+    ...
+    &lt;/configuration&gt;
+</code></pre>
+<h3 id="setting-up-a-key-for-smtp-password-encryption">Setting up a Key for SMTP Password Encryption</h3>
+<p>Add another key to the keystore created above using the instructions mentioned in <a href="http://docs.oracle.com/cd/E19509-01/820-3503/ggfen/index.html">http://docs.oracle.com/cd/E19509-01/820-3503/ggfen/index.html</a>. For example:</p>
+<pre><code>keytool -genkey -alias smtpenc-alias -keyalg RSA -keypass &lt;key password&gt; -storepass &lt;store password&gt; -keystore gwkeystore.jks
+</code></pre>
+
+<p>Note down the alias you used for the key (smtpenc-alias in the above command). Remember to use the same key password and 
+store password as the ones you used in the previous command where you created the keystore.</p>
+<p>Add the following property to <code>dt-site.xml</code> to indicate the alias to be used for SMTP Password Encryption:</p>
+<pre><code>    &lt;configuration&gt;
+    ...
+     &lt;property&gt;
+       &lt;name&gt;dt.gateway.ssl.alias.password.encryption&lt;/name&gt;
+       &lt;value&gt;smtpenc-alias&lt;/value&gt;
+     &lt;/property&gt;
+    ...
+    &lt;/configuration&gt;
+</code></pre>
               
             </div>
           </div>

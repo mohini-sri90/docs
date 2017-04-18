@@ -428,6 +428,13 @@
         
             
     <li class="toctree-l1 ">
+        <a class="" href="../../app-templates/kinesis-to-s3/">Kinesis to S3 App</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
         <a class="" href="../../app-templates/s3-to-hdfs-sync/">S3 to HDFS Sync App</a>
         
     </li>
@@ -662,14 +669,19 @@ running applications.</p>
   <img alt="TopNWordCount" src="../images/topnwords/image38.png" title="TopNWordCount" /></li>
 <li>Click <em>create new application</em> button.
   <img alt="New Application" src="../images/topnwords/image37.png" title="New Application" /></li>
-<li>Type a name for your application, for example, <em>Top N words</em>, and click
-   <em>Create</em>. The <strong>Application Canvas</strong> should open.</li>
+<li>Type a name for your application, for example, <em>TopNWordsJson</em>, and click
+   <em>Create</em>. The <strong>Application Canvas</strong> should open.
+  <img alt="dtAssemble" src="../images/topnwords/image40.png" title="dtAssemble" /></li>
+<li>Click the breadcrumbs link to the Application page, in this case, <em>TopNWordsJson</em>.</li>
 </ol>
 <p>The existing application is a JAVA application. Applications that you create
-using dtAssemble are JSON applications. For each JSON application, there are
-three additional buttons that allow editing, deleting, and cloning operations.
-These operations are not supported for JAVA applications.</p>
-<p><img alt="JSON Application" src="../images/topnwords/image40.png" title="JSON Application" /></p>
+using dtAssemble are JSON applications. For JSON applications, there is an
+extra <em>edit</em> button on the application page which brings you to dtAssemble.
+The <em>edit</em> option is not available for JAVA applications.</p>
+<p><img alt="JSON Application" src="../images/topnwords/image40_1.png" title="JSON Application" /></p>
+<blockquote>
+<p>Click the <em>edit</em> button to go back to dtAssemble.</p>
+</blockquote>
 <h2 id="step-ii-drag-operators-to-the-application-canvas">Step II: Drag operators to the application canvas</h2>
 <ol>
 <li>Wait till the Application Canvas opens.
@@ -712,8 +724,8 @@ the <em>FileWordCount</em> operator which has the largest number of connections:
   the file is still being read) and so it is connected to <em>ConsoleOutput</em> as
   well as to <em>AppDataSnapshotMapServer</em>.</li>
 </ul>
-<p><em>Note</em>: As you make changes, the top left corner displays <em>All
-changes saved to HDFS</em>. No explicit save step is needed.</p>
+<p><em>Note</em>: As you make changes, you may wish to save your progress by clicking
+the <em>save</em> button on the top right.</p>
 <p>After you connect all the operators, the canvas looks like this.
 Although presented differently, it is the same as the logical DAG for
 the Java application.</p>
@@ -806,7 +818,11 @@ properties of the operators.</p>
     4</em> for which the value is 512.</p>
 </li>
 <li>
-<p>Click <em>launch</em> in the top-left corner. <em>Note</em>: Before launching the
+<p>Click <em>save</em> in the top-right corner. You can click the <em>Activity</em> tab in the
+   Inspector panel on the bottom to monitor the validation and save process.</p>
+</li>
+<li>
+<p>Click <em>launch</em> in the top-right corner. <em>Note</em>: Before launching the
    application, shut down the IDE; if it is running at the time of a launch,
    the sandbox might hang due to resource exhaustion.
   <img alt="launch" src="../images/topnwords/image44.png" title="launch" /></p>
