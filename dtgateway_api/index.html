@@ -88,7 +88,7 @@
           
             <li>
     <ul class="subnav">
-    <li><span>Cloud Trial</span></li>
+    <li><span>Cloud Integration</span></li>
 
         
             
@@ -1738,14 +1738,16 @@ Payload:</p>
 </code></pre>
 
 <h3 id="post-wsv2licenses">POST /ws/v2/licenses</h3>
-<p>Function: Add a license to the registry or generate an eval license</p>
-<p>Payload: The license file content, if payload is empty, it will try to generate an eval license and return the info</p>
+<p>Function: Add a license to the registry</p>
+<p>Payload: The license file content</p>
 <p>Return:</p>
 <pre><code class="json">{
   &quot;id&quot;: &quot;{licenseId}&quot;,
   &quot;expireTime&quot;: {unixTimeMillis},
+  &quot;expirationTimeNotificationPeriod&quot;: {timeMillis},
   &quot;nodesAllowed&quot;: {nodesAllowed},
   &quot;memoryMBAllowed&quot;: {memoryMBAllowed},
+  &quot;exceedGracePeriod&quot;: {timeMillis},
   &quot;contextType&quot;: &quot;{contextType}&quot;,
   &quot;type&quot;: &quot;{type}&quot;,
   &quot;features&quot;: [ &quot;{feature1}&quot;, … ]
@@ -1756,15 +1758,21 @@ Payload:</p>
 <p>Function: Get info on the current license</p>
 <pre><code class="json">{
       &quot;id&quot;: &quot;{licenseId}&quot;,
+      &quot;currentTime&quot;: {unixTimeMillis},
       &quot;expireTime&quot;: {unixTimeMillis},
       &quot;nodesAllowed&quot;: {nodesAllowed},
       &quot;nodesUsed&quot;: {nodesUsed},
       &quot;memoryMBAllowed&quot;: {memoryMBAllowed},
       &quot;memoryMBUsed&quot;: {memoryMBUsed},
+      &quot;exceedGracePeriod&quot;: {timeMillis}, // memory exceed grace period
+      &quot;exceedRemainingTime&quot;: {timeMillis},  // (optional)
+      &quot;violation&quot;: &quot;memory&quot;, // returns violation type (optional)
       &quot;contextType&quot;: &quot;{community|standard|enterprise}&quot;,
       &quot;type&quot;: &quot;{evaluation|non_production|production}&quot;
       &quot;features&quot;: [ &quot;{feature1}&quot;, … ], // for community, empty array
-      &quot;current&quot;: true/false
+      &quot;current&quot;: true/false,
+      &quot;expirationTimeNotificationLevel&quot;: &quot;{INFO|WARN|ERROR}&quot;, // (optional)
+      &quot;valid&quot;: true/false // true, if the license is valid
 }
 </code></pre>
 
@@ -2378,6 +2386,137 @@ condition</p>
 <p>Return:</p>
 <pre><code class="json">{
      &quot;{topicName}&quot;: {json object data}, ...
+}
+</code></pre>
+
+<h3 id="put-wsv2systemalertstemplatessystemname">PUT /ws/v2/systemAlerts/templates/system/{name}</h3>
+<p>Function: Creates or replaces the specified system alert template.</p>
+<p>Payload:</p>
+<pre><code class="json">{
+    &quot;isSystemTemplate&quot;: true,
+    &quot;description&quot;: &quot;{description}&quot;,
+    &quot;parameters&quot;: [
+        {
+          &quot;variable&quot;: &quot;{replacement variable in Javascript block}&quot;,
+          &quot;label&quot;: &quot;{input label}&quot;,
+          &quot;type&quot;: &quot;{number/text}&quot;,
+          &quot;placeholder&quot;: &quot;{input placeholder}&quot;,
+          &quot;tooltip&quot;: &quot;{input tooltip}&quot;,
+          &quot;required&quot;: {true/false},
+          &quot;default&quot;: &quot;{default value}&quot;,     // optional
+          &quot;values&quot;: {                       // optional
+            &quot;{key}&quot;: &quot;{value}&quot;,
+            …
+          }
+        },
+        …
+    ],
+    &quot;script&quot;: &quot;{Javascript block}&quot;
+}
+</code></pre>
+
+<p>Example:</p>
+<pre><code class="json">{
+    &quot;templates&quot;: [
+        {
+            &quot;isSystemTemplate&quot;: true,
+            &quot;description&quot;: &quot;An alert template example.&quot;,
+            &quot;parameters&quot;: [
+                {
+                  &quot;variable&quot;: &quot;comparison&quot;,
+                  &quot;label&quot;: &quot;Comparison&quot;,
+                  &quot;type&quot;: &quot;text&quot;,
+                  &quot;placeholder&quot;: &quot;Select a comparison&quot;,
+                  &quot;tooltip&quot;: &quot;Choose the comparison to use.&quot;,
+                  &quot;required&quot;: true,
+                  &quot;default&quot;: &quot;&gt;&quot;,
+                  &quot;values&quot;: {
+                    &quot;&lt;&quot;: &quot;less than&quot;,
+                    &quot;===&quot;: &quot;equals to&quot;,
+                    &quot;&gt;&quot;: &quot;greater than&quot;
+                  }
+                },
+                {
+                  &quot;variable&quot;: &quot;count&quot;,
+                  &quot;label&quot;: &quot;Number of Killed Containers&quot;,
+                  &quot;type&quot;: &quot;number&quot;,
+                  &quot;placeholder&quot;: &quot;Enter a valid number&quot;,
+                  &quot;tooltip&quot;: &quot;Enter the number.&quot;,
+                  &quot;required&quot;: false
+                }
+            ],
+            &quot;script&quot;: &quot;/* Alert when number of killed containers is {{comparison}} {{count}} */
+
+                _topic['cluster.metrics'].numContainers {{comparison.key}} ({{count}} !== null ? {{count}} : 0);&quot;
+        }
+    ]
+}
+</code></pre>
+
+<h3 id="delete-wsv2systemalertstemplatessystemname">DELETE /ws/v2/systemAlerts/templates/system/{name}</h3>
+<p>Function: Deletes the specified system alert template.</p>
+<h3 id="get-wsv2systemalertstemplatessystem">GET /ws/v2/systemAlerts/templates/system</h3>
+<p>Function: Gets the created system alert templates</p>
+<p>Return:</p>
+<pre><code class="json">{
+    &quot;templates&quot;: [
+        {
+            &quot;isSystemTemplate&quot;: true,
+            &quot;description&quot;: &quot;{description}&quot;,
+            &quot;parameters&quot;: [
+                {
+                  &quot;variable&quot;: &quot;{replacement variable in Javascript block}&quot;,
+                  &quot;label&quot;: &quot;{input label}&quot;,
+                  &quot;type&quot;: &quot;{number/text}&quot;,
+                  &quot;placeholder&quot;: &quot;{input placeholder}&quot;,
+                  &quot;tooltip&quot;: &quot;{input tooltip}&quot;,
+                  &quot;required&quot;: {true/false},
+                  &quot;default&quot;: &quot;{default value}&quot;,     // optional
+                  &quot;values&quot;: {                       // optional
+                    &quot;{key}&quot;: &quot;{value}&quot;,
+                    …
+                  }
+                },
+                …
+            ],
+            &quot;script&quot;: &quot;{Javascript block}&quot;
+        },
+        …
+    ]
+}
+</code></pre>
+
+<h3 id="get-wsv2systemalertstemplatessystemname">GET /ws/v2/systemAlerts/templates/system/{name}</h3>
+<p>Function: Gets the specified system alert template</p>
+<p>Return:</p>
+<pre><code class="json">{
+    &quot;isSystemTemplate&quot;: true,
+    &quot;description&quot;: &quot;{description}&quot;,
+    &quot;parameters&quot;: [
+        {
+          &quot;variable&quot;: &quot;{replacement variable in Javascript block}&quot;,
+          &quot;label&quot;: &quot;{input label}&quot;,
+          &quot;type&quot;: &quot;{number/text}&quot;,
+          &quot;placeholder&quot;: &quot;{input placeholder}&quot;,
+          &quot;tooltip&quot;: &quot;{input tooltip}&quot;,
+          &quot;required&quot;: {true/false},
+          &quot;default&quot;: &quot;{default value}&quot;,     // optional
+          &quot;values&quot;: {                       // optional
+            &quot;{key}&quot;: &quot;{value}&quot;,
+            …
+          }
+        },
+        …
+    ],
+    &quot;script&quot;: &quot;{Javascript block}&quot;
+}
+</code></pre>
+
+<h3 id="put-wsv2systemalertsvalidatescript">PUT /ws/v2/systemAlerts/validate/script</h3>
+<p>Function: Validates Java script.</p>
+<p>Payload:</p>
+<pre><code class="json">{
+    &quot;script&quot;: {&quot;script&quot;}
 }
 </code></pre>
 
