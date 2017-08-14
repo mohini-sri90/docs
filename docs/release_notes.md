@@ -1,6 +1,30 @@
 DataTorrent RTS Release Notes
 ========================================================================================================================
 
+Version: 3.8.1
+------------------------------------------------------------------------------------------------------------------------
+
+Release date: Aug 14, 2017
+
+### Summary
+This minor release primarily addresses issues related to installation of DataTorrent RTS on a Hadoop cluster configured for secure mode.
+
+##### RTS Bug Fixes
+
+[SPOI-11694] : Fresh system-wide install fails with "DFS Installation Location failed to load" error
+[SPOI-11846] : Gateway fails when launching application in secure mode without authentication enabled
+[SPOI-11848] : Installation wizard fails on the hadoop configuration screen in secure mode
+[SPOI-11849] : The UI calls to retrieve properties in the wizard fail
+[SPOI-12047] : Gateway throws exceptions while getting restarted after security configuration
+
+##### Apache Apex Bug Fixes
+
+[APEXCORE-737] : Buffer server may stop processing tuples when backpressure is enabled
+[APEXCORE-745] : AppMaster does not shut down because numRequestedContainers becomes negative
+
+
+
+
 Version: 3.8.0
 ------------------------------------------------------------------------------------------------------------------------
 
