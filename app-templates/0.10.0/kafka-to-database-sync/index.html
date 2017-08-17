@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  
+  <title>Kafka-to-Database-sync - DataTorrent Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Kafka-to-Database-sync";
+    var mkdocs_page_input_path = "app-templates/0.10.0/kafka-to-database-sync.md";
+    var mkdocs_page_url = "/app-templates/0.10.0/kafka-to-database-sync/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44586211-2', 'docs.datatorrent.com');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> DataTorrent Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">DataTorrent RTS</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Demos</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../demos/">Running Apps</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../sandbox/">Sandbox</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Cloud Integration</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../aws_emr_manual/">AWS</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Development</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../create/">Creating Applications</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../beginner/">Beginner's Guide</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../demo_videos/">Videos</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Tutorials</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <span class="caption-text">Top N Words</span>
+    <ul class="subnav">
+                <li class="toctree-l4">
+                    
+    <a class="" href="../../../tutorials/topnwords/">Introduction</a>
+                </li>
+                <li class="toctree-l4">
+                    
+    <a class="" href="../../../tutorials/topnwords-c1/">Development Environment</a>
+                </li>
+                <li class="toctree-l4">
+                    
+    <a class="" href="../../../tutorials/topnwords-c2/">Building in Java</a>
+                </li>
+                <li class="toctree-l4">
+                    
+    <a class="" href="../../../tutorials/topnwords-c3/">Building with dtAssemble</a>
+                </li>
+                <li class="toctree-l4">
+                    
+    <a class="" href="../../../tutorials/topnwords-c4/">Monitoring with dtManage</a>
+                </li>
+                <li class="toctree-l4">
+                    
+    <a class="" href="../../../tutorials/topnwords-c5/">Visualizing with dtDashboard</a>
+                </li>
+                <li class="toctree-l4">
+                    
+    <a class="" href="../../../tutorials/topnwords-c7/">Advanced Features</a>
+                </li>
+                <li class="toctree-l4">
+                    
+    <a class="" href="../../../tutorials/topnwords-c6/">Appendix</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3">
+                    
+    <span class="caption-text">Sales Dimensions</span>
+    <ul class="subnav">
+                <li class="toctree-l4">
+                    
+    <a class="" href="../../../tutorials/salesdimensions/">Building in Java</a>
+                </li>
+                <li class="toctree-l4">
+                    
+    <a class="" href="../../../tutorials/salesdimensions-c2/">Building with dtAssemble</a>
+                </li>
+                <li class="toctree-l4">
+                    
+    <a class="" href="../../../tutorials/salesdimensions-c3/">Visualizing with dtDashboard</a>
+                </li>
+                <li class="toctree-l4">
+                    
+    <a class="" href="../../../tutorials/salesdimensions-c4/">Monitoring with dtManage</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../apex_development_setup/">Apex Development Setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../configure_IDE/">Generate New Project in IDE</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../application_development/">Applications</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../application_packages/">Application Packages</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../configuration_packages/">Configuration Packages</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../operator_development/">Operators</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Library Operators</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../library_operators/">List of Operators</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../operators/block_reader/">Block Reader</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../operators/deduper/">Deduper</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../operators/dimensions_computation/">Dimension Computation</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../operators/file_output/">File Output</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../operators/file_splitter/">File Splitter</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../operators/hdht/">HDHT</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../operators/kafkaInputOperator/">Kafka Input</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../operators/snapshot_server/">Snapshot Server</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../app_data_framework/">App Data Framework</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../dtgateway_api/">REST API</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">App Templates</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <span class="caption-text">0.10.0</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../common/import-launch/">Import and Launch App-template</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../common/customize/">Customizing an app-template</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../database-to-database-sync/">Database-to-database-sync</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../hdfs-line-copy/">HDFS-line-copy</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../hdfs-part-file-copy/">HDFS-part-file-copy</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../hdfs-to-hdfs-filter-transform/">HDFS-to-HDFS-filter-transform</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../kafka-to-cassandra-filter-transform/">Kafka-to-Cassandra-Filter-Transform</a>
+                </li>
+                <li class="toctree-l3 current">
+                    
+    <a class="current" href="./">Kafka-to-Database-sync</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l4"><a href="#kafka-to-database-sync-application">Kafka to Database Sync Application</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l5" href="#summary">Summary</a></li>
+        
+            <li><a class="toctree-l5" href="#quick-links">Quick links</a></li>
+        
+            <li><a class="toctree-l5" href="#required-properties">Required Properties</a></li>
+        
+            <li><a class="toctree-l5" href="#advanced-properties-optional">Advanced Properties (optional)</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../kafka-to-hdfs-filter-transform/">Kafka-to-HDFS-Filter-Transform</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../kafka-to-kafka-filter-transform/">Kafka-to-Kafka-Filter-Transform</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../kinesis-to-redshift/">Kinesis-to-Redshift</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../kinesis-to-s3/">Kinesis-to-S3</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../s3-to-hdfs-sync/">S3-to-HDFS-sync</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../s3-to-redshift/">S3-to-HDFS-Filter-Transform</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../database-to-hdfs/">Database dump to HDFS App</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../database-to-database-sync/">Database to Database Sync App</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../hdfs-sync/">HDFS Sync App</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../hdfs-line-copy/">HDFS to HDFS Line Copy App</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../hdfs-to-kafka-sync/">HDFS to Kafka Sync App</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../kafka-to-database-sync/">Kafka to Database Sync App</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../kafka-to-hdfs-filter/">Kafka to HDFS Filter App</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../kafka-to-hdfs-sync/">Kafka to HDFS Sync App</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../kinesis-to-s3/">Kinesis to S3 App</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../s3-to-hdfs-sync/">S3 to HDFS Sync App</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Applications</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../app_data_tracker/">App Data Tracker</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../dtingest/">dtIngest</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Platform</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../rts/">RTS</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../application_configurations/">Application Configurations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../dtmanage/">dtManage</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../dtassemble/">dtAssemble</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../dtdashboard/">dtDashboard</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../dtgateway/">dtGateway</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../dtgateway_systemalerts/">Alerts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../apex/">Apache Apex</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../apex_malhar/">Apache Apex-Malhar</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Deployment and Operations</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../installation/">Installation</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../configuration/">Configuration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../dtgateway_security/">Security</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../dtgateway_systemalerts/">System Alerts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../apexcli/">Apex CLI</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../troubleshooting/">Troubleshooting</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../release_notes/">Release Notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../glossary/">Glossary</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../additional_docs/">Resources</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">DataTorrent Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>App Templates &raquo;</li>
+        
+      
+        
+          <li>0.10.0 &raquo;</li>
+        
+      
+    
+    <li>Kafka-to-Database-sync</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="kafka-to-database-sync-application">Kafka to Database Sync Application</h1>
+<h2 id="summary">Summary</h2>
+<p>This application template demonstrates continuous big data sync from a source to destination while reading data messages from a configured Kafka topic. This could be easily utilized and extended by any developer to create a fast,  fault tolerant and scalable Big Data Sync or Retention Application to serve business with continuous data.</p>
+<h2 id="quick-links">Quick links</h2>
+<ul>
+<li>
+<p><a
+    href="../common/import-launch"  class="docs" id="docs" ga-track="docs"
+    target="_blank">How to import and launch an app-template</a></p>
+</li>
+<li>
+<p><a
+    href="../common/customize"  class="docs" id="docs" ga-track="docs"
+    target="_blank">How to customize an app-template</a></p>
+</li>
+<li>
+<p><a
+    href="https://github.com/DataTorrent/moodI/tree/master/app-templates/database-to-database-sync"  class="docs" id="docs" ga-track="docs"
+    target="_blank">README for the application</a></p>
+</li>
+<li>
+<p><a
+   href="https://github.com/DataTorrent/moodI/tree/master/app-templates/database-to-database-sync"  class="github" id="github" ga-track="github" target="_blank">Source code</a></p>
+</li>
+<li>
+<p>Please send feedback or feature requests to :
+    <a href="mailto:feedback@datatorrent.com"  class="feedback" id="feedback" ga-track="feedback">feedback@datatorrent.com</a></p>
+</li>
+<li>
+<p>Join our user discussion group at :
+    <a href="mailto:dt-users@googlegroups.com"  class="maillist" id="maillist" ga-track="maillist">dt-users@googlegroups.com</a></p>
+</li>
+</ul>
+<h2 id="required-properties">Required Properties</h2>
+<p>End user must specify the values for these properties.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Example</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Csv Parser Schema</td>
+<td>String</td>
+<td>{  "separator": "&#124;",  "quoteChar": "\"",   "fields": [{"name": "accountNumber","type": "Integer"} ,{"name": "name","type": "String"},{"name": "amount","type": "Integer"}]}</td>
+<td>JSON representing schema to be used by CSV parser</td>
+</tr>
+<tr>
+<td>Jdbc Output Database Url</td>
+<td>String</td>
+<td>jdbc:postgresql://dest1 .corp1.com:5432/testdb</td>
+<td>Connection URL for the destination database.</td>
+</tr>
+<tr>
+<td>Jdbc Output Store Password</td>
+<td>String</td>
+<td>postgres</td>
+<td>Password for destination database</td>
+</tr>
+<tr>
+<td>Jdbc Output Store Username</td>
+<td>String</td>
+<td>postgres</td>
+<td>Username for destination database</td>
+</tr>
+<tr>
+<td>Jdbc Output Table Name</td>
+<td>String</td>
+<td>test_event_output_table</td>
+<td>Destination table name</td>
+</tr>
+<tr>
+<td>Kafka Broker List</td>
+<td>String</td>
+<td><ul><li>localhost:9092</li><li>node1.corp1.com:9092, node2.corp1.com:9092</li></ul></td>
+<td>Comma seperated list of kafka brokers</td>
+</tr>
+<tr>
+<td>Kafka Topic Name</td>
+<td>String</td>
+<td>transactions</td>
+<td>Topic names on Kakfa</td>
+</tr>
+</tbody>
+</table>
+<h2 id="advanced-properties-optional">Advanced Properties (optional)</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Default</th>
+<th>Type</th>
+<th>Example</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Initial Offset Of Topic For Kafka Consumer</td>
+<td>LATEST</td>
+<td>String</td>
+<td><ul><li>EARLIEST</li><li>LATEST</li><li>APPLICATION_OR_EARLIEST</li><li>APPLICATION_OR_LATEST</li></ul></td>
+<td>Whether to read from beginning or read from current offset.</td>
+</tr>
+<tr>
+<td>Jdbc Output Database Driver</td>
+<td>org.postgresql .Driver</td>
+<td>String</td>
+<td></td>
+<td>FQCN for jdbc driver class for destination database</td>
+</tr>
+<tr>
+<td>Transform Expression Info</td>
+<td>{"accountNumber":"{$.accountNumber}", "name":"{$.name}.toUpperCase()", "amount":"{$.amount}"}</td>
+<td>String</td>
+<td></td>
+<td>JSON map with key indicating output field. Value indicating expression to be used for calculating its value</td>
+</tr>
+<tr>
+<td>Transform Output field Info</td>
+<td>{"accountNumber":"INTEGER", "name":"STRING", "amount":"INTEGER"}</td>
+<td>String</td>
+<td></td>
+<td>JSON map with key indicating output field. Value indicating data <a href="https://github.com/DataTorrent/moodI/blob/master/operators/library/src/main/java/com/datatorrent/lib/schemaAware/JsonParser.java#L25">type</a> for the field.</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../kafka-to-hdfs-filter-transform/" class="btn btn-neutral float-right" title="Kafka-to-HDFS-Filter-Transform">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../kafka-to-cassandra-filter-transform/" class="btn btn-neutral" title="Kafka-to-Cassandra-Filter-Transform"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../kafka-to-cassandra-filter-transform/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../kafka-to-hdfs-filter-transform/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../../js/theme.js"></script>
+
+</body>
+</html>
