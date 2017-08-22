@@ -7,20 +7,20 @@ Version: 3.9
 Release date: Aug 23, 2017
 
 ### Summary
-##### Application  Dashboards
+#### Application  Dashboards
 
 These dashboards help to deliver a complete application experience, showcasing the business-relevant metrics customers’ desire.
  
 DataTorrent’s Applications Dashboards are 1) easy to create from library of widgets 2) show business relevant, real-time analytics and 3) can be easily associated with one or more streaming application(s). Now customers can construct the specific view that THEY want to see in one place.
  
-##### Application Metrics and Visualization
+#### Application Metrics and Visualization
  
 Customers can create real-time metrics that are relevant to the overall streaming analytics application, so that business-relevant metrics can be easily computed and visualized. 
  
 DataTorrent’s Application Metrics & Visualization capabilities enable customers to define not just operational metrics related to data processing, but now they can capture, store, and show the business relevant metrics too.  This is key to being able to show dashboards that are relevant to specific business problems (for ex: percentage of transactions where fraud occurs, fraud trends in real-time, or fraud breakdown by channels).
 
  
-##### DataTorrent AppFactory
+#### DataTorrent AppFactory
  
 DataTorrent has evolved the AppHub, making it even easier for customers to solve problems and understand how real-time streaming analytics can make a difference for their business.  
 
@@ -41,39 +41,38 @@ Continuous Big Data Sync Application Suite
 AppFactory is a marketplace of big data streaming analytics use cases, reference architectures, and downloadable applications that help you to make a positive impact on your business as quickly as possible. You can search by industry or technology to quickly find what is most relevant to your needs.
  
 
-##### Omni-channel Payment Fraud Prevention Application Suite
+#### Omni-channel Payment Fraud Prevention Application Suite
 
 Prevent payment fraud in real-time on all transactions across all your channels.
 DataTorrent’s Omni-channel Payment Fraud Prevention Application delivers real-time, data-in-motion analytics built for 24/7/365 production with sub-second latency, self-healing, enterprise-grade reliability and a scale-out architecture built with a complete pipeline that includes real-time business and operational visualizations.
 
 
-
-##### Continuous Big Data Cloud Sync Application Suite
+#### Continuous Big Data Cloud Sync Application Suite
 
 Continuous Big Data sync of on-premise and cloud infrastructures for availability, compliance, and archival.
 Allows customers to create various data storages within and across on-premise and cloud which can be continuously synced, with no data loss.
 
  
-##### Continuous Big Data Archival Application Suite
+#### Continuous Big Data Archival Application Suite
 
 Continuous archival of Big Data for compliance and business continuity.
 Enables customers fast backup of large volumes of data with low latency, and dynamic scaling features. 
  
 
-##### Continuous Big Data Preparation Application Suite
+#### Continuous Big Data Preparation Application Suite
 
 Streaming Big Data ingestion to prepare your data for insight and action.
 Renders your data “decision ready” as close as possible to the time of creation, serving the business with continuous, clean, consistent, enriched data in the desired business template.	
 
  
-##### Continuous Big Data Sync Application Suite
+#### Continuous Big Data Sync Application Suite
 
 Continuous delivery of Big Data to your Data Lake.
 Allows customers to create an Enterprise Data Lake which delivers continuous, clean, and consistent data while ensuring no data loss occurs during data movement. 
 
 ### Additional product features that further increase a customer’s time to value include:
 
-##### Operator Library Improvements
+#### Operator Library Improvements
 
 With every release, DataTorrent hardens the operators we ship with our applications and templates, continually adding to the Open Source community.
 
@@ -85,7 +84,7 @@ This feature makes it easier to change the fields that are supported in your dat
 With DataTorrent’s Basic Schema Support for applications, it is easier to change the schema that are supported by the data.  Now users are able to associate fields to the data being processed by a DAG in order to associate this pipeline with a set of fields. When the fields are changed, the whole pipeline is updated accordingly.
 
 
-##### Licensing
+#### Licensing
 
 Every customer including eval and free edition users will need a new license file to use the RTS 3.9.0 product.
 
@@ -94,12 +93,12 @@ In 3.9, we have updated our software licensing mechanism. Customers, including t
 Customers who download our sandbox environment or request a free or evaluation license will automatically receive a 3.9-compatible license.
 
 
-##### Security
+#### Security
 
 Security hardening enhancements in 3.9.0 enable users to configure LDAP Security directly in the product. While available previously, the additional functionality in our User Interface now makes LDAP configuration even easier, saving customers time.
 
 
-##### Centralized Log Aggregation
+#### Centralized Log Aggregation
 
 Troubleshooting just got easier with this feature that enables a centralized facility for log aggregation.
  
@@ -107,13 +106,13 @@ DataTorrent RTS 3.9 Support for 3rd Party Log Aggregation makes it even easier f
 
 ### Additional Features of RTS 3.9.0
 
-##### Apache Beam Support
+#### Apache Beam Support
 
 This feature is focused on making data processing easier, faster and less costly.
 Apache Beam Support, aka Google DataFlow is an open source, unified model and set of language-specific SDKs for defining and executing data processing workflows and also data ingestion and integration flows, supporting EIPs and DSLs. This dataflow pipeline simplifies the mechanics of large-scale batch and streaming processing.
  
 
-##### Basic Batch Processing Support
+#### Basic Batch Processing Support
 This feature enables data to be read and processed in batch mode.
 DataTorrent’s Batch Processing Support allows customers to use their batch-oriented architectures in order to integrate with support for external scheduling (i.e. through cron, Oozie, etc.).
 
@@ -136,8 +135,8 @@ This section lists features and capabilities that have been either removed or pl
 * [APEXCORE-663] Application restart not working.
 * [APEXCORE-648] Unnecessary byte array copy in DefaultStatefulStreamCodec.toDataStatePair()
 
-##### DataTorrent RTS Bug Fixes 
-### Bugs
+### DataTorrent RTS Bug Fixes 
+#### Bugs
 * [SPOI-8784] - Restarting application with originalAppId for long running app takes long time
 * [SPOI-9203] - AppHub "check for updates" option says 'no updated versions' and then displays updated packages
 * [SPOI-10409] - Updating app packages using "check for updates" option from AppHub gives wrong notification as undefined
@@ -253,6 +252,8 @@ This section lists features and capabilities that have been either removed or pl
 * [SPOI-12323] - Historical time range selection settings are not preserved
 * [SPOI-12332] - AppFactory - after importing appPackage, buttons should be refreshed automatically
 * [SPOI-12339] - Unable to retarget datasource in dashboard settings after adding widget
+
+
 
 
 
