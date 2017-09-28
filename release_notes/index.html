@@ -337,6 +337,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../app-templates/hdfs-to-s3-sync/">HDFS to S3 Sync App</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../app-templates/kafka-to-database-sync/">Kafka to Database Sync App</a>
                 </li>
                 <li class="">
@@ -362,10 +366,6 @@
 		
     <span class="caption-text">Applications</span>
     <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../app_data_tracker/">App Data Tracker</a>
-                </li>
                 <li class="">
                     
     <a class="" href="../dtingest/">dtIngest</a>
@@ -731,6 +731,12 @@ DataTorrent’s Batch Processing Support allows customers to use their batch-ori
 <li>[SPOI-12332] - AppFactory - after importing appPackage, buttons should be refreshed automatically</li>
 <li>[SPOI-12339] - Unable to retarget datasource in dashboard settings after adding widget</li>
 </ul>
+<h3 id="appendix">Appendix</h3>
+<h4 id="known-issues">Known Issues</h4>
+<ul>
+<li>[SPOI-11483] -  For FAILED applications, container state is shown as ACTIVE. Yarn returns containers of failed application as active. <br />
+<em>Workaround</em> - Check for app status first.</li>
+</ul>
 <h2 id="version-381">Version: 3.8.1</h2>
 <p>Release date: Aug 14, 2017</p>
 <h3 id="summary_1">Summary</h3>
@@ -792,7 +798,7 @@ You’ll receive a warning, which is shown for 30 minutes before most RTS featur
 We provide warnings at 30 days and 7 days before expiration date.  When a license expires, most RTS features will be immediately disabled. All existing applications will continue to run. You can easily contact DataTorrent for a new license.  </p>
 <p><em>What can I do once RTS is locked (either because my license memory has been exceeded or its expiration date has passed)?</em><br />
 Users can view running applications and enter new license details to unlock RTS. The following capabilities are still accessible:
-<em> Configure - System Configuration is available except for App Data Tracker
+<em> Configure - System Configuration is available 
 </em> Configure - License Information is available
 <em> Configure - Installation Wizard is available
 </em> Monitor - Application kill, inspect and shutdown are available
@@ -990,7 +996,7 @@ Known limitation: Alerts and visualization works correctly with single gateway o
 <li>Gateway fails to recognize AppDataTracker application and it continuously relaunched on a Kerberized cluster.</li>
 <li>On a Kerberized cluster, when the configuration parameters are specified in the <code>dt-site.xml</code> file in the user's home directory, the installation wizard does not allow the user to continue with the installation.</li>
 </ul>
-<h3 id="appendix">Appendix</h3>
+<h3 id="appendix_1">Appendix</h3>
 <h4 id="bug-fixes">Bug Fixes</h4>
 <ul>
 <li>[SPOI-10698] - Allow Custom Properties with Config XML file while launching an application</li>
@@ -1045,8 +1051,8 @@ Change log: https://github.com/apache/apex-core/blob/v3.5.0/CHANGELOG.md</p>
 <p>There was also benchmarking on WindowedOperator with the spillable data structures. From the result, the community significantly improved how objects are serialized and reduced garbage collection considerably in the Managed State layer. Work is still in progress for purging state that is not needed any more and further improving the performance of Managed State that the spillable data structures depend on. More information about the windowing support can be found at http://apex.apache.org/docs/malhar/operators/windowedOperator/.</p>
 <p>This release also adds a new, alternative Cassandra output operator (non-transactional, upsert based) and support for fixed length file format to the enrichment operator. 
 Change log: https://github.com/apache/apex-malhar/blob/v3.6.0/CHANGELOG.md</p>
-<h3 id="appendix_1">Appendix</h3>
-<h4 id="known-issues">Known Issues</h4>
+<h3 id="appendix_2">Appendix</h3>
+<h4 id="known-issues_1">Known Issues</h4>
 <ul>
 <li>[SPOI-9921]   Delete widgets on default pane of physical operators needs to have warm colors</li>
 <li>[SPOI-9923]   Custom panes' on operator monitoring page should have character limits for titles</li>
@@ -1292,7 +1298,7 @@ Change log: https://github.com/apache/apex-malhar/blob/v3.6.0/CHANGELOG.md</p>
 <li>HDFS to HDFS Line Copy</li>
 <li>HDFS to Kafka Sync</li>
 </ul>
-<h3 id="appendix_2">Appendix</h3>
+<h3 id="appendix_3">Appendix</h3>
 <h4 id="improvement_1">Improvement</h4>
 <ul>
 <li>[SPOI-9136] - Enforce DefaultOutputPort.emit() or Sink.put() thread affinity</li>
@@ -1341,8 +1347,8 @@ Change log: https://github.com/apache/apex-malhar/blob/v3.6.0/CHANGELOG.md</p>
 </ul>
 <p>For the full release note, please go to
 https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
-<h3 id="appendix_3">Appendix</h3>
-<h4 id="known-issues_1">Known Issues</h4>
+<h3 id="appendix_4">Appendix</h3>
+<h4 id="known-issues_2">Known Issues</h4>
 <ul>
 <li>[SPOI-9232] Dedup with manage state operator marking all impression as duplicate</li>
 <li>[SPOI-9203]   "check for updates" option says 'no updated versions' and then displays updated packages</li>
@@ -1405,8 +1411,8 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>RPC timeout is now configurable</li>
 <li>When an operator is blocked, it nows print out a warning instead of debug</li>
 </ul>
-<h3 id="appendix_4">Appendix</h3>
-<h4 id="known-issues_2">Known Issues</h4>
+<h3 id="appendix_5">Appendix</h3>
+<h4 id="known-issues_3">Known Issues</h4>
 <ul>
 <li>[SPOI-8518] - Support links from Dashboard to Application instance pages</li>
 <li>[SPOI-8516] - Datatorrent rpm version inconsistency</li>
@@ -1614,7 +1620,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[SPOI-7479] - dtHub "check for updates" option says 'no updated versions' and then displays updated packages</li>
 <li>[SPOI-7626] - Stacked Area Chart widget shows NaN values on Firefox</li>
 </ul>
-<h3 id="appendix_5">Appendix</h3>
+<h3 id="appendix_6">Appendix</h3>
 <h4 id="dthub_1">dtHub</h4>
 <ul>
 <li>[SPOI-6787] - dtHub UI - explore, import, download</li>
@@ -1819,7 +1825,7 @@ https://blogs.apache.org/apex/entry/apache_apex_malhar_3_5</p>
 <li>[SPOI-7471] Temp directories/files not cleaned up in Gateway</li>
 <li>[SPOI-7971] After dynamic repartition application appears blocked</li>
 </ul>
-<h4 id="known-issues_3">Known Issues</h4>
+<h4 id="known-issues_4">Known Issues</h4>
 <ul>
 <li>[SPOI-6999] Gateway stops updating application information after problems with YARN or HDFS</li>
 <li>[SPOI-7061] Implement retention policy for terminated apps</li>
