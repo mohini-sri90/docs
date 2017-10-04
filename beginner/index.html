@@ -408,6 +408,10 @@
     <ul class="subnav">
                 <li class="">
                     
+    <a class="" href="../omni_channel_fraud_app/">Omni Channel Fraud Prevention Application</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../dtingest/">dtIngest</a>
                 </li>
     </ul>
@@ -1142,8 +1146,8 @@ FileLineOutputOperator fileOutput = dag.addOperator(&quot;FileOutputOperator&quo
 dag.addStream(&quot;POJO's&quot;, jdbcInputOperator.outputPort, fileOutput.input).setLocality(Locality.CONTAINER_LOCAL);
 </code></pre>
 
-<h3 id="apphub">AppHub</h3>
-<p><a href="https://www.datatorrent.com/apphub/">AppHub</a> is a source of application templates. There are many more applications for various use cases to help jump start development effort. </p>
+<h3 id="appfactory">AppFactory</h3>
+<p><a href="https://www.datatorrent.com/apphub/">AppFactory</a> is a source of application templates. There are many more applications for various use cases to help jump start development effort. </p>
 <h2 id="additional-resources">Additional Resources</h2>
 <ol>
 <li>
