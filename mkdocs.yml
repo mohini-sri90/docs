@@ -74,7 +74,7 @@ pages:
     - Kinesis to S3 App: app-templates/kinesis-to-s3.md
     - S3 to HDFS Sync App: app-templates/s3-to-hdfs-sync.md
 - Applications:
-    - Omni Channel Fraud Prevention Application: Omni_Channel_Fraud_Prevention_Application.md
+    - Omni Channel Fraud Prevention Application: omni_channel_fraud_app.md
     - dtIngest: dtingest.md
 - Platform:
     - RTS: rts.md

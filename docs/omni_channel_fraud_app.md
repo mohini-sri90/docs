@@ -12,6 +12,7 @@ Prevention** application is a pre-built application which can be used to identif
 
 The following image presents the workflow of the application.
 
+![](images/applications/omni_channel_fraud_app/workflow.png)
  
 The following table lists the various processing phases of the incoming data tuples/event in **Omni Channel Fraud Prevention** application:
 
@@ -313,14 +314,17 @@ Packaged dashboards are the set of following dashboards in which various visuali
 - Realtime FraudPrevention Analysis
 - Realtime FraudPrevention Operations
 
-### Realtime FraudPrevention Analysis
+### Realtime FraudPrevention Summary
 
+![](images/applications/omni_channel_fraud_app/summary_dashboard.png)
  
 ### Realtime FraudPrevention Analysis
 
+![](images/applications/omni_channel_fraud_app/realtimefraudpreventionanalysis.png)
 
 ### Realtime FraudPrevention Operations
 
+![](images/applications/omni_channel_fraud_app/realtimefraudpreventionoperations.png)
 
 ## Importing Dashboards
 
@@ -352,12 +356,15 @@ To view the dashboard, make sure that dashboard is available. Dashboard can be c
 2. In the displayed list of dashboards, select dashboard using checkbox. The **view** button is displayed only when you select one dashboard. If you select more dashboards, **view** button disappears.
 3. Select the dashboard to view in detail and click **view** button. This shows  the following screen: 
 
+![](images/applications/omni_channel_fraud_app/viewing_dashboard.png)
+
 ## Copying Dashboard
 
 To copy the dashboard, make sure that dashboard is available in the list. Dashboard can be created or imported or uploaded and it gets displayed in the list. To copy the dashboard, do the following:
 1. On the DataTorrent Console, click **Visualize** tab. In the displayed list of dashboard(s), select dashboard using checkbox. **copy** button will be displayed only after selecting dashboard. The total count of the selected dashboards is displayed on the **copy** button.
 2. Select the dashboard(s) to be copied and click the **copy** button. This will create a copy of the dashboard(s). Copied dashboard(s) can be seen in the list. Message will be displayed at the upper right corner.
 
+![](images/applications/omni_channel_fraud_app/copying_dashboard.png)
  
 ## Downloading Dashboard
 
