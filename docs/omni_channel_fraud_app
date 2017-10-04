@@ -1,6 +1,10 @@
+Omni Channel Fraud Prevention Application User Guide
+====================================================
+
 # Overview
 
-**Omni Channel Fraud Prevention** application is a pre-built application which can be used to identify frauds in financial transactions. This application is designed to ingest, transform, analyze, act, and visualize data as soon as it is generated thereby preventing fraud transactions in real time that is before it happens. You can view and monitor the historical and real-time data from the dashboards.
+**Omni Channel Fraud
+Prevention** application is a pre-built application which can be used to identify frauds in financial transactions. This application is designed to ingest, transform, analyze, act, and visualize data as soon as it is generated thereby preventing fraud transactions in real time that is before it happens. You can view and monitor the historical and real-time data from the dashboards.
 
 **Omni Channel Fraud Prevention** application is built over DataTorrent RTS platform and can be run on commodity hardware. The platform gives real time insights while providing fault tolerant and scalable way of processing. The fraud identification can be further customized by writing rules as per your business needs.
 
