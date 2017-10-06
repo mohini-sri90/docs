@@ -413,14 +413,6 @@
         
             <li><a class="toctree-l4" href="#enricher">Enricher</a></li>
         
-            <li><a class="toctree-l4" href="#geo-data-enricher">Geo Data Enricher</a></li>
-        
-            <li><a class="toctree-l4" href="#customer-data-enricher">Customer Data Enricher</a></li>
-        
-            <li><a class="toctree-l4" href="#card-data-enricher">Card Data Enricher</a></li>
-        
-            <li><a class="toctree-l4" href="#product-data-enricher">Product Data Enricher</a></li>
-        
             <li><a class="toctree-l4" href="#fraud-rule-executor">Fraud Rule Executor</a></li>
         
             <li><a class="toctree-l4" href="#data-writer">Data Writer</a></li>
@@ -634,7 +626,7 @@ Prevention</strong> application is a pre-built application which can be used to 
 <tr>
 <td>3</td>
 <td>Fraud Rule Execution</td>
-<td>Fraud detection rules are applied to the enriched data using drools as CEP engine. The following operators are involved in the Fraud Rule Execution phase: <em>Fraud Rule Executor</em>, <em>Data Writer</em>, <em>Scale Application.</em></td>
+<td>Fraud detection rules are applied to the enriched data using drools as CEP engine. The following operators are involved in the Fraud Rule Execution phase: <em>Fraud Rule Executor</em>.</td>
 </tr>
 <tr>
 <td>4</td>
@@ -644,7 +636,7 @@ Prevention</strong> application is a pre-built application which can be used to 
 <tr>
 <td>5</td>
 <td>Fraud Triggers and Alerts</td>
-<td>Triggers are activated based on the output of the upstream processing. The processed transactions are written onto HDFS to run any historical analysis in future. Also, transactions are published on message bus such as kafka to take real time actions. The application is also integrated with alerting systems that send real time alerts to applicable users.  Email alerts are sent by default.The following operator is involved in the Fraud Triggers and Alerts phase: <em>Alert Mail</em></td>
+<td>Triggers are activated based on the output of the upstream processing. The processed transactions are written onto HDFS to run any historical analysis in future. Also, transactions are published on message bus such as kafka to take real time actions. The application is also integrated with alerting systems that send real time alerts to applicable users.  Email alerts are sent by default.The following operators are involved in the Fraud Triggers and Alerts phase: <em>Alert Mail</em>, <em>DataWriter</em>, <em>Kafka Output Operator</em>.</td>
 </tr>
 </tbody>
 </table>
@@ -940,7 +932,7 @@ Prevention</strong> application is a pre-built application which can be used to 
 </tr>
 </tbody>
 </table>
-<h2 id="geo-data-enricher">Geo Data Enricher</h2>
+<h3 id="geo-data-enricher">Geo Data Enricher</h3>
 <p>GeoData Enrichment operator refers maxmind database to fetch geo information provided ip address of transaction location. Copy the maxmind city database (GeoLite2 City) to HDFS.</p>
 <p><strong>Note:</strong> Extract GeoLite2-City.mmdb file to load on HDFS, don&#39;t copy the zip file directly.</p>
 <p>The following properties must be set for geo data enricher:</p>
@@ -992,7 +984,7 @@ Prevention</strong> application is a pre-built application which can be used to 
 </tr>
 </tbody>
 </table>
-<h2 id="customer-data-enricher">Customer Data Enricher</h2>
+<h3 id="customer-data-enricher">Customer Data Enricher</h3>
 <p>Customer details are important to evaluate transactions for potential frauds.</p>
 <p>For example, customer home address, spending patterns, risk score, and so on can be used to decide if a specific transaction is fraud. Jdbc store or json file is supported for lookup of customer data.</p>
 <p>If you do not have a database, you can use file input source. Put your json input file on HDFS and configure it accordingly.</p>
@@ -1082,7 +1074,7 @@ Prevention</strong> application is a pre-built application which can be used to 
 </tbody>
 </table>
 <p><strong>Note:</strong> Ensure that the driver jar is in classpath. The driver jar can be added in classpath using config package.</p>
-<h2 id="card-data-enricher">Card Data Enricher</h2>
+<h3 id="card-data-enricher">Card Data Enricher</h3>
 <p>Lookup the card data in your database. If you do not have a database you can use file input source. Please put your json input file on HDFS and configure operator accordingly.</p>
 <p>The following properties must be set for card data enricher:</p>
 <table>
@@ -1170,7 +1162,7 @@ Prevention</strong> application is a pre-built application which can be used to 
 </tbody>
 </table>
 <p><strong>Note</strong> You must ensure that the driver jar is in classpath. The driver jar can be added in classpath using config package.</p>
-<h2 id="product-data-enricher">Product Data Enricher</h2>
+<h3 id="product-data-enricher">Product Data Enricher</h3>
 <p>Lookup product details in your json records stored in HDFS files.</p>
 <p>The following properties must be set for product data enricher:</p>
 <table>
@@ -1426,33 +1418,42 @@ To run the application, do the following:
 <li>Realtime FraudPrevention Operations</li>
 </ul>
 <h3 id="realtime-fraudprevention-summary">Realtime FraudPrevention Summary</h3>
+<p>This is a high level summary view of real time fraud prevention analysis.</p>
 <p><img alt="" src="../images/applications/omni_channel_fraud_app/summary_dashboard.png" /></p>
 <h3 id="realtime-fraudprevention-analysis">Realtime FraudPrevention Analysis</h3>
+<p>This is a real time analytical view of all the perspectives of fraud prevention.</p>
 <p><img alt="" src="../images/applications/omni_channel_fraud_app/realtimefraudpreventionanalysis.png" /></p>
 <h3 id="realtime-fraudprevention-operations">Realtime FraudPrevention Operations</h3>
+<p>This dashboard provides the details of all the processes and operations involved in fraud prevention application.</p>
 <p><img alt="" src="../images/applications/omni_channel_fraud_app/realtimefraudpreventionoperations.png" /></p>
 <h2 id="importing-dashboards">Importing Dashboards</h2>
-<p>To view the dashboards, you need to import the dashboards. To import the dashboards, do the following:
-1. On DataTorrent Console, click &#39;Visualize&#39; tab.
-2. Click &#39;Import&#39; button to view &quot;Packaged Dashboards&quot; screen.</p>
+<p>To view the dashboards, you need to import the dashboards. To import the dashboards, do the following:</p>
+<ol>
+<li>On DataTorrent Console, click &#39;Visualize&#39; tab.</li>
+<li>Click &#39;Import&#39; button to view &quot;Packaged Dashboards&quot; screen.</li>
+</ol>
 <p>Packaged Dashboards consists of:
 - Realtime FraudPrevention Summary
 - Realtime FraudPrevention Analysis
 - Realtime FraudPrevention Operations</p>
-<p>To import the dashboard in the application from the list of packaged dashboards, do the following 
-1. Click on &#39;Import&#39; button from &#39;actions&#39; column from the above screen.
-2. Populate the data in the above screen and click on Import button to import selected dashboard in the application.
-3. Once dashboards are imported, user can see in the list.</p>
+<p>To import the dashboard in the application from the list of packaged dashboards, do the following:</p>
+<ol>
+<li>Click on &#39;Import&#39; button from &#39;actions&#39; column from the above screen.</li>
+<li>Populate the data in the above screen and click on Import button to import selected dashboard in the application.</li>
+<li>Once dashboards are imported, user can see in the list.</li>
+</ol>
 <h2 id="uploading-dashboard">Uploading Dashboard</h2>
 <p>If the dashboard file is available on your local machine, it can be uploaded using this option. To upload the dashboard, do the following:
 1. On DataTorrent Console, click the <strong>Visualize</strong> tab.
 2. Click <strong>Upload</strong> button to view the <strong>Dashboard Upload</strong> screen.
 3. Browse or drag the dashboard file using the above screen. Once the dashboard file is uploaded, user can see in the list.</p>
 <h2 id="viewing-dashboard">Viewing Dashboard</h2>
-<p>To view the dashboard, make sure that dashboard is available. Dashboard can be created or imported or uploaded and in turn it will display in the list. To view the dashboard, do the following:
-1. On DataTorrent Console, click <strong>Visualize</strong> tab. 
-2. In the displayed list of dashboards, select dashboard using checkbox. The <strong>view</strong> button is displayed only when you select one dashboard. If you select more dashboards, <strong>view</strong> button disappears.
-3. Select the dashboard to view in detail and click <strong>view</strong> button. This shows  the following screen: </p>
+<p>To view the dashboard, make sure that dashboard is available. Dashboard can be created or imported or uploaded and in turn it will display in the list. To view the dashboard, do the following:</p>
+<ol>
+<li>On DataTorrent Console, click <strong>Visualize</strong> tab. </li>
+<li>In the displayed list of dashboards, select dashboard using checkbox. The <strong>view</strong> button is displayed only when you select one dashboard. If you select more dashboards, <strong>view</strong> button disappears.</li>
+<li>Select the dashboard to view in detail and click <strong>view</strong> button. This shows  the following screen: </li>
+</ol>
 <p><img alt="" src="../images/applications/omni_channel_fraud_app/viewing_dashboard.png" /></p>
 <h2 id="copying-dashboard">Copying Dashboard</h2>
 <p>To copy the dashboard, make sure that dashboard is available in the list. Dashboard can be created or imported or uploaded and it gets displayed in the list. To copy the dashboard, do the following:
@@ -1460,35 +1461,37 @@ To run the application, do the following:
 2. Select the dashboard(s) to be copied and click the <strong>copy</strong> button. This will create a copy of the dashboard(s). Copied dashboard(s) can be seen in the list. Message will be displayed at the upper right corner.</p>
 <p><img alt="" src="../images/applications/omni_channel_fraud_app/copying_dashboard.png" /></p>
 <h2 id="downloading-dashboard">Downloading Dashboard</h2>
-<p>To download the dashboard, make sure that dashboard is available in the list. Dashboard can be created or imported or uploaded and in turn it will display in the list.
-1. On DataTorrent Console, click <strong>Visualize</strong> tab. In the displayed list of dashboard(s), select a dashboard using checkbox. <strong>download</strong> button will be displayed only after selecting only one dashboard.
-2. Select the dashboard to be downloaded and click <strong>download</strong> button. The downloaded dashboard can be seen in the <strong>Downloads</strong> folder. The extension of the downloaded file will be .dtdashboard.</p>
+<p>To download the dashboard, make sure that dashboard is available in the list. Dashboard can be created or imported or uploaded and in turn it will display in the list.</p>
+<ol>
+<li>On DataTorrent Console, click <strong>Visualize</strong> tab. In the displayed list of dashboard(s), select a dashboard using checkbox. <strong>download</strong> button will be displayed only after selecting only one dashboard.</li>
+<li>Select the dashboard to be downloaded and click <strong>download</strong> button. The downloaded dashboard can be seen in the <strong>Downloads</strong> folder. The extension of the downloaded file will be .dtdashboard.</li>
+</ol>
 <h2 id="deleting-dashboard">Deleting Dashboard</h2>
-<p>To delete the dashboard, make sure that dashboard is available in the list. Dashboard can be created or imported or uploaded and in turn it will display in the list.
-1. On DataTorrent Console, click <strong>Visualize</strong> tab. In the displayed list of dashboard(s), select dashboard using checkbox. The <strong>download</strong> button will be displayed only after you select the dashboard. Depending on the selection of number of dashboards, the count will be displayed on the <strong>download</strong> button.
-2. Select dashboard(s) to be deleted and click <strong>delete</strong> button. This shows following confirmation popup.      <br />
-3. Click <strong>Okay</strong> to delete the selected dashboard(s). This will delete the dashboard and list will be updated.</p>
+<p>To delete the dashboard, make sure that dashboard is available in the list. Dashboard can be created or imported or uploaded and in turn it will display in the list.</p>
+<ol>
+<li>On DataTorrent Console, click <strong>Visualize</strong> tab. In the displayed list of dashboard(s), select dashboard using checkbox. The <strong>download</strong> button will be displayed only after you select the dashboard. Depending on the selection of number of dashboards, the count will be displayed on the <strong>download</strong> button.</li>
+<li>Select dashboard(s) to be deleted and click <strong>delete</strong> button. This shows following confirmation popup.        </li>
+<li>Click <strong>Okay</strong> to delete the selected dashboard(s). This will delete the dashboard and list will be updated.</li>
+</ol>
 <h1 id="troubleshooting">Troubleshooting</h1>
 <ul>
-<li>
-<p><strong>My App crashes immediately with Error stating:</strong> _ <strong>Failed to construct kafka consumer</strong> <em>
-_Solution</em>: Ensure that your kafka instance is up and running. Also check if your kafka server is accessible from your cluster hosts. Also check right if the kafka server configuration is provided to the operator.</p>
-</li>
-<li>
-<p><strong>My Enrichment operator crashes.</strong>
-<em>Solution:</em> Check if you have enrichment data in place. Also verify if enrichment file/data store is accessible from node. Also check right if the configuration is provided to the operator.</p>
-</li>
-<li>
-<p><strong>Latency of my application increases</strong>
-<em>Solution:</em> From DataTorrent RTS UI, check the operator which is a bottleneck. Increase operator memory by referring to the instructions on <a href="http://docs.datatorrent.com">datatorrent.com</a>. Also check Scaling section to add more resources for processing.</p>
-</li>
-<li>
-<p><strong>I don&#39;t see as many number of processed tuple at end operators as I receive from kafka / My tuples are getting filtered out.</strong>
-<em>Solution:</em> Check the following:</p>
-</li>
-<li>Check if the filter condition on the <strong>Validator</strong> operator is filtering out most of tuples. You can check that by looking at count of received tuples and processed tuples by the operator.</li>
-<li>Check if enrichment is failing due to missing data. In case lookup data is missing enrichment operator can fail. By default, tuples are not passed on to the next operator if enrichment is failed. Based on your requirements either validate your lookup data or configure operators to pass on tuples in case of enrichment failures.</li>
+<li><strong>My App crashes immediately with Error stating:</strong> <em><strong>Failed to construct kafka consumer</strong></em></li>
 </ul>
+<p><em>Solution</em>: Ensure that your kafka instance is up and running. Also check if your kafka server is accessible from your cluster hosts. Also check right if the kafka server configuration is provided to the operator.</p>
+<ul>
+<li><strong>My Enrichment operator crashes.</strong></li>
+</ul>
+<p><em>Solution:</em> Check if you have enrichment data in place. Also verify if enrichment file/data store is accessible from node. Also check  if the correct configuration is provided to the operator.</p>
+<ul>
+<li><strong>Latency of my application increases</strong></li>
+</ul>
+<p><em>Solution:</em> From DataTorrent RTS UI, check the operator which is a bottleneck. Increase operator memory by referring to the instructions on <a href="http://docs.datatorrent.com">datatorrent.com</a>. Also check Scaling section to add more resources for processing.</p>
+<ul>
+<li><strong>I don&#39;t see as many number of processed tuple at end operators as I receive from kafka / My tuples are getting filtered out.</strong></li>
+</ul>
+<p><em>Solution:</em> Check the following:
+  - Check if the filter condition on the <strong>Validator</strong> operator is filtering out most of tuples. You can check that by looking at count of received tuples and processed tuples by the operator.
+  - Check if enrichment is failing due to missing data. In case lookup data is missing enrichment operator can fail. By default, tuples are not passed on to the next operator if enrichment is failed. Based on your requirements either validate your lookup data or configure operators to pass on tuples in case of enrichment failures.</p>
               
             </div>
           </div>
