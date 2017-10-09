@@ -514,6 +514,8 @@
         
             <li><a class="toctree-l4" href="#application-logging">Application Logging</a></li>
         
+            <li><a class="toctree-l4" href="#integration-of-gateway-and-apex-with-3rd-party-log-aggregation-tools">Integration of Gateway and Apex with 3rd party log aggregation tools</a></li>
+        
             <li><a class="toctree-l4" href="#custom-log4j-properties-for-application-packages">Custom log4j Properties for Application Packages</a></li>
         
             <li><a class="toctree-l4" href="#dtgateway-logging">dtGateway Logging</a></li>
@@ -924,6 +926,90 @@ into <code>dt-site.xml</code>. To specify multiple patterns, use a comma-separat
 &lt;/property&gt;
 </code></pre>
 
+<h2 id="integration-of-gateway-and-apex-with-3rd-party-log-aggregation-tools">Integration of Gateway and Apex with 3rd party log aggregation tools</h2>
+<h3 id="introduction">Introduction</h3>
+<p>During execution Gateway and Apex generate event log records in order to provide an audit trail that can be used to understand the activity of the system and to diagnose problems. Typically the event log records are stored into a local file system and later can be used for analysis and diagnostic.
+Gateway also provides an universal ability to pass and store Gateway and Apex event log records to 3rd party sources and use some external tools to store the log events and do querying and reporting. In order to make it the user should configure logger appender in Gateway configuration files.</p>
+<h3 id="configuration-of-logger-appenders">Configuration of Logger Appenders</h3>
+<p>Gateway and Apex Client processes are running on the machine node where Gateway instance was installed. So the configuration of  logger appenders can be done via the regular log4j properties (datatorrent/releases/3.8.0/conf/dtgateway.log4j.properties).</p>
+<p>Example of configuration log4j properties for Socket Appender:lizy@datatorrent.com</p>
+<pre><code>log4j.rootLogger=${dt.root.logger.level},tcp
+...
+log4j.appender.tcp=org.apache.log4j.net.SocketAppender
+log4j.appender.tcp.RemoteHost=logstashnode1
+log4j.appender.tcp.Port=5400
+log4j.appender.tcp.ReconnectionDelay=10000
+log4j.appender.tcp.LocationInfo=true
+</code></pre>
+
+<p>The configuration of logger appenders for Apex Application Master and Containers can be done via the regular attribute property “apex.attr.LOGGER_APPENDER” that can be defined in the configuration file dt-site.xml (global, local and user) or the static and runtime application properties.</p>
+<p>Syntax of logger appender attribute value:</p>
+<pre><code>{comma-separated-appender-names};{comma-separated-appenders-properties}
+</code></pre>
+
+<p>Example of configuration of the logger appender attribute for Socket  Appender:</p>
+<pre><code>  &lt;property&gt;
+    &lt;name&gt;apex.attr.LOGGER_APPENDER&lt;/name&gt;
+    &lt;value&gt;tcp;log4j.appender.tcp=org.apache.log4j.net.SocketAppender,log4j.appender.tcp.RemoteHost=logstashnode1,log4j.appender.tcp.Port=5400,log4j.appender.tcp.ReconnectionDelay=10000,log4j.appender.tcp.LocationInfo=true&lt;/value&gt;
+  &lt;/property&gt;
+</code></pre>
+
+<h3 id="integration-with-elasticsearch-and-splunk">Integration with ElasticSearch and Splunk</h3>
+<p>The user can use different ways to store event log records to an external data source. But we would recommend to use the following scenario.
+Gateway and Apex can be configured to use Socket Appender to send logger events to Logstash. And Logstash can deploy event log records to any output data sources. For instance the following picture shows the integration workflow with ElasticSearch and Splunk.</p>
+<p><img alt="" src="../images/configuration/Conf_3rdparty1.png" /></p>
+<p>Example of  Logstash configuration:</p>
+<pre><code>input {  getting of looger events from Socket Appender
+  log4j {
+    mode =&gt; &quot;server&quot;
+    port =&gt; 5400
+    type =&gt; &quot;log4j&quot;
+  }
+}
+
+Filter{  transformation of looger events to event log records
+  mutate {
+    remove_field =&gt; [ &quot;@version&quot;,&quot;path&quot;,&quot;tags&quot;,&quot;host&quot;,&quot;type&quot;,&quot;logger_name&quot; ]
+    rename =&gt; { &quot;apex.user&quot; =&gt; &quot;user&quot; }
+    rename =&gt; { &quot;apex.application&quot; =&gt; &quot;application&quot; }
+    rename =&gt; { &quot;apex.containerId&quot; =&gt; &quot;containerId&quot; }
+    rename =&gt; { &quot;apex.applicationId&quot; =&gt; &quot;applicationId&quot; }
+    rename =&gt; { &quot;apex.node&quot; =&gt; &quot;node&quot; }
+    rename =&gt; { &quot;apex.service&quot; =&gt; &quot;service&quot; }
+    rename =&gt; { &quot;dt.node&quot; =&gt; &quot;node&quot; }
+    rename =&gt; { &quot;dt.service&quot; =&gt; &quot;service&quot; }
+    rename =&gt; { &quot;priority&quot; =&gt; &quot;level&quot; }
+    rename =&gt; { &quot;timestamp&quot; =&gt; &quot;recordTime&quot; }
+   }
+   date {
+    match =&gt; [ &quot;recordTime&quot;, &quot;UNIX&quot; ]
+    target =&gt; &quot;recordTime&quot;
+  }
+}
+
+output {
+  elasticsearch {  putting of event log records to ElasticSearch cluster
+  hosts =&gt; [&quot;esnode1:9200&quot;,&quot;esnode2:9200&quot;,&quot;esnode3:9200&quot;]
+    index =&gt; &quot;apexlogs-%{+YYYY-MM-dd}&quot;
+    manage_template =&gt; false
+  }
+
+  tcp {  putting of event log records to Splunk
+   host =&gt; &quot;splunknode&quot;
+   mode =&gt; &quot;client&quot;
+   port =&gt; 15000
+   codec =&gt; &quot;json_lines&quot;
+ }
+}
+</code></pre>
+
+<p>ElasticSearch users can use Kibana reporting tool for analysis and diagnostic. Splunk users can use Splunkweb.</p>
+<p><img alt="" src="../images/configuration/Conf_3rdparty3.png" /></p>
+<p>Links to 3rd party tools:</p>
+<p>Logstash: https://www.elastic.co/products/logstash</p>
+<p>ElasticSearch: https://www.elastic.co/products/elasticsearch</p>
+<p>Kibana: https://www.elastic.co/products/kibana</p>
+<p>Splunk: https://www.splunk.com</p>
 <h2 id="custom-log4j-properties-for-application-packages">Custom log4j Properties for Application Packages</h2>
 <p>There are two ways of setting custom <code>log4j</code> properties in an Apex application
 package</p>
