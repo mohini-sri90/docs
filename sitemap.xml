@@ -272,6 +272,12 @@
     
         
     <url>
+     <loc>/Licensing/</loc>
+     <lastmod>2017-10-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>/installation/</loc>
      <lastmod>2017-10-11</lastmod>
      <changefreq>daily</changefreq>
