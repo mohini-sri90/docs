@@ -460,6 +460,8 @@
     
         <ul>
         
+            <li><a class="toctree-l3" href="#version-391">Version: 3.9.1</a></li>
+        
             <li><a class="toctree-l3" href="#version-39">Version: 3.9</a></li>
         
             <li><a class="toctree-l3" href="#version-381">Version: 3.8.1</a></li>
@@ -537,6 +539,45 @@
             <div class="section">
               
                 <h1 id="datatorrent-rts-release-notes">DataTorrent RTS Release Notes</h1>
+<h2 id="version-391">Version: 3.9.1</h2>
+<p>Release date: Oct 10, 2017</p>
+<h3 id="features">Features</h3>
+<p>The following features and enhancements are included in the DataTorrent RTS 3.9.1 release:</p>
+<h4 id="premium-applications-licensing">Premium Applications Licensing</h4>
+<p>DataTorrent applications and operators are now offered under the following license categories:</p>
+<ul>
+<li>DataTorrent Premium Suite </li>
+<li>DataTorrent Service Plus </li>
+</ul>
+<p>These categories determine the type of access that you have for the premium applications and operators that are available in DataTorrent's AppFactory.</p>
+<p>With <strong>DT Premium</strong>, you can access  and download premium applications from the DataTorrent AppFactory such as the Omni-Channel Fraud Prevention application and operators such as Drools-based rule engine for complex event processing. </p>
+<p>With <strong>DT Plus</strong>, you can download only non-premium applications and operators that can be used for data ingestion.  Premium applications,  although visible on the AppFactory,  can be downloaded only if you subscribe to DataTorrent - Premium Suite ®.</p>
+<p>In this release, licensing support is extended to <strong>Metrics module</strong> and to <strong>Omni Channel Fraud Prevention</strong> application.</p>
+<h4 id="python-support">Python Support</h4>
+<p>DataTorrent now provides support to Python for building applications in Apex. You can create a DAG with Python as high level API support.</p>
+<h4 id="single-value-widget">Single Value Widget</h4>
+<p>The Single Value widget can be now added to a dashboard of Application Templates.</p>
+<h4 id="historical-time-range-results">Historical Time Range Results</h4>
+<p>The Historical time range selection results now includes the  <strong>From</strong> and <strong>To</strong> values.</p>
+<h4 id="enhancements-to-import-packaged-dashboards-section">Enhancements to Import Packaged Dashboards Section</h4>
+<p>The following enhancements are done to the <strong>Import Packaged Dashboards</strong> section of the <strong>Launch &lt; Application &gt;</strong> dialog box:</p>
+<ul>
+<li>On the UI, the default selection for the replacement application is now the same as the currently launching application.</li>
+<li>The <strong>Name</strong> field is now changed to <strong>Dashboard Name</strong></li>
+<li>A detailed description is now provided for the <strong>Select Replacement Applications</strong> field. </li>
+<li>The purpose of the application state can be viewed when you hover over the dashboard name. </li>
+<li>The name of the user who packaged the dashboards is now no longer visible against the name of the dashboard. </li>
+</ul>
+<h4 id="artifact-query-api-filter">Artifact Query API Filter</h4>
+<p>The artifact query API now supports expansion to all versions, including older ones, as well as specifying exact RTS Version and limiting the results. </p>
+<h3 id="datatorrent-rts-defect-fixes">DataTorrent RTS Defect Fixes</h3>
+<p>The following resolved issues are included in the DataTorrent RTS 3.9.1 release:</p>
+<h4 id="defects">Defects</h4>
+<ul>
+<li>[SPOI-11219] - Add a new recovery mode where the operator instance before a failure event can be reused in certain cases without reloading from checkpoint.</li>
+<li>[SPOI-12665] - Autometric values of an operator is showing wrongly in App master.</li>
+<li>[SPOI-12633] - Operator fails with catastrophic error message.</li>
+</ul>
 <h2 id="version-39">Version: 3.9</h2>
 <p>Release date: Aug 23, 2017</p>
 <h3 id="summary">Summary</h3>
