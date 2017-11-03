@@ -74,7 +74,7 @@ End user must specify the values for these properties (these properties are all 
 |<p style="font-size:12px">dt.operator.S3InputModule.prop.files|Access URL for S3 source|<p style="font-size:12px">s3n://ACCESS_KEY_ID:SECRET_KEY<br/>@BUCKET_NAME/DIRECTORY |
 
 ### Advanced properties
-There are pre-saved configurations based on the application environment. Recommended settings for [datatorrent sandbox edition](https://www.datatorrent.com/download/datatorrent-rts-sandbox-edition-download/) are in `sandbox-memory-conf.xml` and for a cluster environment in `cluster-memory-conf.xml`.
+There are pre-saved configurations based on the application environment. Recommended settings for [datatorrent sandbox](https://www.datatorrent.com/download/datatorrent-rts-sandbox-edition-download/) are in `sandbox-memory-conf.xml` and for a cluster environment in `cluster-memory-conf.xml`.
 
 |Property|Description|Type|Default for<br/>cluster-<br/>memory-<br/> conf.xml|Default for<br/>  sandbox<br/>-memory -<br/>conf.xml|
 |-|-|-|-|-|
