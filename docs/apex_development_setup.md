@@ -17,7 +17,7 @@ There are a few tools that will be helpful when developing Apache Apex applicati
 
 4.  *VirtualBox* -- Oracle VirtualBox is a virtual machine manager (version 4.3 or later) and can be downloaded from <https://www.virtualbox.org/wiki/Downloads>. It is needed to run the DataTorrent Sandbox.
 
-5.  *DataTorrent Sandbox* -- The sandbox can be downloaded from <https://www.datatorrent.com/download>. It is useful for testing simple applications since it contains Apache Hadoop and DataTorrent RTS pre-installed with a time-limited Enterprise License. If you already installed the RTS Enterprise Edition (evaluation or production license) on a cluster, you can use that setup for deployment and testing instead of the sandbox.
+5.  *DataTorrent Sandbox* -- The sandbox can be downloaded from <https://www.datatorrent.com/download>. It is useful for testing simple applications since it contains Apache Hadoop and DataTorrent RTS pre-installed with a time-limited Enterprise License. If you have already installed DataTorrent RTS (DT Plus license or DT Premium license) on a cluster, you can use that setup for deployment and testing instead of the sandbox.
 
 6.  (Optional) If you prefer to use an IDE (Integrated Development Environment) such as *NetBeans*, *Eclipse* or *IntelliJ*, install that as well.
 
