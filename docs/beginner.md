@@ -154,7 +154,7 @@ multiple options here:
   [here](http://docs.datatorrent.com/sandbox/). This is
   the simplest option for experimenting with Apex since it has all the necessary pieces
   installed.
-+ Download and install the DataTorrent Community or Enterprise Edition downloadable from
++ Download and install the free or licensed DataTorrent RTS downloadable from
   [here](https://www.datatorrent.com/download/).
 + Use an existing DataTorrent RTS licensed installation.
 + Clone the Apex source code on a cluster with Hadoop already installed, build it and
