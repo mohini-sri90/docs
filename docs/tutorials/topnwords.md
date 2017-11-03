@@ -44,5 +44,5 @@ The answers to these and other questions are explored in the sections below.
 
 For this tutorial, use the DataTorrent RTS Sandbox; it comes pre-installed
 with Apache Hadoop and the latest version of DataTorrent RTS configured as a single-node
-cluster and includes a time-limited enterprise license. If you've already installed the RTS Enterprise Edition (evaluation or production license), you
+cluster and includes a time-limited enterprise license. If you've already installed DataTorrent RTS, you
 can use that setup instead.
