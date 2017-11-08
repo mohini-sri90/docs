@@ -5,16 +5,16 @@ The following videos provide an introduction to DataTorrent RTS. Application Bui
 
 ### Application Builder
 
-https://www.youtube.com/watch?v=LwRWBudOjg4&t=178s"
+https://www.youtube.com/watch?v=LwRWBudOjg4&t=178s
 
 ### Dimensional Computing
 
-"https://www.youtube.com/watch?v=L1IfGvx-eHs&t=394sU"
+https://www.youtube.com/watch?v=L1IfGvx-eHs&t=394sU
 
 ### Elastic Scalability
 
-"https://www.youtube.com/watch?v=dBdzKQZSg98"
+https://www.youtube.com/watch?v=dBdzKQZSg98
 
 ### Fault Tolerance
 
-"https://www.youtube.com/watch?v=FCMY6Ii89Nw"
+https://www.youtube.com/watch?v=FCMY6Ii89Nw
