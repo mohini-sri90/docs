@@ -79,6 +79,7 @@ Example of a single property configuration in dt-site.xml:
 * **dt.gateway.authentication.(OPTION)** - Determines the scheme of Hadoop security authentication (See the [dtGateway Security](dtgateway_security.md) document).
 * **dt.gateway.http.authentication** - Determines the scheme of DT Gateway HTTP security authentication (See the [dtGateway Security](dtgateway_security.md) document).
 * **dt.gateway.staticResourceDirectory** - The document root directory where the DT Gateway should serve from for the /static HTTP path.
+* **dt.dockerMinSupportedVersion** - Sets the minimum supported docker server version for running docker services. Default is 1.9.1.
 
 
 #### Application Configuration Properties
