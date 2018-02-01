@@ -449,6 +449,8 @@
         
             <li><a class="toctree-l4" href="#configuring-smtp-for-email">Configuring SMTP for Email</a></li>
         
+            <li><a class="toctree-l4" href="#authorization-support-for-alerts-and-topics">Authorization Support for Alerts and Topics</a></li>
+        
             <li><a class="toctree-l4" href="#managing-and-viewing-alerts">Managing and viewing alerts</a></li>
         
             <li><a class="toctree-l4" href="#creating-an-alert">Creating an alert</a></li>
@@ -544,20 +546,21 @@ list of addresses. Likewise, when the condition turns false, the alert becomes i
 and another email about the state change is sent.</p>
 <p>Here is an example for simple JavaScript condition; we can make a REST call to create an
 alert named <code>xyz</code> which emails to <code>someone@company.com</code> when the number of running
-applications is greater than 5 for at least 60 seconds; the JSON object is the payload:</p>
+applications is greater than 5 for at least 60 seconds; the disabled flag indicates whether the alert is enabled or disabled; the JSON object is the payload:</p>
 <h3 id="put-wsv2systemalertsalertsxyz">PUT /ws/v2/systemAlerts/alerts/xyz</h3>
 <pre><code class="json">{
   &quot;condition&quot;:&quot;_topic['cluster.metrics'].numAppsRunning &gt; 5&quot;,
   &quot;email&quot;:&quot;someone@company.com&quot;,
   &quot;description&quot;: &quot;No.of apps running is more than 5&quot;,
-  &quot;timeThresholdMillis&quot;:&quot;60000&quot;
+  &quot;timeThresholdMillis&quot;:&quot;60000&quot;,
+  &quot;disabled&quot;:&quot;false&quot;
 }
 </code></pre>
 
-<p>When the number of running applications is greater than 5 for more than 60 seconds, a simple
+<p>When the number of running applications is greater than 5 for more than 60 seconds with the alert status being enabled, a simple
 email will be sent to <code>someone@company.com</code>, stating that the alert is in effect, and when
 the number of running applications drops below 6, another email will be sent, stating that
-the alert is no longer in effect.</p>
+the alert is no longer in effect. If an alert is disabled, an email will be sent to indicate the change.</p>
 <p>The condition is a simple JavaScript expression which the user can build
 from various system or application-specific values. These values are available as fields
 of JavaScript objects representing WebSocket topics obtained with expressions of the
@@ -687,6 +690,10 @@ user to re-enter the previous password. Note that the JSON sample following the 
 
 <p>The GET API returns the existing SMTP configuration in the gateway. As mentioned above, the SMTP-password
 value is never returned for security reasons.</p>
+<h2 id="authorization-support-for-alerts-and-topics">Authorization Support for Alerts and Topics</h2>
+<p>Starting with RTS 3.8, access to alerts will be restricted based on alert owner. A user can view and manage only his own alerts. A user with admin role will have complete access to all alerts including those of other users.</p>
+<p>A user will also have restricted access to topics. A user can only view and access topics for applications started by him. Access to topics "cluster.metrics" and "applications" will be restricted to users who have permission to view global configuration(VIEW_GLOBAL_CONFIG). A user with admin role will have access to all topics of all users as well as cluster.metrics and applications.</p>
+<p>With the above restriction on topic data, the alert condition provided while creating system alerts can only utilize alert topics which are accessible to alert owner. Hence, a non-admin user A cannot create alerts with conditions using topic data of application(s) started by another user B.</p>
 <h2 id="managing-and-viewing-alerts">Managing and viewing alerts</h2>
 <p>The following operations are available in the Gateway REST API:</p>
 <ul>
@@ -708,7 +715,7 @@ value is never returned for security reasons.</p>
 </ul>
 <h2 id="creating-an-alert">Creating an alert</h2>
 <p>To create an alert, the user needs to specify the alert name, condition,
-email address and duration in milliseconds. As explained above, the condition
+email address, duration in milliseconds and alert status using disabled flag. As explained above, the condition
 can refer to values in various topic objects including system metrics,
 application metrics, and custom application counters and must yield a Boolean
 value.</p>
@@ -721,7 +728,8 @@ when the <code>WordCount</code> app is not in the <code>RUNNING</code> state for
   &quot;condition&quot;: &quot;_topic['applications.application_1480063135007_0543']['state'] != 'RUNNING'&quot;,
   &quot;email&quot;:&quot;phil@company.com, mike@company.com&quot;,
   &quot;description&quot;: &quot;WordCount Application is not running&quot;,
-  &quot;timeThresholdMillis&quot;:&quot;60000&quot;
+  &quot;timeThresholdMillis&quot;:&quot;60000&quot;,
+  &quot;disabled&quot;:&quot;false&quot;
 }
 </code></pre>
 
@@ -758,7 +766,8 @@ with the revised complex expression compressed to a single line:</p>
   &quot;condition&quot;: &quot;var alert=false;var appId=undefined;var appsInfo=_topic['applications'].apps;for(i=0;i&lt;appsInfo.length;i++){if(appsInfo[i].name=='WordCount'){appId=appsInfo[i].id;break}}if(appId!=undefined){alert=_topic['applications.'+appId]['state']!='RUNNING'}alert;&quot;,
    &quot;email&quot;:&quot;phil@company.com, mike@company.com&quot;,
    &quot;description&quot;: &quot;WordCount Application is not running&quot;,
-   &quot;timeThresholdMillis&quot;:&quot;60000&quot;
+   &quot;timeThresholdMillis&quot;:&quot;60000&quot;,
+   &quot;disabled&quot;:&quot;false&quot;
 }
 </code></pre>
 
@@ -797,6 +806,7 @@ so whenever gateway is restarted the alerts history gets cleared.</p>
  &quot;email&quot;: &quot;phil@company.com, mike@company.com&quot;,
  &quot;description&quot;: &quot;checking latency &gt; 50&quot;,
  &quot;timeThresholdMillis&quot;: &quot;10000&quot;,
+ &quot;disabled&quot;:&quot;false&quot;,
  &quot;alertStatus&quot;: {
    &quot;isInAlert&quot;: true,
    &quot;inTime&quot;: &quot;1481264665450&quot;,
@@ -806,8 +816,8 @@ so whenever gateway is restarted the alerts history gets cleared.</p>
 }
 </code></pre>
 
-<p>The result includes the alert name, condition, email addresses, description and duration.
-It also alert status info such as <code>isInAlert</code> which indicates whether it is still active
+<p>The result includes the alert name, condition, email addresses, description, duration and enabled/disabled status.
+It also includes alert status info such as <code>isInAlert</code> which indicates whether it is still active
 or not, <code>inTime</code> which represents the time the alert became active, <code>emailSent</code> which,
 as the name suggests, indicates if email was sent, and <code>message</code> which is similar to the
 description.</p>

@@ -1026,13 +1026,13 @@ recording goes on forever)
 }
 </code></pre>
 
-<h3 id="get-wsv2applicationsappidphysicalplancontainerscontaineridlogslognamestartstartposendendposgrepregexpincludeoffsettruefalse">GET /ws/v2/applications/{appid}/physicalPlan/containers/{containerId}/logs/{logName}[?start={startPos}&amp;end={endPos}&amp;grep={regexp}&amp;includeOffset={true/false}]</h3>
-<p>Function: Return the raw log</p>
-<p>Return: if includeOffset=false or not provided, return raw log content
-(Content-Type: text/plain). Otherwise (Content-Type: application/json):</p>
+<h3 id="get-wsv2applicationsappidphysicalplancontainerscontaineridlogslognamestartstartposendendposgrepregexpincludeoffsettruefalselastnbytesn">GET /ws/v2/applications/{appid}/physicalPlan/containers/{containerId}/logs/{logName}[?start={startPos}&amp;end={endPos}&amp;grep={regexp}&amp;includeOffset={true/false}&amp;lastNbytes={N}]</h3>
+<p>Function: Return the log with provided options</p>
+<p>Return: if includeOffset=false or not provided, return raw log content (Content-Type: text/plain). Otherwise (Content-Type: application/json).
+The options (start, end) and (lastNbytes) are mutually exclusive.</p>
 <pre><code class="json">{
     &quot;lines&quot;: [
-        { &quot;byteOffset&quot;:&quot;{byteOffset}&quot;, &quot;line&quot;: &quot;{line}&quot; }, …
+        { &quot;byteOffset&quot;:&quot;{byteOffset}&quot;, &quot;line&quot;: &quot;{line}&quot; }, { &quot;byteOffset&quot;:&quot;{byteOffset}&quot;, &quot;line&quot;: &quot;RandomNumber : {Line}&quot; } …
      ]
 }
 </code></pre>
