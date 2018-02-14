@@ -371,3 +371,7 @@ that dashboard will serve as the starting point of your presentation. To start t
 just enter Presentation Mode from the home dashboard.
 
 ![presentationBuilder.gif](images/dtdashboard/image21.gif)
+
+## IFrame Widget
+
+The IFrame widget 
