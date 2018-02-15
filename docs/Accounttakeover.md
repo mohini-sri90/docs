@@ -142,7 +142,7 @@ Following properties should be set for configuration file path:
 
 ## Geo Data Enricher
 
-GeoData Enrichment operator refers to the **maxmind** database that fetch geo information when you provide the IP address of the transaction location. To run the GeoData Enrichment operator, you must copy the maxmind city database (GeoLite2 City) to HDFS. You can remove this enrichment as well as update properties (e.g. maxmind db path) by configuring enrichment properties. &lt;Please mention again as per previous para how to write and set enrichments.json&gt;
+GeoData Enrichment operator refers to the **maxmind** database that fetch geo information when you provide the IP address of the transaction location. To run the GeoData Enrichment operator, you must copy the maxmind city database (GeoLite2 City) to HDFS. You can remove this enrichment as well as update properties (e.g. maxmind db path) by configuring enrichment properties.  By default, the configuration for enrichment is stored in **enrichments.json** that is bundled in the application package. You can also write your own configuration in a file and store that file on HDFS. 
 
 **Note:** Extract **GeoLite2-City.mmdb** file to HDFS. Do not copy the ZIP file directly.
 
@@ -160,7 +160,7 @@ Following properties should be set for the **User Profile Enricher** operator as
 | lookupFields | Main field / key based on which the user data is queried. | JSON | userId |
 | includeFields | comma seperated Mapping of fields from user data to the fields in JAVA object. | JSON | &quot;customer.userId&quot;:&quot;userId&quot;,&quot;customer.customerType&quot;:&quot;customerType&quot; |
 
-Example of enrichents.json file
+## Example of enrichents.json file
 
 Following is an example of the **enrichment.json** file. You can refer to this example to create the **enrichment.json** file.
 ```
