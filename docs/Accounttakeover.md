@@ -22,6 +22,7 @@ ATO Prevention application is available with DT Premium license.
 
 The following image depicts the workflow in the ATO application.
 
+![images](images/ATOworkflow.png)
  
 # Setting the Application
 
