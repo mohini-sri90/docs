@@ -164,172 +164,90 @@ Example of enrichents.json file
 Following is an example of the **enrichment.json** file. You can refer to this example to create the **enrichment.json** file.
 ```
 [
-
   {
-
-        &quot;name&quot;: &quot;UserProfileEnricher&quot;,
-
-        &quot;storeType&quot; : &quot;json\_file&quot;,
-
-        &quot;storeFields&quot; : [
-
-          { &quot;name&quot; : &quot;userId&quot;, &quot;type&quot; : &quot;string&quot; },
-
-          { &quot;name&quot;: &quot;customerType&quot;, &quot;type&quot; : &quot;string&quot; },
-
-          { &quot;name&quot; : &quot;customerAvgSpending&quot;, &quot;type&quot; : &quot;double&quot; },
-
-          { &quot;name&quot; : &quot;customerRiskScore&quot;, &quot;type&quot; : &quot;double&quot; },
-
-          { &quot;name&quot; : &quot;custGender&quot;, &quot;type&quot; : &quot;string&quot; },
-
-          { &quot;name&quot;: &quot;custMaritalStatus&quot;, &quot;type&quot; : &quot;string&quot; },
-
-          { &quot;name&quot; : &quot;custIncomeLevel&quot;, &quot;type&quot; : &quot;string&quot; },
-
-          { &quot;name&quot; : &quot;custStreet1&quot;, &quot;type&quot; : &quot;string&quot; },
-
-          { &quot;name&quot; : &quot;custStreet2&quot;, &quot;type&quot; : &quot;string&quot; },
-
-          { &quot;name&quot; : &quot;custCity&quot;, &quot;type&quot; : &quot;string&quot; },
-
-          { &quot;name&quot; : &quot;custState&quot;, &quot;type&quot; : &quot;string&quot; },
-
-          { &quot;name&quot; : &quot;custCountry&quot;, &quot;type&quot; : &quot;string&quot; },
-
-          { &quot;name&quot; : &quot;custPoBox&quot;, &quot;type&quot; : &quot;string&quot; },
-
-          { &quot;name&quot; : &quot;custPostalCode&quot;, &quot;type&quot; : &quot;string&quot; },
-
-          { &quot;name&quot; : &quot;custPostalCodeType&quot;, &quot;type&quot; : &quot;string&quot; },
-
-          { &quot;name&quot; : &quot;lat&quot;, &quot;type&quot; : &quot;double&quot; },
-
-          { &quot;name&quot; : &quot;lon&quot;, &quot;type&quot; : &quot;double&quot; }
-
-        ],
-
-        &quot;inputType&quot; : &quot;com.datatorrent.ato.schema.UserActivity&quot;,
-
-        &quot;outputType&quot; : &quot;com.datatorrent.ato.schema.UserActivity&quot;,
-
-        &quot;reuseObject&quot; : true,
-
-        &quot;properties&quot;: {
-
-          &quot;file&quot; : &quot;ato\_lookupdata/customers.json&quot;,
-
-          &quot;refreshInterval&quot; : 5000
-
-        },
-
-        &quot;lookupFields&quot; : {
-
-          &quot;userId&quot; : &quot;userId&quot;
-
-        },
-
-        &quot;includeFields&quot; : {
-
-          &quot;customer.userId&quot;:&quot;userId&quot;,
-
-          &quot;customer.customerType&quot;:&quot;customerType&quot;,
-
-          &quot;customer.customerAvgSpending&quot;:&quot;customerAvgSpending&quot;,
-
-          &quot;customer.customerRiskScore&quot;:&quot;customerRiskScore&quot;,
-
-          &quot;customer.custGender&quot;:&quot;custGender&quot;,
-
-          &quot;customer.custMaritalStatus&quot;:&quot;custMaritalStatus&quot;,
-
-          &quot;customer.custIncomeLevel&quot;:&quot;custIncomeLevel&quot;,
-
-          &quot;customer.custStreet1&quot;:&quot;custStreet1&quot;,
-
-          &quot;customer.custStreet2&quot;:&quot;custStreet2&quot;,
-
-          &quot;customer.custCity&quot;:&quot;custCity&quot;,
-
-          &quot;customer.custState&quot;:&quot;custState&quot;,
-
-          &quot;customer.custCountry&quot;:&quot;custCountry&quot;,
-
-          &quot;customer.custPoBox&quot;:&quot;custPoBox&quot;,
-
-          &quot;customer.custPostalCode&quot;:&quot;custPostalCode&quot;,
-
-          &quot;customer.custPostalCodeType&quot;: &quot;custPostalCodeType&quot;
-
-        }
-
+	"name": "UserProfileEnricher",
+	"storeType" : "json_file",
+	"storeFields" : [
+  	{ "name" : "userId", "type" : "string" },
+  	{ "name": "customerType", "type" : "string" },
+  	{ "name" : "customerAvgSpending", "type" : "double" },
+  	{ "name" : "customerRiskScore", "type" : "double" },
+  	{ "name" : "custGender", "type" : "string" },
+  	{ "name": "custMaritalStatus", "type" : "string" },
+  	{ "name" : "custIncomeLevel", "type" : "string" },
+  	{ "name" : "custStreet1", "type" : "string" },
+  	{ "name" : "custStreet2", "type" : "string" },
+  	{ "name" : "custCity", "type" : "string" },
+  	{ "name" : "custState", "type" : "string" },
+  	{ "name" : "custCountry", "type" : "string" },
+  	{ "name" : "custPoBox", "type" : "string" },
+  	{ "name" : "custPostalCode", "type" : "string" },
+  	{ "name" : "custPostalCodeType", "type" : "string" },
+  	{ "name" : "lat", "type" : "double" },
+  	{ "name" : "lon", "type" : "double" }
+	],
+	"inputType" : "com.datatorrent.ato.schema.UserActivity",
+	"outputType" : "com.datatorrent.ato.schema.UserActivity",
+	"reuseObject" : true,
+	"properties": {
+  	"file" : "ato_lookupdata/customers.json",
+  	"refreshInterval" : 5000
+	},
+	"lookupFields" : {
+  	"userId" : "userId"
+	},
+	"includeFields" : {
+  	"customer.userId":"userId",
+  	"customer.customerType":"customerType",
+  	"customer.customerAvgSpending":"customerAvgSpending",
+  	"customer.customerRiskScore":"customerRiskScore",
+  	"customer.custGender":"custGender",
+  	"customer.custMaritalStatus":"custMaritalStatus",
+  	"customer.custIncomeLevel":"custIncomeLevel",
+  	"customer.custStreet1":"custStreet1",
+  	"customer.custStreet2":"custStreet2",
+  	"customer.custCity":"custCity",
+  	"customer.custState":"custState",
+  	"customer.custCountry":"custCountry",
+  	"customer.custPoBox":"custPoBox",
+  	"customer.custPostalCode":"custPostalCode",
+  	"customer.custPostalCodeType": "custPostalCodeType"
+	}
   },
-
   {
-
-        &quot;name&quot;: &quot;GeoDataEnricher&quot;,
-
-        &quot;passThroughOnError&quot; : true,
-
-        &quot;storeType&quot;: &quot;geo\_mmdb&quot;,
-
-        &quot;storeFields&quot;: [
-
-          { &quot;name&quot; : &quot;IP&quot;, &quot;type&quot; : &quot;string&quot; },
-
-          { &quot;name&quot;: &quot;CITY&quot;, &quot;type&quot;: &quot;string&quot; },
-
-          { &quot;name&quot; : &quot;SUBDIVISION\_ISO&quot;, &quot;type&quot; : &quot;string&quot; },
-
-          { &quot;name&quot;: &quot;ZIPCODE&quot;, &quot;type&quot;: &quot;string&quot; },
-
-          { &quot;name&quot;: &quot;COUNTRY\_ISO&quot;, &quot;type&quot;: &quot;string&quot; },
-
-          { &quot;name&quot; : &quot;LATITUDE&quot;, &quot;type&quot; : &quot;double&quot; },
-
-          { &quot;name&quot; : &quot;LONGITUDE&quot;, &quot;type&quot; : &quot;double&quot; }
-
-        ],
-
-        &quot;inputType&quot;: &quot;com.datatorrent.ato.schema.UserActivity&quot;,
-
-        &quot;outputType&quot;: &quot;com.datatorrent.ato.schema.UserActivity&quot;,
-
-        &quot;reuseObject&quot;: true,
-
-        &quot;properties&quot;: {
-
-          &quot;dbpath&quot;: &quot;city.mmdb&quot;,
-
-          &quot;refreshInterval&quot;: 5000
-
-        },
-
-        &quot;lookupFields&quot;: {
-
-          &quot;IP&quot;: &quot;deviceIP&quot;
-
-        },
-
-        &quot;includeFields&quot;: {
-
-          &quot;geoIp.city&quot; : &quot;CITY&quot;,
-
-          &quot;geoIp.state&quot; : &quot;SUBDIVISION\_ISO&quot;,
-
-          &quot;geoIp.zipcode&quot; : &quot;ZIPCODE&quot;,
-
-          &quot;geoIp.country&quot; : &quot;COUNTRY\_ISO&quot;,
-
-          &quot;geoIp.latitude&quot; : &quot;LATITUDE&quot;,
-
-          &quot;geoIp.longitude&quot; : &quot;LONGITUDE&quot;
-
-        }
-
+	"name": "GeoDataEnricher",
+	"passThroughOnError" : true,
+	"storeType": "geo_mmdb",
+	"storeFields": [
+  	{ "name" : "IP", "type" : "string" },
+  	{ "name": "CITY", "type": "string" },
+  	{ "name" : "SUBDIVISION_ISO", "type" : "string" },
+  	{ "name": "ZIPCODE", "type": "string" },
+  	{ "name": "COUNTRY_ISO", "type": "string" },
+  	{ "name" : "LATITUDE", "type" : "double" },
+  	{ "name" : "LONGITUDE", "type" : "double" }
+	],
+	"inputType": "com.datatorrent.ato.schema.UserActivity",
+	"outputType": "com.datatorrent.ato.schema.UserActivity",
+	"reuseObject": true,
+	"properties": {
+  	"dbpath": "city.mmdb",
+  	"refreshInterval": 5000
+	},
+	"lookupFields": {
+  	"IP": "deviceIP"
+	},
+	"includeFields": {
+  	"geoIp.city" : "CITY",
+  	"geoIp.state" : "SUBDIVISION_ISO",
+  	"geoIp.zipcode" : "ZIPCODE",
+  	"geoIp.country" : "COUNTRY_ISO",
+  	"geoIp.latitude" : "LATITUDE",
+  	"geoIp.longitude" : "LONGITUDE"
+	}
   }
-
 ]
+
 ```
 ## Rules Executor
 
