@@ -203,3 +203,11 @@ Later, you must add the following plugin to **pom.xml** for packaging the python
  </executions>
 </plugin>
 ```
+# Limitations of Python Operator
+The following limitations are noted for Python operator:
+
+ - Python version Supported is 2.7.3.
+ - Implementation requires pip, wheel packages. 
+ - Some python package may not have pip installable package for specific operating systems. For such packages, packages need to be installed on all nodes before deploying python application. 
+ - Some wheel packages are not platform independent. For example,  OpenCV pip package. 
+   For using such a package, the application needs to be compiled on the same platform as the deployment platform.
