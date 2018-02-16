@@ -374,4 +374,14 @@ just enter Presentation Mode from the home dashboard.
 
 ## IFrame Widget
 
-The IFrame widget 
+The IFrame widget allows user to embed content from another source. The OAS dashboards are embedded inside DataTorrent RTS dashboards using this widget.
+
+ ![IFrame widget](images/dtdashboard/iframe-widget.png)
+
+IFrame settings allows user the following functionalities:
+
+- User can execute javascript after iframe has been loaded, only if the iframe src is from the same domain.
+- The Iframe content can also be opened in a new tab.
+- IFrame content from a different domain can also be embedded as long the src domain is CORS enabled.
+
+![IFrame widget settings](images/dtdashboard/iframe-settings.png)

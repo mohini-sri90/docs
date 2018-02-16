@@ -78,8 +78,8 @@ pages:
 - Applications:
     - Omni Channel Fraud Prevention Application: omni_channel_fraud_app.md
 - Services:
-    - Drools - CEP Engine: drools.md
-    - Superset: superset.md
+    - CEP Engine: cep_engine.md
+    - OAS Dashboards: oas_dashboards.md
 - Platform:
     - RTS: rts.md
     - Application Configurations: application_configurations.md
