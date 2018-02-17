@@ -78,7 +78,7 @@ pages:
 - Applications:
     - Omni Channel Fraud Prevention Application: omni_channel_fraud_app.md
 - Services:
-    - CEP Engine: cep_engine.md
+    - CEP Workbench: cep_workbench.md
     - OAS Dashboards: oas_dashboards.md
 - Platform:
     - RTS: rts.md
