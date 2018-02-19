@@ -1,6 +1,6 @@
 # Introduction
 
-CEP Workbench is a [DataTorrent RTS Service](services/#overview) that allows users to govern Drools Workbench assets. The service provides you with the capability to change the application functionality, using drools-based rules.
+CEP Workbench is a [DataTorrent RTS Service](services/#overview) that is a customized Drools Workbench implementation. The service provides you with the capability to change the application functionality, using drools-based rules.
 
 The CEP Workbench service is pre-packaged with applications like Omni-channel Fraud Prevention and Account Takeover Prevention. Using this service, you can configure customized rules for an application in DT RTS. From the DT RTS console, you can access CEP Workbench service, create the customized rules, and then apply these rules to the application configuration before you launch the application.
 
@@ -59,7 +59,7 @@ To configure rules within the CEP Workbench, you must complete the following ste
 
 4. **Add Rules file**:
 
-	1. Go to your Drools project and click **Create New Asset** . A file is created which gets listed in the project.
+	1. Go to your Drools project and click **Create New Asset**, select **DRL file** from dropdown . A file is created which gets listed in the project.
 	2. Open this file, add the rules, and click **Save**. For more details, refer to [Creating Rules](https://docs.jboss.org/drools/release/7.2.0.Final/drools-docs/html_single/#_welcome).
 	
 	![step4](/images/cep_workbench/step4.png)
