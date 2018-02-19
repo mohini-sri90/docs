@@ -20,43 +20,35 @@ Notification is displayed on the top right corner after application package is s
    ![App import Notification](images/kafka-to-hdfs-filter/import-notification.png)
 
 1. Click on the link in the notification which navigates to the page for this application package.
-   ![App details page](images/kafka-to-hdfs-filter/app-details-page.png)
-   Detailed information about the application package like version, last modified time, and short description is available on this page. Click on launch button for `Kafka-to-HDFS-Filter` application.
 
-1. <a name="launch-dialogue"></a>`Launch Kafka-to-HDFS-Filter` dialogue is displayed. One can configure name of this instance of the application from this dialogue.
-   ![Launch dialogue](images/kafka-to-hdfs-filter/launch.png)
+    ![App details page](images/kafka-to-hdfs-filter/app-details-page.png)
 
-1. Select `Use saved configuration` option. This displays list of pre-saved configurations.
-Please select `sandbox-memory-conf.xml` or `cluster-memory-conf.xml` depending on whether
-your environment is the DataTorrent sandbox, or other cluster.
-   ![Select saved configuration](images/kafka-to-hdfs-filter/saved-conf.png)
+    Detailed information about the application package like version, last modified time, and short description is available on this page. Click on launch button for `Kafka-to-HDFS-Filter` application. In the confirmation modal, click the Configure button.
 
-1. Select `Specify custom properties` option. Click on `add default properties` button.
-   ![Specify custom properties](images/kafka-to-hdfs-filter/specify-custom.png)
+1. The <a name="launch-dialogue"></a>`Kafka-to-HDFS-Filter` application configuration page is displayed. The Required Properties section must be completed before the application can be launched.
 
-1. This expands a key-value editor pre-populated with mandatory properties for this application. Change values as needed.
-   ![Properties editor](images/kafka-to-hdfs-filter/property-editor.png)
-   <a name="property-editor"></a>
-   For example, suppose we wish to process all messages seperated by '|' from topic `transactions` at the kafka server running on `kafka-source.node.com` with port `9092`, filters the messages based on the filter criteria `({$}.getAmount() >= 20000)` and write them to `output.txt` under `/user/appuser/output` on HDFS.
-   Properties should be set as follows:
+    ![Launch dialogue](images/kafka-to-hdfs-filter/launch.png)
+
+    <a name="property-editor"></a>
+    For example, suppose we wish to process all messages seperated by '|' from topic `transactions` at the kafka server running on `kafka-source.node.com` with port `9092`, filters the messages based on the filter criteria `({$}.getAmount() >= 20000)` and write them to `output.txt` under `/user/appuser/output` on HDFS.
+    Properties should be set as follows:
 
     |name|value|
     |---|---|
-    |dt.operator.fileOutput.prop.filePath|/user/appuser/output|
-    |dt.operator.fileOutput.prop.outputFileName|output.txt|
-    |dt.operator.filter.prop.condition|Filter condition|({$}.getAmount() >= 20000)|
-    |dt.operator.kafkaInput.prop.clusters|kafka-source.node.com:9092|
-    |dt.operator.kafkaInput.prop.initialOffset|EARLIEST|
-    |dt.operator.kafkaInput.prop.topics|transactions|
+    |Output Directory Path |/user/appuser/output|
+    |Output File Name |output.txt|
+    |Kafka Broker List |node1.company.com:9098, node2.company.com:9098, node3.company.com:9098|
+    |Kafka Topic Name |transactions|
 
     Details about configuration options are available in [Configuration options](#configuration_options) section.
 
-1. Click on the `Launch` button on lower right corner of the dialog to launch the application.
-A notification is displayed on the top right corner after application is launched successfully and includes the Application ID which can be used to monitor this instance and find its logs.
+1. When you are finished inputting application configuration properties, click on the `save` button on the top right corner of the page to save the configuration.
+
+1. Click on the `launch` button at the top right corner of the page to launch the application.
+A notification will be displayed at the top right corner after the application is launched successfully and includes the Application ID which can be used to monitor this instance and find its logs.
    ![Application launch no tification](images/common/app_launch_notification.png)
 
 1. Click on the `Monitor` tab from the top navigation bar.
-   ![Monitor tab](images/common/monitor_link.png)
 
 1. A page listing all running applications is displayed. Search for current application based on name or application id or any other relevant field. Click on the application name or id to navigate to application instance details page.
    ![Apps monitor listing](images/common/apps_monitor_listing.png)
@@ -135,7 +127,8 @@ You can override default values for advanced properties by specifying custom val
     This will generate the application package with `.apa` extension in the `target` directory.
 
 1. Go to DataTorrent UI Management console on web browser. Click on the `Develop` tab from the top navigation bar.
-   ![Develop tab](images/common/develop_link.png)
+
+1. Click on `Application Packages` from the list.
 
 1. Click on `upload package` button and upload the generated `.apa` file.
    ![Upload](images/common/upload.png)

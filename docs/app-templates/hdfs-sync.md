@@ -15,41 +15,37 @@ This document has a step-by-step guide to configure, customize, and launch this 
   Page listing the applications available on AppFactory is displayed.
 1. Search for HDFS to see all applications related to HDFS.
 1. Click on import button for `HDFS Sync App`. Notification is displayed on the top right corner after application package is imported successfully
- ![App import Notification](images/hdfs-sync/import-notification.png)
+
+    ![App import Notification](images/hdfs-sync/import-notification.png)
+
 1. Search for HDFS to see all applications related to HDFS.
 1. Click on the link in the notification which navigates to the page for this application package.
-   ![App details page](images/hdfs-sync/app-details-page.png)
-   Detailed information about the application package like version, last modified time, and short description is available on this page. Click on launch button for `HDFS-Sync-App`
-   application. <a name="launch-dialogue"></a>`Launch HDFS-Sync-App` dialogue is displayed. One can configure name of this instance of the application from this dialogue.
-   ![Launch dialogue](images/hdfs-sync/launch.png)
 
-1. Select `Use saved configuration` option. This displays list of pre-saved configurations.
-Please select `sandbox-memory-conf.xml` or `cluster-memory-conf.xml` depending on whether
-your environment is the DataTorrent sandbox, or other cluster.
-   ![Select saved configuration](images/hdfs-sync/saved-conf.png)
+    ![App details page](images/hdfs-sync/app-details-page.png)
 
-1. Select `Specify custom properties` option. Click on `add default properties` button.
-  ![Specify custom properties](images/hdfs-sync/specify-custom.png)
+    Detailed information about the application package like version, last modified time, and short description is available on this page. Click on launch button for `HDFS-Sync-App`
+    application. In the confirmation modal, click the Configure button. The <a name="launch-dialogue"></a>`HDFS-Sync-App` application configuration is displayed. The Required Properties section must be completed before the application can be launched.
 
-1. This expands a key-value editor pre-populated with mandatory properties for this application. Change values as needed.
-   ![Properties editor](images/hdfs-sync/property-editor.png)
-   <a name="property-editor"></a>
- For example, suppose we wish to copy all files in `/user/appuser/input` from `remote-cluster` to `/user/appuser/archive` on the host cluster (on which app is running). Properties should be set as follows:
+    ![Launch dialogue](images/hdfs-sync/launch.png)
+
+    <a name="property-editor"></a>
+    For example, suppose we wish to copy all files in `/user/appuser/input` from `remote-cluster` to `/user/appuser/archive` on the host cluster (on which app is running). Properties should be set as follows:
 
     |name|value|
     |---|---|
-    |dt.operator.HDFSFileCopyModule.prop.outputDirectoryPath|/user/appuser/archive|
-    |dt.operator.HDFSInputModule.prop.files|hdfs://remote-cluster/user/appuser/input|
+    |Input Directory Or File Path |hdfs://remote-cluster/user/appuser/input|
+    |Output Directory Path |/user/appuser/archive|
 
     This application is tuned for better performance if reading data from remote cluster to host cluster.
     Details about configuration options are available in [Configuration options](#configuration_options) section.
 
-1. Click on `Launch` button on bottom right corner to launch the application.
-   Notification is displayed on the top right corner after application is launched successfully and includes the Application ID which can be used to monitor this instance and find its logs.
+1. When you are finished inputting application configuration properties, click on the `save` button on the top right corner of the page to save the configuration.
+
+1. Click on the `launch` button at the top right corner of the page to launch the application.
+   A notification will be displayed on the top right corner after the application is launched successfully and includes the Application ID which can be used to monitor this instance and find its logs.
    ![Application launch notification](images/common/app_launch_notification.png)
 
 1. Click on the `Monitor` tab from the top navigation bar.
-   ![Monitor tab](images/common/monitor_link.png)
 
 1. A page listing all running applications is displayed. Search for current application based on name or application id or any other relevant field. Click on the application name or id to navigate to application instance details page.
    ![Apps monitor listing](images/common/apps_monitor_listing.png)
@@ -116,7 +112,8 @@ You can override default values for advanced properties by specifying custom val
     This will generate the application package with `.apa` extension inside the `target` directory.
 
 1. Go to DataTorrent UI Management console on web browser. Click on the `Develop` tab from the top navigation bar.
-    ![Develop tab](images/common/develop_link.png)
+
+1. Click on `Application Packages` from the list.
 
 1. Click on `upload package` button and upload the generated `.apa` file.
     ![Upload](images/common/upload.png)

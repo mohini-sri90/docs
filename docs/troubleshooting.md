@@ -1,4 +1,23 @@
 ===============================
+## Online Analytics Service (OAS)
+
+### Handling High Ingestion Rate in OAS 
+
+Usually, OAS consumes the Kafka topic data as soon as it is available from upstream. However, if it cannot cope with the incoming rate, there can be failures in the **Input** operator. 
+To avoid such issues, the following approaches are suggested:
+
+ - **OlapParser Operator partitioning**
+ 
+   OlapParser operator can be partitioned, if the ingestion rate is very high. For example,  for creating 4 partitions, the property      ***dt.operator.OlapParser.attr.PARTITIONER*** can be used with value as ***com.datatorrent.common.partitioner.StatelessPartitioner:4***
+
+ - **Increase Retention period for kafka topic**
+ 
+   If OAS is overloaded and not processing the data at the same rate as upstream, the retention period for the kafka topic can be increased. This gives sufficient time for OAS to process all the topic data.
+
+ - **Specify 'auto.offset.reset' consumer property**
+ 
+   There can be cases where OAS is unable to keep pace with the upstream and the older data in Kafka topic gets expired because of  the  retention policy that is set before getting processed by OAS. In such cases the OAS **Input** operator may fail. To avoid this failure, the consumer property ***dt.operator.Input.prop.consumerProps(auto.offset.reset)*** can be set in OAS with value as ***earliest***. With this property, in case of older topic data expiry, the offset used for reading the data is ***earliest***  that is whichever oldest offset that is currently available with the topic. This avoids the Input operator failure but also involves some loss of data.
+**Caution**: This is not the recommended approach,  as it may result in data loss without any notification.
 
 ## Download
 
@@ -117,7 +136,6 @@ The system requirements for Sandbox deployment are as follows:
 -  DataTorrent Operator Library
 -  DataTorrent Enterprise Security
 -  DataTorrent dtManage
--  DataTorrent dtAssemble
 -  DataTorrent dtDashboard
 -  Demo Applications
 
@@ -345,20 +363,45 @@ You have to make sure that the Hadoop jars are not bundled with the application 
 
 ### Serialization considerations
 
-The platform requires all operators and tuples in an Apex application to be serializable (and deserializable).
-After an application is launched, operators are serialized from the starting node and deserialized and 
-instantiated on various cluster nodes. Also checkpointing involves serializing and persisting an operator 
-to a store and deserializing from the store in case of recovery. Tuples are serialized and deserialized 
-when transmitted over a stream.
+An Apex application needs to satisfy serializability requirements on operators and tuples as described below.
 
-Problems of lack of serializability (and deserializability) in the code can only be reliably uncovered at run-time.
-So the recommended way to uncover these problems is to run the application in 
-[local mode](http://apex.apache.org/docs/apex/application_development/#local-mode) before running on a cluster.
-Use the [ApexCLI](http://apex.apache.org/docs/apex/apex_cli/) to launch your application with the `-local` option
-to run it in local mode. When the platform runs into a situation where a field or object is not serializable or 
-deserializable, the application will fail at that point with a relevant exception logged on the console or the
-log file as described in the [Kryo exception](#application-throwing-following-kryo-exception) section. Check out 
-that section further for hints about troubleshooting serialization issues.
+#### Operators
+
+After an application is launched, the DAG is serialized using a combination of
+[Java Serialization](https://docs.oracle.com/javase/8/docs/platform/serialization/spec/serialTOC.html) and
+[Kryo](https://github.com/EsotericSoftware/kryo/blob/master/README.md) and then the DAG is
+transferred over the network from the launching node to the application master node.
+
+Checkpointing also involves serializing and persisting an operator state to a store and deserializing 
+from the store in case of recovery. The platform uses Kryo serialization in this case. Kryo imposes
+additional requirements on an operator Java class to be de-serializable. For more details check out
+this [page](https://github.com/EsotericSoftware/kryo/blob/master/README.md#object-creation).
+
+#### Tuples
+
+Tuples are serialized (and deserialized) according to the specified stream codec when transmitted between Yarn containers.
+When no stream codec is specified, Apex uses the default stream codec that relies on the 
+[Kryo](https://github.com/EsotericSoftware/kryo/blob/master/README.md) serialization library to
+serialize and deserialize tuples. A custom stream codec can be specified to use a different serialization
+framework.
+
+Thread and container local streams don't use a stream codec, so tuples don't need to be serializable in such cases.
+
+#### Troubleshooting serialization issues
+
+There is no guaranteed way to uncover serialization issues in your code. An operator may emit a problematic tuple
+only in very rare and hard to reproduce conditions while testing. Kryo deserialization problem in an operator will 
+not be uncovered until the recovery time, and at that point it is most likely too late. It is recommended to unit
+test an operator's ability to restore itself properly similar to this 
+[example](https://github.com/apache/apex-malhar/blob/master/library/src/test/java/com/datatorrent/lib/io/fs/AbstractFileOutputOperatorTest.java)
+
+To exercise tuple serialization, run your application in 
+[local mode](http://apex.apache.org/docs/apex/application_development/#local-mode) that could uncover many tuple
+serialization problems. Use the [ApexCLI](http://apex.apache.org/docs/apex/apex_cli/) to launch your application with
+the `-local` option to run it in local mode. The application will fail at a point when the platform is unable to serialize
+or deserialize a tuple,and the relevant exception will be logged on the console or a log file as described in the 
+[Kryo exception](#application-throwing-following-kryo-exception) section. Check out that section further for
+hints about troubleshooting serialization issues.
 
 #### Transient members
 
@@ -366,13 +409,12 @@ Certain data members of an operator do not need to be serialized or deserialized
 checkpointing/recovery because they are [transient](http://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.3.1.3)
 in nature and do not represent stateful data. Developers should judiciously use the 
 [transient](http://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.3.1.3) keyword for declaring
-such non-stateful members of operators (or members of objects which are indirectly members of operators) 
+such non-stateful members of operators (or members of objects that are indirectly members of operators) 
 so that the platform skips serialization of such members and serialization/deserialization errors are 
 minimized. Transient members are further described in the context of the operator life-cycle 
 [here](http://apex.apache.org/docs/apex/operator_development/#setup-call). Typical examples of
 transient data members are database or network connection objects which need to be 
-initialized before they are used in a process, so there is no use of persisting them
-across process invocations.
+initialized before they are used in a process, so they are never persisted across process invocations.
 
 
 ### Getting this message in STRAM logs. Is anything wrong in my code?
@@ -658,12 +700,6 @@ Additional information on tools related to both types of dumps is available
 *   pom dependency management, exclusions etc. eg: Malhar library and
     contrib, Hive (includes Hadoop dependencies, we need to explicitly
     exclude), Jersey(we work only with 1.9 version) etc
-
-*  All non-transient members of the operator object need to be
-    serializable. All members that are not serializable cannot be saved
-    during checkpoint and must be declared transient (e.g. connection
-    objects). This is such a common problem that we need to dedicate a
-    section to it.
 
 *   Exactly once processing mode. Commit operation is supposed to be
     done at endWindow. This is only best-effort exactly once and not

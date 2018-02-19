@@ -20,19 +20,17 @@ This document has a step-by-step guide to configure, customize, and launch this 
    ![App import Notification](images/kinesis-to-s3/import-notification.png)
 
 1. Click on the link in the notification which navigates to the page for this application package.
-   ![App details page](images/kinesis-to-s3/app-details-page.png)
-   Detailed information about the application package like version, last modified time, and short description is available on this page. Click on launch button for `kinesis-to-S3` application.
 
-1. <a name="launch-dialogue"></a>`Launch Kinesis-to-S3` dialogue is displayed. One can configure name of this instance of the application from this dialogue.
-   ![Launch dialogue](images/kinesis-to-s3/launch.png)
+    ![App details page](images/kinesis-to-s3/app-details-page.png)
+    
+    Detailed information about the application package like version, last modified time, and short description is available on this page. Click on launch button for `kinesis-to-S3` application. In the confirmation modal, click the Configure button.
 
-1. Select `Specify Launch properties` option. This expands a key-value editor with mandatory properties for this application. 
-   ![Specify Launch properties](images/kinesis-to-s3/specify-launch.png)
+1. The <a name="launch-dialogue"></a>`Kinesis-to-S3` application configuration page is displayed. The Required Properties section must be completed before the application can be launched.
 
-1. Specify the mandatory properties under `Specify Launch Properties`
-   ![Properties editor](images/kinesis-to-s3/property-editor.png)
-   <a name="property-editor"></a>
-   For example, suppose we wish to process all messages from Kinesis stream `transactions` 
+    ![Launch dialogue](images/kinesis-to-s3/launch.png)
+
+    <a name="property-editor"></a>
+    For example, suppose we wish to process all messages from Kinesis stream `transactions` 
       and write them to `output.txt` under `/user/appuser/output` on S3. Properties should be set as follows:
 
     |name|value|
@@ -48,12 +46,13 @@ This document has a step-by-step guide to configure, customize, and launch this 
 
     Details about configuration options are available in [Configuration options](#configuration_options) section.
 
-1. Click on the `Launch` button on lower right corner of the dialog to launch the application.
-A notification is displayed on the top right corner after application is launched successfully and includes the Application ID which can be used to monitor this instance and find its logs.
+1. When you are finished inputting application configuration properties, click on the `save` button on the top right corner of the page to save the configuration.
+
+1. Click on the `launch` button at the top right corner of the page to launch the application.
+A notification will be displayed on the top right corner after the application is launched successfully and includes the Application ID which can be used to monitor this instance and find its logs.
    ![Application launch no tification](images/common/app_launch_notification.png)
 
 1. Click on the `Monitor` tab from the top navigation bar.
-   ![Monitor tab](images/common/monitor_link.png)
 
 1. A page listing all running applications is displayed. Search for current application based on name or application id or any other relevant field. Click on the application name or id to navigate to application instance details page.
    ![Apps monitor listing](images/common/apps_monitor_listing.png)
@@ -116,7 +115,8 @@ End user must specify the values for these properties.
     This will generate the application package with `.apa` extension in the `target` directory.
 
 1. Go to DataTorrent UI Management console on web browser. Click on the `Develop` tab from the top navigation bar.
-   ![Develop tab](images/common/develop_link.png)
+
+1. Click on `Application Packages` from the list.
 
 1. Click on `upload package` button and upload the generated `.apa` file.
    ![Upload](images/common/upload.png)

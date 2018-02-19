@@ -1420,7 +1420,7 @@ a parallel computation flow per partition. It is described in detail in
 the [Parallel
 Partitions](#h.3vac5uf)[ ](#h.3vac5uf)section.
 Another example is queue capacity that specifies the buffer size for the
-port. Details of attributes are covered in  Operation and Installation Guide.
+port. Details of attributes are covered in [Configuration](configuration.md).
 
 #### Properties
 
@@ -1855,8 +1855,7 @@ an intrinsic element of multi-tenancy as without it a cluster cannot be
 reasonably be shared among enterprise applications. Streaming
 applications follow all multi-tenancy security models used in Hadoop as
 they are native Hadoop applications. For details refer to the
-[Operation and Installation
-Guide](https://www.datatorrent.com/docs/guides/OperationandInstallationGuide.html)
+[Configuration](configuration.md)
 .
 
 Security

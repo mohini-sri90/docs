@@ -1,102 +1,172 @@
 Application Configurations
-========================
+==========================
 
-Application Configurations can be thought of as wrappers for Applications. You
-create a Configuration with properties that override and supplement the ones
-already set in the original Application.
+An application configuration is a collection of custom settings applied to an application.
+These settings may include properties, launch options, artifacts, services, and dashboards.
+Application Configurations can be thought of as wrappers for Applications, which allow for clean separation between 
+application sources and application runtime configurations.  Configurations are based on [Configuration Packages](configuration_packages) and can be created, modified, and deleted without affecting the source application packages.  And once created they can be downloaded, shared, and uploaded, enabling convenient storage and transportation of application settings across multiple environments.
 
-You may find Application Configurations to be particularly useful if:
-
-  * You use the *Specify Launch Properties* option when launching Applications
-  and want the properties to persist.
-  * Users want to share their Configurations of the same Application.
+![](images/application_configurations/working_with.png)
 
 
 Creating an Application Configuration
 =====================================
 
-  1. Navigate to either the *Applications* page or the *Application Configurations*
-  page in the **Develop** section.
-  2. If you're on the  *Applications* page, click the **configure** button 
-  next to the Application you want to configure, and then click **create new configuration**.
-    ![](images/application_configurations/image00.png)
-  Or if you're on the *Application Configurations* page, click on the **create new** button.
-    ![](images/application_configurations/image01.png)
-  3. Select the **Source Application** from the dropdown (preselected if you used
-  the **configure** button), choose a unique **Configuration Name**, and click the **create** button.
-    ![](images/application_configurations/image02.png)
-  4. Once the Configuration is created, you will be navigated to the newly created
-  Application Configuration's page.
+Application configurations are created from an existing source application. Multiple
+application configurations can target the same source application, but each application
+configuration must have a unique name.
+
+To create an application configuration:
+
+  1. Navigate to the **Launch** page and click on the *Applications* tab.
+  2. Find the application you want to configure from the list, and click on the dropdown next to the launch button.
+  3. From the dropdown, select **new configuration**.
+
+    ![](images/application_configurations/creating.png)
+  
+  4. In the **New Application Configuration** modal, confirm the *Source Application* is correct and name your configuration.
+  5. Click **create**. You will be navigated to the newly created configuration's page.
 
 
-Modifying Properties of an Application Configuration
-====================================================
+#### Launching Quickly With Temporary Configurations
 
-Properties set in an Application Configuration will override any existing properties
-of the Application. These properties can be Operator level properties or even
-Application Package level. To see a list of existing properties, go to the
-Application Configuration's page.
+If you want to quickly launch an application without saving an application configuration,
+you can just use the **launch** button in the **Launch** page. However, applications with
+*Required Properties* must be configured, so a temporary configuration can be used.
 
-![](images/application_configurations/image03.png)
+![](images/application_configurations/launching.png)
 
-  * **Package Properties**: Shows the existing properties of the Application. This table
-  is useful for reference when specifying **Optional Properties**.
-  * **Optional Properties**: This is where you can add/edit/remove Application property
-  overrides. The properties and values you specify here will take precedence over the
-  existing **Package Properties**. The JSON tab allows you to copy-and-paste properties
-  in JSON format.
-
-![](images/application_configurations/image04.gif)
-
-_NOTE_: Package Properties can be copied into your clipboard by double-clicking the **name**
-field of the property. You can then paste it when creating Optional Properties.
-
-When you have finished modifying your properties, remember to click the **save**
-button in the top-right corner of the page.
+Working with temporary configurations is the same as working with a saved configuration, except
+temporary configurations will be discarded once you navigate away. Temporary
+configurations can be converted to regular application configurations by saving them.
 
 
-Launching an Application Configuration
-======================================
+Working With Application Configurations
+=======================================
 
-Application Configurations have to be launched just like Applications. 
-They can be launched from the list view (table), or from the Configuration's
-page itself:
-
-  ![](images/application_configurations/image05.gif)
-
-
-Exporting and Importing Application Configurations
-====================================================
-
-Application Configurations can be exported and downloaded as **.apc** files.
-
-  ![](images/application_configurations/image06.png)
-
-Exported **.apc** files can be imported by uploading them on the Application
-Configurations page.
-
-  ![](images/application_configurations/image07.png)
+  * [Properties](#properties)
+  * [JAR Artifacts](#jar-artifacts)
+  * [File Artifacts](#file-artifacts)
+  * [Services](#services)
+  * [Dashboards](#dashboards)
+  * [Settings](#settings)
 
 
-JSON Application Configurations
-===============================
+Properties
+----------
 
-Application Configurations of JSON Applications (dtAssemble) differ from
-Application Configurations of Java Applications in several ways:
+#### Application Package Properties
 
-  * When creating a Configuration of a JSON Application, the entire
-  JSON Application is copied into the Configuration.
-  * The original JSON Application and its Configurations are decoupled. Any modifications
-  to either would not affect the other. They still rely on the same Package resources
-  (e.g. Operators).
+A list of properties from the source application package. These properties can be overridden in *Optional Properties* by using the same property name.
+
+*Note*: Package Properties with names or values that are too long to display are cut off. Hover over the table cell to see
+the rest. To select the entire string including the cut off content, double-click the text in the table cell.
+
+#### Required Properties
+
+A list of properties that must have defined values before the application configuration can be launched.
+This section only appears if the application has defined required properties.
+
+![](images/application_configurations/working_with_required_properties.png)
+
+#### Optional Properties
+
+Use this section to provide additional properties, or to override properties listed
+in **Application Package Properties**.
+
+The entire list of **Application Package Properties** can be added to this section by
+selecting **default properties** in the **add** dropdown.
+
+Garbage collection (GC) logging can be enabled by selecting **enable gc logging** in the
+**add** dropdown. This will add an optional property 
 
 
-Deleting Applications with Existing Application Configurations
-==============================================================
+JAR Artifacts
+-------------
 
-If an Application with existing Application Configurations is deleted, the
-Application Configuration can no longer be launched.
+JAR artifacts can be added to the application configuration by uploading or adding from the artifact library. New AVRO schemas can also be created. JAR artifacts will be added to the application's classpath.
 
-  ![](images/application_configurations/image08.png)
+![](images/application_configurations/working_with_jar_artifacts.png)
 
-The launch functionality will be restored if you re-upload the Application.
+To add non-JAR files to the configuration, see [File Artifacts](#file-artifacts).
+
+#### Adding From Artifact Library
+
+Artifacts can be added to the configuration as a reference to a JAR in the artifact library. As a result, these artifacts are not copied directly into the configuration (.apc).
+
+To add an artifact from the artifact library, click on the **add from artifact library** dropdown and select an artifact.
+
+#### Creating a New Schema
+
+New AVRO schemas can be created and added to the configuration as a reference. Schemas created within application configurations will be stored in the artifact library.
+
+To create a new schema, click on the **add** dropdown under the *JAR Artifacts* header and select **new schema**. The Group ID, Artifact ID, Version, and Schema Content fields must be completed.
+
+#### Uploading JAR Artifacts
+
+To upload a JAR artifact, click on the **add** dropdown under the *JAR Artifacts* header and select **upload JAR**.
+
+The entirety of the uploaded JAR artifacts are stored inside the configuration (.apc), and will not be added to the artifact library. Unlike the references stored in the configuration by [Adding From Artifact Library](#adding-from-artifact-library) or [Creating a New Schema](#creating-a-new-schema), these JARs travel along with the configuration when downloaded and shared.
+
+*Note*: Make sure you save the configuration after uploading your JAR artifacts. If you decide not to save the configuration, recently uploaded JARs will still be accessible for a limited time in the **add** dropdown's **recent uploads** section.
+
+
+File Artifacts
+--------------
+
+Files can be uploaded and added to the application configuration. This is useful for uploading configuration specific datasets.
+
+![](images/application_configurations/working_with_file_artifacts.png)
+
+To add JAR files to the configuration, see [JAR Artifacts](#jar-artifacts).
+
+#### Uploading File Artifacts
+
+To upload a file, click on the **add** dropdown under the *File Artifacts* header and select **upload**.
+
+Like uploaded JAR artifacts, file artifacts are stored inside the configuration. As a result, these files can be found inside the .apc when downloaded, and are still accessible when the .apc is reuploaded.
+
+
+Services
+--------
+
+See the main [Services](services) page for an in-depth explanation of services.
+
+By default, services are pulled in from the source application package. Services can also be added to application configurations. Services in application configurations will be started (or installed first, then started) when the configuration is launched. Some applications have predefined services and will appear in the services list when the configuration is created. Custom services can also be added to the configuration.
+
+![](images/application_configurations/working_with_services.png)
+
+#### Adding a Service
+
+To add a new service to the configuration, click on the **add** dropdown under the *Services* header and select **new service**.
+
+Otherwise, you can add services defined within app packages by selecting **from app packages** or any existing installed services by selecting **from installed services**.
+
+Once an application configuration service is installed, it will appear in the *Services* page, which can be accessed by using the cog button on the main navigation bar and selecting **Services**.
+
+
+Dashboards
+----------
+
+Dashboards are automatically imported (if they have not already been) when the application configuration is launched. These dashboards are pulled in from the source application package and have predefined target applications for each widget data source.
+
+![](images/application_configurations/working_with_dashboards.png)
+
+See the [Packaged Dashboard](dtdashboard/#packaged-dashboards) section in the dtDashboard page for more details.
+
+#### Configuring a Packaged Dashboard
+
+To configure a packaged dashboard, click the **configure** button. In the modal, you can change the dashboard name and target applications. Target applications can be either the current application configuration, or other running applications that have data sources.
+
+
+Settings
+--------
+
+The application configuration settings modal allows you to edit the **Configuration Name** and retarget the **Source Application**.
+The settings modal can be accessed by clicking the **edit** button next to the configuration name header, or through the dropdown menu on the top right corner of the page.
+
+#### Retargeting Source Application
+
+Retargeting allows you to carry over your configuration settings to another source application. This is useful when working with multiple versions of an application; you can **copy** the configuration, then retarget the source application in the copied configuration.
+
+When an application configuration's source application is deleted, it becomes orphaned. You can reupload the source application or retarget the configuration to restore functionality.

@@ -21,17 +21,19 @@ This document has step-by-step guide on how to import and launch app-template.
 
 1. Click on the link in the notification which navigates to the page for this application package.
    ![App details page](../../images/common/app-details-page.png)
-   Detailed information about the application package like version, last modified time, and short description is available on this page. Applications in this application package will be displayed in the table. Click on the `launch` button for the desired application.
+   Detailed information about the application package like version, last modified time, and short description is available on this page. Applications in this application package will be displayed in the table. Click on the `launch` button for the desired application. In the confirmation modal, click the `Configure` button.
 
-1. <a name="launch-dialogue"></a>Launch dialogue for the application is displayed.  ![Launch dialogue](../../images/common/launch.png)
-    Fill in the required properties for the application. For more details, please refer to properties section in the documentation for the respective app.
+1. <a name="launch-dialogue"></a>Launch page for the application configuration is displayed.  ![Launch page](../../images/common/launch.png)
+    Fill in the required properties for the application configuration. For more details, please refer to properties section in the documentation for the respective app.
 
 1. Advanced properties for the application have preset default values. Thus, changing these values is optional. But, if required you can change these properties for fine tuning the application.  
-   Under optional properties section, click on down arrow button and then click on `add default properties`.
+   Under optional properties section, click on down arrow button and then click on `default properties`.
 ![optional-properties](../../images/common/optional.png)
 
-1. Click on the `Launch` button on lower right corner of the dialog to launch the application.
-A notification is displayed on the top right corner after application is launched successfully and includes the Application ID which can be used to monitor this instance and find its logs.
+1. When you are finished inputting application configuration properties, click on the `save` button on the top right corner of the page to save the configuration.
+
+1. Click on the `launch` button on top right corner of the page to launch the application.
+A notification will be displayed on the top right corner after application is launched successfully and includes the Application ID which can be used to monitor this instance and find its logs.
    ![Application launch no tification](../../images/common/app_launch_notification.png)
 
 1. Click on the `Monitor` tab from the top navigation bar.

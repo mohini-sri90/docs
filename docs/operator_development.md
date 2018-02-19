@@ -443,3 +443,21 @@ ports.
 1. Invoke constructor; non-transients initialized.
 2. Copy state from checkpoint -- initialized values from step 1 are
 replaced.
+
+Advanced Features <a name="advanced_features"></a>
+====================================
+
+Control Tuple Support
+---------------------------
+Operators now also have the capability to emit control tuples. These control tuples are different from the control tuples used by the engine like BEGIN_WINDOW and END_WINDOW tuples. Operators can create and emit their own control tuples which can be used to communicate to the down stream operators regarding some event. Examples of such events can be BEGIN_FILE, or END_FILE.
+More details can be found at [Control Tuples](../control_tuples)
+
+
+Operator Development Reference
+====================================
+
+For more details about operator development see [Operator Developmnet Reference](operator_development_ref.md)
+
+
+
+
