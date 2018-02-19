@@ -6,7 +6,7 @@ The CEP Workbench service is pre-packaged with applications like Omni-channel Fr
 
 # Pre-requisites
 
-Install Docker (Version 1.9.1 or greater). You can install Docker during or after RTS installation and specify the docker host in the installation wizard. For more details, please refer to [Docker Configuration](services/#docker-configuration)
+Install Docker (Version 1.9.1 or greater). You can install Docker during or after RTS installation and specify the docker host in the installation wizard. For more details, please refer to [Docker Configuration](services/#configuring-docker)
 
 # Accessing CEP Workbench
 

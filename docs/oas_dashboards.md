@@ -2,7 +2,7 @@
 
 OAS Dashboards service is a [DataTorrent RTS Service](services/#overview) that has been built using Apache Superset. This service packages OAS dashboards, that are enterprise-ready and business intelligent, with a rich set of data visualizations and an easy-to-use interface for exploring and visualizing data.
 
-The [OAS](oas/#introduction) provides the neccesary backend infrastructure for OAS Dashboards Service to query for expected visualizations on the dashboards. OAS Dashboards service is launched as a docker service whereas OAS is launched as an apex service. For more details on services, please refer to [DataTorrent RTS Services](services/#overview)
+The [OAS](oas/#overview) provides the neccesary backend infrastructure for OAS Dashboards Service to query for expected visualizations on the dashboards. OAS Dashboards service is launched as a docker service whereas OAS is launched as an apex service. For more details on services, please refer to [DataTorrent RTS Services](services/#overview)
 
 The OAS Dashboards service helps you to visualize real time outcomes, historical trends, data KPIs, historical KPIs, real time operational metrics, trends of operator performance, etc. for the following DataTorrent RTS applications:
 
@@ -11,7 +11,7 @@ The OAS Dashboards service helps you to visualize real time outcomes, historical
 
 # Pre-requisites
 
-- Docker installation (Version 1.9.1 or greater). You can also install Docker during or after RTS installation and specify the docker host in the installation wizard. For more details, please refer to [Docker Configuration](services/#docker-configuration)
+- Docker installation (Version 1.9.1 or greater). You can also install Docker during or after RTS installation and specify the docker host in the installation wizard. For more details, please refer to [Docker Configuration](services/#configuring-docker)
 
 # Accessing OAS Dashboards service
 
