@@ -376,10 +376,10 @@ The IFrame widget allows user to embed content from another source. The OAS dash
 
  ![IFrame widget](images/dtdashboard/iframe-widget.png)
 
-IFrame settings allows user the following functionalities:
+IFrame widget supports the following functionalities:
 
-- User can execute javascript after iframe has been loaded, only if the iframe src is from the same domain.
-- The Iframe content can also be opened in a new tab.
+- Custom JavaScript execution after iframe has been loaded, provided the iframe src is from the same domain.
+- Iframe content can also be opened in a full-view mode in a new tab.
 - IFrame content from a different domain can also be embedded as long the src domain is CORS enabled.
 
 ![IFrame widget settings](images/dtdashboard/iframe-settings.png)
