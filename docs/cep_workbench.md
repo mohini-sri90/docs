@@ -1,12 +1,12 @@
 # Introduction
 
-CEP Workbench is a [DataTorrent RTS Service](services/#overview) that is a customized Drools Workbench implementation. The service provides you with the capability to change the application functionality, using drools-based rules.
+CEP Workbench is a [DataTorrent RTS Service](services/#overview) that is a customized Drools Workbench implementation. The service provides you with the capability to change the functionality of CEP applications using drools-based rules.
 
-The CEP Workbench service is pre-packaged with applications like Omni-channel Fraud Prevention and Account Takeover Prevention. Using this service, you can configure customized rules for an application in DT RTS. From the DT RTS console, you can access CEP Workbench service, create the customized rules, and then apply these rules to the application configuration before you launch the application.
+The CEP Workbench service is pre-packaged with applications like Omni-channel Fraud Prevention and Account Takeover Prevention.  From the DT RTS console, you can access CEP Workbench service, create the customized rules, and then apply these rules to the application configuration to change the application behavior.
 
 # Pre-requisites
 
-Install Docker (Version 1.9.1 or greater). You can install Docker during or after RTS installation and specify the docker host in the installation wizard. For more details, please refer to [Docker Configuration](services/#configuring-docker)
+Install Docker (Version 1.9.1 or greater) and provide the docker host setting by running the installation wizard in cases where Docker is installed on a machine other than the Gateway.  For more details, please refer to [Docker Configuration](services/#configuring-docker)
 
 # Accessing CEP Workbench
 
@@ -36,7 +36,7 @@ To configure rules within the CEP Workbench, you must complete the following ste
 	1. Create an application configuration for an application.
 	2. In the application configuration, create and save a schema. This adds schema in the configuration of the application that you want to launch with the customized rules. [Creating Schema](docs/jar_artifacts.md)
 	
-	![step1](/images/cep_workbench/step1.png)
+	![](images/cep_workbench/step1.png)
 	
 2. **Create a project in Drools**:
 
@@ -46,7 +46,7 @@ To configure rules within the CEP Workbench, you must complete the following ste
 	4. In the Welcome page, click **New Project**.
 	5. In the New Project page, enter a project name and description and click **Create**. The new project gets listed under **Project Authoring**. For more details, see [Add Project](https://docs.jboss.org/drools/release/7.2.0.Final/drools-docs/html_single/#_wb.quickstartaddproject).
 	
-	![step2](/images/cep_workbench/step2.png)
+	![](images/cep_workbench/step2.png)
 
 3. **Add Schema dependency**:
 
@@ -55,14 +55,14 @@ To configure rules within the CEP Workbench, you must complete the following ste
 	3. Click the **Project Settings** button on the left and select **Dependencies**. The Dependencies page is displayed.
 	4. Click **Add from Repository button**. The Artifacts page is displayed and the schema that was created in DT RTS for the application configuration is listed there. The schema is now added as a dependency for the project.
 	
-	![step3](/images/cep_workbench/step3.png)
+	![](images/cep_workbench/step3.png)
 
 4. **Add Rules file**:
 
 	1. Go to your Drools project and click **Create New Asset**, select **DRL file** from dropdown . A file is created which gets listed in the project.
 	2. Open this file, add the rules, and click **Save**. For more details, refer to [Creating Rules](https://docs.jboss.org/drools/release/7.2.0.Final/drools-docs/html_single/#_welcome).
 	
-	![step4](/images/cep_workbench/step4.png)
+	![](images/cep_workbench/step4.png)
 
 5. **Add KieBase and KieSessionName to kmodule.xml**:
 	
@@ -71,16 +71,16 @@ To configure rules within the CEP Workbench, you must complete the following ste
 	3. Add the KieBase and Kie Session name to kmodule.xml from here.
 	4. Click **Save**.
 	
-	![step5-a](/images/cep_workbench/step5-a.png)
+	![](images/cep_workbench/step5-a.png)
 	
-	![step5-b](/images/cep_workbench/step5-b.png)
+	![](images/cep_workbench/step5-b.png)
 
 6. **Build and Deploy Project**:
 	
 	1. Inside Drools, go to **Authoring > Project Authoring** and select your project.
 	2. On the upper right side, click **Build & Deploy** button. The Rules Jar is created which becomes automatically available in the application configuration in DT RTS.
 	
-	![step6](/images/cep_workbench/step6.png)
+	![](images/cep_workbench/step6.png)
 
 7.  **Add Rules Jar to Application Configuration**:
 
@@ -88,7 +88,7 @@ To configure rules within the CEP Workbench, you must complete the following ste
 	2. Under **JAR artifacts**, click **add from artifact library**.
 	3. Select the rule jar that was created in Drools Workbench. The Rules Jar that was created in Drools becomes automatically available in the application configuration in DT RTS.
 	
-	![step7](/images/cep_workbench/step7.png)
+	![](images/cep_workbench/step7.png)
 
 8.  **Specify Optional Properties**:
 
