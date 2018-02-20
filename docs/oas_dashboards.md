@@ -1,28 +1,24 @@
 # Introduction
 
-OAS Dashboards service is a [DataTorrent RTS Service](services/#overview) that has been built using Apache Superset. This service packages OAS dashboards, that are enterprise-ready and business intelligent, with a rich set of data visualizations and an easy-to-use interface for exploring and visualizing data.
+OAS Dashboards service is a [DataTorrent RTS Service](services/#overview) that is a customized implementation of Apache Superset. This service packages application-specific OAS dashboards with a rich set of data visualizations and an easy-to-use interface for exploring and visualizing the application data.  The [OAS](oas/#overview) provides the neccesary backend infrastructure for OAS Dashboards Service to query for application data used in the dashboard visualizations.
 
-The [OAS](oas/#overview) provides the neccesary backend infrastructure for OAS Dashboards Service to query for expected visualizations on the dashboards. OAS Dashboards service is launched as a docker service whereas OAS is launched as an apex service. For more details on services, please refer to [DataTorrent RTS Services](services/#overview)
-
-The OAS Dashboards service helps you to visualize real time outcomes, historical trends, data KPIs, historical KPIs, real time operational metrics, trends of operator performance, etc. for the following DataTorrent RTS applications:
+The OAS Dashboards service helps you to visualize real time outcomes, historical trends, real time and historical KPIs, real time operational metrics, etc. for the following DataTorrent RTS applications:
 
  - Omni-Channel Fraud Prevention Application
  - Account Take Over Prevention Application
 
 # Pre-requisites
 
-- Docker installation (Version 1.9.1 or greater). You can also install Docker during or after RTS installation and specify the docker host in the installation wizard. For more details, please refer to [Docker Configuration](services/#configuring-docker)
+Install Docker (Version 1.9.1 or greater) and provide the docker host setting by running the installation wizard in cases where Docker is installed on a machine other than the Gateway.  For more details, please refer to [Docker Configuration](services/#configuring-docker)
 
 # Accessing OAS Dashboards service
 
-The service is run inside docker containers using Docker images provided by DatTorrent.
+The OAS Dashboards service is installed and launched automatically for some RTS applications.  Once installed and running, you can access the OAS dashboards as embedded IFrame widgets inside the application dashboards, or directly via the proxy URL displayed on the service details page.
 
-These superset services are added as a required service for some RTS applications. You can access the OAS dashboards directly via a proxy URL displayed on the service details page.
-
-Steps to view service details via application page -
+Steps to view service details via application dashboards -
 
 1. Click the **Monitor** tab and open an application.
-2. Click the **Services** drop-down and select the OAS Dashboard service, named as superset-fpa, etc. The Service Details page is displayed.
+2. Click the **visualize** drop-down and select one of the available dashboards.  Dashboard will render the IFrame widget with visualizations coming directly from OAS Dashboards service.
 
 Steps to view the service details via Service Management Page -
 
