@@ -6,7 +6,7 @@ The CEP Workbench service is pre-packaged with applications like Omni-channel Fr
 
 # Pre-requisites
 
-Install Docker (Version 1.9.1 or greater) and provide the docker host setting by running the installation wizard in cases where Docker is installed on a machine other than the Gateway.  For more details, please refer to [Docker Configuration](services/#configuring-docker)
+Install Docker (Version 1.9.1 or greater) and provide the docker host setting by running the installation wizard in cases where Docker is installed on a machine other than the Gateway.  Please note that for automatic artifacts synchronization the Docker container with CEP Workbench and Gateway need to share the same physical host.  For more details, please refer to [Docker Configuration](services/#configuring-docker)
 
 # Accessing CEP Workbench
 
@@ -56,6 +56,8 @@ To configure rules within the CEP Workbench, you must complete the following ste
 	4. Click **Add from Repository button**. The Artifacts page is displayed and the schema that was created in DT RTS for the application configuration is listed there. The schema is now added as a dependency for the project.
 	
 	![](images/cep_workbench/step3.png)
+	
+	**Note**: For automatic artifacts synchronization the Docker container with CEP Workbench and Gateway need to share the same physical host and file system.
 
 4. **Add Rules file**:
 
