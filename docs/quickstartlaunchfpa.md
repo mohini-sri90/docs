@@ -10,30 +10,33 @@
 
 1. Navigate to the **AppFactory page** > **Financial Services** > **Omni-Channel Payment Fraud Prevention.**
 2. In the DataTorrent Omni Channel Fraud Prevention Application box, click **import**. ![](images/applications/quickstart_launch/import.png)
-3. Download the application after DataTorrent Omni Channel Fraud Prevention Application package is imported.
-4. Navigate to **Develop** > **Application Package** > **Data Torrent Omni Channel Fraud Prevention Application.** Click **launch** drop-down and select **download package**. ![](images/applications/quickstart_launch/downloadpackage.png)
-5. Get the Geolite Maxmind Database (Use Hadoop user or user that has access to Hadoop). Getting Geolite Maxmind Database using Bash:
+3. Click on the **View Package** button to view the imported package, and click **download** button to download the package file.  The contents of the `.apa` will be used to generate lookup data.
+4. Following steps will generate lookup data, which will be used by the enrichment operators.  Transfer the `.apa` file to the node where hadoop is installed, and execute the following commands on this node.  The last command needs to be executed as the user launching the application, which is `dtadmin` in the example below.
 
-            url http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz -o GeoLite2-City.tar.gz
-            tar -zxvf GeoLite2-City.tar.gz 
-            hdfs dfs put GeoLite2-City*/GeoLite2-City.mmdb city.mmdb
+        mkdir fpa_package && cd fpa_package
+        unzip ../dt-cep-omni-fraud-prevention-app-1.4.0.apa 
+        sudo -u dtadmin java -cp app/*:lib/*:`hadoop classpath` com.datatorrent.cep.transactionGenerator.DumpLookupData lookupdata
 
-6. Generate lookup data which will be used by enrichment operators in the DAG. Use Hadoop user or any user that has access to Hadoop. Generating sample lookup data using Bash:
+5. On the same node as in previous step, get the Geolite Maxmind Database and copy the city database to HDFS using the following commands:
 
-            mkdir fpa_package
-            cd fpa_package
-            unzip ../dt-cep-omni-fraud-prevention-app-1.4.0.apa 
-            java -cp app/*:lib/*:`hadoop classpath` com.datatorrent.cep.transactionGenerator.DumpLookupData lookupdata
+        curl http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz -o GeoLite2-City.tar.gz
+        tar -zxvf GeoLite2-City.tar.gz 
+        sudo -u dtadmin hdfs dfs put GeoLite2-City*/GeoLite2-City.mmdb city.mmdb
 
-7. Create a New Configuration for the OmniChannelFrudPreventationApp.
-
-    i. Go to **Develop** > **Application Configurations** > **+ create new.**
+6. Create a New Configuration for the OmniChannelFraudPreventationApp by clicking launch dropdown menu next to **OmniChannelFraudPreventionApp** and selecting **+ new configuration** option.
     
-    ii. Select a Source Application and enter the Configuration Name and then click **Create**. ![](images/applications/quickstart_launch/newappconfig.png)  
+    ![](images/applications/quickstart_launch/newappconfig.png)  
     
-8. Enter the Required Properties. ![](images/applications/quickstart_launch/requiredpropertiesfpa.png)
+7. Navigate to the newly created configuration and enter the following **Required Properties**.
 
-9. Configure the **CEP Workbench Service**.    
+        * Analytics Output Topic: Analytics
+        * Ato Facts Output Topic: Ato
+        * Facts Output Topic: Facts
+        * Fraud Transactions Output Topic: Fraud
+        * Transaction Receiver Topic: Receiver
+        * Kafka Broker List: <running kafka broker adddress:port> Ex: node23.morado.com:9092
+
+8. Configure the **CEP Workbench Service**.    
 
     i. On the configuration page, scroll down.
     
