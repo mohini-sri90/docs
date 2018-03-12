@@ -34,7 +34,7 @@
     * Facts Output Topic: `Facts`
     * Fraud Transactions Output Topic: `Fraud`
     * Transaction Receiver Topic: `Receiver`
-    * Kafka Broker List: <running kafka broker adddress:port> Ex: `node23.morado.com:9092`
+    * Kafka Broker List: `kafka-broker-adddress:kafka-broker-port` Ex: `node23:9092`
 
 8. OPTIONAL: Configure the **CEP Workbench Service** if docker is configured on a different node from Gateway service.
 
