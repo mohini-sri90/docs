@@ -29,48 +29,46 @@
     
 7. Navigate to the newly created configuration and enter the following **Required Properties**.
 
-        * Analytics Output Topic: Analytics
-        * Ato Facts Output Topic: Ato
-        * Facts Output Topic: Facts
-        * Fraud Transactions Output Topic: Fraud
-        * Transaction Receiver Topic: Receiver
-        * Kafka Broker List: <running kafka broker adddress:port> Ex: node23.morado.com:9092
+    * Analytics Output Topic: `Analytics`
+    * Ato Facts Output Topic: `Ato`
+    * Facts Output Topic: `Facts`
+    * Fraud Transactions Output Topic: `Fraud`
+    * Transaction Receiver Topic: `Receiver`
+    * Kafka Broker List: <running kafka broker adddress:port> Ex: `node23.morado.com:9092`
 
-8. Configure the **CEP Workbench Service**.    
+8. OPTIONAL: Configure the **CEP Workbench Service** if docker is configured on a different node from Gateway service.
 
-    i. On the configuration page, scroll down.
+    a.  On configuration page in the **Services** section, select the **drools-workbench** and click **configure**.  
     
-    ii. Select the **drools-workbench** and click **configure**.![](images/applications/quickstart_launch/configservicefpa1.png)
+    b.  In the **Gateway Proxy Configuration** section replace the default **Proxy Address** with the location of the remote docker host.  ![](images/applications/quickstart_launch/configservicefpa1.png)
     
-    iii. Click **save** after specifying the configuration. **Note:** Ensure that the Proxy Address is set correctly.
+    c.  Click **save** after confirming the changes.
             
-10. Configure the **Online Analytics Service**.
+9. Configure the **OAS (Online Analytics Service)** to provide the correct **KafkaBrokers** and **KafkaTopic**
            
-    i. Select the **fpa-online-analytics-service** and click **configure**.![](images/applications/quickstart_launch/configservicefpa2.png)
+    a.  On configuration page in the **Services** section, select the **fpa-online-analytics-service** and click **configure**.  
     
-    ii. Click **save** after specifying the configuration. **Note** :Ensure that the **KafkaBrokers** and the **KafkaTopic** is set correctly.
+    b.  Provide the same values as Kafka Broker and Analytics Output Topic in step 7 for `apex.app-param.kafkaBrokers` and `apex.app-param.kafkaTopic` properties. ![](images/applications/quickstart_launch/configservicefpa2.png)
+    
+    c. Click **save** after confirming that the **KafkaBrokers** and the **KafkaTopic** values are set correctly.
             
-11. Configure the **OAS Dashboards** service.
+10. Configure the **OAS Dashboards** service to specify Gateway ip and port in **Docker Run**
             
-    i. Select **superset-fpa** and click **configure**![](images/applications/quickstart_launch/configservicefpa3.png)
+    a. On configuration page in the **Services** section, select the **superset-fpa** and click **configure**.   
     
-    ii. Click **save** after specifying the configuration. **Note** : Ensure to set correct druid\_cluster IP and the Proxy Address.
+    b.  Replace `<GATEWAY_IP>` and `PORT=9090` to match the current Gateway ip and port. ![](images/applications/quickstart_launch/configservicefpa3.png)
+    
+    c.  OPTIONAL: In the **Gateway Proxy Configuration** section replace the default **Proxy Address** with the location of the remote docker host, if it is on a different node from Gateway.
+    
+    d. Click **save** after confirming the changes.
             
-12. Configure the Dashboards.
+           
+11. Save the configuration by clicking the **Save** button on the top right of the configuration page.
     
-    i. Click **configure**.![](images/applications/quickstart_launch/configpackagedashboardfpa.png)
-    
-    ii. From the **Select Replacement Applications** drop down, select the corresponding configuration name for both the dashboards.
-    
-    iii. Click **Save**.
-            
-13. Save the configuration.
+12. Launch the application by clicking **launch** button.
 
-    i. Click **Save.**
-    
-    ii. Click **launch** to launch the application.![](images/applications/quickstart_launch/launchfpa.png)
-      
-## Launch Test Data Generator Application
+
+## Launch Demo Data Generator Application
 
 1. Create **New Configuration** for the OmniChannelFraudPreventationDataGenerator.
 2. Go to **Develop** > **Application Packages > + new configuration.**
